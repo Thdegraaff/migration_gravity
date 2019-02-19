@@ -1,0 +1,1254 @@
+from_id,to_id,from,to,jobs,distance
+1,5,Oost-Groningen (CR),Zuidwest-Friesland (CR),0.1,107
+1,11,Oost-Groningen (CR),Zuidwest-Overijssel (CR),0.1,113.6
+1,14,Oost-Groningen (CR),Achterhoek (CR),0.1,138.1
+1,15,Oost-Groningen (CR),Arnhem/Nijmegen (CR),0.1,164.9
+1,18,Oost-Groningen (CR),Kop van Noord-Holland (CR),0.1,180.4
+1,25,Oost-Groningen (CR),Agglomeratie Leiden en Bollenstreek (CR),0.1,226.4
+1,28,Oost-Groningen (CR),Oost-Zuid-Holland (CR),0.1,223.3
+1,30,Oost-Groningen (CR),Zuidoost-Zuid-Holland (CR),0.1,234.4
+1,33,Oost-Groningen (CR),West-Noord-Brabant (CR),0.1,259.3
+1,34,Oost-Groningen (CR),Midden-Noord-Brabant (CR),0.1,244.1
+1,35,Oost-Groningen (CR),Noordoost-Noord-Brabant (CR),0.1,213.4
+1,36,Oost-Groningen (CR),Zuidoost-Noord-Brabant (CR),0.1,238.9
+1,39,Oost-Groningen (CR),Zuid-Limburg (CR),0.1,287.8
+2,4,Delfzijl en omgeving (CR),Noord-Friesland (CR),0.1,78.9
+2,6,Delfzijl en omgeving (CR),Zuidoost-Friesland (CR),0.1,68
+2,11,Delfzijl en omgeving (CR),Zuidwest-Overijssel (CR),0.1,142.8
+2,12,Delfzijl en omgeving (CR),Twente (CR),0.1,140.4
+2,14,Delfzijl en omgeving (CR),Achterhoek (CR),0.1,158.3
+2,17,Delfzijl en omgeving (CR),Utrecht (CR),0.1,203.3
+2,23,Delfzijl en omgeving (CR),Groot-Amsterdam (CR),0.1,204.5
+2,30,Delfzijl en omgeving (CR),Zuidoost-Zuid-Holland (CR),0.1,252.1
+2,36,Delfzijl en omgeving (CR),Zuidoost-Noord-Brabant (CR),0.1,259.2
+3,16,Overig Groningen (CR),Zuidwest-Gelderland (CR),0.1,199.6
+3,19,Overig Groningen (CR),Alkmaar en omgeving (CR),0.1,162.4
+3,20,Overig Groningen (CR),IJmond (CR),0.1,181.1
+3,21,Overig Groningen (CR),Agglomeratie Haarlem (CR),0.1,192.4
+3,27,Overig Groningen (CR),Delft en Westland (CR),0.1,233.1
+3,28,Overig Groningen (CR),Oost-Zuid-Holland (CR),0.1,209.1
+3,39,Overig Groningen (CR),Zuid-Limburg (CR),0.1,298.9
+4,16,Noord-Friesland (CR),Zuidwest-Gelderland (CR),0.1,185.3
+4,21,Noord-Friesland (CR),Agglomeratie Haarlem (CR),0.1,140.8
+4,22,Noord-Friesland (CR),Zaanstreek (CR),0.1,126.5
+4,25,Noord-Friesland (CR),Agglomeratie Leiden en Bollenstreek (CR),0.1,170.6
+4,27,Noord-Friesland (CR),Delft en Westland (CR),0.1,195.1
+4,28,Noord-Friesland (CR),Oost-Zuid-Holland (CR),0.1,183.3
+4,39,Noord-Friesland (CR),Zuid-Limburg (CR),0.1,293
+5,1,Zuidwest-Friesland (CR),Oost-Groningen (CR),0.1,105.9
+5,2,Zuidwest-Friesland (CR),Delfzijl en omgeving (CR),0.1,105
+5,19,Zuidwest-Friesland (CR),Alkmaar en omgeving (CR),0.1,87.6
+5,20,Zuidwest-Friesland (CR),IJmond (CR),0.1,111.8
+5,25,Zuidwest-Friesland (CR),Agglomeratie Leiden en Bollenstreek (CR),0.1,147.8
+5,26,Zuidwest-Friesland (CR),Agglomeratie 's-Gravenhage (CR),0.1,164.1
+5,28,Zuidwest-Friesland (CR),Oost-Zuid-Holland (CR),0.1,155.9
+5,30,Zuidwest-Friesland (CR),Zuidoost-Zuid-Holland (CR),0.1,173.4
+5,35,Zuidwest-Friesland (CR),Noordoost-Noord-Brabant (CR),0.1,176.7
+5,39,Zuidwest-Friesland (CR),Zuid-Limburg (CR),0.1,266.9
+6,2,Zuidoost-Friesland (CR),Delfzijl en omgeving (CR),0.1,71.5
+6,14,Zuidoost-Friesland (CR),Achterhoek (CR),0.1,125.2
+6,16,Zuidoost-Friesland (CR),Zuidwest-Gelderland (CR),0.1,164.8
+6,19,Zuidoost-Friesland (CR),Alkmaar en omgeving (CR),0.1,125.9
+6,20,Zuidoost-Friesland (CR),IJmond (CR),0.1,145.2
+6,25,Zuidoost-Friesland (CR),Agglomeratie Leiden en Bollenstreek (CR),0.1,163.1
+6,26,Zuidoost-Friesland (CR),Agglomeratie 's-Gravenhage (CR),0.1,181.1
+6,28,Zuidoost-Friesland (CR),Oost-Zuid-Holland (CR),0.1,169.6
+6,30,Zuidoost-Friesland (CR),Zuidoost-Zuid-Holland (CR),0.1,188.8
+6,35,Zuidoost-Friesland (CR),Noordoost-Noord-Brabant (CR),0.1,182.1
+7,14,Noord-Drenthe (CR),Achterhoek (CR),0.1,124.6
+7,18,Noord-Drenthe (CR),Kop van Noord-Holland (CR),0.1,146
+7,24,Noord-Drenthe (CR),Het Gooi en Vechtstreek (CR),0.1,142.8
+7,25,Noord-Drenthe (CR),Agglomeratie Leiden en Bollenstreek (CR),0.1,195.5
+7,28,Noord-Drenthe (CR),Oost-Zuid-Holland (CR),0.1,188.5
+7,30,Noord-Drenthe (CR),Zuidoost-Zuid-Holland (CR),0.1,206.8
+7,33,Noord-Drenthe (CR),West-Noord-Brabant (CR),0.1,226.9
+7,35,Noord-Drenthe (CR),Noordoost-Noord-Brabant (CR),0.1,189.3
+8,5,Zuidoost-Drenthe (CR),Zuidwest-Friesland (CR),0.1,101.3
+8,14,Zuidoost-Drenthe (CR),Achterhoek (CR),0.1,97.6
+8,16,Zuidoost-Drenthe (CR),Zuidwest-Gelderland (CR),0.1,169.5
+8,18,Zuidoost-Drenthe (CR),Kop van Noord-Holland (CR),0.1,167.5
+8,25,Zuidoost-Drenthe (CR),Agglomeratie Leiden en Bollenstreek (CR),0.1,199.3
+8,26,Zuidoost-Drenthe (CR),Agglomeratie 's-Gravenhage (CR),0.1,211.7
+8,28,Zuidoost-Drenthe (CR),Oost-Zuid-Holland (CR),0.1,190.7
+8,30,Zuidoost-Drenthe (CR),Zuidoost-Zuid-Holland (CR),0.1,203.3
+8,33,Zuidoost-Drenthe (CR),West-Noord-Brabant (CR),0.1,225.1
+8,34,Zuidoost-Drenthe (CR),Midden-Noord-Brabant (CR),0.1,207.2
+8,35,Zuidoost-Drenthe (CR),Noordoost-Noord-Brabant (CR),0.1,179.1
+9,2,Zuidwest-Drenthe (CR),Delfzijl en omgeving (CR),0.1,90.6
+9,14,Zuidwest-Drenthe (CR),Achterhoek (CR),0.1,83.6
+9,18,Zuidwest-Drenthe (CR),Kop van Noord-Holland (CR),0.1,131.3
+9,24,Zuidwest-Drenthe (CR),Het Gooi en Vechtstreek (CR),0.1,106.3
+9,25,Zuidwest-Drenthe (CR),Agglomeratie Leiden en Bollenstreek (CR),0.1,150.5
+9,26,Zuidwest-Drenthe (CR),Agglomeratie 's-Gravenhage (CR),0.1,174.3
+9,28,Zuidwest-Drenthe (CR),Oost-Zuid-Holland (CR),0.1,158.5
+9,30,Zuidwest-Drenthe (CR),Zuidoost-Zuid-Holland (CR),0.1,167.9
+9,33,Zuidwest-Drenthe (CR),West-Noord-Brabant (CR),0.1,193.8
+9,35,Zuidwest-Drenthe (CR),Noordoost-Noord-Brabant (CR),0.1,154.8
+9,36,Zuidwest-Drenthe (CR),Zuidoost-Noord-Brabant (CR),0.1,177
+9,39,Zuidwest-Drenthe (CR),Zuid-Limburg (CR),0.1,232.9
+10,1,Noord-Overijssel (CR),Oost-Groningen (CR),0.1,84.5
+10,2,Noord-Overijssel (CR),Delfzijl en omgeving (CR),0.1,111
+10,18,Noord-Overijssel (CR),Kop van Noord-Holland (CR),0.1,106.7
+10,19,Noord-Overijssel (CR),Alkmaar en omgeving (CR),0.1,123.3
+10,20,Noord-Overijssel (CR),IJmond (CR),0.1,131.1
+10,21,Noord-Overijssel (CR),Agglomeratie Haarlem (CR),0.1,122.3
+10,32,Noord-Overijssel (CR),Overig Zeeland (CR),0.1,237.5
+10,38,Noord-Overijssel (CR),Midden-Limburg (CR),0.1,177.8
+11,4,Zuidwest-Overijssel (CR),Noord-Friesland (CR),0.1,120.8
+11,5,Zuidwest-Overijssel (CR),Zuidwest-Friesland (CR),0.1,93.4
+11,6,Zuidwest-Overijssel (CR),Zuidoost-Friesland (CR),0.1,91.3
+11,7,Zuidwest-Overijssel (CR),Noord-Drenthe (CR),0.1,80
+11,8,Zuidwest-Overijssel (CR),Zuidoost-Drenthe (CR),0.1,70.4
+11,16,Zuidwest-Overijssel (CR),Zuidwest-Gelderland (CR),0.1,87.5
+11,28,Zuidwest-Overijssel (CR),Oost-Zuid-Holland (CR),0.1,121
+11,30,Zuidwest-Overijssel (CR),Zuidoost-Zuid-Holland (CR),0.1,128
+11,33,Zuidwest-Overijssel (CR),West-Noord-Brabant (CR),0.1,148.5
+11,34,Zuidwest-Overijssel (CR),Midden-Noord-Brabant (CR),0.1,132.4
+12,2,Twente (CR),Delfzijl en omgeving (CR),0.1,139.4
+12,5,Twente (CR),Zuidwest-Friesland (CR),0.1,122.5
+12,20,Twente (CR),IJmond (CR),0.1,170.5
+12,21,Twente (CR),Agglomeratie Haarlem (CR),0.1,163.7
+12,27,Twente (CR),Delft en Westland (CR),0.1,191.4
+12,38,Twente (CR),Midden-Limburg (CR),0.1,174.9
+13,1,Veluwe (CR),Oost-Groningen (CR),0.1,138.9
+13,19,Veluwe (CR),Alkmaar en omgeving (CR),0.1,108.4
+13,20,Veluwe (CR),IJmond (CR),0.1,97
+14,3,Achterhoek (CR),Overig Groningen (CR),0.1,144.1
+14,4,Achterhoek (CR),Noord-Friesland (CR),0.1,156.7
+14,6,Achterhoek (CR),Zuidoost-Friesland (CR),0.1,126.2
+14,7,Achterhoek (CR),Noord-Drenthe (CR),0.1,111.1
+14,8,Achterhoek (CR),Zuidoost-Drenthe (CR),0.1,101.9
+14,25,Achterhoek (CR),Agglomeratie Leiden en Bollenstreek (CR),0.1,149.5
+14,27,Achterhoek (CR),Delft en Westland (CR),0.1,158.4
+15,1,Arnhem/Nijmegen (CR),Oost-Groningen (CR),0.1,175.2
+15,2,Arnhem/Nijmegen (CR),Delfzijl en omgeving (CR),0.1,185.9
+15,4,Arnhem/Nijmegen (CR),Noord-Friesland (CR),0.1,165.3
+15,5,Arnhem/Nijmegen (CR),Zuidwest-Friesland (CR),0.1,142.8
+15,7,Arnhem/Nijmegen (CR),Noord-Drenthe (CR),0.1,138.9
+15,8,Arnhem/Nijmegen (CR),Zuidoost-Drenthe (CR),0.1,129.7
+15,19,Arnhem/Nijmegen (CR),Alkmaar en omgeving (CR),0.1,133.8
+15,20,Arnhem/Nijmegen (CR),IJmond (CR),0.1,124
+15,22,Arnhem/Nijmegen (CR),Zaanstreek (CR),0.1,111.5
+15,31,Arnhem/Nijmegen (CR),Zeeuwsch-Vlaanderen (CR),0.1,200.7
+16,3,Zuidwest-Gelderland (CR),Overig Groningen (CR),0.1,192.7
+16,11,Zuidwest-Gelderland (CR),Zuidwest-Overijssel (CR),0.1,85
+16,20,Zuidwest-Gelderland (CR),IJmond (CR),0.1,97
+16,21,Zuidwest-Gelderland (CR),Agglomeratie Haarlem (CR),0.1,86.2
+16,27,Zuidwest-Gelderland (CR),Delft en Westland (CR),0.1,84.3
+16,31,Zuidwest-Gelderland (CR),Zeeuwsch-Vlaanderen (CR),0.1,171.7
+17,7,Utrecht (CR),Noord-Drenthe (CR),0.1,155
+17,8,Utrecht (CR),Zuidoost-Drenthe (CR),0.1,145.9
+17,31,Utrecht (CR),Zeeuwsch-Vlaanderen (CR),0.1,177.1
+18,6,Kop van Noord-Holland (CR),Zuidoost-Friesland (CR),0.1,109.4
+18,7,Kop van Noord-Holland (CR),Noord-Drenthe (CR),0.1,148.4
+18,8,Kop van Noord-Holland (CR),Zuidoost-Drenthe (CR),0.1,167.1
+18,9,Kop van Noord-Holland (CR),Zuidwest-Drenthe (CR),0.1,129.7
+18,12,Kop van Noord-Holland (CR),Twente (CR),0.1,160.2
+18,14,Kop van Noord-Holland (CR),Achterhoek (CR),0.1,157.4
+18,37,Kop van Noord-Holland (CR),Noord-Limburg (CR),0.1,201.4
+18,38,Kop van Noord-Holland (CR),Midden-Limburg (CR),0.1,207.1
+18,39,Kop van Noord-Holland (CR),Zuid-Limburg (CR),0.1,250.5
+19,3,Alkmaar en omgeving (CR),Overig Groningen (CR),0.1,161.3
+19,4,Alkmaar en omgeving (CR),Noord-Friesland (CR),0.1,104.9
+19,5,Alkmaar en omgeving (CR),Zuidwest-Friesland (CR),0.1,96.8
+19,10,Alkmaar en omgeving (CR),Noord-Overijssel (CR),0.1,119.6
+19,12,Alkmaar en omgeving (CR),Twente (CR),0.1,170.3
+19,16,Alkmaar en omgeving (CR),Zuidwest-Gelderland (CR),0.1,109.6
+19,27,Alkmaar en omgeving (CR),Delft en Westland (CR),0.1,89.8
+19,32,Alkmaar en omgeving (CR),Overig Zeeland (CR),0.1,160
+19,35,Alkmaar en omgeving (CR),Noordoost-Noord-Brabant (CR),0.1,130.8
+19,39,Alkmaar en omgeving (CR),Zuid-Limburg (CR),0.1,231.4
+20,12,IJmond (CR),Twente (CR),0.1,164.3
+20,16,IJmond (CR),Zuidwest-Gelderland (CR),0.1,93.6
+20,27,IJmond (CR),Delft en Westland (CR),0.1,65.2
+20,30,IJmond (CR),Zuidoost-Zuid-Holland (CR),0.1,90.6
+20,35,IJmond (CR),Noordoost-Noord-Brabant (CR),0.1,119
+20,37,IJmond (CR),Noord-Limburg (CR),0.1,166.1
+20,39,IJmond (CR),Zuid-Limburg (CR),0.1,212.3
+21,3,Agglomeratie Haarlem (CR),Overig Groningen (CR),0.1,192.6
+21,9,Agglomeratie Haarlem (CR),Zuidwest-Drenthe (CR),0.1,140.6
+21,12,Agglomeratie Haarlem (CR),Twente (CR),0.1,164.6
+21,16,Agglomeratie Haarlem (CR),Zuidwest-Gelderland (CR),0.1,83.8
+21,39,Agglomeratie Haarlem (CR),Zuid-Limburg (CR),0.1,210.6
+22,10,Zaanstreek (CR),Noord-Overijssel (CR),0.1,112.1
+22,12,Zaanstreek (CR),Twente (CR),0.1,150
+22,16,Zaanstreek (CR),Zuidwest-Gelderland (CR),0.1,83.8
+22,27,Zaanstreek (CR),Delft en Westland (CR),0.1,69.7
+22,30,Zaanstreek (CR),Zuidoost-Zuid-Holland (CR),0.1,88.5
+22,33,Zaanstreek (CR),West-Noord-Brabant (CR),0.1,118.9
+22,35,Zaanstreek (CR),Noordoost-Noord-Brabant (CR),0.1,106.7
+22,37,Zaanstreek (CR),Noord-Limburg (CR),0.1,152.8
+23,6,Groot-Amsterdam (CR),Zuidoost-Friesland (CR),0.1,132.3
+23,8,Groot-Amsterdam (CR),Zuidoost-Drenthe (CR),0.1,166.1
+23,31,Groot-Amsterdam (CR),Zeeuwsch-Vlaanderen (CR),0.1,188.8
+24,3,Het Gooi en Vechtstreek (CR),Overig Groningen (CR),0.1,162.2
+24,4,Het Gooi en Vechtstreek (CR),Noord-Friesland (CR),0.1,143.9
+24,11,Het Gooi en Vechtstreek (CR),Zuidwest-Overijssel (CR),0.1,78.5
+24,27,Het Gooi en Vechtstreek (CR),Delft en Westland (CR),0.1,75.9
+24,39,Het Gooi en Vechtstreek (CR),Zuid-Limburg (CR),0.1,184
+25,3,Agglomeratie Leiden en Bollenstreek (CR),Overig Groningen (CR),0.1,207.8
+25,4,Agglomeratie Leiden en Bollenstreek (CR),Noord-Friesland (CR),0.1,172.4
+25,10,Agglomeratie Leiden en Bollenstreek (CR),Noord-Overijssel (CR),0.1,135.9
+25,11,Agglomeratie Leiden en Bollenstreek (CR),Zuidwest-Overijssel (CR),0.1,131.6
+25,12,Agglomeratie Leiden en Bollenstreek (CR),Twente (CR),0.1,171.6
+25,14,Agglomeratie Leiden en Bollenstreek (CR),Achterhoek (CR),0.1,143.7
+25,31,Agglomeratie Leiden en Bollenstreek (CR),Zeeuwsch-Vlaanderen (CR),0.1,154.7
+26,5,Agglomeratie 's-Gravenhage (CR),Zuidwest-Friesland (CR),0.1,166.6
+26,7,Agglomeratie 's-Gravenhage (CR),Noord-Drenthe (CR),0.1,208.1
+26,8,Agglomeratie 's-Gravenhage (CR),Zuidoost-Drenthe (CR),0.1,215.1
+26,9,Agglomeratie 's-Gravenhage (CR),Zuidwest-Drenthe (CR),0.1,173.3
+26,31,Agglomeratie 's-Gravenhage (CR),Zeeuwsch-Vlaanderen (CR),0.1,135.2
+26,38,Agglomeratie 's-Gravenhage (CR),Midden-Limburg (CR),0.1,165.9
+27,8,Delft en Westland (CR),Zuidoost-Drenthe (CR),0.1,219
+27,12,Delft en Westland (CR),Twente (CR),0.1,189.9
+27,14,Delft en Westland (CR),Achterhoek (CR),0.1,158.3
+27,16,Delft en Westland (CR),Zuidwest-Gelderland (CR),0.1,82.4
+27,18,Delft en Westland (CR),Kop van Noord-Holland (CR),0.1,110.8
+27,20,Delft en Westland (CR),IJmond (CR),0.1,65.1
+27,31,Delft en Westland (CR),Zeeuwsch-Vlaanderen (CR),0.1,130.2
+27,37,Delft en Westland (CR),Noord-Limburg (CR),0.1,158.6
+27,39,Delft en Westland (CR),Zuid-Limburg (CR),0.1,197.7
+27,40,Delft en Westland (CR),Flevoland (CR),0.1,100.9
+28,3,Oost-Zuid-Holland (CR),Overig Groningen (CR),0.1,208.8
+28,9,Oost-Zuid-Holland (CR),Zuidwest-Drenthe (CR),0.1,146
+28,10,Oost-Zuid-Holland (CR),Noord-Overijssel (CR),0.1,125.4
+28,14,Oost-Zuid-Holland (CR),Achterhoek (CR),0.1,126.4
+28,18,Oost-Zuid-Holland (CR),Kop van Noord-Holland (CR),0.1,86.2
+28,19,Oost-Zuid-Holland (CR),Alkmaar en omgeving (CR),0.1,70.3
+28,22,Oost-Zuid-Holland (CR),Zaanstreek (CR),0.1,49.5
+28,38,Oost-Zuid-Holland (CR),Midden-Limburg (CR),0.1,143.5
+28,39,Oost-Zuid-Holland (CR),Zuid-Limburg (CR),0.1,180.2
+29,1,Groot-Rijnmond (CR),Oost-Groningen (CR),0.1,245.3
+29,2,Groot-Rijnmond (CR),Delfzijl en omgeving (CR),0.1,269.5
+29,4,Groot-Rijnmond (CR),Noord-Friesland (CR),0.1,203.8
+29,5,Groot-Rijnmond (CR),Zuidwest-Friesland (CR),0.1,184.2
+29,6,Groot-Rijnmond (CR),Zuidoost-Friesland (CR),0.1,186.6
+29,7,Groot-Rijnmond (CR),Noord-Drenthe (CR),0.1,214.4
+29,8,Groot-Rijnmond (CR),Zuidoost-Drenthe (CR),0.1,221.5
+29,11,Groot-Rijnmond (CR),Zuidwest-Overijssel (CR),0.1,140.6
+30,3,Zuidoost-Zuid-Holland (CR),Overig Groningen (CR),0.1,226.2
+30,4,Zuidoost-Zuid-Holland (CR),Noord-Friesland (CR),0.1,207.5
+30,10,Zuidoost-Zuid-Holland (CR),Noord-Overijssel (CR),0.1,138.2
+30,19,Zuidoost-Zuid-Holland (CR),Alkmaar en omgeving (CR),0.1,107.4
+30,20,Zuidoost-Zuid-Holland (CR),IJmond (CR),0.1,89.5
+30,22,Zuidoost-Zuid-Holland (CR),Zaanstreek (CR),0.1,86.3
+30,31,Zuidoost-Zuid-Holland (CR),Zeeuwsch-Vlaanderen (CR),0.1,129.7
+30,37,Zuidoost-Zuid-Holland (CR),Noord-Limburg (CR),0.1,111.2
+30,38,Zuidoost-Zuid-Holland (CR),Midden-Limburg (CR),0.1,120.1
+31,13,Zeeuwsch-Vlaanderen (CR),Veluwe (CR),0.1,230.5
+31,27,Zeeuwsch-Vlaanderen (CR),Delft en Westland (CR),0.1,131.8
+31,28,Zeeuwsch-Vlaanderen (CR),Oost-Zuid-Holland (CR),0.1,146.1
+32,2,Overig Zeeland (CR),Delfzijl en omgeving (CR),0.1,346.7
+32,10,Overig Zeeland (CR),Noord-Overijssel (CR),0.1,227
+32,12,Overig Zeeland (CR),Twente (CR),0.1,241.5
+32,18,Overig Zeeland (CR),Kop van Noord-Holland (CR),0.1,217.1
+32,21,Overig Zeeland (CR),Agglomeratie Haarlem (CR),0.1,144.2
+32,38,Overig Zeeland (CR),Midden-Limburg (CR),0.1,184.6
+32,39,Overig Zeeland (CR),Zuid-Limburg (CR),0.1,219.2
+32,40,Overig Zeeland (CR),Flevoland (CR),0.1,194.5
+33,5,West-Noord-Brabant (CR),Zuidwest-Friesland (CR),0.1,202.5
+33,10,West-Noord-Brabant (CR),Noord-Overijssel (CR),0.1,166.3
+33,11,West-Noord-Brabant (CR),Zuidwest-Overijssel (CR),0.1,150.6
+33,18,West-Noord-Brabant (CR),Kop van Noord-Holland (CR),0.1,164.2
+33,19,West-Noord-Brabant (CR),Alkmaar en omgeving (CR),0.1,140.7
+33,20,West-Noord-Brabant (CR),IJmond (CR),0.1,122.3
+33,22,West-Noord-Brabant (CR),Zaanstreek (CR),0.1,119.7
+34,3,Midden-Noord-Brabant (CR),Overig Groningen (CR),0.1,238.8
+34,9,Midden-Noord-Brabant (CR),Zuidwest-Drenthe (CR),0.1,172
+34,11,Midden-Noord-Brabant (CR),Zuidwest-Overijssel (CR),0.1,127.7
+34,18,Midden-Noord-Brabant (CR),Kop van Noord-Holland (CR),0.1,149.2
+34,19,Midden-Noord-Brabant (CR),Alkmaar en omgeving (CR),0.1,135.2
+34,20,Midden-Noord-Brabant (CR),IJmond (CR),0.1,126.2
+34,21,Midden-Noord-Brabant (CR),Agglomeratie Haarlem (CR),0.1,110.9
+35,3,Noordoost-Noord-Brabant (CR),Overig Groningen (CR),0.1,211
+35,19,Noordoost-Noord-Brabant (CR),Alkmaar en omgeving (CR),0.1,133.2
+35,20,Noordoost-Noord-Brabant (CR),IJmond (CR),0.1,118.6
+35,21,Noordoost-Noord-Brabant (CR),Agglomeratie Haarlem (CR),0.1,109.3
+35,22,Noordoost-Noord-Brabant (CR),Zaanstreek (CR),0.1,109.5
+36,4,Zuidoost-Noord-Brabant (CR),Noord-Friesland (CR),0.1,227.6
+36,5,Zuidoost-Noord-Brabant (CR),Zuidwest-Friesland (CR),0.1,202.5
+36,6,Zuidoost-Noord-Brabant (CR),Zuidoost-Friesland (CR),0.1,215.2
+36,9,Zuidoost-Noord-Brabant (CR),Zuidwest-Drenthe (CR),0.1,173.7
+36,11,Zuidoost-Noord-Brabant (CR),Zuidwest-Overijssel (CR),0.1,118.7
+36,18,Zuidoost-Noord-Brabant (CR),Kop van Noord-Holland (CR),0.1,170
+36,19,Zuidoost-Noord-Brabant (CR),Alkmaar en omgeving (CR),0.1,159.4
+36,20,Zuidoost-Noord-Brabant (CR),IJmond (CR),0.1,145.2
+36,21,Zuidoost-Noord-Brabant (CR),Agglomeratie Haarlem (CR),0.1,134.3
+37,3,Noord-Limburg (CR),Overig Groningen (CR),0.1,210.5
+37,5,Noord-Limburg (CR),Zuidwest-Friesland (CR),0.1,194.7
+37,9,Noord-Limburg (CR),Zuidwest-Drenthe (CR),0.1,174.7
+37,10,Noord-Limburg (CR),Noord-Overijssel (CR),0.1,140.3
+37,18,Noord-Limburg (CR),Kop van Noord-Holland (CR),0.1,196.3
+37,24,Noord-Limburg (CR),Het Gooi en Vechtstreek (CR),0.1,131
+37,25,Noord-Limburg (CR),Agglomeratie Leiden en Bollenstreek (CR),0.1,156.4
+37,27,Noord-Limburg (CR),Delft en Westland (CR),0.1,161.7
+37,28,Noord-Limburg (CR),Oost-Zuid-Holland (CR),0.1,134.6
+37,31,Noord-Limburg (CR),Zeeuwsch-Vlaanderen (CR),0.1,203.2
+37,32,Noord-Limburg (CR),Overig Zeeland (CR),0.1,181.2
+38,3,Midden-Limburg (CR),Overig Groningen (CR),0.1,261.2
+38,4,Midden-Limburg (CR),Noord-Friesland (CR),0.1,271.5
+38,8,Midden-Limburg (CR),Zuidoost-Drenthe (CR),0.1,232.1
+38,12,Midden-Limburg (CR),Twente (CR),0.1,175.7
+38,24,Midden-Limburg (CR),Het Gooi en Vechtstreek (CR),0.1,147.8
+38,25,Midden-Limburg (CR),Agglomeratie Leiden en Bollenstreek (CR),0.1,169.7
+38,27,Midden-Limburg (CR),Delft en Westland (CR),0.1,164.6
+38,28,Midden-Limburg (CR),Oost-Zuid-Holland (CR),0.1,146.1
+38,32,Midden-Limburg (CR),Overig Zeeland (CR),0.1,172.6
+38,40,Midden-Limburg (CR),Flevoland (CR),0.1,168.6
+39,3,Zuid-Limburg (CR),Overig Groningen (CR),0.1,295
+39,8,Zuid-Limburg (CR),Zuidoost-Drenthe (CR),0.1,250.3
+39,11,Zuid-Limburg (CR),Zuidwest-Overijssel (CR),0.1,178.2
+39,19,Zuid-Limburg (CR),Alkmaar en omgeving (CR),0.1,236.8
+39,20,Zuid-Limburg (CR),IJmond (CR),0.1,220.6
+39,21,Zuid-Limburg (CR),Agglomeratie Haarlem (CR),0.1,208.1
+39,22,Zuid-Limburg (CR),Zaanstreek (CR),0.1,210
+39,27,Zuid-Limburg (CR),Delft en Westland (CR),0.1,200.3
+39,31,Zuid-Limburg (CR),Zeeuwsch-Vlaanderen (CR),0.1,247.8
+40,1,Flevoland (CR),Oost-Groningen (CR),0.1,142.9
+40,32,Flevoland (CR),Overig Zeeland (CR),0.1,191.2
+1,26,Oost-Groningen (CR),Agglomeratie 's-Gravenhage (CR),0.2,239.1
+2,8,Delfzijl en omgeving (CR),Zuidoost-Drenthe (CR),0.2,71.5
+2,10,Delfzijl en omgeving (CR),Noord-Overijssel (CR),0.2,111.1
+2,13,Delfzijl en omgeving (CR),Veluwe (CR),0.2,166.1
+2,29,Delfzijl en omgeving (CR),Groot-Rijnmond (CR),0.2,259.1
+3,24,Overig Groningen (CR),Het Gooi en Vechtstreek (CR),0.2,166.5
+3,25,Overig Groningen (CR),Agglomeratie Leiden en Bollenstreek (CR),0.2,210.5
+3,30,Overig Groningen (CR),Zuidoost-Zuid-Holland (CR),0.2,231
+3,33,Overig Groningen (CR),West-Noord-Brabant (CR),0.2,250.5
+3,35,Overig Groningen (CR),Noordoost-Noord-Brabant (CR),0.2,216.7
+4,11,Noord-Friesland (CR),Zuidwest-Overijssel (CR),0.2,127.1
+4,19,Noord-Friesland (CR),Alkmaar en omgeving (CR),0.2,106
+4,20,Noord-Friesland (CR),IJmond (CR),0.2,129
+4,24,Noord-Friesland (CR),Het Gooi en Vechtstreek (CR),0.2,143.7
+4,26,Noord-Friesland (CR),Agglomeratie 's-Gravenhage (CR),0.2,182.9
+4,30,Noord-Friesland (CR),Zuidoost-Zuid-Holland (CR),0.2,206
+4,35,Noord-Friesland (CR),Noordoost-Noord-Brabant (CR),0.2,206
+5,7,Zuidwest-Friesland (CR),Noord-Drenthe (CR),0.2,71.8
+5,8,Zuidwest-Friesland (CR),Zuidoost-Drenthe (CR),0.2,100.5
+5,11,Zuidwest-Friesland (CR),Zuidwest-Overijssel (CR),0.2,97.7
+5,12,Zuidwest-Friesland (CR),Twente (CR),0.2,119.4
+5,24,Zuidwest-Friesland (CR),Het Gooi en Vechtstreek (CR),0.2,113.1
+5,33,Zuidwest-Friesland (CR),West-Noord-Brabant (CR),0.2,195.6
+5,34,Zuidwest-Friesland (CR),Midden-Noord-Brabant (CR),0.2,196.6
+5,36,Zuidwest-Friesland (CR),Zuidoost-Noord-Brabant (CR),0.2,199.7
+6,1,Zuidoost-Friesland (CR),Oost-Groningen (CR),0.2,68.1
+6,15,Zuidoost-Friesland (CR),Arnhem/Nijmegen (CR),0.2,136.2
+6,18,Zuidoost-Friesland (CR),Kop van Noord-Holland (CR),0.2,110.6
+6,24,Zuidoost-Friesland (CR),Het Gooi en Vechtstreek (CR),0.2,122.9
+6,33,Zuidoost-Friesland (CR),West-Noord-Brabant (CR),0.2,209.8
+6,34,Zuidoost-Friesland (CR),Midden-Noord-Brabant (CR),0.2,208.2
+6,36,Zuidoost-Friesland (CR),Zuidoost-Noord-Brabant (CR),0.2,208.4
+7,5,Noord-Drenthe (CR),Zuidwest-Friesland (CR),0.2,72
+7,15,Noord-Drenthe (CR),Arnhem/Nijmegen (CR),0.2,141.2
+7,26,Noord-Drenthe (CR),Agglomeratie 's-Gravenhage (CR),0.2,209.6
+7,34,Noord-Drenthe (CR),Midden-Noord-Brabant (CR),0.2,217.2
+7,36,Noord-Drenthe (CR),Zuidoost-Noord-Brabant (CR),0.2,215
+8,2,Zuidoost-Drenthe (CR),Delfzijl en omgeving (CR),0.2,63.9
+8,15,Zuidoost-Drenthe (CR),Arnhem/Nijmegen (CR),0.2,127.6
+8,24,Zuidoost-Drenthe (CR),Het Gooi en Vechtstreek (CR),0.2,147.1
+8,36,Zuidoost-Drenthe (CR),Zuidoost-Noord-Brabant (CR),0.2,200.6
+8,39,Zuidoost-Drenthe (CR),Zuid-Limburg (CR),0.2,253.1
+9,1,Zuidwest-Drenthe (CR),Oost-Groningen (CR),0.2,61.3
+9,5,Zuidwest-Drenthe (CR),Zuidwest-Friesland (CR),0.2,63.3
+9,34,Zuidwest-Drenthe (CR),Midden-Noord-Brabant (CR),0.2,182.1
+10,16,Noord-Overijssel (CR),Zuidwest-Gelderland (CR),0.2,113
+10,25,Noord-Overijssel (CR),Agglomeratie Leiden en Bollenstreek (CR),0.2,134.4
+10,28,Noord-Overijssel (CR),Oost-Zuid-Holland (CR),0.2,137
+10,37,Noord-Overijssel (CR),Noord-Limburg (CR),0.2,147.6
+11,3,Zuidwest-Overijssel (CR),Overig Groningen (CR),0.2,114.2
+11,24,Zuidwest-Overijssel (CR),Het Gooi en Vechtstreek (CR),0.2,80.5
+11,26,Zuidwest-Overijssel (CR),Agglomeratie 's-Gravenhage (CR),0.2,142.4
+11,37,Zuidwest-Overijssel (CR),Noord-Limburg (CR),0.2,121.5
+11,39,Zuidwest-Overijssel (CR),Zuid-Limburg (CR),0.2,182.9
+12,1,Twente (CR),Oost-Groningen (CR),0.2,98.6
+12,4,Twente (CR),Noord-Friesland (CR),0.2,140.4
+12,6,Twente (CR),Zuidoost-Friesland (CR),0.2,104.1
+12,18,Twente (CR),Kop van Noord-Holland (CR),0.2,162.7
+12,25,Twente (CR),Agglomeratie Leiden en Bollenstreek (CR),0.2,172.5
+12,28,Twente (CR),Oost-Zuid-Holland (CR),0.2,158.6
+12,30,Twente (CR),Zuidoost-Zuid-Holland (CR),0.2,164.5
+13,5,Veluwe (CR),Zuidwest-Friesland (CR),0.2,92.6
+13,6,Veluwe (CR),Zuidoost-Friesland (CR),0.2,95.8
+13,7,Veluwe (CR),Noord-Drenthe (CR),0.2,105
+13,8,Veluwe (CR),Zuidoost-Drenthe (CR),0.2,96.5
+13,18,Veluwe (CR),Kop van Noord-Holland (CR),0.2,100
+13,22,Veluwe (CR),Zaanstreek (CR),0.2,83.2
+13,27,Veluwe (CR),Delft en Westland (CR),0.2,117
+14,9,Achterhoek (CR),Zuidwest-Drenthe (CR),0.2,81.9
+14,28,Achterhoek (CR),Oost-Zuid-Holland (CR),0.2,126.3
+14,30,Achterhoek (CR),Zuidoost-Zuid-Holland (CR),0.2,125.3
+15,9,Arnhem/Nijmegen (CR),Zuidwest-Drenthe (CR),0.2,106.4
+15,18,Arnhem/Nijmegen (CR),Kop van Noord-Holland (CR),0.2,134.7
+15,21,Arnhem/Nijmegen (CR),Agglomeratie Haarlem (CR),0.2,115.3
+15,27,Arnhem/Nijmegen (CR),Delft en Westland (CR),0.2,123.7
+15,32,Arnhem/Nijmegen (CR),Overig Zeeland (CR),0.2,175.7
+16,10,Zuidwest-Gelderland (CR),Noord-Overijssel (CR),0.2,104.4
+16,32,Zuidwest-Gelderland (CR),Overig Zeeland (CR),0.2,140.2
+17,4,Utrecht (CR),Noord-Friesland (CR),0.2,160.4
+17,5,Utrecht (CR),Zuidwest-Friesland (CR),0.2,129.7
+17,6,Utrecht (CR),Zuidoost-Friesland (CR),0.2,134.5
+18,3,Kop van Noord-Holland (CR),Overig Groningen (CR),0.2,147.8
+18,4,Kop van Noord-Holland (CR),Noord-Friesland (CR),0.2,85.3
+18,5,Kop van Noord-Holland (CR),Zuidwest-Friesland (CR),0.2,80.4
+18,10,Kop van Noord-Holland (CR),Noord-Overijssel (CR),0.2,107.1
+18,15,Kop van Noord-Holland (CR),Arnhem/Nijmegen (CR),0.2,133.9
+18,16,Kop van Noord-Holland (CR),Zuidwest-Gelderland (CR),0.2,115.3
+18,28,Kop van Noord-Holland (CR),Oost-Zuid-Holland (CR),0.2,92.9
+18,30,Kop van Noord-Holland (CR),Zuidoost-Zuid-Holland (CR),0.2,130.2
+18,32,Kop van Noord-Holland (CR),Overig Zeeland (CR),0.2,191.2
+18,35,Kop van Noord-Holland (CR),Noordoost-Noord-Brabant (CR),0.2,144.8
+19,13,Alkmaar en omgeving (CR),Veluwe (CR),0.2,108
+19,15,Alkmaar en omgeving (CR),Arnhem/Nijmegen (CR),0.2,128.6
+19,28,Alkmaar en omgeving (CR),Oost-Zuid-Holland (CR),0.2,74.4
+19,30,Alkmaar en omgeving (CR),Zuidoost-Zuid-Holland (CR),0.2,109.1
+19,33,Alkmaar en omgeving (CR),West-Noord-Brabant (CR),0.2,138.5
+19,40,Alkmaar en omgeving (CR),Flevoland (CR),0.2,69.1
+20,13,IJmond (CR),Veluwe (CR),0.2,95.2
+20,28,IJmond (CR),Oost-Zuid-Holland (CR),0.2,55
+20,33,IJmond (CR),West-Noord-Brabant (CR),0.2,120.3
+20,36,IJmond (CR),Zuidoost-Noord-Brabant (CR),0.2,144
+20,40,IJmond (CR),Flevoland (CR),0.2,60.7
+21,30,Agglomeratie Haarlem (CR),Zuidoost-Zuid-Holland (CR),0.2,78.1
+21,33,Agglomeratie Haarlem (CR),West-Noord-Brabant (CR),0.2,107.9
+21,34,Agglomeratie Haarlem (CR),Midden-Noord-Brabant (CR),0.2,116.2
+21,35,Agglomeratie Haarlem (CR),Noordoost-Noord-Brabant (CR),0.2,106.8
+22,13,Zaanstreek (CR),Veluwe (CR),0.2,85.2
+22,15,Zaanstreek (CR),Arnhem/Nijmegen (CR),0.2,112.5
+22,28,Zaanstreek (CR),Oost-Zuid-Holland (CR),0.2,54.5
+22,34,Zaanstreek (CR),Midden-Noord-Brabant (CR),0.2,118.5
+22,36,Zaanstreek (CR),Zuidoost-Noord-Brabant (CR),0.2,133.6
+23,4,Groot-Amsterdam (CR),Noord-Friesland (CR),0.2,134.9
+23,5,Groot-Amsterdam (CR),Zuidwest-Friesland (CR),0.2,117.9
+23,7,Groot-Amsterdam (CR),Noord-Drenthe (CR),0.2,157.5
+23,9,Groot-Amsterdam (CR),Zuidwest-Drenthe (CR),0.2,123
+23,11,Groot-Amsterdam (CR),Zuidwest-Overijssel (CR),0.2,104.9
+23,32,Groot-Amsterdam (CR),Overig Zeeland (CR),0.2,145.1
+23,38,Groot-Amsterdam (CR),Midden-Limburg (CR),0.2,161.9
+24,10,Het Gooi en Vechtstreek (CR),Noord-Overijssel (CR),0.2,79.7
+24,12,Het Gooi en Vechtstreek (CR),Twente (CR),0.2,118.3
+24,14,Het Gooi en Vechtstreek (CR),Achterhoek (CR),0.2,89.3
+25,16,Agglomeratie Leiden en Bollenstreek (CR),Zuidwest-Gelderland (CR),0.2,78.3
+25,37,Agglomeratie Leiden en Bollenstreek (CR),Noord-Limburg (CR),0.2,154.4
+25,39,Agglomeratie Leiden en Bollenstreek (CR),Zuid-Limburg (CR),0.2,208
+26,4,Agglomeratie 's-Gravenhage (CR),Noord-Friesland (CR),0.2,183.2
+26,10,Agglomeratie 's-Gravenhage (CR),Noord-Overijssel (CR),0.2,150.9
+26,12,Agglomeratie 's-Gravenhage (CR),Twente (CR),0.2,182.6
+26,14,Agglomeratie 's-Gravenhage (CR),Achterhoek (CR),0.2,154.3
+26,18,Agglomeratie 's-Gravenhage (CR),Kop van Noord-Holland (CR),0.2,99.9
+26,19,Agglomeratie 's-Gravenhage (CR),Alkmaar en omgeving (CR),0.2,78.9
+26,22,Agglomeratie 's-Gravenhage (CR),Zaanstreek (CR),0.2,62.2
+26,37,Agglomeratie 's-Gravenhage (CR),Noord-Limburg (CR),0.2,159.6
+27,13,Delft en Westland (CR),Veluwe (CR),0.2,109.6
+27,15,Delft en Westland (CR),Arnhem/Nijmegen (CR),0.2,121.6
+27,21,Delft en Westland (CR),Agglomeratie Haarlem (CR),0.2,52.5
+27,24,Delft en Westland (CR),Het Gooi en Vechtstreek (CR),0.2,78
+27,32,Delft en Westland (CR),Overig Zeeland (CR),0.2,88.5
+27,35,Delft en Westland (CR),Noordoost-Noord-Brabant (CR),0.2,101.5
+28,12,Oost-Zuid-Holland (CR),Twente (CR),0.2,154.1
+28,20,Oost-Zuid-Holland (CR),IJmond (CR),0.2,51.9
+28,32,Oost-Zuid-Holland (CR),Overig Zeeland (CR),0.2,108.3
+29,9,Groot-Rijnmond (CR),Zuidwest-Drenthe (CR),0.2,175.3
+29,19,Groot-Rijnmond (CR),Alkmaar en omgeving (CR),0.2,101.1
+30,12,Zuidoost-Zuid-Holland (CR),Twente (CR),0.2,165
+30,21,Zuidoost-Zuid-Holland (CR),Agglomeratie Haarlem (CR),0.2,77.3
+30,39,Zuidoost-Zuid-Holland (CR),Zuid-Limburg (CR),0.2,155.5
+30,40,Zuidoost-Zuid-Holland (CR),Flevoland (CR),0.2,88.9
+31,17,Zeeuwsch-Vlaanderen (CR),Utrecht (CR),0.2,176.4
+32,14,Overig Zeeland (CR),Achterhoek (CR),0.2,209.3
+32,15,Overig Zeeland (CR),Arnhem/Nijmegen (CR),0.2,171.6
+32,16,Overig Zeeland (CR),Zuidwest-Gelderland (CR),0.2,128.9
+32,24,Overig Zeeland (CR),Het Gooi en Vechtstreek (CR),0.2,159.3
+32,25,Overig Zeeland (CR),Agglomeratie Leiden en Bollenstreek (CR),0.2,110.9
+33,3,West-Noord-Brabant (CR),Overig Groningen (CR),0.2,250.3
+34,10,Midden-Noord-Brabant (CR),Noord-Overijssel (CR),0.2,151.7
+34,40,Midden-Noord-Brabant (CR),Flevoland (CR),0.2,107.2
+35,9,Noordoost-Noord-Brabant (CR),Zuidwest-Drenthe (CR),0.2,152.6
+35,10,Noordoost-Noord-Brabant (CR),Noord-Overijssel (CR),0.2,123.6
+35,11,Noordoost-Noord-Brabant (CR),Zuidwest-Overijssel (CR),0.2,95.4
+35,18,Noordoost-Noord-Brabant (CR),Kop van Noord-Holland (CR),0.2,141.4
+36,3,Zuidoost-Noord-Brabant (CR),Overig Groningen (CR),0.2,236.2
+37,12,Noord-Limburg (CR),Twente (CR),0.2,137.3
+37,30,Noord-Limburg (CR),Zuidoost-Zuid-Holland (CR),0.2,114.4
+37,40,Noord-Limburg (CR),Flevoland (CR),0.2,123.2
+39,25,Zuid-Limburg (CR),Agglomeratie Leiden en Bollenstreek (CR),0.2,207.3
+39,28,Zuid-Limburg (CR),Oost-Zuid-Holland (CR),0.2,181.5
+39,40,Zuid-Limburg (CR),Flevoland (CR),0.2,201.4
+40,7,Flevoland (CR),Noord-Drenthe (CR),0.2,97.4
+40,8,Flevoland (CR),Zuidoost-Drenthe (CR),0.2,103.2
+40,27,Flevoland (CR),Delft en Westland (CR),0.2,98.9
+1,4,Oost-Groningen (CR),Noord-Friesland (CR),0.3,87.9
+1,6,Oost-Groningen (CR),Zuidoost-Friesland (CR),0.3,72.3
+1,17,Oost-Groningen (CR),Utrecht (CR),0.3,183
+1,23,Oost-Groningen (CR),Groot-Amsterdam (CR),0.3,195.1
+1,29,Oost-Groningen (CR),Groot-Rijnmond (CR),0.3,243.8
+2,9,Delfzijl en omgeving (CR),Zuidwest-Drenthe (CR),0.3,82.4
+3,11,Overig Groningen (CR),Zuidwest-Overijssel (CR),0.3,120.5
+3,18,Overig Groningen (CR),Kop van Noord-Holland (CR),0.3,149.7
+3,34,Overig Groningen (CR),Midden-Noord-Brabant (CR),0.3,241.9
+4,1,Noord-Friesland (CR),Oost-Groningen (CR),0.3,85.1
+4,2,Noord-Friesland (CR),Delfzijl en omgeving (CR),0.3,89.9
+4,8,Noord-Friesland (CR),Zuidoost-Drenthe (CR),0.3,98.9
+4,15,Noord-Friesland (CR),Arnhem/Nijmegen (CR),0.3,166.4
+5,15,Zuidwest-Friesland (CR),Arnhem/Nijmegen (CR),0.3,123.7
+5,18,Zuidwest-Friesland (CR),Kop van Noord-Holland (CR),0.3,75.7
+5,29,Zuidwest-Friesland (CR),Groot-Rijnmond (CR),0.3,180.2
+6,11,Zuidoost-Friesland (CR),Zuidwest-Overijssel (CR),0.3,93.3
+6,29,Zuidoost-Friesland (CR),Groot-Rijnmond (CR),0.3,192.4
+7,29,Noord-Drenthe (CR),Groot-Rijnmond (CR),0.3,213.3
+7,40,Noord-Drenthe (CR),Flevoland (CR),0.3,106
+8,4,Zuidoost-Drenthe (CR),Noord-Friesland (CR),0.3,98.4
+8,6,Zuidoost-Drenthe (CR),Zuidoost-Friesland (CR),0.3,71.7
+9,4,Zuidwest-Drenthe (CR),Noord-Friesland (CR),0.3,75.2
+9,29,Zuidwest-Drenthe (CR),Groot-Rijnmond (CR),0.3,177.5
+10,30,Noord-Overijssel (CR),Zuidoost-Zuid-Holland (CR),0.3,142.6
+11,29,Zuidwest-Overijssel (CR),Groot-Rijnmond (CR),0.3,140.2
+12,7,Twente (CR),Noord-Drenthe (CR),0.3,91.3
+12,16,Twente (CR),Zuidwest-Gelderland (CR),0.3,116.9
+12,24,Twente (CR),Het Gooi en Vechtstreek (CR),0.3,121.1
+12,37,Twente (CR),Noord-Limburg (CR),0.3,146.9
+13,21,Veluwe (CR),Agglomeratie Haarlem (CR),0.3,90.4
+13,32,Veluwe (CR),Overig Zeeland (CR),0.3,173.6
+14,24,Achterhoek (CR),Het Gooi en Vechtstreek (CR),0.3,94.9
+14,26,Achterhoek (CR),Agglomeratie 's-Gravenhage (CR),0.3,150.4
+15,6,Arnhem/Nijmegen (CR),Zuidoost-Friesland (CR),0.3,147.5
+16,25,Zuidwest-Gelderland (CR),Agglomeratie Leiden en Bollenstreek (CR),0.3,77.8
+16,38,Zuidwest-Gelderland (CR),Midden-Limburg (CR),0.3,99.5
+16,40,Zuidwest-Gelderland (CR),Flevoland (CR),0.3,76.8
+18,34,Kop van Noord-Holland (CR),Midden-Noord-Brabant (CR),0.3,162.6
+18,36,Kop van Noord-Holland (CR),Zuidoost-Noord-Brabant (CR),0.3,174.8
+19,34,Alkmaar en omgeving (CR),Midden-Noord-Brabant (CR),0.3,140.9
+19,36,Alkmaar en omgeving (CR),Zuidoost-Noord-Brabant (CR),0.3,158.2
+20,15,IJmond (CR),Arnhem/Nijmegen (CR),0.3,123.7
+20,34,IJmond (CR),Midden-Noord-Brabant (CR),0.3,129.3
+21,13,Agglomeratie Haarlem (CR),Veluwe (CR),0.3,89.9
+21,27,Agglomeratie Haarlem (CR),Delft en Westland (CR),0.3,52.8
+21,28,Agglomeratie Haarlem (CR),Oost-Zuid-Holland (CR),0.3,40.2
+21,36,Agglomeratie Haarlem (CR),Zuidoost-Noord-Brabant (CR),0.3,133.1
+23,37,Groot-Amsterdam (CR),Noord-Limburg (CR),0.3,144
+24,16,Het Gooi en Vechtstreek (CR),Zuidwest-Gelderland (CR),0.3,52.9
+24,18,Het Gooi en Vechtstreek (CR),Kop van Noord-Holland (CR),0.3,70.5
+24,19,Het Gooi en Vechtstreek (CR),Alkmaar en omgeving (CR),0.3,61.8
+24,20,Het Gooi en Vechtstreek (CR),IJmond (CR),0.3,51.1
+24,28,Het Gooi en Vechtstreek (CR),Oost-Zuid-Holland (CR),0.3,48.4
+24,33,Het Gooi en Vechtstreek (CR),West-Noord-Brabant (CR),0.3,91.2
+24,35,Het Gooi en Vechtstreek (CR),Noordoost-Noord-Brabant (CR),0.3,76.1
+25,18,Agglomeratie Leiden en Bollenstreek (CR),Kop van Noord-Holland (CR),0.3,77.4
+25,19,Agglomeratie Leiden en Bollenstreek (CR),Alkmaar en omgeving (CR),0.3,57.1
+25,22,Agglomeratie Leiden en Bollenstreek (CR),Zaanstreek (CR),0.3,39.8
+25,35,Agglomeratie Leiden en Bollenstreek (CR),Noordoost-Noord-Brabant (CR),0.3,100.9
+26,3,Agglomeratie 's-Gravenhage (CR),Overig Groningen (CR),0.3,223.1
+28,15,Oost-Zuid-Holland (CR),Arnhem/Nijmegen (CR),0.3,94.8
+28,37,Oost-Zuid-Holland (CR),Noord-Limburg (CR),0.3,125.3
+28,40,Oost-Zuid-Holland (CR),Flevoland (CR),0.3,72.6
+29,3,Groot-Rijnmond (CR),Overig Groningen (CR),0.3,233.7
+29,10,Groot-Rijnmond (CR),Noord-Overijssel (CR),0.3,153.7
+29,18,Groot-Rijnmond (CR),Kop van Noord-Holland (CR),0.3,121
+29,20,Groot-Rijnmond (CR),IJmond (CR),0.3,81
+29,22,Groot-Rijnmond (CR),Zaanstreek (CR),0.3,85.2
+29,38,Groot-Rijnmond (CR),Midden-Limburg (CR),0.3,149.2
+30,14,Zuidoost-Zuid-Holland (CR),Achterhoek (CR),0.3,120.5
+31,23,Zeeuwsch-Vlaanderen (CR),Groot-Amsterdam (CR),0.3,187.6
+31,34,Zeeuwsch-Vlaanderen (CR),Midden-Noord-Brabant (CR),0.3,140.5
+31,35,Zeeuwsch-Vlaanderen (CR),Noordoost-Noord-Brabant (CR),0.3,172.5
+31,36,Zeeuwsch-Vlaanderen (CR),Zuidoost-Noord-Brabant (CR),0.3,168.9
+33,12,West-Noord-Brabant (CR),Twente (CR),0.3,189.5
+33,21,West-Noord-Brabant (CR),Agglomeratie Haarlem (CR),0.3,107.5
+33,38,West-Noord-Brabant (CR),Midden-Limburg (CR),0.3,109.3
+34,12,Midden-Noord-Brabant (CR),Twente (CR),0.3,158.1
+34,25,Midden-Noord-Brabant (CR),Agglomeratie Leiden en Bollenstreek (CR),0.3,91.1
+34,38,Midden-Noord-Brabant (CR),Midden-Limburg (CR),0.3,76.3
+35,27,Noordoost-Noord-Brabant (CR),Delft en Westland (CR),0.3,101.1
+35,40,Noordoost-Noord-Brabant (CR),Flevoland (CR),0.3,100.5
+36,10,Zuidoost-Noord-Brabant (CR),Noord-Overijssel (CR),0.3,151.6
+36,25,Zuidoost-Noord-Brabant (CR),Agglomeratie Leiden en Bollenstreek (CR),0.3,130.8
+36,40,Zuidoost-Noord-Brabant (CR),Flevoland (CR),0.3,130.4
+38,16,Midden-Limburg (CR),Zuidwest-Gelderland (CR),0.3,95.4
+38,18,Midden-Limburg (CR),Kop van Noord-Holland (CR),0.3,211.2
+38,30,Midden-Limburg (CR),Zuidoost-Zuid-Holland (CR),0.3,125.3
+39,10,Zuid-Limburg (CR),Noord-Overijssel (CR),0.3,203.5
+39,12,Zuid-Limburg (CR),Twente (CR),0.3,211.2
+39,16,Zuid-Limburg (CR),Zuidwest-Gelderland (CR),0.3,133.4
+39,18,Zuid-Limburg (CR),Kop van Noord-Holland (CR),0.3,239.5
+39,24,Zuid-Limburg (CR),Het Gooi en Vechtstreek (CR),0.3,180.4
+40,4,Flevoland (CR),Noord-Friesland (CR),0.3,86.3
+40,20,Flevoland (CR),IJmond (CR),0.3,63
+40,38,Flevoland (CR),Midden-Limburg (CR),0.3,167.1
+1,13,Oost-Groningen (CR),Veluwe (CR),0.4,141.1
+1,40,Oost-Groningen (CR),Flevoland (CR),0.4,146.2
+3,14,Overig Groningen (CR),Achterhoek (CR),0.4,141.4
+3,26,Overig Groningen (CR),Agglomeratie 's-Gravenhage (CR),0.4,226.6
+4,12,Noord-Friesland (CR),Twente (CR),0.4,137.9
+4,14,Noord-Friesland (CR),Achterhoek (CR),0.4,147.1
+4,33,Noord-Friesland (CR),West-Noord-Brabant (CR),0.4,233.7
+4,34,Noord-Friesland (CR),Midden-Noord-Brabant (CR),0.4,226.8
+4,36,Noord-Friesland (CR),Zuidoost-Noord-Brabant (CR),0.4,229.9
+6,12,Zuidoost-Friesland (CR),Twente (CR),0.4,103.4
+7,11,Noord-Drenthe (CR),Zuidwest-Overijssel (CR),0.4,89.2
+8,11,Zuidoost-Drenthe (CR),Zuidwest-Overijssel (CR),0.4,78.2
+8,29,Zuidoost-Drenthe (CR),Groot-Rijnmond (CR),0.4,212.8
+8,40,Zuidoost-Drenthe (CR),Flevoland (CR),0.4,111
+9,15,Zuidwest-Drenthe (CR),Arnhem/Nijmegen (CR),0.4,104.3
+10,24,Noord-Overijssel (CR),Het Gooi en Vechtstreek (CR),0.4,84.9
+10,26,Noord-Overijssel (CR),Agglomeratie 's-Gravenhage (CR),0.4,152.2
+10,33,Noord-Overijssel (CR),West-Noord-Brabant (CR),0.4,173.4
+10,34,Noord-Overijssel (CR),Midden-Noord-Brabant (CR),0.4,160.9
+10,39,Noord-Overijssel (CR),Zuid-Limburg (CR),0.4,207.2
+11,9,Zuidwest-Overijssel (CR),Zuidwest-Drenthe (CR),0.4,52.1
+12,26,Twente (CR),Agglomeratie 's-Gravenhage (CR),0.4,178.1
+12,34,Twente (CR),Midden-Noord-Brabant (CR),0.4,160.3
+13,3,Veluwe (CR),Overig Groningen (CR),0.4,133.5
+13,25,Veluwe (CR),Agglomeratie Leiden en Bollenstreek (CR),0.4,98.3
+14,33,Achterhoek (CR),West-Noord-Brabant (CR),0.4,147
+15,3,Arnhem/Nijmegen (CR),Overig Groningen (CR),0.4,169.9
+15,25,Arnhem/Nijmegen (CR),Agglomeratie Leiden en Bollenstreek (CR),0.4,113.2
+15,28,Arnhem/Nijmegen (CR),Oost-Zuid-Holland (CR),0.4,96
+16,12,Zuidwest-Gelderland (CR),Twente (CR),0.4,122.9
+17,9,Utrecht (CR),Zuidwest-Drenthe (CR),0.4,118.2
+17,32,Utrecht (CR),Overig Zeeland (CR),0.4,139.1
+17,38,Utrecht (CR),Midden-Limburg (CR),0.4,122.6
+18,13,Kop van Noord-Holland (CR),Veluwe (CR),0.4,101.9
+18,25,Kop van Noord-Holland (CR),Agglomeratie Leiden en Bollenstreek (CR),0.4,80.6
+18,33,Kop van Noord-Holland (CR),West-Noord-Brabant (CR),0.4,157.5
+19,25,Alkmaar en omgeving (CR),Agglomeratie Leiden en Bollenstreek (CR),0.4,59.9
+21,15,Agglomeratie Haarlem (CR),Arnhem/Nijmegen (CR),0.4,115.9
+21,40,Agglomeratie Haarlem (CR),Flevoland (CR),0.4,56
+22,25,Zaanstreek (CR),Agglomeratie Leiden en Bollenstreek (CR),0.4,44
+22,40,Zaanstreek (CR),Flevoland (CR),0.4,47.5
+24,30,Het Gooi en Vechtstreek (CR),Zuidoost-Zuid-Holland (CR),0.4,64.2
+24,34,Het Gooi en Vechtstreek (CR),Midden-Noord-Brabant (CR),0.4,89.2
+25,15,Agglomeratie Leiden en Bollenstreek (CR),Arnhem/Nijmegen (CR),0.4,113.4
+26,16,Agglomeratie 's-Gravenhage (CR),Zuidwest-Gelderland (CR),0.4,81.2
+26,20,Agglomeratie 's-Gravenhage (CR),IJmond (CR),0.4,57.7
+26,39,Agglomeratie 's-Gravenhage (CR),Zuid-Limburg (CR),0.4,201.9
+27,36,Delft en Westland (CR),Zuidoost-Noord-Brabant (CR),0.4,120.8
+28,16,Oost-Zuid-Holland (CR),Zuidwest-Gelderland (CR),0.4,56.7
+28,34,Oost-Zuid-Holland (CR),Midden-Noord-Brabant (CR),0.4,68.6
+29,37,Groot-Rijnmond (CR),Noord-Limburg (CR),0.4,137.1
+30,32,Zuidoost-Zuid-Holland (CR),Overig Zeeland (CR),0.4,88.6
+32,13,Overig Zeeland (CR),Veluwe (CR),0.4,193.7
+32,28,Overig Zeeland (CR),Oost-Zuid-Holland (CR),0.4,100.2
+33,24,West-Noord-Brabant (CR),Het Gooi en Vechtstreek (CR),0.4,94.7
+33,37,West-Noord-Brabant (CR),Noord-Limburg (CR),0.4,107.5
+33,40,West-Noord-Brabant (CR),Flevoland (CR),0.4,126.5
+34,24,Midden-Noord-Brabant (CR),Het Gooi en Vechtstreek (CR),0.4,82.9
+36,31,Zuidoost-Noord-Brabant (CR),Zeeuwsch-Vlaanderen (CR),0.4,165.6
+38,14,Midden-Limburg (CR),Achterhoek (CR),0.4,130.8
+38,26,Midden-Limburg (CR),Agglomeratie 's-Gravenhage (CR),0.4,164
+40,6,Flevoland (CR),Zuidoost-Friesland (CR),0.4,57.1
+40,9,Flevoland (CR),Zuidwest-Drenthe (CR),0.4,59.6
+40,28,Flevoland (CR),Oost-Zuid-Holland (CR),0.4,75.3
+40,30,Flevoland (CR),Zuidoost-Zuid-Holland (CR),0.4,104.9
+3,15,Overig Groningen (CR),Arnhem/Nijmegen (CR),0.5,168.1
+4,7,Noord-Friesland (CR),Noord-Drenthe (CR),0.5,61.1
+5,13,Zuidwest-Friesland (CR),Veluwe (CR),0.5,92.4
+5,17,Zuidwest-Friesland (CR),Utrecht (CR),0.5,125.5
+7,2,Noord-Drenthe (CR),Delfzijl en omgeving (CR),0.5,45.1
+7,23,Noord-Drenthe (CR),Groot-Amsterdam (CR),0.5,162.6
+8,23,Zuidoost-Drenthe (CR),Groot-Amsterdam (CR),0.5,164.6
+9,23,Zuidwest-Drenthe (CR),Groot-Amsterdam (CR),0.5,127.3
+10,5,Noord-Overijssel (CR),Zuidwest-Friesland (CR),0.5,56.3
+10,35,Noord-Overijssel (CR),Noordoost-Noord-Brabant (CR),0.5,127.5
+11,35,Zuidwest-Overijssel (CR),Noordoost-Noord-Brabant (CR),0.5,101.9
+11,36,Zuidwest-Overijssel (CR),Zuidoost-Noord-Brabant (CR),0.5,122.8
+12,35,Twente (CR),Noordoost-Noord-Brabant (CR),0.5,129.7
+13,4,Veluwe (CR),Noord-Friesland (CR),0.5,129.3
+14,34,Achterhoek (CR),Midden-Noord-Brabant (CR),0.5,123.9
+16,28,Zuidwest-Gelderland (CR),Oost-Zuid-Holland (CR),0.5,56.3
+17,3,Utrecht (CR),Overig Groningen (CR),0.5,176.5
+17,18,Utrecht (CR),Kop van Noord-Holland (CR),0.5,90
+19,24,Alkmaar en omgeving (CR),Het Gooi en Vechtstreek (CR),0.5,62.9
+19,26,Alkmaar en omgeving (CR),Agglomeratie 's-Gravenhage (CR),0.5,77.3
+20,24,IJmond (CR),Het Gooi en Vechtstreek (CR),0.5,50.4
+22,26,Zaanstreek (CR),Agglomeratie 's-Gravenhage (CR),0.5,62.1
+23,10,Groot-Amsterdam (CR),Noord-Overijssel (CR),0.5,102.4
+24,22,Het Gooi en Vechtstreek (CR),Zaanstreek (CR),0.5,36.9
+24,36,Het Gooi en Vechtstreek (CR),Zuidoost-Noord-Brabant (CR),0.5,105.1
+25,32,Agglomeratie Leiden en Bollenstreek (CR),Overig Zeeland (CR),0.5,113
+26,40,Agglomeratie 's-Gravenhage (CR),Flevoland (CR),0.5,92.6
+28,21,Oost-Zuid-Holland (CR),Agglomeratie Haarlem (CR),0.5,37.8
+29,14,Groot-Rijnmond (CR),Achterhoek (CR),0.5,146.9
+30,15,Zuidoost-Zuid-Holland (CR),Arnhem/Nijmegen (CR),0.5,82.7
+32,27,Overig Zeeland (CR),Delft en Westland (CR),0.5,87.4
+34,31,Midden-Noord-Brabant (CR),Zeeuwsch-Vlaanderen (CR),0.5,129.5
+35,12,Noordoost-Noord-Brabant (CR),Twente (CR),0.5,122.5
+35,25,Noordoost-Noord-Brabant (CR),Agglomeratie Leiden en Bollenstreek (CR),0.5,101.1
+35,28,Noordoost-Noord-Brabant (CR),Oost-Zuid-Holland (CR),0.5,80.1
+36,12,Zuidoost-Noord-Brabant (CR),Twente (CR),0.5,146.2
+39,30,Zuid-Limburg (CR),Zuidoost-Zuid-Holland (CR),0.5,161.2
+39,32,Zuid-Limburg (CR),Overig Zeeland (CR),0.5,226.8
+40,3,Flevoland (CR),Overig Groningen (CR),0.5,122.7
+40,16,Flevoland (CR),Zuidwest-Gelderland (CR),0.5,78.5
+40,18,Flevoland (CR),Kop van Noord-Holland (CR),0.5,62.7
+40,19,Flevoland (CR),Alkmaar en omgeving (CR),0.5,69.9
+40,21,Flevoland (CR),Agglomeratie Haarlem (CR),0.5,57.3
+40,25,Flevoland (CR),Agglomeratie Leiden en Bollenstreek (CR),0.5,77.1
+1,12,Oost-Groningen (CR),Twente (CR),0.6,100.3
+3,36,Overig Groningen (CR),Zuidoost-Noord-Brabant (CR),0.6,238.8
+3,40,Overig Groningen (CR),Flevoland (CR),0.6,119.1
+4,40,Noord-Friesland (CR),Flevoland (CR),0.6,91
+6,8,Zuidoost-Friesland (CR),Zuidoost-Drenthe (CR),0.6,63.1
+8,13,Zuidoost-Drenthe (CR),Veluwe (CR),0.6,107
+8,17,Zuidoost-Drenthe (CR),Utrecht (CR),0.6,151.9
+10,4,Noord-Overijssel (CR),Noord-Friesland (CR),0.6,82
+12,33,Twente (CR),West-Noord-Brabant (CR),0.6,186.5
+12,39,Twente (CR),Zuid-Limburg (CR),0.6,213.3
+13,28,Veluwe (CR),Oost-Zuid-Holland (CR),0.6,83.6
+17,19,Utrecht (CR),Alkmaar en omgeving (CR),0.6,75.4
+18,26,Kop van Noord-Holland (CR),Agglomeratie 's-Gravenhage (CR),0.6,99.6
+18,27,Kop van Noord-Holland (CR),Delft en Westland (CR),0.6,117.9
+20,26,IJmond (CR),Agglomeratie 's-Gravenhage (CR),0.6,57.5
+24,15,Het Gooi en Vechtstreek (CR),Arnhem/Nijmegen (CR),0.6,73.8
+24,21,Het Gooi en Vechtstreek (CR),Agglomeratie Haarlem (CR),0.6,46.3
+24,25,Het Gooi en Vechtstreek (CR),Agglomeratie Leiden en Bollenstreek (CR),0.6,54.5
+25,13,Agglomeratie Leiden en Bollenstreek (CR),Veluwe (CR),0.6,104.5
+25,36,Agglomeratie Leiden en Bollenstreek (CR),Zuidoost-Noord-Brabant (CR),0.6,129.7
+25,40,Agglomeratie Leiden en Bollenstreek (CR),Flevoland (CR),0.6,69.9
+28,13,Oost-Zuid-Holland (CR),Veluwe (CR),0.6,79.7
+28,35,Oost-Zuid-Holland (CR),Noordoost-Noord-Brabant (CR),0.6,86.1
+28,36,Oost-Zuid-Holland (CR),Zuidoost-Noord-Brabant (CR),0.6,103.8
+29,21,Groot-Rijnmond (CR),Agglomeratie Haarlem (CR),0.6,65.3
+30,24,Zuidoost-Zuid-Holland (CR),Het Gooi en Vechtstreek (CR),0.6,61.7
+33,14,West-Noord-Brabant (CR),Achterhoek (CR),0.6,147.3
+34,37,Midden-Noord-Brabant (CR),Noord-Limburg (CR),0.6,80.4
+35,24,Noordoost-Noord-Brabant (CR),Het Gooi en Vechtstreek (CR),0.6,76.4
+36,28,Zuidoost-Noord-Brabant (CR),Oost-Zuid-Holland (CR),0.6,104.3
+37,26,Noord-Limburg (CR),Agglomeratie 's-Gravenhage (CR),0.6,160.8
+38,15,Midden-Limburg (CR),Arnhem/Nijmegen (CR),0.6,92.8
+39,14,Zuid-Limburg (CR),Achterhoek (CR),0.6,170.2
+40,5,Flevoland (CR),Zuidwest-Friesland (CR),0.6,35.4
+40,22,Flevoland (CR),Zaanstreek (CR),0.6,46.4
+40,33,Flevoland (CR),West-Noord-Brabant (CR),0.6,122.3
+40,39,Flevoland (CR),Zuid-Limburg (CR),0.6,202.5
+1,9,Oost-Groningen (CR),Zuidwest-Drenthe (CR),0.7,63.9
+5,9,Zuidwest-Friesland (CR),Zuidwest-Drenthe (CR),0.7,58.7
+5,23,Zuidwest-Friesland (CR),Groot-Amsterdam (CR),0.7,117.4
+6,13,Zuidoost-Friesland (CR),Veluwe (CR),0.7,105.2
+6,17,Zuidoost-Friesland (CR),Utrecht (CR),0.7,134.9
+6,23,Zuidoost-Friesland (CR),Groot-Amsterdam (CR),0.7,135.1
+7,4,Noord-Drenthe (CR),Noord-Friesland (CR),0.7,60.6
+7,17,Noord-Drenthe (CR),Utrecht (CR),0.7,155.5
+9,11,Zuidwest-Drenthe (CR),Zuidwest-Overijssel (CR),0.7,58.5
+9,17,Zuidwest-Drenthe (CR),Utrecht (CR),0.7,116.9
+9,40,Zuidwest-Drenthe (CR),Flevoland (CR),0.7,63.7
+10,36,Noord-Overijssel (CR),Zuidoost-Noord-Brabant (CR),0.7,149.1
+12,3,Twente (CR),Overig Groningen (CR),0.7,120.4
+12,8,Twente (CR),Zuidoost-Drenthe (CR),0.7,62.9
+12,9,Twente (CR),Zuidwest-Drenthe (CR),0.7,54.3
+13,9,Veluwe (CR),Zuidwest-Drenthe (CR),0.7,68.1
+13,30,Veluwe (CR),Zuidoost-Zuid-Holland (CR),0.7,91.1
+16,24,Zuidwest-Gelderland (CR),Het Gooi en Vechtstreek (CR),0.7,49.2
+17,11,Utrecht (CR),Zuidwest-Overijssel (CR),0.7,74.2
+17,20,Utrecht (CR),IJmond (CR),0.7,63.4
+17,22,Utrecht (CR),Zaanstreek (CR),0.7,52.5
+19,29,Alkmaar en omgeving (CR),Groot-Rijnmond (CR),0.7,98.1
+22,29,Zaanstreek (CR),Groot-Rijnmond (CR),0.7,79.1
+23,3,Groot-Amsterdam (CR),Overig Groningen (CR),0.7,174.7
+23,12,Groot-Amsterdam (CR),Twente (CR),0.7,146
+23,16,Groot-Amsterdam (CR),Zuidwest-Gelderland (CR),0.7,70.7
+25,24,Agglomeratie Leiden en Bollenstreek (CR),Het Gooi en Vechtstreek (CR),0.7,53.8
+25,34,Agglomeratie Leiden en Bollenstreek (CR),Midden-Noord-Brabant (CR),0.7,95.4
+26,13,Agglomeratie 's-Gravenhage (CR),Veluwe (CR),0.7,105.1
+27,33,Delft en Westland (CR),West-Noord-Brabant (CR),0.7,67.1
+27,34,Delft en Westland (CR),Midden-Noord-Brabant (CR),0.7,84.7
+28,24,Oost-Zuid-Holland (CR),Het Gooi en Vechtstreek (CR),0.7,47.1
+28,33,Oost-Zuid-Holland (CR),West-Noord-Brabant (CR),0.7,63.4
+29,12,Groot-Rijnmond (CR),Twente (CR),0.7,183.4
+29,39,Groot-Rijnmond (CR),Zuid-Limburg (CR),0.7,183.3
+29,40,Groot-Rijnmond (CR),Flevoland (CR),0.7,101.4
+30,13,Zuidoost-Zuid-Holland (CR),Veluwe (CR),0.7,88.1
+31,26,Zeeuwsch-Vlaanderen (CR),Agglomeratie 's-Gravenhage (CR),0.7,141.9
+32,35,Overig Zeeland (CR),Noordoost-Noord-Brabant (CR),0.7,134.3
+33,16,West-Noord-Brabant (CR),Zuidwest-Gelderland (CR),0.7,62.2
+34,14,Midden-Noord-Brabant (CR),Achterhoek (CR),0.7,114.6
+34,27,Midden-Noord-Brabant (CR),Delft en Westland (CR),0.7,82
+36,14,Zuidoost-Noord-Brabant (CR),Achterhoek (CR),0.7,110.5
+36,24,Zuidoost-Noord-Brabant (CR),Het Gooi en Vechtstreek (CR),0.7,106.7
+37,23,Noord-Limburg (CR),Groot-Amsterdam (CR),0.7,149.7
+38,23,Midden-Limburg (CR),Groot-Amsterdam (CR),0.7,160.2
+40,37,Flevoland (CR),Noord-Limburg (CR),0.7,134.4
+1,10,Oost-Groningen (CR),Noord-Overijssel (CR),0.8,91.9
+3,29,Overig Groningen (CR),Groot-Rijnmond (CR),0.8,235.4
+4,29,Noord-Friesland (CR),Groot-Rijnmond (CR),0.8,201.4
+10,14,Noord-Overijssel (CR),Achterhoek (CR),0.8,63
+10,29,Noord-Overijssel (CR),Groot-Rijnmond (CR),0.8,156.3
+11,23,Zuidwest-Overijssel (CR),Groot-Amsterdam (CR),0.8,107.1
+14,40,Achterhoek (CR),Flevoland (CR),0.8,94.3
+15,24,Arnhem/Nijmegen (CR),Het Gooi en Vechtstreek (CR),0.8,74.1
+17,37,Utrecht (CR),Noord-Limburg (CR),0.8,99.2
+18,40,Kop van Noord-Holland (CR),Flevoland (CR),0.8,61
+20,25,IJmond (CR),Agglomeratie Leiden en Bollenstreek (CR),0.8,36.6
+23,39,Groot-Amsterdam (CR),Zuid-Limburg (CR),0.8,198.7
+25,33,Agglomeratie Leiden en Bollenstreek (CR),West-Noord-Brabant (CR),0.8,88.8
+26,15,Agglomeratie 's-Gravenhage (CR),Arnhem/Nijmegen (CR),0.8,118.7
+26,21,Agglomeratie 's-Gravenhage (CR),Agglomeratie Haarlem (CR),0.8,44.5
+26,32,Agglomeratie 's-Gravenhage (CR),Overig Zeeland (CR),0.8,94.5
+31,30,Zeeuwsch-Vlaanderen (CR),Zuidoost-Zuid-Holland (CR),0.8,128.5
+33,13,West-Noord-Brabant (CR),Veluwe (CR),0.8,112.7
+33,15,West-Noord-Brabant (CR),Arnhem/Nijmegen (CR),0.8,105.5
+33,39,West-Noord-Brabant (CR),Zuid-Limburg (CR),0.8,142.6
+36,27,Zuidoost-Noord-Brabant (CR),Delft en Westland (CR),0.8,117.3
+39,26,Zuid-Limburg (CR),Agglomeratie 's-Gravenhage (CR),0.8,202.4
+40,35,Flevoland (CR),Noordoost-Noord-Brabant (CR),0.8,107.2
+3,12,Overig Groningen (CR),Twente (CR),0.9,121.9
+4,13,Noord-Friesland (CR),Veluwe (CR),0.9,135.2
+4,18,Noord-Friesland (CR),Kop van Noord-Holland (CR),0.9,87.1
+5,10,Zuidwest-Friesland (CR),Noord-Overijssel (CR),0.9,62.7
+12,29,Twente (CR),Groot-Rijnmond (CR),0.9,178.7
+13,34,Veluwe (CR),Midden-Noord-Brabant (CR),0.9,103.5
+14,29,Achterhoek (CR),Groot-Rijnmond (CR),0.9,145.8
+14,38,Achterhoek (CR),Midden-Limburg (CR),0.9,140.7
+15,30,Arnhem/Nijmegen (CR),Zuidoost-Zuid-Holland (CR),0.9,82.6
+18,24,Kop van Noord-Holland (CR),Het Gooi en Vechtstreek (CR),0.9,74.8
+20,29,IJmond (CR),Groot-Rijnmond (CR),0.9,78.2
+21,24,Agglomeratie Haarlem (CR),Het Gooi en Vechtstreek (CR),0.9,45.2
+22,24,Zaanstreek (CR),Het Gooi en Vechtstreek (CR),0.9,39.8
+26,35,Agglomeratie 's-Gravenhage (CR),Noordoost-Noord-Brabant (CR),0.9,100.2
+29,31,Groot-Rijnmond (CR),Zeeuwsch-Vlaanderen (CR),0.9,113.4
+32,36,Overig Zeeland (CR),Zuidoost-Noord-Brabant (CR),0.9,134.5
+35,31,Noordoost-Noord-Brabant (CR),Zeeuwsch-Vlaanderen (CR),0.9,178.6
+35,38,Noordoost-Noord-Brabant (CR),Midden-Limburg (CR),0.9,64.9
+37,17,Noord-Limburg (CR),Utrecht (CR),0.9,106.6
+37,29,Noord-Limburg (CR),Groot-Rijnmond (CR),0.9,142.6
+37,33,Noord-Limburg (CR),West-Noord-Brabant (CR),0.9,109.1
+38,17,Midden-Limburg (CR),Utrecht (CR),0.9,125.9
+40,11,Flevoland (CR),Zuidwest-Overijssel (CR),0.9,63.1
+40,26,Flevoland (CR),Agglomeratie 's-Gravenhage (CR),0.9,89.8
+40,34,Flevoland (CR),Midden-Noord-Brabant (CR),0.9,118.6
+2,1,Delfzijl en omgeving (CR),Oost-Groningen (CR),1,31.9
+3,13,Overig Groningen (CR),Veluwe (CR),1,139.2
+4,17,Noord-Friesland (CR),Utrecht (CR),1,158.9
+7,12,Noord-Drenthe (CR),Twente (CR),1,93.3
+9,6,Zuidwest-Drenthe (CR),Zuidoost-Friesland (CR),1,36.9
+12,36,Twente (CR),Zuidoost-Noord-Brabant (CR),1,151.7
+15,40,Arnhem/Nijmegen (CR),Flevoland (CR),1,83.8
+17,12,Utrecht (CR),Twente (CR),1,116.9
+21,18,Agglomeratie Haarlem (CR),Kop van Noord-Holland (CR),1,63.7
+23,30,Groot-Amsterdam (CR),Zuidoost-Zuid-Holland (CR),1,74.1
+24,29,Het Gooi en Vechtstreek (CR),Groot-Rijnmond (CR),1,73.7
+25,20,Agglomeratie Leiden en Bollenstreek (CR),IJmond (CR),1,35.6
+26,24,Agglomeratie 's-Gravenhage (CR),Het Gooi en Vechtstreek (CR),1,70.4
+27,30,Delft en Westland (CR),Zuidoost-Zuid-Holland (CR),1,42.9
+32,23,Overig Zeeland (CR),Groot-Amsterdam (CR),1,144.4
+37,14,Noord-Limburg (CR),Achterhoek (CR),1,97.8
+40,14,Flevoland (CR),Achterhoek (CR),1,89.5
+2,7,Delfzijl en omgeving (CR),Noord-Drenthe (CR),1.1,47
+3,5,Overig Groningen (CR),Zuidwest-Friesland (CR),1.1,69.4
+6,40,Zuidoost-Friesland (CR),Flevoland (CR),1.1,59.9
+13,38,Veluwe (CR),Midden-Limburg (CR),1.1,131.2
+18,29,Kop van Noord-Holland (CR),Groot-Rijnmond (CR),1.1,119.4
+21,19,Agglomeratie Haarlem (CR),Alkmaar en omgeving (CR),1.1,34.1
+25,30,Agglomeratie Leiden en Bollenstreek (CR),Zuidoost-Zuid-Holland (CR),1.1,56.2
+29,16,Groot-Rijnmond (CR),Zuidwest-Gelderland (CR),1.1,67.6
+30,35,Zuidoost-Zuid-Holland (CR),Noordoost-Noord-Brabant (CR),1.1,52.9
+31,33,Zeeuwsch-Vlaanderen (CR),West-Noord-Brabant (CR),1.1,101.2
+32,34,Overig Zeeland (CR),Midden-Noord-Brabant (CR),1.1,99.1
+33,27,West-Noord-Brabant (CR),Delft en Westland (CR),1.1,68.4
+34,13,Midden-Noord-Brabant (CR),Veluwe (CR),1.1,102.9
+34,15,Midden-Noord-Brabant (CR),Arnhem/Nijmegen (CR),1.1,76.1
+34,39,Midden-Noord-Brabant (CR),Zuid-Limburg (CR),1.1,116.4
+36,16,Zuidoost-Noord-Brabant (CR),Zuidwest-Gelderland (CR),1.1,56.2
+36,30,Zuidoost-Noord-Brabant (CR),Zuidoost-Zuid-Holland (CR),1.1,83.5
+38,13,Midden-Limburg (CR),Veluwe (CR),1.1,128.4
+38,29,Midden-Limburg (CR),Groot-Rijnmond (CR),1.1,146.2
+38,33,Midden-Limburg (CR),West-Noord-Brabant (CR),1.1,105.4
+39,13,Zuid-Limburg (CR),Veluwe (CR),1.1,164.1
+40,36,Flevoland (CR),Zuidoost-Noord-Brabant (CR),1.1,128.2
+4,9,Noord-Friesland (CR),Zuidwest-Drenthe (CR),1.2,70.9
+7,13,Noord-Drenthe (CR),Veluwe (CR),1.2,115.2
+9,3,Zuidwest-Drenthe (CR),Overig Groningen (CR),1.2,62.7
+9,12,Zuidwest-Drenthe (CR),Twente (CR),1.2,61.4
+13,26,Veluwe (CR),Agglomeratie 's-Gravenhage (CR),1.2,106
+13,33,Veluwe (CR),West-Noord-Brabant (CR),1.2,116.7
+14,16,Achterhoek (CR),Zuidwest-Gelderland (CR),1.2,80
+16,26,Zuidwest-Gelderland (CR),Agglomeratie 's-Gravenhage (CR),1.2,82.3
+17,39,Utrecht (CR),Zuid-Limburg (CR),1.2,160.5
+23,14,Groot-Amsterdam (CR),Achterhoek (CR),1.2,108.8
+23,35,Groot-Amsterdam (CR),Noordoost-Noord-Brabant (CR),1.2,93.2
+29,13,Groot-Rijnmond (CR),Veluwe (CR),1.2,106.1
+30,25,Zuidoost-Zuid-Holland (CR),Agglomeratie Leiden en Bollenstreek (CR),1.2,54.3
+30,36,Zuidoost-Zuid-Holland (CR),Zuidoost-Noord-Brabant (CR),1.2,79
+33,25,West-Noord-Brabant (CR),Agglomeratie Leiden en Bollenstreek (CR),1.2,86.4
+33,31,West-Noord-Brabant (CR),Zeeuwsch-Vlaanderen (CR),1.2,96.9
+34,28,Midden-Noord-Brabant (CR),Oost-Zuid-Holland (CR),1.2,61.5
+37,13,Noord-Limburg (CR),Veluwe (CR),1.2,98.1
+4,10,Noord-Friesland (CR),Noord-Overijssel (CR),1.3,90.7
+14,23,Achterhoek (CR),Groot-Amsterdam (CR),1.3,122.2
+15,26,Arnhem/Nijmegen (CR),Agglomeratie 's-Gravenhage (CR),1.3,118.3
+17,10,Utrecht (CR),Noord-Overijssel (CR),1.3,86.3
+23,33,Groot-Amsterdam (CR),West-Noord-Brabant (CR),1.3,101.7
+24,26,Het Gooi en Vechtstreek (CR),Agglomeratie 's-Gravenhage (CR),1.3,70.3
+27,28,Delft en Westland (CR),Oost-Zuid-Holland (CR),1.3,35.5
+30,27,Zuidoost-Zuid-Holland (CR),Delft en Westland (CR),1.3,41.7
+32,17,Overig Zeeland (CR),Utrecht (CR),1.3,140.2
+35,14,Noordoost-Noord-Brabant (CR),Achterhoek (CR),1.3,83.4
+37,16,Noord-Limburg (CR),Zuidwest-Gelderland (CR),1.3,78.1
+4,23,Noord-Friesland (CR),Groot-Amsterdam (CR),1.4,136
+10,3,Noord-Overijssel (CR),Overig Groningen (CR),1.4,86.8
+11,17,Zuidwest-Overijssel (CR),Utrecht (CR),1.4,77.1
+14,10,Achterhoek (CR),Noord-Overijssel (CR),1.4,61.4
+15,11,Arnhem/Nijmegen (CR),Zuidwest-Overijssel (CR),1.4,47
+16,14,Zuidwest-Gelderland (CR),Achterhoek (CR),1.4,79.8
+18,17,Kop van Noord-Holland (CR),Utrecht (CR),1.4,88.8
+19,17,Alkmaar en omgeving (CR),Utrecht (CR),1.4,78.8
+21,29,Agglomeratie Haarlem (CR),Groot-Rijnmond (CR),1.4,63.5
+26,36,Agglomeratie 's-Gravenhage (CR),Zuidoost-Noord-Brabant (CR),1.4,124.3
+36,13,Zuidoost-Noord-Brabant (CR),Veluwe (CR),1.4,97.2
+3,17,Overig Groningen (CR),Utrecht (CR),1.5,177.7
+8,12,Zuidoost-Drenthe (CR),Twente (CR),1.5,65.7
+9,13,Zuidwest-Drenthe (CR),Veluwe (CR),1.5,70.3
+10,7,Noord-Overijssel (CR),Noord-Drenthe (CR),1.5,57.9
+14,35,Achterhoek (CR),Noordoost-Noord-Brabant (CR),1.5,91.2
+14,36,Achterhoek (CR),Zuidoost-Noord-Brabant (CR),1.5,111.6
+17,14,Utrecht (CR),Achterhoek (CR),1.5,77.7
+17,21,Utrecht (CR),Agglomeratie Haarlem (CR),1.5,53.8
+21,22,Agglomeratie Haarlem (CR),Zaanstreek (CR),1.5,19.5
+22,18,Zaanstreek (CR),Kop van Noord-Holland (CR),1.5,45
+23,27,Groot-Amsterdam (CR),Delft en Westland (CR),1.5,57.2
+24,13,Het Gooi en Vechtstreek (CR),Veluwe (CR),1.5,45.5
+29,15,Groot-Rijnmond (CR),Arnhem/Nijmegen (CR),1.5,112.8
+29,24,Groot-Rijnmond (CR),Het Gooi en Vechtstreek (CR),1.5,77.4
+35,30,Noordoost-Noord-Brabant (CR),Zuidoost-Zuid-Holland (CR),1.5,53.1
+40,29,Flevoland (CR),Groot-Rijnmond (CR),1.5,108.9
+5,40,Zuidwest-Friesland (CR),Flevoland (CR),1.6,44.3
+10,6,Noord-Overijssel (CR),Zuidoost-Friesland (CR),1.6,37.7
+10,15,Noord-Overijssel (CR),Arnhem/Nijmegen (CR),1.6,80.5
+11,40,Zuidwest-Overijssel (CR),Flevoland (CR),1.6,67.9
+18,21,Kop van Noord-Holland (CR),Agglomeratie Haarlem (CR),1.6,56.5
+37,34,Noord-Limburg (CR),Midden-Noord-Brabant (CR),1.6,85.7
+39,15,Zuid-Limburg (CR),Arnhem/Nijmegen (CR),1.6,135.2
+3,8,Overig Groningen (CR),Zuidoost-Drenthe (CR),1.7,59.7
+10,23,Noord-Overijssel (CR),Groot-Amsterdam (CR),1.7,106.1
+20,17,IJmond (CR),Utrecht (CR),1.7,65.4
+21,26,Agglomeratie Haarlem (CR),Agglomeratie 's-Gravenhage (CR),1.7,43.3
+3,10,Overig Groningen (CR),Noord-Overijssel (CR),1.8,90.5
+3,23,Overig Groningen (CR),Groot-Amsterdam (CR),1.8,178.3
+7,6,Noord-Drenthe (CR),Zuidoost-Friesland (CR),1.8,32.6
+10,8,Noord-Overijssel (CR),Zuidoost-Drenthe (CR),1.8,36.5
+12,23,Twente (CR),Groot-Amsterdam (CR),1.8,149.2
+15,10,Arnhem/Nijmegen (CR),Noord-Overijssel (CR),1.8,76.2
+16,33,Zuidwest-Gelderland (CR),West-Noord-Brabant (CR),1.8,66.6
+16,36,Zuidwest-Gelderland (CR),Zuidoost-Noord-Brabant (CR),1.8,55.2
+16,39,Zuidwest-Gelderland (CR),Zuid-Limburg (CR),1.8,134.8
+22,19,Zaanstreek (CR),Alkmaar en omgeving (CR),1.8,22.3
+23,13,Groot-Amsterdam (CR),Veluwe (CR),1.8,73.9
+35,13,Noordoost-Noord-Brabant (CR),Veluwe (CR),1.8,66.2
+39,17,Zuid-Limburg (CR),Utrecht (CR),1.8,162.9
+39,23,Zuid-Limburg (CR),Groot-Amsterdam (CR),1.8,197.3
+40,12,Flevoland (CR),Twente (CR),1.8,109.1
+6,7,Zuidoost-Friesland (CR),Noord-Drenthe (CR),1.9,28.1
+17,27,Utrecht (CR),Delft en Westland (CR),1.9,65
+34,32,Midden-Noord-Brabant (CR),Overig Zeeland (CR),1.9,105.7
+36,32,Zuidoost-Noord-Brabant (CR),Overig Zeeland (CR),1.9,141.7
+38,34,Midden-Limburg (CR),Midden-Noord-Brabant (CR),1.9,82.1
+1,2,Oost-Groningen (CR),Delfzijl en omgeving (CR),2,28.8
+11,15,Zuidwest-Overijssel (CR),Arnhem/Nijmegen (CR),2,48.4
+15,33,Arnhem/Nijmegen (CR),West-Noord-Brabant (CR),2,101.2
+15,38,Arnhem/Nijmegen (CR),Midden-Limburg (CR),2,88.6
+20,18,IJmond (CR),Kop van Noord-Holland (CR),2,47
+22,17,Zaanstreek (CR),Utrecht (CR),2,55.6
+22,21,Zaanstreek (CR),Agglomeratie Haarlem (CR),2,18.8
+26,33,Agglomeratie 's-Gravenhage (CR),West-Noord-Brabant (CR),2,69.8
+33,28,West-Noord-Brabant (CR),Oost-Zuid-Holland (CR),2,67.1
+5,3,Zuidwest-Friesland (CR),Overig Groningen (CR),2.1,75
+13,29,Veluwe (CR),Groot-Rijnmond (CR),2.1,105.4
+15,34,Arnhem/Nijmegen (CR),Midden-Noord-Brabant (CR),2.1,75
+16,37,Zuidwest-Gelderland (CR),Noord-Limburg (CR),2.1,79.2
+28,27,Oost-Zuid-Holland (CR),Delft en Westland (CR),2.1,34.2
+38,35,Midden-Limburg (CR),Noordoost-Noord-Brabant (CR),2.1,67.8
+39,34,Zuid-Limburg (CR),Midden-Noord-Brabant (CR),2.1,115.6
+6,9,Zuidoost-Friesland (CR),Zuidwest-Drenthe (CR),2.2,35.8
+7,10,Noord-Drenthe (CR),Noord-Overijssel (CR),2.2,64
+12,17,Twente (CR),Utrecht (CR),2.2,116.3
+13,24,Veluwe (CR),Het Gooi en Vechtstreek (CR),2.2,44.1
+16,29,Zuidwest-Gelderland (CR),Groot-Rijnmond (CR),2.2,67.7
+34,26,Midden-Noord-Brabant (CR),Agglomeratie 's-Gravenhage (CR),2.2,84.5
+35,32,Noordoost-Noord-Brabant (CR),Overig Zeeland (CR),2.2,143.6
+13,39,Veluwe (CR),Zuid-Limburg (CR),2.3,165.3
+16,34,Zuidwest-Gelderland (CR),Midden-Noord-Brabant (CR),2.3,31.5
+8,3,Zuidoost-Drenthe (CR),Overig Groningen (CR),2.4,54
+15,29,Arnhem/Nijmegen (CR),Groot-Rijnmond (CR),2.4,109.2
+23,15,Groot-Amsterdam (CR),Arnhem/Nijmegen (CR),2.4,98.8
+23,34,Groot-Amsterdam (CR),Midden-Noord-Brabant (CR),2.4,104.6
+27,25,Delft en Westland (CR),Agglomeratie Leiden en Bollenstreek (CR),2.4,26.2
+34,16,Midden-Noord-Brabant (CR),Zuidwest-Gelderland (CR),2.4,29.4
+34,23,Midden-Noord-Brabant (CR),Groot-Amsterdam (CR),2.4,98.1
+39,37,Zuid-Limburg (CR),Noord-Limburg (CR),2.4,63.4
+3,9,Overig Groningen (CR),Zuidwest-Drenthe (CR),2.5,61.2
+6,10,Zuidoost-Friesland (CR),Noord-Overijssel (CR),2.5,47.9
+13,36,Veluwe (CR),Zuidoost-Noord-Brabant (CR),2.5,98.9
+15,12,Arnhem/Nijmegen (CR),Twente (CR),2.5,85.2
+17,33,Utrecht (CR),West-Noord-Brabant (CR),2.5,76
+26,34,Agglomeratie 's-Gravenhage (CR),Midden-Noord-Brabant (CR),2.5,89.5
+35,39,Noordoost-Noord-Brabant (CR),Zuid-Limburg (CR),2.5,107.2
+14,17,Achterhoek (CR),Utrecht (CR),2.6,83.8
+21,25,Agglomeratie Haarlem (CR),Agglomeratie Leiden en Bollenstreek (CR),2.6,22.3
+23,28,Groot-Amsterdam (CR),Oost-Zuid-Holland (CR),2.6,33.8
+36,15,Zuidoost-Noord-Brabant (CR),Arnhem/Nijmegen (CR),2.6,65.7
+7,1,Noord-Drenthe (CR),Oost-Groningen (CR),2.7,28.2
+30,34,Zuidoost-Zuid-Holland (CR),Midden-Noord-Brabant (CR),2.7,32.1
+32,30,Overig Zeeland (CR),Zuidoost-Zuid-Holland (CR),2.7,94.9
+35,26,Noordoost-Noord-Brabant (CR),Agglomeratie 's-Gravenhage (CR),2.7,106.1
+8,1,Zuidoost-Drenthe (CR),Oost-Groningen (CR),2.8,19.3
+11,14,Zuidwest-Overijssel (CR),Achterhoek (CR),2.8,25.2
+13,35,Veluwe (CR),Noordoost-Noord-Brabant (CR),2.8,81
+16,23,Zuidwest-Gelderland (CR),Groot-Amsterdam (CR),2.8,69.3
+23,36,Groot-Amsterdam (CR),Zuidoost-Noord-Brabant (CR),2.8,120.2
+31,32,Zeeuwsch-Vlaanderen (CR),Overig Zeeland (CR),2.8,44.1
+9,8,Zuidwest-Drenthe (CR),Zuidoost-Drenthe (CR),2.9,34.5
+25,27,Agglomeratie Leiden en Bollenstreek (CR),Delft en Westland (CR),2.9,27.8
+36,26,Zuidoost-Noord-Brabant (CR),Agglomeratie 's-Gravenhage (CR),2.9,125.6
+28,30,Oost-Zuid-Holland (CR),Zuidoost-Zuid-Holland (CR),3,28.5
+39,29,Zuid-Limburg (CR),Groot-Rijnmond (CR),3,182.6
+13,37,Veluwe (CR),Noord-Limburg (CR),3.1,92.6
+14,39,Achterhoek (CR),Zuid-Limburg (CR),3.1,171.4
+25,21,Agglomeratie Leiden en Bollenstreek (CR),Agglomeratie Haarlem (CR),3.1,19.5
+30,23,Zuidoost-Zuid-Holland (CR),Groot-Amsterdam (CR),3.1,70.6
+32,26,Overig Zeeland (CR),Agglomeratie 's-Gravenhage (CR),3.1,98.1
+32,31,Overig Zeeland (CR),Zeeuwsch-Vlaanderen (CR),3.1,42.2
+1,8,Oost-Groningen (CR),Zuidoost-Drenthe (CR),3.2,27.1
+10,17,Noord-Overijssel (CR),Utrecht (CR),3.2,89.7
+13,16,Veluwe (CR),Zuidwest-Gelderland (CR),3.2,44.6
+16,13,Zuidwest-Gelderland (CR),Veluwe (CR),3.2,39
+18,22,Kop van Noord-Holland (CR),Zaanstreek (CR),3.2,40.3
+27,23,Delft en Westland (CR),Groot-Amsterdam (CR),3.2,57.2
+29,32,Groot-Rijnmond (CR),Overig Zeeland (CR),3.2,71.3
+30,16,Zuidoost-Zuid-Holland (CR),Zuidwest-Gelderland (CR),3.2,23.8
+39,35,Zuid-Limburg (CR),Noordoost-Noord-Brabant (CR),3.2,108.1
+24,40,Het Gooi en Vechtstreek (CR),Flevoland (CR),3.3,22.1
+19,21,Alkmaar en omgeving (CR),Agglomeratie Haarlem (CR),3.4,34.6
+30,28,Zuidoost-Zuid-Holland (CR),Oost-Zuid-Holland (CR),3.4,27.7
+31,29,Zeeuwsch-Vlaanderen (CR),Groot-Rijnmond (CR),3.4,120
+7,8,Noord-Drenthe (CR),Zuidoost-Drenthe (CR),3.5,33.5
+17,34,Utrecht (CR),Midden-Noord-Brabant (CR),3.5,70.1
+17,36,Utrecht (CR),Zuidoost-Noord-Brabant (CR),3.5,85.6
+18,20,Kop van Noord-Holland (CR),IJmond (CR),3.5,45
+13,12,Veluwe (CR),Twente (CR),3.6,68.6
+19,22,Alkmaar en omgeving (CR),Zaanstreek (CR),3.6,25.5
+33,23,West-Noord-Brabant (CR),Groot-Amsterdam (CR),3.6,102.8
+35,23,Noordoost-Noord-Brabant (CR),Groot-Amsterdam (CR),3.6,93.2
+9,7,Zuidwest-Drenthe (CR),Noord-Drenthe (CR),3.7,32.1
+26,30,Agglomeratie 's-Gravenhage (CR),Zuidoost-Zuid-Holland (CR),3.7,46.7
+39,33,Zuid-Limburg (CR),West-Noord-Brabant (CR),3.7,138.3
+3,2,Overig Groningen (CR),Delfzijl en omgeving (CR),3.8,22.5
+17,35,Utrecht (CR),Noordoost-Noord-Brabant (CR),3.8,57.1
+21,17,Agglomeratie Haarlem (CR),Utrecht (CR),3.8,55.8
+29,36,Groot-Rijnmond (CR),Zuidoost-Noord-Brabant (CR),3.8,106.9
+36,23,Zuidoost-Noord-Brabant (CR),Groot-Amsterdam (CR),3.8,120.2
+14,37,Achterhoek (CR),Noord-Limburg (CR),3.9,105.3
+15,39,Arnhem/Nijmegen (CR),Zuid-Limburg (CR),3.9,128.4
+22,20,Zaanstreek (CR),IJmond (CR),4,13
+29,35,Groot-Rijnmond (CR),Noordoost-Noord-Brabant (CR),4,86.7
+3,4,Overig Groningen (CR),Noord-Friesland (CR),4.1,49.8
+6,5,Zuidoost-Friesland (CR),Zuidwest-Friesland (CR),4.1,27.1
+29,34,Groot-Rijnmond (CR),Midden-Noord-Brabant (CR),4.2,68
+20,22,IJmond (CR),Zaanstreek (CR),4.3,13.2
+34,17,Midden-Noord-Brabant (CR),Utrecht (CR),4.3,62.3
+36,38,Zuidoost-Noord-Brabant (CR),Midden-Limburg (CR),4.3,29.8
+12,15,Twente (CR),Arnhem/Nijmegen (CR),4.4,79.5
+16,30,Zuidwest-Gelderland (CR),Zuidoost-Zuid-Holland (CR),4.4,23.9
+1,7,Oost-Groningen (CR),Noord-Drenthe (CR),4.5,35.2
+17,40,Utrecht (CR),Flevoland (CR),4.5,43.1
+7,9,Noord-Drenthe (CR),Zuidwest-Drenthe (CR),4.6,33.9
+14,11,Achterhoek (CR),Zuidwest-Overijssel (CR),4.6,23.3
+23,40,Groot-Amsterdam (CR),Flevoland (CR),4.6,36.6
+27,17,Delft en Westland (CR),Utrecht (CR),4.7,66.3
+15,23,Arnhem/Nijmegen (CR),Groot-Amsterdam (CR),4.8,99
+23,20,Groot-Amsterdam (CR),IJmond (CR),4.8,25.4
+8,7,Zuidoost-Drenthe (CR),Noord-Drenthe (CR),4.9,35.7
+23,19,Groot-Amsterdam (CR),Alkmaar en omgeving (CR),4.9,35.1
+36,37,Zuidoost-Noord-Brabant (CR),Noord-Limburg (CR),4.9,34.8
+33,17,West-Noord-Brabant (CR),Utrecht (CR),5,77
+12,40,Twente (CR),Flevoland (CR),5.1,112.7
+17,25,Utrecht (CR),Agglomeratie Leiden en Bollenstreek (CR),5.1,51.7
+36,17,Zuidoost-Noord-Brabant (CR),Utrecht (CR),5.1,87
+36,29,Zuidoost-Noord-Brabant (CR),Groot-Rijnmond (CR),5.1,107.2
+37,15,Noord-Limburg (CR),Arnhem/Nijmegen (CR),5.1,29.4
+17,30,Utrecht (CR),Zuidoost-Zuid-Holland (CR),5.2,41
+30,33,Zuidoost-Zuid-Holland (CR),West-Noord-Brabant (CR),5.2,34.4
+12,14,Twente (CR),Achterhoek (CR),5.4,33.3
+21,20,Agglomeratie Haarlem (CR),IJmond (CR),5.4,11.6
+35,16,Noordoost-Noord-Brabant (CR),Zuidwest-Gelderland (CR),5.4,25.8
+8,9,Zuidoost-Drenthe (CR),Zuidwest-Drenthe (CR),5.5,37.3
+13,11,Veluwe (CR),Zuidwest-Overijssel (CR),5.5,19.6
+25,28,Agglomeratie Leiden en Bollenstreek (CR),Oost-Zuid-Holland (CR),5.5,18.9
+29,25,Groot-Rijnmond (CR),Agglomeratie Leiden en Bollenstreek (CR),5.5,38.4
+3,1,Overig Groningen (CR),Oost-Groningen (CR),5.6,32.7
+3,6,Overig Groningen (CR),Zuidoost-Friesland (CR),5.6,37.4
+34,30,Midden-Noord-Brabant (CR),Zuidoost-Zuid-Holland (CR),5.7,27.7
+35,37,Noordoost-Noord-Brabant (CR),Noord-Limburg (CR),5.7,27.8
+40,10,Flevoland (CR),Noord-Overijssel (CR),5.7,36.8
+33,32,West-Noord-Brabant (CR),Overig Zeeland (CR),5.8,53.7
+36,39,Zuidoost-Noord-Brabant (CR),Zuid-Limburg (CR),5.8,78.8
+8,10,Zuidoost-Drenthe (CR),Noord-Overijssel (CR),5.9,51.1
+15,36,Arnhem/Nijmegen (CR),Zuidoost-Noord-Brabant (CR),5.9,65.1
+17,16,Utrecht (CR),Zuidwest-Gelderland (CR),5.9,26.5
+30,26,Zuidoost-Zuid-Holland (CR),Agglomeratie 's-Gravenhage (CR),6,45.7
+37,35,Noord-Limburg (CR),Noordoost-Noord-Brabant (CR),6,31.6
+2,3,Delfzijl en omgeving (CR),Overig Groningen (CR),6.1,23.6
+4,5,Noord-Friesland (CR),Zuidwest-Friesland (CR),6.1,28.4
+6,3,Zuidoost-Friesland (CR),Overig Groningen (CR),6.1,38.6
+10,11,Noord-Overijssel (CR),Zuidwest-Overijssel (CR),6.1,33.5
+12,13,Twente (CR),Veluwe (CR),6.1,70.1
+16,15,Zuidwest-Gelderland (CR),Arnhem/Nijmegen (CR),6.1,29.5
+34,29,Midden-Noord-Brabant (CR),Groot-Rijnmond (CR),6.1,63.2
+4,3,Noord-Friesland (CR),Overig Groningen (CR),6.3,46.4
+20,19,IJmond (CR),Alkmaar en omgeving (CR),6.3,15.5
+35,29,Noordoost-Noord-Brabant (CR),Groot-Rijnmond (CR),6.3,82.4
+10,40,Noord-Overijssel (CR),Flevoland (CR),6.4,38.4
+17,15,Utrecht (CR),Arnhem/Nijmegen (CR),6.4,51.6
+33,26,West-Noord-Brabant (CR),Agglomeratie 's-Gravenhage (CR),6.4,72.3
+33,35,West-Noord-Brabant (CR),Noordoost-Noord-Brabant (CR),6.4,57.1
+16,35,Zuidwest-Gelderland (CR),Noordoost-Noord-Brabant (CR),6.5,22.6
+35,17,Noordoost-Noord-Brabant (CR),Utrecht (CR),6.6,58.2
+11,12,Zuidwest-Overijssel (CR),Twente (CR),6.7,36.1
+10,9,Noord-Overijssel (CR),Zuidwest-Drenthe (CR),6.9,21
+40,15,Flevoland (CR),Arnhem/Nijmegen (CR),6.9,79.9
+23,18,Groot-Amsterdam (CR),Kop van Noord-Holland (CR),7.1,49.8
+17,28,Utrecht (CR),Oost-Zuid-Holland (CR),7.2,28.9
+37,39,Noord-Limburg (CR),Zuid-Limburg (CR),7.2,65
+13,40,Veluwe (CR),Flevoland (CR),7.3,39.6
+36,33,Zuidoost-Noord-Brabant (CR),West-Noord-Brabant (CR),7.3,67.2
+13,14,Veluwe (CR),Achterhoek (CR),7.4,39.7
+13,23,Veluwe (CR),Groot-Amsterdam (CR),7.4,71.8
+33,30,West-Noord-Brabant (CR),Zuidoost-Zuid-Holland (CR),7.4,36.2
+5,6,Zuidwest-Friesland (CR),Zuidoost-Friesland (CR),7.5,23.7
+6,4,Zuidoost-Friesland (CR),Noord-Friesland (CR),7.5,28.9
+26,28,Agglomeratie 's-Gravenhage (CR),Oost-Zuid-Holland (CR),7.5,25.1
+40,24,Flevoland (CR),Het Gooi en Vechtstreek (CR),7.7,25.2
+10,12,Noord-Overijssel (CR),Twente (CR),7.8,41.8
+11,13,Zuidwest-Overijssel (CR),Veluwe (CR),7.9,25.1
+14,12,Achterhoek (CR),Twente (CR),7.9,31.9
+15,37,Arnhem/Nijmegen (CR),Noord-Limburg (CR),7.9,51.1
+38,37,Midden-Limburg (CR),Noord-Limburg (CR),7.9,27.3
+5,4,Zuidwest-Friesland (CR),Noord-Friesland (CR),8,28.8
+25,29,Agglomeratie Leiden en Bollenstreek (CR),Groot-Rijnmond (CR),8,36
+19,20,Alkmaar en omgeving (CR),IJmond (CR),8.2,20.8
+2,2,Delfzijl en omgeving (CR),Delfzijl en omgeving (CR),8.4,4.2
+32,33,Overig Zeeland (CR),West-Noord-Brabant (CR),8.7,48.4
+23,25,Groot-Amsterdam (CR),Agglomeratie Leiden en Bollenstreek (CR),8.9,26.6
+11,10,Zuidwest-Overijssel (CR),Noord-Overijssel (CR),9,25.1
+23,29,Groot-Amsterdam (CR),Groot-Rijnmond (CR),9,65.5
+23,26,Groot-Amsterdam (CR),Agglomeratie 's-Gravenhage (CR),9.2,52
+40,17,Flevoland (CR),Utrecht (CR),9.2,45.7
+12,11,Twente (CR),Zuidwest-Overijssel (CR),9.3,37.3
+37,38,Noord-Limburg (CR),Midden-Limburg (CR),9.3,25.5
+37,36,Noord-Limburg (CR),Zuidoost-Noord-Brabant (CR),9.7,40.3
+12,10,Twente (CR),Noord-Overijssel (CR),10,45.1
+3,7,Overig Groningen (CR),Noord-Drenthe (CR),10.1,25.4
+39,38,Zuid-Limburg (CR),Midden-Limburg (CR),10.4,36
+33,36,West-Noord-Brabant (CR),Zuidoost-Noord-Brabant (CR),10.5,63.1
+15,17,Arnhem/Nijmegen (CR),Utrecht (CR),10.6,55.3
+28,25,Oost-Zuid-Holland (CR),Agglomeratie Leiden en Bollenstreek (CR),10.6,18
+9,10,Zuidwest-Drenthe (CR),Noord-Overijssel (CR),10.7,26.1
+19,18,Alkmaar en omgeving (CR),Kop van Noord-Holland (CR),10.7,23.4
+32,29,Overig Zeeland (CR),Groot-Rijnmond (CR),10.9,72.4
+13,10,Veluwe (CR),Noord-Overijssel (CR),11,26
+15,16,Arnhem/Nijmegen (CR),Zuidwest-Gelderland (CR),11.2,38.2
+35,33,Noordoost-Noord-Brabant (CR),West-Noord-Brabant (CR),11.2,61.6
+14,13,Achterhoek (CR),Veluwe (CR),11.3,38.4
+35,15,Noordoost-Noord-Brabant (CR),Arnhem/Nijmegen (CR),11.3,28.7
+17,29,Utrecht (CR),Groot-Rijnmond (CR),11.4,57.3
+20,21,IJmond (CR),Agglomeratie Haarlem (CR),11.4,11.1
+23,22,Groot-Amsterdam (CR),Zaanstreek (CR),11.6,14.6
+38,36,Midden-Limburg (CR),Zuidoost-Noord-Brabant (CR),11.6,37.5
+10,13,Noord-Overijssel (CR),Veluwe (CR),11.7,43.5
+23,24,Groot-Amsterdam (CR),Het Gooi en Vechtstreek (CR),11.7,26.4
+29,33,Groot-Rijnmond (CR),West-Noord-Brabant (CR),11.7,49.2
+28,23,Oost-Zuid-Holland (CR),Groot-Amsterdam (CR),11.9,30.8
+1,3,Oost-Groningen (CR),Overig Groningen (CR),12,30.7
+25,17,Agglomeratie Leiden en Bollenstreek (CR),Utrecht (CR),12.5,54.1
+30,17,Zuidoost-Zuid-Holland (CR),Utrecht (CR),12.9,40.4
+36,34,Zuidoost-Noord-Brabant (CR),Midden-Noord-Brabant (CR),12.9,35.5
+27,29,Delft en Westland (CR),Groot-Rijnmond (CR),13.5,18.2
+15,35,Arnhem/Nijmegen (CR),Noordoost-Noord-Brabant (CR),13.7,34.7
+28,26,Oost-Zuid-Holland (CR),Agglomeratie 's-Gravenhage (CR),13.9,27.3
+16,17,Zuidwest-Gelderland (CR),Utrecht (CR),14,27.3
+4,6,Noord-Friesland (CR),Zuidoost-Friesland (CR),14.5,29
+29,28,Groot-Rijnmond (CR),Oost-Zuid-Holland (CR),14.7,23.3
+23,21,Groot-Amsterdam (CR),Agglomeratie Haarlem (CR),14.8,16.7
+38,39,Midden-Limburg (CR),Zuid-Limburg (CR),15.1,33.7
+15,14,Arnhem/Nijmegen (CR),Achterhoek (CR),15.4,33.1
+26,25,Agglomeratie 's-Gravenhage (CR),Agglomeratie Leiden en Bollenstreek (CR),15.5,17.6
+17,26,Utrecht (CR),Agglomeratie 's-Gravenhage (CR),15.6,62.6
+28,17,Oost-Zuid-Holland (CR),Utrecht (CR),16.2,32.8
+34,36,Midden-Noord-Brabant (CR),Zuidoost-Noord-Brabant (CR),16.2,34.7
+29,23,Groot-Rijnmond (CR),Groot-Amsterdam (CR),16.4,64.8
+24,17,Het Gooi en Vechtstreek (CR),Utrecht (CR),16.8,21.3
+40,13,Flevoland (CR),Veluwe (CR),17.2,45.9
+34,35,Midden-Noord-Brabant (CR),Noordoost-Noord-Brabant (CR),18.1,25.2
+7,3,Noord-Drenthe (CR),Overig Groningen (CR),18.4,20.6
+35,34,Noordoost-Noord-Brabant (CR),Midden-Noord-Brabant (CR),18.8,24.5
+39,36,Zuid-Limburg (CR),Zuidoost-Noord-Brabant (CR),18.9,80.5
+28,29,Oost-Zuid-Holland (CR),Groot-Rijnmond (CR),19.1,21.7
+33,34,West-Noord-Brabant (CR),Midden-Noord-Brabant (CR),19.5,26.4
+17,24,Utrecht (CR),Het Gooi en Vechtstreek (CR),19.7,20.5
+13,15,Veluwe (CR),Arnhem/Nijmegen (CR),19.8,32.6
+17,13,Utrecht (CR),Veluwe (CR),19.8,25.3
+14,15,Achterhoek (CR),Arnhem/Nijmegen (CR),20.1,29.7
+33,29,West-Noord-Brabant (CR),Groot-Rijnmond (CR),20.4,50.6
+19,23,Alkmaar en omgeving (CR),Groot-Amsterdam (CR),20.7,37.7
+26,23,Agglomeratie 's-Gravenhage (CR),Groot-Amsterdam (CR),20.8,49.7
+18,19,Kop van Noord-Holland (CR),Alkmaar en omgeving (CR),20.9,23
+29,27,Groot-Rijnmond (CR),Delft en Westland (CR),21.6,17.1
+29,17,Groot-Rijnmond (CR),Utrecht (CR),21.7,61.8
+20,23,IJmond (CR),Groot-Amsterdam (CR),22.7,25.5
+26,17,Agglomeratie 's-Gravenhage (CR),Utrecht (CR),23,59.5
+27,26,Delft en Westland (CR),Agglomeratie 's-Gravenhage (CR),23.2,10.5
+18,23,Kop van Noord-Holland (CR),Groot-Amsterdam (CR),23.8,45.2
+15,13,Arnhem/Nijmegen (CR),Veluwe (CR),23.9,33.5
+26,27,Agglomeratie 's-Gravenhage (CR),Delft en Westland (CR),24.3,9.5
+34,33,Midden-Noord-Brabant (CR),West-Noord-Brabant (CR),24.6,22.6
+25,26,Agglomeratie Leiden en Bollenstreek (CR),Agglomeratie 's-Gravenhage (CR),24.7,17.4
+29,30,Groot-Rijnmond (CR),Zuidoost-Zuid-Holland (CR),25.4,23.1
+25,23,Agglomeratie Leiden en Bollenstreek (CR),Groot-Amsterdam (CR),25.5,27.9
+24,23,Het Gooi en Vechtstreek (CR),Groot-Amsterdam (CR),27.9,26.2
+35,36,Noordoost-Noord-Brabant (CR),Zuidoost-Noord-Brabant (CR),28.5,29.8
+22,22,Zaanstreek (CR),Zaanstreek (CR),29.5,4.5
+9,9,Zuidwest-Drenthe (CR),Zuidwest-Drenthe (CR),29.8,6.2
+13,17,Veluwe (CR),Utrecht (CR),29.9,29.8
+31,31,Zeeuwsch-Vlaanderen (CR),Zeeuwsch-Vlaanderen (CR),30.7,8.9
+36,35,Zuidoost-Noord-Brabant (CR),Noordoost-Noord-Brabant (CR),31.2,29.9
+40,23,Flevoland (CR),Groot-Amsterdam (CR),31.3,36.7
+5,5,Zuidwest-Friesland (CR),Zuidwest-Friesland (CR),31.7,7.3
+1,1,Oost-Groningen (CR),Oost-Groningen (CR),31.9,6.8
+22,23,Zaanstreek (CR),Groot-Amsterdam (CR),32.9,16.5
+23,17,Groot-Amsterdam (CR),Utrecht (CR),33.4,40.4
+26,29,Agglomeratie 's-Gravenhage (CR),Groot-Rijnmond (CR),34.9,22.5
+30,29,Zuidoost-Zuid-Holland (CR),Groot-Rijnmond (CR),36.1,22
+11,11,Zuidwest-Overijssel (CR),Zuidwest-Overijssel (CR),36.5,5
+21,21,Agglomeratie Haarlem (CR),Agglomeratie Haarlem (CR),39.1,3.2
+20,20,IJmond (CR),IJmond (CR),39.5,3.9
+21,23,Agglomeratie Haarlem (CR),Groot-Amsterdam (CR),40.5,17.6
+8,8,Zuidoost-Drenthe (CR),Zuidoost-Drenthe (CR),41.2,7.6
+7,7,Noord-Drenthe (CR),Noord-Drenthe (CR),42,7.4
+29,26,Groot-Rijnmond (CR),Agglomeratie 's-Gravenhage (CR),46.6,24.4
+24,24,Het Gooi en Vechtstreek (CR),Het Gooi en Vechtstreek (CR),48.1,4.2
+6,6,Zuidoost-Friesland (CR),Zuidoost-Friesland (CR),49,7.8
+27,27,Delft en Westland (CR),Delft en Westland (CR),55,3.4
+16,16,Zuidwest-Gelderland (CR),Zuidwest-Gelderland (CR),55.6,6.7
+19,19,Alkmaar en omgeving (CR),Alkmaar en omgeving (CR),58.1,4.8
+38,38,Midden-Limburg (CR),Midden-Limburg (CR),59.8,6.8
+17,23,Utrecht (CR),Groot-Amsterdam (CR),69.5,38.6
+28,28,Oost-Zuid-Holland (CR),Oost-Zuid-Holland (CR),70.7,5.1
+32,32,Overig Zeeland (CR),Overig Zeeland (CR),85.3,9.4
+37,37,Noord-Limburg (CR),Noord-Limburg (CR),87.2,7.2
+40,40,Flevoland (CR),Flevoland (CR),94,8.2
+4,4,Noord-Friesland (CR),Noord-Friesland (CR),98.4,8.6
+30,30,Zuidoost-Zuid-Holland (CR),Zuidoost-Zuid-Holland (CR),102,6.5
+18,18,Kop van Noord-Holland (CR),Kop van Noord-Holland (CR),107.5,8
+25,25,Agglomeratie Leiden en Bollenstreek (CR),Agglomeratie Leiden en Bollenstreek (CR),109.3,4.5
+14,14,Achterhoek (CR),Achterhoek (CR),114.2,8.2
+10,10,Noord-Overijssel (CR),Noord-Overijssel (CR),114.7,8
+3,3,Overig Groningen (CR),Overig Groningen (CR),127.9,7.1
+34,34,Midden-Noord-Brabant (CR),Midden-Noord-Brabant (CR),130.3,5.7
+13,13,Veluwe (CR),Veluwe (CR),189.1,7.7
+39,39,Zuid-Limburg (CR),Zuid-Limburg (CR),191.6,8.5
+33,33,West-Noord-Brabant (CR),West-Noord-Brabant (CR),191.8,8.7
+35,35,Noordoost-Noord-Brabant (CR),Noordoost-Noord-Brabant (CR),194.2,7.6
+26,26,Agglomeratie 's-Gravenhage (CR),Agglomeratie 's-Gravenhage (CR),215.8,5.4
+15,15,Arnhem/Nijmegen (CR),Arnhem/Nijmegen (CR),217.7,7.9
+12,12,Twente (CR),Twente (CR),230.9,8.4
+36,36,Zuidoost-Noord-Brabant (CR),Zuidoost-Noord-Brabant (CR),259.9,7.6
+17,17,Utrecht (CR),Utrecht (CR),413.3,9
+29,29,Groot-Rijnmond (CR),Groot-Rijnmond (CR),441.7,8.7
+23,23,Groot-Amsterdam (CR),Groot-Amsterdam (CR),486.3,7.5
