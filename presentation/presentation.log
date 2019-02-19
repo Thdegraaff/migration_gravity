@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.10.8)  18 FEB 2019 17:59
-=======
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.8.28)  18 FEB 2019 15:06
->>>>>>> df0f73e80abb6254f89cc106bd73a5854d81ba96
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.10.8)  19 FEB 2019 11:37
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **\input presentation.tex
 (./presentation.tex
@@ -1122,7 +1117,6 @@ LaTeX Info: Redefining \- on input line 3807.
 .................................................
 ))
 \c@fontsnotfound=\count279
-<<<<<<< HEAD
 \g__fontspec_family_FiraSansLight_int=\count280
 .................................................
 . fontspec info: "defining-font"
@@ -1196,38 +1190,26 @@ LaTeX Info: Redefining \sffamily on input line 95.
 LaTeX Info: Redefining \ttfamily on input line 95.
 ))
 (./presentation.aux)
-=======
-
-
-Package beamerthememetropolis Warning: Could not find Fira Sans fonts on input 
-line 95.
-
-
-Package beamerthememetropolis Warning: Could not find Fira Mono fonts on input 
-line 95.
-
-)) (./presentation.aux)
->>>>>>> df0f73e80abb6254f89cc106bd73a5854d81ba96
 \openout1 = `presentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1265,7 +1247,7 @@ LaTeX Font Info:    ... okay on input line 7.
 
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box75
-Package hyperref Info: Link coloring OFF on input line 7.
+Package hyperref Info: Link coloring OFF on input line 8.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1273,116 +1255,70 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-<<<<<<< HEAD
 \c@section@level=\count282
-=======
-\c@section@level=\count280
->>>>>>> df0f73e80abb6254f89cc106bd73a5854d81ba96
 )
-LaTeX Info: Redefining \ref on input line 7.
-LaTeX Info: Redefining \pageref on input line 7.
-LaTeX Info: Redefining \nameref on input line 7.
+LaTeX Info: Redefining \ref on input line 8.
+LaTeX Info: Redefining \pageref on input line 8.
+LaTeX Info: Redefining \nameref on input line 8.
 
 (./presentation.out) (./presentation.out)
 \@outlinefile=\write5
 \openout5 = `presentation.out'.
 
-<<<<<<< HEAD
-=======
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
->>>>>>> df0f73e80abb6254f89cc106bd73a5854d81ba96
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 7.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 8.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 7.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 8.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmr/m/n on input line 7.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 7.
+(Font)                  OT1/cmss/m/n --> TU/lmr/m/n on input line 8.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 8.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-<<<<<<< HEAD
 (Font)                  OT1/cmr/bx/n --> TU/FiraSansLight(0)/bx/n on input line
- 7.
+ 8.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/FiraSansLight(0)/bx/n on input line
- 7.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 7.
+ 8.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 8.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/cmss/m/n --> TU/FiraSansLight(0)/m/n on input line 
-7.
+8.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/FiraSansLight(0)/m/n on input line
- 7.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 7.
+ 8.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 8.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> TU/FiraSansLight(0)/m/it on input line
- 7.
+ 8.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> TU/FiraSansLight(0)/m/it on input lin
-e 7.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 7.
+e 8.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 8.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 7.
+(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 8.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 7.
+(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 8.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
 (Font)                  TU/FiraSansLight(0)/m/n --> TU/FiraSansLight(0)/bx/n on
- input line 7.
+ input line 8.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  TU/FiraSansLight(0)/m/it --> TU/FiraSansLight(0)/bx/it 
-on input line 7.
+on input line 8.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmr/bx/n on input line 7.
+(Font)                  OT1/cmss/bx/n --> TU/lmr/bx/n on input line 8.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
 (Font)                  TU/FiraSansLight(0)/bx/n --> TU/FiraSansLight(0)/bx/n o
-n input line 7.
+n input line 8.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  TU/FiraSansLight(0)/m/n --> TU/FiraSansLight(0)/bx/n on
- input line 7.
+ input line 8.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  TU/FiraSansLight(0)/m/it --> TU/FiraSansLight(0)/bx/it 
-on input line 7.
+on input line 8.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  TU/FiraMono(0)/m/n --> TU/FiraMono(0)/bx/n on input lin
-e 7.
-=======
-(Font)                  OT1/cmr/bx/n --> TU/lmss/bx/n on input line 7.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmss/bx/n on input line 7.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 7.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 7.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/m/n on input line 7.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 7.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmss/m/it on input line 7.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmss/m/it on input line 7.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 7.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 7.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 7.
-LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 7.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 7.
-LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmr/bx/n on input line 7.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  TU/lmss/bx/n --> TU/lmss/bx/n on input line 7.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 7.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 7.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  TU/lmtt/m/n --> TU/lmtt/bx/n on input line 7.
->>>>>>> df0f73e80abb6254f89cc106bd73a5854d81ba96
+e 8.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/translator/dicts/translato
 r-basic-dictionary/translator-basic-dictionary-English.dict
@@ -1408,35 +1344,35 @@ Dictionary: translator-numbers-dictionary, Language: English
 r-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 7.
+LaTeX Info: Redefining \includegraphics on input line 8.
 
 (./presentation.nav)
-Overfull \vbox (15.63992pt too high) detected at line 8
+Overfull \vbox (15.63992pt too high) detected at line 9
  []
 
 [1
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 9.
+LaTeX Font Info:    Try loading font information for U+msa on input line 11.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 9.
+LaTeX Font Info:    Try loading font information for U+msb on input line 11.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-<<<<<<< HEAD
 ) [2
-=======
-)
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 9.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 9.
- [2
->>>>>>> df0f73e80abb6254f89cc106bd73a5854d81ba96
 
 ] [3
+
+]
+[4
+
+] [5
+
+] [6
+
+] [7
 
 ]
 \tf@nav=\write6
@@ -1448,30 +1384,19 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 13.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 13.
-
-(./presentation.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 13.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 13.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 41.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 41.
+ (./presentation.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 41.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 41.
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
- 32032 strings out of 493005
- 654048 string characters out of 6134596
- 701172 words of memory out of 5000000
- 35465 multiletter control sequences out of 15000+600000
+ 32085 strings out of 493005
+ 655170 string characters out of 6134596
+ 703668 words of memory out of 5000000
+ 35518 multiletter control sequences out of 15000+600000
  8893 words of font info for 63 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 71i,13n,95p,10441b,675s stack positions out of 5000i,500n,10000p,200000b,80000s
-=======
- 31968 strings out of 493005
- 651684 string characters out of 6134596
- 699425 words of memory out of 5000000
- 35428 multiletter control sequences out of 15000+600000
- 8765 words of font info for 47 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 71i,13n,83p,10441b,675s stack positions out of 5000i,500n,10000p,200000b,80000s
->>>>>>> df0f73e80abb6254f89cc106bd73a5854d81ba96
+ 71i,13n,95p,10441b,677s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on presentation.pdf (3 pages).
+Output written on presentation.pdf (7 pages).
