@@ -4,6 +4,7 @@
 
 library("tidyverse")
 library("sf")
+library("cowplot")
 
 ######################
 # Read in csv files
@@ -75,6 +76,17 @@ hist_housing <- ggplot(data = housing, aes(x = Percentage)) +
   facet_wrap(~ Housing_type, labeller = variable_labeller) +
   theme_bw() + 
   labs(x = "Percentage (%)", y = "")
+
+data_mig_large <- filter(data, migrants >= 20)
+data_mig_small <- filter(data, migrants < 20)
+hist_mig_small <- ggplot(data = data_mig_small, aes(migrants)) + 
+  geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20)
+hist_mig_large <- ggplot(data = data_mig_large, aes(migrants)) + 
+  geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20, breaks = seq(20, 4020, by =200)) +
+  xlim(c(20,4020))
+hist_mig <- plot_grid(hist_mig_small, hist_mig_large, labels = c("Small", "Large"))
+hist_mig
+
 
 pdf(file = "./fig/hist_housing.pdf" ,width=8,height=4) 
   hist_housing 
