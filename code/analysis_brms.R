@@ -10,7 +10,7 @@ library("brms")
 # Get subsample of data
 ######################
 
-nr <- 20
+nr <- 393
 
 ######################
 # Read in data
@@ -38,12 +38,12 @@ d$hom_d <- log(d$homeowners_d) - mean(log(d$homeowners_d))
 ################ Analysis #############
 
 #m1 <- brm(migrants~0 + log_distance, family = poisson("log"), data = d)
-# m2 <- brm(migrants~ pop_d + pop_o +hom_d + hom_o + soc_o + soc_d + log_distance + 
-#                 (1 | destination) + (1 | origin), 
+# m2 <- brm(migrants~ pop_d + pop_o +hom_d + hom_o + soc_o + soc_d + log_distance +
+#                 (1 | destination) + (1 | origin),
 #               prior = c(prior(normal(0, 2), class = Intercept),
 #                         prior(normal(0, 2), class = b),
 #                         prior(cauchy(0, 1), class = sd)),
-#               family = poisson("log"), data = d, iter = 5000, warmup = 2000, cores = 4, chains = 4)
+#               family = poisson("log"), data = d, iter = 2000, warmup = 1000, cores = 4, chains = 4)
 
 m2_neg <- brm(migrants~ pop_d + pop_o +hom_d + hom_o + soc_o + soc_d + log_distance +
             (1 | destination) + (1 | origin),
@@ -51,4 +51,4 @@ m2_neg <- brm(migrants~ pop_d + pop_o +hom_d + hom_o + soc_o + soc_d + log_dista
                     prior(normal(0, 2), class = b),
                     prior(cauchy(0, 1), class = sd),
                     prior(gamma(0.01, 0.01), class = shape)),
-          family = negbinomial, data = d, iter = 2000, warmup = 1000, cores = 4, chains = 4)
+          family = negbinomial, data = d, iter = 4000, warmup = 1000, cores = 4, chains = 4)
