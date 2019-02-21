@@ -1,0 +1,39 @@
+\frametitle{Prediction in gravity models}
+\begin{figure}
+           \begin{tikzpicture}[
+             origin/.style={
+         circle,
+         draw=black,
+         fill=red,
+         fill opacity = 0.25,
+         text opacity=1,
+         inner sep=0pt,
+         minimum size=20pt,
+         font=\small},
+       destination/.style={
+         circle,
+         draw=black,
+         fill=blue,
+         fill opacity = 0.25,
+         text opacity=1,
+         inner sep=0pt,
+         minimum size=20pt,
+         font=\scriptsize},
+       var/.style = {rectangle, draw, fill=green!10, rounded corners, text centered, text width = 5em, minimum height = 2em, font= \small},
+node distance=0.5cm and 5cm
+      ]
+      \node[origin] (O1) {$O_1$};
+      \node[origin,below =  of O1] (O2) {$O_2$};
+      \node[origin,below =  of O2] (O3) {$O_3$};
+
+      \node[destination,right = of O1] (D1) {$D_1$};
+      \node[destination,below =  of D1] (D2) {$D_2$};
+      \node[destination,below =  of D2] (D3) {$D_3$};
+
+      \node[var,  above = of O1] (O) {origin specific variables};
+      \node[var,  above = of D1] (D) {destination specific variables};
+      \node[var,  right = 0.7cm of O] (FD) {Flow specific variables};
+
+\end{tikzpicture}
+^^I^^I\caption{Variables that can affect flows $F_{ij}$ between origins $O_i$ and destinations $D_j$}
+^^I\end{figure}
