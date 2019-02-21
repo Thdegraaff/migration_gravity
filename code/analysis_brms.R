@@ -10,7 +10,7 @@ library("brms")
 # Get subsample of data
 ######################
 
-nr <- 20
+nr <- 50
 
 ######################
 # Read in data
