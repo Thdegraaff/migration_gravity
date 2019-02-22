@@ -84,7 +84,7 @@ hist_mig_small <- ggplot(data = data_mig_small, aes(migrants)) +
 hist_mig_large <- ggplot(data = data_mig_large, aes(migrants)) + 
   geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20, breaks = seq(20, 4020, by =200)) +
   xlim(c(20,4020))
-hist_mig <- plot_grid(hist_mig_small, hist_mig_large, labels = c("Small", "Large"))
+hist_mig <- plot_grid(hist_mig_small, hist_mig_large, labels = c("Small flows", "Large flows"))
 hist_mig
 
 

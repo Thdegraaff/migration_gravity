@@ -1,4 +1,4 @@
-\frametitle{Prediction in gravity models}
+\frametitle{Gravity model data structure}
 \begin{figure}
            \begin{tikzpicture}[
              origin/.style={

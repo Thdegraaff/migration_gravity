@@ -1,0 +1,128 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Stylish Article
+% LaTeX Template
+% Version 2.1 (1/10/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Mathias Legrand (legrand.mathias@gmail.com) 
+% With extensive modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%--------------------------------------------------------------# Path to your oh-my-zsh installation.--------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[fleqn,10pt]{SelfArx} % Document font size and equations flushed left
+
+\usepackage[english]{babel} % Specify a different language here - english by default
+
+\usepackage{marvosym, epigraph, subfig, listings}
+
+\usepackage[sortcites=false,style=authoryear-comp,bibencoding=utf8, natbib=true, firstinits=true, maxcitenames=2, maxbibnames = 99, uniquename=false, backend=bibtex, useprefix=true, backref=false,doi=false,isbn=false,url=false,dashed=true]{biblatex}
+\setlength\bibhang{20pt}
+\bibliography{references.bib}
+\AtEveryBibitem{%
+	\clearfield{day}%
+	\clearfield{month}%
+	\clearfield{endday}%
+	\clearfield{endmonth}%
+}
+
+%----------------------------------------------------------------------------------------
+%	COLUMNS
+%----------------------------------------------------------------------------------------
+
+\setlength{\columnsep}{0.55cm} % Distance between the two columns of text
+\setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
+
+%----------------------------------------------------------------------------------------
+%	COLORS
+%----------------------------------------------------------------------------------------
+
+\definecolor{color1}{RGB}{0,0,90} % Color of the article title and sections
+\definecolor{color2}{RGB}{0,20,20} % Color of the boxes behind the abstract and headings
+
+%----------------------------------------------------------------------------------------
+%	HYPERLINKS
+%----------------------------------------------------------------------------------------
+
+\usepackage{hyperref} % Required for hyperlinks
+\hypersetup{hidelinks,colorlinks,breaklinks=true,urlcolor=color2,citecolor=color1,linkcolor=color1,bookmarksopen=false,pdftitle={What drives which region?},pdfauthor={Thomas de Graaff}}
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE INFORMATION
+%----------------------------------------------------------------------------------------
+
+\JournalInfo{Conference paper} % Journal information 
+\Archive{Prepared for ERSA 2019} % Additional notes (e.g. copyright, DOI, review/research article)
+
+\PaperTitle{Housing market and migration revisited: a multilevel gravity model for Dutch municipalities}
+
+\Authors{Thomas de Graaff\textsuperscript{1}*} % Authors
+\affiliation{\textsuperscript{1}\textit{Department of Spatial Economics, Vrije Universiteit Amsterdam, Amsterdam, The Netherlands}} % Author affiliation
+\affiliation{*\textbf{Corresponding author}: \Letter{} t.de.graaff@vu.n; \Mundus{} \href{thomasdegraaff.nl}{thomasdegraaff.nl}} % Corresponding author
+
+\Keywords{Gravity model --- housing market --- migration --- multilevel model --- partial pooling --- prediction}
+\newcommand{\keywordname}{Keywords} 
+
+%%----------------------------------------------------------------------------------------
+%%	ABSTRACT
+%%----------------------------------------------------------------------------------------
+
+\Abstract{This paper revisits the impact of the housing market structure on interregional migration, but adopts an alternative modeling approach to migration flows between cities. The starting point is a gravity model, but instead of using fixed effects for cities of origin and destination, I use a multilevel mixed effects approach allowing me to simultaneously model migration flows and the cities of origin and destination. This approach has two main advantages. First, it allows for simultaneous estimation of the impact of city characteristics on migration flows, where the impact is not necessarily symmetrical for cities of origin and destination. Second, it allows for prediction of migration flows between cities both in and out of sample. Preliminary results show that homeownership decrease migration flows significantly with an elasticity below $-1$. Municipal social renting rate has a negative impact as well, but its elasticity is close to zero.}
+
+%----------------------------------------------------------------------------------------
+\hypersetup{draft} 
+\begin{document}
+	
+	\flushbottom % Makes all text pages the same height
+	\maketitle % Print the title and abstract box
+	%\tableofcontents % Print the contents section
+	\thispagestyle{empty} % Removes page numbering from the first page
+	
+	%----------------------------------------------------------------------------------------
+	
+	\section{Introduction} % The \section*{} command stops section numbering
+
+In the 1990s, Andrew Oswald wrote two famous working papers \citep{oswald1996conjecture, oswald1999housing}  postulating that homeownership rates would have a negative impact on labor market behavior, as the high costs of moving residence associated with homeownership would impede regional mobility. These two working papers evoked a large empirical literature \citep[see, e.g., ][]{munch2006homeowners, munch2008home, de2013european} looking at the impact of individual and aggregate homeownership on labor market performance, where seemingly paradoxically at the aggregate level homeownership is indeed harmful for labor market behavior where at the individual level it is correlated with positive labor market performance.
+
+That housing market structure has an effect on migration decisions...
+
+
+
+\section{Data}
+
+\section{The model}
+
+\begin{align}
+	\text{Migrants}_{ij} \sim & \text{ Gamma poisson}(\lambda_{ij}, \sigma)\\
+	\log(\lambda_{ij}) = & \alpha + o_{\text{mun}[i]} + d_{mun[j]} + \notag \\
+	& home_i + home_j +soc_i + soc_j + \notag\\
+	& pop_i+pop_j + dist_{ij}\\
+	mun[i] \sim&  \text{ Normal}(\alpha_o)
+\end{align}
+
+\section{Results}
+
+\subsection{Model predictions}
+
+\section{In conclusion}
+	
+	%----------------------------------------------------------------------------------------
+	%	REFERENCE LIST
+	%----------------------------------------------------------------------------------------
+	
+	\addcontentsline{toc}{section}{references} % Adds this section to the table of contents
+	\printbibliography
+	
+	%----------------------------------------------------------------------------------------
+	
+\end{document}

@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: housing_migration.aux
+The style file: biblatex.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: housing_migration-blx.bib
+Database file #2: references.bib
+Biblatex version: 3.3
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 6 entries,
+            6256 wiz_defined-function locations,
+            1206 strings with 9322 characters,
+and the built_in function-call counts, 29615 in all, are:
+= -- 2016
+> -- 584
+< -- 174
++ -- 614
+- -- 187
+* -- 2140
+:= -- 2895
+add.period$ -- 0
+call.type$ -- 6
+change.case$ -- 106
+chr.to.int$ -- 30
+cite$ -- 10
+duplicate$ -- 2939
+empty$ -- 2882
+format.name$ -- 346
+if$ -- 6279
+int.to.chr$ -- 0
+int.to.str$ -- 17
+missing$ -- 0
+newline$ -- 173
+num.names$ -- 276
+pop$ -- 1771
+preamble$ -- 1
+purify$ -- 127
+quote$ -- 0
+skip$ -- 997
+stack$ -- 0
+substring$ -- 3414
+swap$ -- 786
+text.length$ -- 142
+text.prefix$ -- 5
+top$ -- 1
+type$ -- 191
+warning$ -- 0
+while$ -- 338
+width$ -- 0
+write$ -- 168

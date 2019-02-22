@@ -1,0 +1,176 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\sortlist[entry]{nyt/global/}
+  \entry{de2013european}{article}{}
+    \name{author}{2}{}{%
+      {{hash=DGT}{%
+         family={De\bibnamedelima Graaff},
+         familyi={D\bibinitperiod\bibinitdelim G\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=VLM}{%
+         family={Van\bibnamedelima Leuvensteijn},
+         familyi={V\bibinitperiod\bibinitdelim L\bibinitperiod},
+         given={Michiel},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Routledge}%
+    }
+    \strng{namehash}{DGTVLM1}
+    \strng{fullhash}{DGTVLM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{number}{9}
+    \field{pages}{1443\bibrangedash 1461}
+    \field{title}{A European cross-country comparison of the impact of
+  homeownership and transaction costs on job tenure}
+    \field{volume}{47}
+    \field{journaltitle}{Regional Studies}
+    \field{year}{2013}
+  \endentry
+
+  \entry{munch2006homeowners}{article}{}
+    \name{author}{3}{}{%
+      {{hash=MJR}{%
+         family={Munch},
+         familyi={M\bibinitperiod},
+         given={Jakob\bibnamedelima Roland},
+         giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Rosholm},
+         familyi={R\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Svarer},
+         familyi={S\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Oxford University Press Oxford, UK}%
+    }
+    \strng{namehash}{MJR+1}
+    \strng{fullhash}{MJRRMSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2006}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{number}{514}
+    \field{pages}{991\bibrangedash 1013}
+    \field{title}{Are homeowners really more unemployed?}
+    \field{volume}{116}
+    \field{journaltitle}{The Economic Journal}
+    \field{year}{2006}
+  \endentry
+
+  \entry{munch2008home}{article}{}
+    \name{author}{3}{}{%
+      {{hash=MJR}{%
+         family={Munch},
+         familyi={M\bibinitperiod},
+         given={Jakob\bibnamedelima Roland},
+         giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Rosholm},
+         familyi={R\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Svarer},
+         familyi={S\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{MJR+1}
+    \strng{fullhash}{MJRRMSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2008}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{number}{1}
+    \field{pages}{130\bibrangedash 145}
+    \field{title}{Home ownership, job duration, and wages}
+    \field{volume}{63}
+    \field{journaltitle}{Journal of Urban Economics}
+    \field{year}{2008}
+  \endentry
+
+  \entry{oswald1996conjecture}{report}{}
+    \name{author}{1}{}{%
+      {{hash=OAJ}{%
+         family={Oswald},
+         familyi={O\bibinitperiod},
+         given={Andrew\bibnamedelima J},
+         giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{OAJ1}
+    \strng{fullhash}{OAJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1996}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{title}{A conjecture on the explanation for high unemployment in the
+  industrialized nations: Part I}
+    \field{type}{techreport}
+    \field{year}{1996}
+  \endentry
+
+  \entry{oswald1999housing}{article}{}
+    \name{author}{1}{}{%
+      {{hash=OAJ}{%
+         family={Oswald},
+         familyi={O\bibinitperiod},
+         given={Andrew\bibnamedelima J},
+         giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{OAJ1}
+    \strng{fullhash}{OAJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1999}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{title}{The housing market and Europe’s unemployment: a
+  non-technical paper}
+    \field{journaltitle}{Homeownership and the labour Market in Europe}
+    \field{year}{1999}
+  \endentry
+\endsortlist
+\endinput

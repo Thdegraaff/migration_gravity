@@ -1,8 +1,8 @@
 \documentclass{beamer}
 \usetheme[block = fill, titleformat title = allcaps, titleformat subtitle  = smallcaps, background = light]{metropolis}           % Use metropolis theme
 \usetikzlibrary{arrows.meta,positioning}
-\title{Municipal housing market structure as barrier to within-country migration}
-\subtitle{A multilevel analysis for the Netherlands}
+\title{Housing market and migration revisited}
+\subtitle{A multilevel gravity model for Dutch municipalities}
 \date{\today}
 \author{Thomas de Graaff}
 \institute{Vrije Universiteit Amsterdam\\Department of Spatial Economics}
@@ -11,13 +11,27 @@
 
 \section{The problem}
 
-  \begin{frame}{Contempory applied spatial economic research}
+  \begin{frame}{Background}
     	\begin{itemize}
-    		\item 50--70\% of all research questions in spatial economics evolve around policy \alert{evaluation} or \alert{explaining} impact of \alert{isolated} variables 
-    		\item Huge demand (firms \& government for research dealing with \alert{prediction} and \alert{assessing} total model performance
-    		\item But, more than 90\% of all statistical analysie is done with basic applied econometrics using \alert{linear} models and \alert{fixed} effects
+    		\item 50--70\% of all research questions in spatial economics evolve around policy \alert{evaluation} 
+    		\begin{itemize}
+    			\item focus on \textbf{consistency}
+    		\end{itemize}
+    		\item Huge demand (e.g., by firms \& government) for research dealing with \alert{prediction}
+    		\begin{itemize}
+    			\item focus on model \textbf{performance}
+    		\end{itemize}
+    		\item But, more than 90\% of all statistical analyses is basic applied econometrics using \alert{linear} models and \alert{fixed} effects
     	\end{itemize}
   \end{frame}
+
+\begin{frame}{Research problem}
+	\begin{itemize}
+		\item Aggregate homeownership has negative impact on labour market performance, because of increased \alert{moving costs} (Oswald, 1996, 1999)
+		\item This paper applies a \alert{gravity model} on the impact of housing market structure (e.g., homeownership and social renting) on within-country migration flows 
+		\item Aim: to be able to \alert{predict} all changes in incoming and outcoming migration flows of, e.g., Amsterdam, when aggregate homeownership in Amsterdam increases by 10\%
+	\end{itemize}
+\end{frame}
 
 \begin{frame}[fragile]{Gravity model data structure}
 	 \begin{figure}	
