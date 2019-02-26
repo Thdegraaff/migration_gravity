@@ -17,6 +17,187 @@
 \endgroup
 
 \sortlist[entry]{nyt/global/}
+  \entry{amirault2016drags}{article}{}
+    \name{author}{3}{}{%
+      {{hash=AD}{%
+         family={Amirault},
+         familyi={A\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=dMD}{%
+         prefix={de},
+         prefixi={d\bibinitperiod},
+         family={Munnik},
+         familyi={M\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={Miller},
+         familyi={M\bibinitperiod},
+         given={Sarah},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{AD+1}
+    \strng{fullhash}{ADdMDMS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{number}{3}
+    \field{pages}{1035\bibrangedash 1056}
+    \field{title}{What drags and drives mobility? Explaining Canada's aggregate
+  migration patterns}
+    \field{volume}{49}
+    \field{journaltitle}{Canadian Journal of Economics/Revue canadienne
+  d'{\'e}conomique}
+    \field{year}{2016}
+  \endentry
+
+  \entry{anderson2003gravity}{article}{}
+    \name{author}{2}{}{%
+      {{hash=AJE}{%
+         family={Anderson},
+         familyi={A\bibinitperiod},
+         given={James\bibnamedelima E},
+         giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=VWE}{%
+         family={Van\bibnamedelima Wincoop},
+         familyi={V\bibinitperiod\bibinitdelim W\bibinitperiod},
+         given={Eric},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AJEVWE1}
+    \strng{fullhash}{AJEVWE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2003}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{number}{1}
+    \field{pages}{170\bibrangedash 192}
+    \field{title}{Gravity with gravitas: a solution to the border puzzle}
+    \field{volume}{93}
+    \field{journaltitle}{American economic review}
+    \field{year}{2003}
+  \endentry
+
+  \entry{brms}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BPC}{%
+         family={Bürkner},
+         familyi={B\bibinitperiod},
+         given={Paul-Christian},
+         giveni={P\bibinitperiod-C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BPC1}
+    \strng{fullhash}{BPC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.18637/jss.v080.i01
+    \endverb
+    \field{number}{1}
+    \field{pages}{1\bibrangedash 28}
+    \field{title}{{brms}: An {R} Package for {Bayesian} Multilevel Models Using
+  {Stan}}
+    \field{volume}{80}
+    \field{journaltitle}{Journal of Statistical Software}
+    \field{year}{2017}
+  \endentry
+
+  \entry{carpenter2017stan}{article}{}
+    \name{author}{10}{}{%
+      {{hash=CB}{%
+         family={Carpenter},
+         familyi={C\bibinitperiod},
+         given={Bob},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={Gelman},
+         familyi={G\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HMD}{%
+         family={Hoffman},
+         familyi={H\bibinitperiod},
+         given={Matthew\bibnamedelima D},
+         giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=LD}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=GB}{%
+         family={Goodrich},
+         familyi={G\bibinitperiod},
+         given={Ben},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Betancourt},
+         familyi={B\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Brubaker},
+         familyi={B\bibinitperiod},
+         given={Marcus},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Guo},
+         familyi={G\bibinitperiod},
+         given={Jiqiang},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LP}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=RA}{%
+         family={Riddell},
+         familyi={R\bibinitperiod},
+         given={Allen},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Harvard University, Cambridge, MA}%
+    }
+    \strng{namehash}{CB+1}
+    \strng{fullhash}{CBGAHMDLDGBBMBMGJLPRA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{number}{1}
+    \field{title}{Stan: A probabilistic programming language}
+    \field{volume}{76}
+    \field{journaltitle}{Journal of statistical software}
+    \field{year}{2017}
+  \endentry
+
   \entry{de2013european}{article}{}
     \name{author}{2}{}{%
       {{hash=DGT}{%
@@ -49,6 +230,71 @@
     \field{volume}{47}
     \field{journaltitle}{Regional Studies}
     \field{year}{2013}
+  \endentry
+
+  \entry{dietz2003social}{article}{}
+    \name{author}{2}{}{%
+      {{hash=DRD}{%
+         family={Dietz},
+         familyi={D\bibinitperiod},
+         given={Robert\bibnamedelima D},
+         giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=HDR}{%
+         family={Haurin},
+         familyi={H\bibinitperiod},
+         given={Donald\bibnamedelima R},
+         giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{DRDHDR1}
+    \strng{fullhash}{DRDHDR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2003}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{number}{3}
+    \field{pages}{401\bibrangedash 450}
+    \field{title}{The social and private micro-level consequences of
+  homeownership}
+    \field{volume}{54}
+    \field{journaltitle}{Journal of urban Economics}
+    \field{year}{2003}
+  \endentry
+
+  \entry{hoffman2014no}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HMD}{%
+         family={Hoffman},
+         familyi={H\bibinitperiod},
+         given={Matthew\bibnamedelima D},
+         giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={Gelman},
+         familyi={G\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HMDGA1}
+    \strng{fullhash}{HMDGA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{1}
+    \field{pages}{1593\bibrangedash 1623}
+    \field{title}{The No-U-Turn sampler: adaptively setting path lengths in
+  Hamiltonian Monte Carlo.}
+    \field{volume}{15}
+    \field{journaltitle}{Journal of Machine Learning Research}
+    \field{year}{2014}
   \endentry
 
   \entry{munch2006homeowners}{article}{}
@@ -171,6 +417,95 @@
   non-technical paper}
     \field{journaltitle}{Homeownership and the labour Market in Europe}
     \field{year}{1999}
+  \endentry
+
+  \entry{palomares2018understanding}{article}{}
+    \name{author}{2}{}{%
+      {{hash=PLI}{%
+         family={Palomares-Linares},
+         familyi={P\bibinitperiod-L\bibinitperiod},
+         given={Isabel},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=vHM}{%
+         prefix={van},
+         prefixi={v\bibinitperiod},
+         family={Ham},
+         familyi={H\bibinitperiod},
+         given={Maarten},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Routledge}%
+    }
+    \strng{namehash}{PLIvHM1}
+    \strng{fullhash}{PLIvHM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{pages}{1\bibrangedash 12}
+    \field{title}{Understanding the effects of homeownership and regional
+  unemployment levels on internal migration during the economic crisis in
+  Spain}
+    \field{journaltitle}{Regional Studies}
+    \field{year}{2018}
+  \endentry
+
+  \entry{silva2006log}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SJS}{%
+         family={Silva},
+         familyi={S\bibinitperiod},
+         given={JMC\bibnamedelima Santos},
+         giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=TS}{%
+         family={Tenreyro},
+         familyi={T\bibinitperiod},
+         given={Silvana},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MIT Press}%
+    }
+    \strng{namehash}{SJSTS1}
+    \strng{fullhash}{SJSTS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2006}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{4}
+    \field{pages}{641\bibrangedash 658}
+    \field{title}{The log of gravity}
+    \field{volume}{88}
+    \field{journaltitle}{The Review of Economics and statistics}
+    \field{year}{2006}
+  \endentry
+
+  \entry{tinbergen1962shaping}{article}{}
+    \name{author}{1}{}{%
+      {{hash=TJJ}{%
+         family={Tinbergen},
+         familyi={T\bibinitperiod},
+         given={Jan\bibnamedelima J},
+         giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TJJ1}
+    \strng{fullhash}{TJJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1962}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{title}{Shaping the world economy; suggestions for an international
+  economic policy}
+    \field{year}{1962}
   \endentry
 \endsortlist
 \endinput
