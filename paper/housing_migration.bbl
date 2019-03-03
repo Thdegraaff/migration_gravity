@@ -232,6 +232,44 @@
     \field{year}{2013}
   \endentry
 
+  \entry{de2009homeownership}{article}{}
+    \name{author}{3}{}{%
+      {{hash=DGT}{%
+         family={De\bibnamedelima Graaff},
+         familyi={D\bibinitperiod\bibinitdelim G\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=VLM}{%
+         family={Van\bibnamedelima Leuvensteijn},
+         familyi={V\bibinitperiod\bibinitdelim L\bibinitperiod},
+         given={Michiel},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=VEC}{%
+         family={Van\bibnamedelima Ewijk},
+         familyi={V\bibinitperiod\bibinitdelim E\bibinitperiod},
+         given={Casper},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Oxford University Press Oxford}%
+    }
+    \strng{namehash}{DGT+1}
+    \strng{fullhash}{DGTVLMVEC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2009}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{pages}{53\bibrangedash 81}
+    \field{title}{Homeownership, social renting and labor mobility accross
+  Europe}
+    \field{journaltitle}{Homeownership and the labour market in Europe}
+    \field{year}{2009}
+  \endentry
+
   \entry{dietz2003social}{article}{}
     \name{author}{2}{}{%
       {{hash=DRD}{%
