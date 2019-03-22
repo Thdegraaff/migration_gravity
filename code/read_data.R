@@ -62,18 +62,14 @@ municipalities <- municipalities %>%
 housing <- gather(municipalities, key = "Housing_type", value = "Percentage", c("P_KOOPWON", "P_HUURCORP") ) %>%
   select(GM_CODE, GM_NAAM, Housing_type, Percentage)
 
-variable_names <- list(
+variable_names <- c(
   "P_HUURCORP" = "Social Housing" ,
   "P_KOOPWON" = "Homeownership"
 )
 
-variable_labeller <- function(variable,value){
-  return(variable_names[value])
-}
-
 hist_housing <- ggplot(data = housing, aes(x = Percentage)) + 
   geom_histogram(aes(y = ..density..) ,col = "black", fill= "forest green", alpha = 0.7, breaks=seq(0, 100, by=5), position = "identity") +
-  facet_wrap(~ Housing_type, labeller = variable_labeller) +
+  facet_wrap(~ Housing_type, labeller = labeller(Housing_type= variable_names)) +
   theme_bw() + 
   labs(x = "Percentage (%)", y = "")
 
