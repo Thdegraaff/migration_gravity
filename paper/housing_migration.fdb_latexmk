@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex housing_migration"] 1556116700 "housing_migration.aux" "housing_migration.bbl" "housing_migration" 1556118010
+["bibtex housing_migration"] 1556116700 "housing_migration.aux" "housing_migration.bbl" "housing_migration" 1556118241
   "/usr/local/texlive/2017/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1480098434 63002 075c3f13314e99e71e6ff0a472a98980 ""
-  "housing_migration-blx.bib" 1556118008 306 5b06ccd736fe7936629b5ab2f116c8e0 ""
-  "housing_migration.aux" 1556118009 9303 516b337894dc7cf8a29013dbd3abe6de ""
+  "housing_migration-blx.bib" 1556118240 306 5b06ccd736fe7936629b5ab2f116c8e0 ""
+  "housing_migration.aux" 1556118241 9303 516b337894dc7cf8a29013dbd3abe6de ""
   "references.bib" 1556116407 4602 922eb32c8bf804370d5723ae046fac14 ""
   (generated)
-  "housing_migration.blg"
   "housing_migration.bbl"
-["pdflatex"] 1556118008 "housing_migration.tex" "housing_migration.pdf" "housing_migration" 1556118010
+  "housing_migration.blg"
+["pdflatex"] 1556118239 "housing_migration.tex" "housing_migration.pdf" "housing_migration" 1556118241
   "../fig/forestplot.pdf" 1550919624 5222 2a47263e0df25f6cdfdc651cea5eaee3 ""
   "../fig/hist_housing.pdf" 1552128065 5413 49f2c82e68eca751d3fd3615908fe829 ""
-  "../fig/hist_mig.pdf" 1556117999 5379 d04a6c5c58569bdc242a044468de6f6b ""
+  "../fig/hist_mig.pdf" 1556118234 5716 f1b9e50d44ea4c45ef60c8006dad2205 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1480098688 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -166,13 +166,13 @@
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1507478637 4129592 778be113e4f91bde869b3b6ef8ac4c5c ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
   "SelfArx.cls" 1550841385 7278 e73ad3fe0a654ddca73525a34dd49344 ""
-  "housing_migration.aux" 1556118009 9303 516b337894dc7cf8a29013dbd3abe6de ""
+  "housing_migration.aux" 1556118241 9303 516b337894dc7cf8a29013dbd3abe6de ""
   "housing_migration.bbl" 1556116700 16527 22c180612a221b1cf7789a0a6475d5bc "bibtex housing_migration"
-  "housing_migration.run.xml" 1556118009 2723 8b4884895a260779698125b27c0aa3ba ""
+  "housing_migration.run.xml" 1556118241 2723 8b4884895a260779698125b27c0aa3ba ""
   "housing_migration.tex" 1556116590 24447 2faf79a4dd2436e3b17d763458278c46 ""
   (generated)
+  "housing_migration.run.xml"
   "housing_migration-blx.bib"
+  "housing_migration.pdf"
   "housing_migration.aux"
   "housing_migration.log"
-  "housing_migration.run.xml"
-  "housing_migration.pdf"
