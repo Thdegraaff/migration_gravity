@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.26)  24 APR 2019 12:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.26)  24 APR 2019 14:13
 entering extended mode
 **./housing_migration.tex
 (housing_migration.tex
@@ -1014,27 +1014,36 @@ File: mt-mvs.cfg 2006/07/05 v1.1 microtype config. file: Marvosym Euro (RS)
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 108.
 
-Underfull \vbox (badness 3000) has occurred while \output is active []
+Overfull \hbox (4.20691pt too wide) in paragraph at lines 124--127
+[]\OT1/ptm/m/n/10 (-20) Theoretically, this dif-fer-ence is ex-plained by sort-
+ing. Home-
+ []
 
-<../fig/hist_mig.pdf, id=1, 578.16pt x 289.08pt>
-File: ../fig/hist_mig.pdf Graphic file (type pdf)
-<use ../fig/hist_mig.pdf>
-Package pdftex.def Info: ../fig/hist_mig.pdf  used on input line 175.
-(pdftex.def)             Requested size: 400.38872pt x 200.19322pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1264) has occurred while \output is active []
 
  [1{C:/Users/tgf200/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
-<../fig/hist_housing.pdf, id=13, 578.16pt x 289.08pt>
+<../fig/hist_mig.pdf, id=11, 578.16pt x 289.08pt>
+File: ../fig/hist_mig.pdf Graphic file (type pdf)
+<use ../fig/hist_mig.pdf>
+Package pdftex.def Info: ../fig/hist_mig.pdf  used on input line 183.
+(pdftex.def)             Requested size: 400.38872pt x 200.19322pt.
+<../fig/hist_housing.pdf, id=12, 578.16pt x 289.08pt>
 File: ../fig/hist_housing.pdf Graphic file (type pdf)
 <use ../fig/hist_housing.pdf>
-Package pdftex.def Info: ../fig/hist_housing.pdf  used on input line 226.
+Package pdftex.def Info: ../fig/hist_housing.pdf  used on input line 234.
 (pdftex.def)             Requested size: 400.38872pt x 200.19322pt.
- [2 <../fig/hist_mig.pdf>] [3 <../fig/hist_housing.pdf>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 368.
+ [2]
+Underfull \vbox (badness 7796) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <../fig/hist_mig.pdf> <../fig/hist_housing.pdf>]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 376.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1pcr.fd"
@@ -1045,52 +1054,52 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (2.52109pt too wide) in paragraph at lines 383--400
+Overfull \hbox (2.52109pt too wide) in paragraph at lines 391--408
  [][] 
  []
 
 <../fig/forestplot.pdf, id=40, 289.08pt x 216.81pt>
 File: ../fig/forestplot.pdf Graphic file (type pdf)
 <use ../fig/forestplot.pdf>
-Package pdftex.def Info: ../fig/forestplot.pdf  used on input line 403.
+Package pdftex.def Info: ../fig/forestplot.pdf  used on input line 411.
 (pdftex.def)             Requested size: 242.41745pt x 181.81148pt.
 
-Overfull \hbox (2.67606pt too wide) in paragraph at lines 425--429
+Overfull \hbox (2.67606pt too wide) in paragraph at lines 433--437
 \OT1/ptm/m/n/10 (-20) GitHub page: https://github.com/Thdegraaff/migration[]gra
 vity. 
  []
 
-
-Overfull \hbox (3.8642pt too wide) in paragraph at lines 432--432
+[4 <../fig/forestplot.pdf>]
+Overfull \hbox (3.8642pt too wide) in paragraph at lines 440--440
 [][]\OT1/ptm/m/n/10 (-20) Carpenter, B., A. Gel-man, M. D. Hoff-man, D. Lee, B.
  Goodrich,
  []
 
-[4 <../fig/forestplot.pdf>] 
+
 AED: lastpage setting LastPage
 [5
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 435.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 435.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 443.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 443.
  (housing_migration.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 435.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 435.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 443.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 443.
 Package logreq Info: Writing requests to 'housing_migration.run.xml'.
 \openout1 = `housing_migration.run.xml'.
 
  )
 (\end occurred inside a group at level 2)
 
-### simple group (level 2) entered at line 352 ({)
-### simple group (level 1) entered at line 344 ({)
+### simple group (level 2) entered at line 360 ({)
+### simple group (level 1) entered at line 352 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 19931 strings out of 492945
- 325844 string characters out of 3135510
- 675702 words of memory out of 3000000
- 23319 multiletter control sequences out of 15000+200000
- 70577 words of font info for 253 fonts, out of 3000000 for 9000
+ 19938 strings out of 492945
+ 325997 string characters out of 3135510
+ 680702 words of memory out of 3000000
+ 23323 multiletter control sequences out of 15000+200000
+ 70778 words of font info for 255 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,12n,54p,832b,1769s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Pr
@@ -1104,7 +1113,7 @@ uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb><C
 :/Users/tgf200/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/symbol/usyr.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on housing_migration.pdf (5 pages, 141011 bytes).
+Output written on housing_migration.pdf (5 pages, 141707 bytes).
 PDF statistics:
  90 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

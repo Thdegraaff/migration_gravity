@@ -505,6 +505,40 @@
     \field{year}{2018}
   \endentry
 
+  \entry{ranjan2007bayesian}{article}{}
+    \name{author}{2}{}{%
+      {{hash=RP}{%
+         family={Ranjan},
+         familyi={R\bibinitperiod},
+         given={Priya},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=TJL}{%
+         family={Tobias},
+         familyi={T\bibinitperiod},
+         given={Justin\bibnamedelima L},
+         giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{RPTJL1}
+    \strng{fullhash}{RPTJL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2007}
+    \field{labeldatesource}{year}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{number}{4}
+    \field{pages}{817\bibrangedash 838}
+    \field{title}{Bayesian inference for the gravity model}
+    \field{volume}{22}
+    \field{journaltitle}{Journal of Applied Econometrics}
+    \field{year}{2007}
+  \endentry
+
   \entry{silva2006log}{article}{}
     \name{author}{2}{}{%
       {{hash=SJS}{%
