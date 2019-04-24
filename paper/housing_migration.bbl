@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.8 $
+% $ biblatex bbl format version 3.0 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -16,7 +16,7 @@
   {}
 \endgroup
 
-\sortlist[entry]{nyt/global/}
+\datalist[entry]{nyt/global//global/global}
   \entry{amirault2016drags}{article}{}
     \name{author}{3}{}{%
       {{hash=AD}{%
@@ -48,6 +48,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2016}
+    \field{labeldatesource}{year}
     \field{sortinit}{A}
     \field{sortinithash}{A}
     \field{number}{3}
@@ -80,6 +81,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2003}
+    \field{labeldatesource}{year}
     \field{sortinit}{A}
     \field{sortinithash}{A}
     \field{number}{1}
@@ -96,7 +98,7 @@
          family={Bürkner},
          familyi={B\bibinitperiod},
          given={Paul-Christian},
-         giveni={P\bibinitperiod-C\bibinitperiod},
+         giveni={P\bibinithyphendelim C\bibinitperiod},
       }}%
     }
     \strng{namehash}{BPC1}
@@ -104,6 +106,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2017}
+    \field{labeldatesource}{year}
     \field{sortinit}{B}
     \field{sortinithash}{B}
     \verb{doi}
@@ -189,6 +192,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2017}
+    \field{labeldatesource}{year}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \field{number}{1}
@@ -221,6 +225,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2013}
+    \field{labeldatesource}{year}
     \field{sortinit}{D}
     \field{sortinithash}{D}
     \field{number}{9}
@@ -261,6 +266,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2009}
+    \field{labeldatesource}{year}
     \field{sortinit}{D}
     \field{sortinithash}{D}
     \field{pages}{53\bibrangedash 81}
@@ -293,6 +299,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2003}
+    \field{labeldatesource}{year}
     \field{sortinit}{D}
     \field{sortinithash}{D}
     \field{number}{3}
@@ -324,6 +331,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2014}
+    \field{labeldatesource}{year}
     \field{sortinit}{H}
     \field{sortinithash}{H}
     \field{number}{1}
@@ -364,6 +372,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2006}
+    \field{labeldatesource}{year}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{number}{514}
@@ -403,6 +412,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2008}
+    \field{labeldatesource}{year}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{number}{1}
@@ -427,6 +437,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{1996}
+    \field{labeldatesource}{year}
     \field{sortinit}{O}
     \field{sortinithash}{O}
     \field{title}{A conjecture on the explanation for high unemployment in the
@@ -449,6 +460,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{1999}
+    \field{labeldatesource}{year}
     \field{sortinit}{O}
     \field{sortinithash}{O}
     \field{title}{The housing market and Europe’s unemployment: a
@@ -461,7 +473,7 @@
     \name{author}{2}{}{%
       {{hash=PLI}{%
          family={Palomares-Linares},
-         familyi={P\bibinitperiod-L\bibinitperiod},
+         familyi={P\bibinithyphendelim L\bibinitperiod},
          given={Isabel},
          giveni={I\bibinitperiod},
       }}%
@@ -482,6 +494,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2018}
+    \field{labeldatesource}{year}
     \field{sortinit}{P}
     \field{sortinithash}{P}
     \field{pages}{1\bibrangedash 12}
@@ -490,6 +503,40 @@
   Spain}
     \field{journaltitle}{Regional Studies}
     \field{year}{2018}
+  \endentry
+
+  \entry{ranjan2007bayesian}{article}{}
+    \name{author}{2}{}{%
+      {{hash=RP}{%
+         family={Ranjan},
+         familyi={R\bibinitperiod},
+         given={Priya},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=TJL}{%
+         family={Tobias},
+         familyi={T\bibinitperiod},
+         given={Justin\bibnamedelima L},
+         giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{RPTJL1}
+    \strng{fullhash}{RPTJL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2007}
+    \field{labeldatesource}{year}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{number}{4}
+    \field{pages}{817\bibrangedash 838}
+    \field{title}{Bayesian inference for the gravity model}
+    \field{volume}{22}
+    \field{journaltitle}{Journal of Applied Econometrics}
+    \field{year}{2007}
   \endentry
 
   \entry{silva2006log}{article}{}
@@ -515,6 +562,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2006}
+    \field{labeldatesource}{year}
     \field{sortinit}{S}
     \field{sortinithash}{S}
     \field{number}{4}
@@ -539,11 +587,12 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{1962}
+    \field{labeldatesource}{year}
     \field{sortinit}{T}
     \field{sortinithash}{T}
     \field{title}{Shaping the world economy; suggestions for an international
   economic policy}
     \field{year}{1962}
   \endentry
-\endsortlist
+\enddatalist
 \endinput

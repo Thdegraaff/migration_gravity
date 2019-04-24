@@ -79,12 +79,12 @@
 
 \Abstract{This paper revisits the impact of the housing market
   structure on interregional migration, but adopts an alternative
-  modeling approach to migration flows between cities. The starting
+  modeling approach to regional migration flows. The starting
   point is a gravity model, but instead of using fixed effects for
   cities of origin and destination, I use a multilevel mixed effects
   approach allowing me to simultaneously model migration flow
   characteristics and the cities of origin and destination
-  characteristics. This approach has two main advantages. First, it
+  varying effects. This approach has two main advantages. First, it
   allows for simultaneous estimation of the impact of city
   characteristics on migration flows, where the impact is not
   necessarily symmetrical for cities of origin and
@@ -109,38 +109,46 @@
 
         In the 1990s, Andrew Oswald wrote two famous working papers
         \citep{oswald1996conjecture, oswald1999housing} postulating
-        that homeownership rates would have a negative impact on labor
-        market behavior, as the high costs of moving residence
-        associated with homeownership would impede regional
+        that home-ownership rates would have a negative impact on labor
+        market behaviour, as the high costs of moving residence
+        associated with home-ownership would impede regional
         mobility. These two working papers evoked a large empirical
         literature \citep[see, e.g., ][]{munch2006homeowners,
           munch2008home, de2013european} looking at the impact of
-        individual and aggregate homeownership on labor market
+        individual and aggregate home-ownership on labour market
         performance, where seemingly paradoxically at the aggregate
-        level homeownership is indeed harmful for labor market
-        behavior where at the individual level it is correlated with
-        positive labor market performance.
+        level home-ownership is indeed harmful for labour market
+        behaviour where at the individual level it is correlated with
+        positive labour market performance.
+        
+        Theoretically, this difference is explained by sorting. Home-owners are indeed less mobile than renters because of higher fixed and sunk moving costs which has a negative aggregate effect on 
+        labour market performance. However, home-owners are different from renters as they do individually
+        better on the labour market (due to unobservables). 
 
         That housing market structure has an effect on migration
-        decisions is well-established, especially at the micro-level,
-        where it is widely accepted that homeownership has a negative
+        decisions is empirically well-established, especially at the micro-level,
+        where it is widely accepted that home-ownership has a negative
         effect on regional mobility \citep{dietz2003social}. For
         example, \citet{palomares2018understanding} find that
-        homeownership has a very strong immobility effect on in
+        home-ownership has a very strong immobility effect on
         internal migration in Spain during the period 2001--2011.
 
-        On an aggregate level, \citet{amirault2016drags} already
-        looked at the impact of homeownership on migration flows
+        On an aggregate level, \citet{amirault2016drags}, amongst others,
+        looked at the impact of home-ownership on migration flows
         within a gravity model using a Poisson pseudo maximum
         likelihood estimator and found an elasticity around
-        $-1$. However, traditional gravity modeling has the
+        $-1$. 
+        
+        This papers revisits the relation between housing markets and regional migration and adds two main elements to the literature. First, it does not only consider home-ownership but as well municipal social renting structure, which can be argued to have a huge effect on regional mobility as well as social renting rights are usually only valid locally (within municipality) and are lost when moving residence between municipalities.
+        
+        Secondly, we adopt an alternative Bayesian multi-level modelling approach which is not frequently encountered in the gravity literature \citep[a notable exception is][in a trade context]{ranjan2007bayesian}. Traditional gravity modelling has the
         disadvantage that either regional fixed effects of origins and
         destinations can be incorporated or the regions'
         characteristics when not varying over flows. Moreover,
-        theoretically, regional effecs should be incorporated leaving
+        theoretically, regional effects should be incorporated leaving
         no room in the traditional approach to incorporate regional characteristics
 
-        This paper circumvents this disadvanted by adopting a
+        This paper circumvents this disadvantage by adopting a
         multilevel approach with partial pooling\footnote{There is a
           whole variety of names for these types of models, including
           varying effects, mixed effects and shrinkage models. I use
@@ -150,18 +158,18 @@
         origin and destination specific effects, but that I ``draw''
         them from a distribution, hence the name partial pooling
         (where complete pooling states no group effects and no pooling
-        fixed effects.
+        fixed effects).
 
-        A partial pooling approach has another advantege, namely the
-        regional specific effects are completely probabilistic, making
+        A partial pooling approach has another advantage, namely the
+        regional varying effects are completely probabilistic, making
         it feasible to predict both within and out-of-sample. In other
         words, with the results at hand I can predict flows between
-        hypothetical regions.
+        existing \emph{and} hypothetical regions.
 
         This paper reads as follows. The next section describes the
         data and focuses especially on the distribution of regional
         migration flows and regional labour market structure. Section
-        3 describes the modeling approach, where starting from
+        3 describes the modelling approach, where starting from
         traditional gravity model and using the descriptives of
         migration flows I argue for a specific type of model. Section
         4. gives both the model results and their analysis. By the
@@ -180,12 +188,13 @@
           \label{fig:hist_mig}
         \end{figure*}
 
-        I model migration flows measured in individuals between
-        the 393 Dutch municipalities in 2015. There is no information
-        available about within municipality residential migration. So,
-        I have 393 regional characteristics (or doubled when
-        accounting for both regions of origin and destination) and
-        154,056 flows ($393 \times 393 - 393$). 
+
+        I use inter-municipal migration flows measured in individuals
+        between all of the the 393 Dutch municipalities in 2015. There
+        is no information available on within municipality residential
+        migration. So, I have 393 regional characteristics (or doubled
+        when accounting for both regions of origin and destination)
+        and 154,056 flows ($393 \times 393 - 393$).
 
         Figure \ref{fig:hist_mig} shows the distribution of migrant
         flows within my sample. The left panel deals with migrant
@@ -193,35 +202,34 @@
         larger. Two main observations can be made.
 
         First, there is strong but consistent decay in both panels,
-        which points to a strong underlying pattern. However, the
+        which points to a persistent underlying pattern. However, the
         `tail' in this distribution is rather thick.\footnote{The
           largest migration flows are between the municipalities of
           Amsterdam and Amstelveen and amount to about 3,500
-          migrants.} There are still observations quite far right in
-        the distributution. Indeed, the sample mean is about 10, while
-        the sample variance is around 40, leading to a strong presence
-        of \emph{overdispersion}.
-
-        Secondly, most of my dataset consists of zero
-        observations. Although they do seem to be genuine observations
-        and not caused by another proces (we will check for this
-        later), they do need to be taken specifically into account.
+          migrants.} Thus, there are still observations quite far
+        right in the distribution. Indeed, the sample mean is about
+        10, while the sample variance is around 40, leading to a
+        strong presence of \emph{overdispersion} (unconditional on
+        other explanatory variables).  Secondly, two thirds of the
+        dataset consists of zero observations. Although they do seem
+        to be genuine observations and not caused by another process
+        (we will check for this later), they do need to be taken
+        specifically into account.
 
         I include 7 other variables in my model. First, to account for
         spatial distance decay between origin $i$ and destination $j$,
         distance between all municipalities are calculated as
         Eucledian distance between centroids
         ($\text{dist}_{ij}$). Secondly, as municipality mass we use
-        population size (so $\text{pop}_i$ and
+        population size for both city of origin and city of destination (so $\text{pop}_i$ and
         $\text{pop}_j$). Finally, for housing market structure we use
         variables indicating percentage of homeownership
         ($\text{home}_i$ and $\text{home}_j$ and percentage of social
-        renting ($text{soc}_i$ and $\text{soc}_j$). Social renting in
-        the Netherlands includes all kinds of renting but typically
+        renting ($\text{soc}_i$ and $\text{soc}_j$), again in both cities of origin and destination. Social renting in the Netherlands includes all kinds of rent controlled housing but typically
         involves local housing corporations offering housing to lower
         income households, where eligibility is based on (local) waiting
         lists. Both social renting and homeownership are assumed to
-        impede regional mobility \citep{de2009homeownership}.
+        impede regional mobility as argued in \citep{de2009homeownership}.
 
         \begin{figure*}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
           \includegraphics[width=0.8\linewidth]{../fig/hist_housing.pdf}
@@ -248,7 +256,7 @@
 
         \subsection{The traditional gravity model}
 
-        We adopt the basic gravity model specification pioneered by
+        To start with, I adopt the basic gravity model specification pioneered by
         \citet{tinbergen1962shaping}, so:
         \begin{equation}
           \text{migrants}_{ij} = \text{pop}_i^{\beta_1}\text{pop}_j^{\beta_2}\text{dist}_{ij}^\gamma
@@ -263,8 +271,8 @@
 
         Importantly, \citet{anderson2003gravity} argued that origin
         and destination specific variables should be incorporated to
-        take into account multilateral resitance terms. Most oftens,
-        this is done by log-linearizing model
+        take into account multilateral resistance terms. Most often,
+        this is done by log-linearising model
         (\ref{eq:grav})\footnote{In our case, note that zeros are
           present in our social renting variable. We therefore add a
           small number to this variables (0.0001). Doing this only on
@@ -278,16 +286,16 @@
         Unfortunately, this approach does not allow for municipality
         specific variables; so, population and housing market
         variables drop out of this model. But those are exactly the
-        variables we are interested in! Moreover, equation
-        (\ref{eq:gravfixed}) is typically estimated with regression
+        variables I am  interested in! Moreover, equation
+        (\ref{eq:gravfixed} is typically estimated with regression
         type of models, which is often very cumbersome given the large
-        amount of zeros present in the flows of migrants.
+        amount of zeros migrants flows.
 
-        Therefore, in the next subsection I allow for a different
-        strategy, where I tackle both disadvantes of above by
-        incorporating both region specific effects and variables and
-        modeling the distribution of migrants flows as they are
-        displayed in Figure \ref{fig:hist_mig}.
+        Therefore, I next allow for a different strategy, where I
+        would like to tackle simultaneously the two disadvantes of above:
+        incorporating both city varying effects and city specific variables and
+        modelling the distribution of migrants flows as they are
+        displayed in Figure \ref{fig:hist_mig}---even when being zero.
 
         \subsection{A multilevel gravity model}
 
@@ -311,15 +319,15 @@
 
         Finally, to adopt both region effects and variables I adopt a
         multilevel model with partial pooling. This entails that our
-        regional specific effects (the formerly fixed effecs) are
+        regional varying effects (the formerly fixed effecs) are now
         drawn from a, in this case Normal, distribution, where the
-        parameters of this distrbution are estimated as well (in the
+        parameters of this distribution are estimated as well (in the
         literature they are known as well as
         hyper-parameters). Intuitively, this entails that regions are
         partially pooled indicating that information between regions
-        is shared. This is very attractive, as fixed effects for no
-        pooling. The model only learns from the information contained
-        in that specific region. The partial pooling also ensures that
+        is shared. This is very attractive, as fixed effects assume no
+        pooling. In that case, the model only learns from the information contained
+        in that specific region whereas with partial pooling it is ensured that
         outliers (very high or low effects) are effectively
         \emph{shrunk} towards the mean. Indeed, this is a further
         extension of that best feature of linear regression:
@@ -351,15 +359,15 @@
           (with parameter $\lambda_{ij}$) allowing for overdispersion
           by using an additional parameter $\tau$. The linear part of
           the model is given by (\ref{linear}) and states that the
-          poisson outcome space in on a log-scale and that most
+          poisson outcome space is on a log-scale and that most
           parameters are on a log-scale as well, allowing for direct
           comparison of the parameters being elasticities. Equations
           (\ref{muno}) and {(\ref{mund}) constitute the multilevel
             part, where parameters $\sigma_o$ and $\sigma_d$ measure
-            the amount of pooling. If they tend to zero, there the
+            the amount of pooling. If they tend to zero, then the
             data exhibits complete pooling. If they become very large
             (go to infinity) there is no pooling (thus fixed
-            effects). All other parameters are priors (chosen such
+            effects). All the other parameters are priors (chosen such
             that they are rather conservative but given the amount of
             data they are of little influence).
           
@@ -368,11 +376,9 @@
         \subsection{Parameter estimates}
         
         I estimate model (\ref{model}) by using the \emph{No U-Turn
-          Sampler} (NUTS) in Stan.\footnote{As interface to Stan
+          Sampler} (NUTS) from the Stan application.\footnote{See \href{https://mc-stan.org/}{https://mc-stan.org/}. As interface to Stan
           \citep[see for an overview article of
-          Stan][]{carpenter2017stan} I used the \texttt{brms}
-          R-package \citep{brms}.} NUTS is a relatively recent
-        developed Hamiltonian Monte Carlo (a specific form of Markov
+          Stan][]{carpenter2017stan} I used the R-package \citep{brms} \texttt{brms}.} NUTS is a relatively recent developed Hamiltonian Monte Carlo (a specific form of Markov
         Chain Monte Carlo simulation) method, able to draw samples
         efficiently from large multilevel models
         \citep{hoffman2014no}. Parameter estimates and probability
@@ -385,7 +391,7 @@
 % Fri Feb 22 15:07:02 2019
 \begin{table}[ht]
   \centering
-  \caption{Parameter estimates with 95\% probability intervals (group speficic origin and destination estimates are not presented)}
+  \caption{Parameter estimates with 95\% probability intervals (group specific origin and destination estimates are not presented)}
   \label{tab:coef}
   \begin{tabular}{lrrrr}
     \toprule
@@ -409,16 +415,16 @@
 \begin{figure}
   \includegraphics[width = \columnwidth]{../fig/forestplot.pdf}
   \caption{Forest plot of parameter means and 95\% probability
-    intervals (group speficic origin and destination estimates are not
+    intervals (group specific origin and destination estimates are not
     presented)}
   \label{fig:forestplot}
 \end{figure}
 
-As most important conclusions in this stage can we say that housing
-structure indeed impedes regional mobility, but that it is mainly
-homeownership rates and not social renting rates that have a negative
-effect. The homeownership elasticities are slightly larger in absolute
-size than what \citet{amirault2016drags} reported. Furthermore,
+As most important conclusions in this stage I can say that housing
+structure indeed impedes regional mobility, but that it is primarily 
+home-ownership rates and not social renting rates that have a negative
+effect. The home-ownership elasticities are slightly larger in absolute
+size than what \citet{amirault2016drags} reported. Furthermore, if anything, 
 estimations for parameters $\sigma_o$ and $\sigma_d$ point to more
 pooling than less, so fixed effects in this case might lead to
 substantial overfitting.
