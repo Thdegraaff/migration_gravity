@@ -171,7 +171,7 @@
 
         \section{Data}
 
-              \begin{figure*}[ht!]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+        \begin{figure*}[ht!]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
           \includegraphics[width=0.8\linewidth]{../fig/hist_mig.pdf}
           \caption{Histogram of migrant flows. Left panel shows the
             histogram of small migrant flows ($N<0$) and the right
@@ -180,7 +180,7 @@
           \label{fig:hist_mig}
         \end{figure*}
 
-        I model the migration flows measured in individuals between
+        I model migration flows measured in individuals between
         the 393 Dutch municipalities in 2015. There is no information
         available about within municipality residential migration. So,
         I have 393 regional characteristics (or doubled when
@@ -198,14 +198,14 @@
           largest migration flows are between the municipalities of
           Amsterdam and Amstelveen and amount to about 3,500
           migrants.} There are still observations quite far right in
-        the distributution. Indeed, sample mean is about 10, while the
-        sample variance is aournd 40, leading to a strong presence of
-        \emph{overdispersion}.
+        the distributution. Indeed, the sample mean is about 10, while
+        the sample variance is around 40, leading to a strong presence
+        of \emph{overdispersion}.
 
         Secondly, most of my dataset consists of zero
         observations. Although they do seem to be genuine observations
         and not caused by another proces (we will check for this
-        later), they do need to be taken specifically into account. 
+        later), they do need to be taken specifically into account.
 
         I include 7 other variables in my model. First, to account for
         spatial distance decay between origin $i$ and destination $j$,
@@ -219,7 +219,7 @@
         renting ($text{soc}_i$ and $\text{soc}_j$). Social renting in
         the Netherlands includes all kinds of renting but typically
         involves local housing corporations offering housing to lower
-        income households, where eligibility is based on (lcoal) waiting
+        income households, where eligibility is based on (local) waiting
         lists. Both social renting and homeownership are assumed to
         impede regional mobility \citep{de2009homeownership}.
 
@@ -233,13 +233,16 @@
 
         Figure \ref{fig:housing_mig} shows the distribution of social
         renting and homeownership across Dutch municipalities in 2015.
-        Clearly, both types of homewnership are important for the
-        Netherlands, with an average of 25\% of social housing and
+        Clearly, both types of housing structures are important for
+        the Netherlands, with an average of 25\% of social housing and
         around 60\% of homeownership. Moreover, it is worthwhile to
         note that social renting is especially prevalent in the the
-        larger cities (e.g., Amsterdam has about 40\% social renting
+        larger cities with a correlation of 0.4 between city size and
+        social renting (e.g., Amsterdam has about 40\% social renting
         rate). Also, some smaller dutch municipalities do not exhibit
-        any social renting.
+        any social renting. Homeownership and city size correlate
+        negatively ($-0.51$). Finally, there is a large negative
+        correlation between social renting and homeownership ($-0.84$) across municipalities.
         
         \section{Modeling framework}
 
@@ -252,7 +255,7 @@
           \label{eq:grav}
         \end{equation}
         Note, that in model (\ref{eq:grav}) the variable
-        $\text{dist}_{ij}$ may inhibit all sorts of frictions, not
+        $\text{dist}_{ij}$ may represent all sorts of frictions, not
         only physical distance. Thus, in my case we incorporate
         variables for homeownership and social renting to account for
         frictions on the housing market that may impede regional
@@ -276,12 +279,12 @@
         specific variables; so, population and housing market
         variables drop out of this model. But those are exactly the
         variables we are interested in! Moreover, equation
-        (\ref{eq:gravfixed} is typically estimated with regression
+        (\ref{eq:gravfixed}) is typically estimated with regression
         type of models, which is often very cumbersome given the large
-        amount of zeros present flows of migrants.
+        amount of zeros present in the flows of migrants.
 
-        Therefore, I next allow for a different strategy, where I
-        would like to tackle both the disadvantes of above:
+        Therefore, in the next subsection I allow for a different
+        strategy, where I tackle both disadvantes of above by
         incorporating both region specific effects and variables and
         modeling the distribution of migrants flows as they are
         displayed in Figure \ref{fig:hist_mig}.
@@ -293,13 +296,14 @@
         appropriate way to go forward is to model number of migrants
         with a Poisson type of model. However, given that the sampling
         variance is four times the sampling mean of the migration
-        flows, we need to correct for overdispersion of
-        heteroskedasticity \citep[][states that heteroskedasticity
-        (rather than the presence of too many zeros) is responsible
-        for the main differences.]{silva2006log}. An often used
-        distribution to account for overdispersion is the
-        gamma-poisson model (also known as the negative binomial
-        model). So, we use that for our outcome variable. 
+        flows (although not conditional on the covariates), we likely
+        need to correct for overdispersion of heteroskedasticity
+        \citep[][states that heteroskedasticity (rather than the
+        presence of too many zeros) is responsible for the main
+        differences.]{silva2006log}. An often used distribution to
+        account for overdispersion is the gamma-poisson model (also
+        known as the negative binomial model). So, we use that for our
+        outcome variable.
 
         To account for the multiplicative nature of the theoretical
         model as in (\ref{eq:grav}), I adopt a log-link for the
@@ -363,7 +367,7 @@
 
         \subsection{Parameter estimates}
         
-        I estimated model (\ref{model}) by using the \emph{No U-Turn
+        I estimate model (\ref{model}) by using the \emph{No U-Turn
           Sampler} (NUTS) in Stan.\footnote{As interface to Stan
           \citep[see for an overview article of
           Stan][]{carpenter2017stan} I used the \texttt{brms}
@@ -425,7 +429,11 @@ substantial overfitting.
 
 \section*{Acknowledgments} % The \section*{} command stops section numbering
 
-Paper, data and code can be retrieved from the project's GitHub page: \href{https://github.com/Thdegraaff/migration_gravity}{https://github.com/Thdegraaff/migration\_gravity}. 
+I would like to thank Wim Bernasco for valuable comments on a first
+draft of this paper. Paper, data and code can be retrieved from the
+project's GitHub page:
+
+\href{https://github.com/Thdegraaff/migration_gravity}{https://github.com/Thdegraaff/migration\_gravity}.
 	%----------------------------------------------------------------------------------------
 	%	REFERENCE LIST
 	%----------------------------------------------------------------------------------------
