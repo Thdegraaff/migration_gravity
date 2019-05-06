@@ -121,9 +121,13 @@
         behaviour where at the individual level it is correlated with
         positive labour market performance.
         
-        Theoretically, this difference is explained by sorting. Home-owners are indeed less mobile than renters because of higher fixed and sunk moving costs which has a negative aggregate effect on 
-        labour market performance. However, home-owners are different from renters as they do individually
-        better on the labour market (due to unobservables). 
+        Theoretically, this difference is explained by
+        sorting. Home-owners are indeed less mobile than renters
+        because of higher fixed and sunk moving costs which has a
+        negative aggregate effect on labour market
+        performance. However, home-owners are different from renters
+        as they do individually better on the labour market (due to
+        unobservables).
 
         That housing market structure has an effect on migration
         decisions is empirically well-established, especially at the micro-level,
@@ -139,14 +143,25 @@
         likelihood estimator and found an elasticity around
         $-1$. 
         
-        This papers revisits the relation between housing markets and regional migration and adds two main elements to the literature. First, it does not only consider home-ownership but as well municipal social renting structure, which can be argued to have a huge effect on regional mobility as well as social renting rights are usually only valid locally (within municipality) and are lost when moving residence between municipalities.
+        This papers revisits the relation between housing markets and
+        regional migration and adds two main elements to the
+        literature. First, it does not only consider home-ownership
+        but as well municipal social renting structure, which can be
+        argued to have a huge effect on regional mobility as well as
+        social renting rights are usually only valid locally (within
+        municipality) and are lost when moving residence between
+        municipalities.
         
-        Secondly, we adopt an alternative Bayesian multi-level modelling approach which is not frequently encountered in the gravity literature \citep[a notable exception is][in a trade context]{ranjan2007bayesian}. Traditional gravity modelling has the
-        disadvantage that either regional fixed effects of origins and
-        destinations can be incorporated or the regions'
+        Secondly, we adopt an alternative Bayesian multi-level
+        modelling approach which is not frequently encountered in the
+        gravity literature \citep[a notable exception is][in a trade
+        context]{ranjan2007bayesian}. Traditional gravity modelling
+        has the disadvantage that either regional fixed effects of
+        origins and destinations can be incorporated or the regions'
         characteristics when not varying over flows. Moreover,
         theoretically, regional effects should be incorporated leaving
-        no room in the traditional approach to incorporate regional characteristics
+        no room in the traditional approach to incorporate regional
+        characteristics
 
         This paper circumvents this disadvantage by adopting a
         multilevel approach with partial pooling\footnote{There is a
@@ -221,15 +236,19 @@
         distance between all municipalities are calculated as
         Eucledian distance between centroids
         ($\text{dist}_{ij}$). Secondly, as municipality mass we use
-        population size for both city of origin and city of destination (so $\text{pop}_i$ and
-        $\text{pop}_j$). Finally, for housing market structure we use
-        variables indicating percentage of homeownership
-        ($\text{home}_i$ and $\text{home}_j$ and percentage of social
-        renting ($\text{soc}_i$ and $\text{soc}_j$), again in both cities of origin and destination. Social renting in the Netherlands includes all kinds of rent controlled housing but typically
+        population size for both city of origin and city of
+        destination (so $\text{pop}_i$ and $\text{pop}_j$). Finally,
+        for housing market structure we use variables indicating
+        percentage of homeownership ($\text{home}_i$ and
+        $\text{home}_j$ and percentage of social renting
+        ($\text{soc}_i$ and $\text{soc}_j$), again in both cities of
+        origin and destination. Social renting in the Netherlands
+        includes all kinds of rent controlled housing but typically
         involves local housing corporations offering housing to lower
-        income households, where eligibility is based on (local) waiting
-        lists. Both social renting and homeownership are assumed to
-        impede regional mobility as argued in \citep{de2009homeownership}.
+        income households, where eligibility is based on (local)
+        waiting lists. Both social renting and homeownership are
+        assumed to impede regional mobility as argued in
+        \citep{de2009homeownership}.
 
         \begin{figure*}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
           \includegraphics[width=0.8\linewidth]{../fig/hist_housing.pdf}
@@ -286,7 +305,15 @@
         Unfortunately, this approach does not allow for municipality
         specific variables; so, population and housing market
         variables drop out of this model. But those are exactly the
-        variables I am  interested in! Moreover, equation
+        variables I am  interested in!
+
+        \begin{figure}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+          \includegraphics[width=\linewidth]{../fig/gravity_network.pdf}
+          \caption{Schematic deccomposition of a gravity network}
+            \label{fig:gravity_network}
+          \end{figure}
+          
+        Moreover, equation
         (\ref{eq:gravfixed} is typically estimated with regression
         type of models, which is often very cumbersome given the large
         amount of zeros migrants flows.

@@ -342,6 +342,9 @@ INPUT ../fig/hist_mig.pdf
 INPUT ../fig/hist_housing.pdf
 INPUT ../fig/hist_housing.pdf
 INPUT ../fig/hist_housing.pdf
+INPUT ../fig/gravity_network.pdf
+INPUT ../fig/gravity_network.pdf
+INPUT ../fig/gravity_network.pdf
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
@@ -370,8 +373,13 @@ INPUT housing_migration.aux
 INPUT housing_migration.run.xml
 OUTPUT housing_migration.run.xml
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/marvosym/marvosym.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb

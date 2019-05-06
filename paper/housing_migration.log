@@ -1,12 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.8)  24 APR 2019 17:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.8)  6 MAY 2019 18:08
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**housing_migration.tex
-(./housing_migration.tex
-LaTeX2e <2017-04-15>
-Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
-(./SelfArx.cls
+**\input housing_migration.tex
+(./housing_migration.tex (./SelfArx.cls
 Document Class: SelfArx 25/01/2012, v1.0
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
@@ -1313,7 +1311,7 @@ File: mt-mvs.cfg 2006/07/05 v1.1 microtype config. file: Marvosym Euro (RS)
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 108.
 
-Overfull \hbox (4.20691pt too wide) in paragraph at lines 124--127
+Overfull \hbox (4.20691pt too wide) in paragraph at lines 124--131
 []\OT1/ptm/m/n/10 (-20) Theoretically, this dif-fer-ence is ex-plained by sort-
 ing. Home-
  []
@@ -1328,15 +1326,22 @@ Underfull \vbox (badness 1264) has occurred while \output is active []
 <../fig/hist_mig.pdf, id=12, 578.16pt x 289.08pt>
 File: ../fig/hist_mig.pdf Graphic file (type pdf)
  <use ../fig/hist_mig.pdf>
-Package pdftex.def Info: ../fig/hist_mig.pdf used on input line 183.
+Package pdftex.def Info: ../fig/hist_mig.pdf used on input line 198.
 (pdftex.def)             Requested size: 400.38872pt x 200.19322pt.
 
 <../fig/hist_housing.pdf, id=13, 578.16pt x 289.08pt>
 File: ../fig/hist_housing.pdf Graphic file (type pdf)
 
 <use ../fig/hist_housing.pdf>
-Package pdftex.def Info: ../fig/hist_housing.pdf used on input line 235.
+Package pdftex.def Info: ../fig/hist_housing.pdf used on input line 254.
 (pdftex.def)             Requested size: 400.38872pt x 200.19322pt.
+
+<../fig/gravity_network.pdf, id=14, 379.79593pt x 306.91763pt>
+File: ../fig/gravity_network.pdf Graphic file (type pdf)
+
+<use ../fig/gravity_network.pdf>
+Package pdftex.def Info: ../fig/gravity_network.pdf used on input line 311.
+(pdftex.def)             Requested size: 242.41745pt x 195.90678pt.
  [2]
 Underfull \vbox (badness 7796) has occurred while \output is active []
 
@@ -1344,7 +1349,7 @@ Underfull \vbox (badness 7796) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3 <../fig/hist_mig.pdf> <../fig/hist_housing.pdf>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 381.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 408.
 
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1pcr.fd
@@ -1355,65 +1360,74 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (2.52109pt too wide) in paragraph at lines 396--413
+Overfull \hbox (2.52109pt too wide) in paragraph at lines 423--440
  [][] 
  []
 
-<../fig/forestplot.pdf, id=41, 289.08pt x 216.81pt>
+<../fig/forestplot.pdf, id=42, 289.08pt x 216.81pt>
 File: ../fig/forestplot.pdf Graphic file (type pdf)
 
 <use ../fig/forestplot.pdf>
-Package pdftex.def Info: ../fig/forestplot.pdf used on input line 416.
+Package pdftex.def Info: ../fig/forestplot.pdf used on input line 443.
 (pdftex.def)             Requested size: 242.41745pt x 181.81148pt.
- [4 <../fig/forestplot.pdf>]
-Overfull \hbox (3.8642pt too wide) in paragraph at lines 449--449
+ [4 <../fig/gravity_network.pdf> <../fig/forestplot.pdf>]
+Overfull \hbox (3.8642pt too wide) in paragraph at lines 476--476
 [][]\OT1/ptm/m/n/10 (-20) Carpenter, B., A. Gel-man, M. D. Hoff-man, D. Lee, B.
  Goodrich,
  []
 
 
-AED: lastpage setting LastPage
-[5
+Overfull \hbox (1.61014pt too wide) in paragraph at lines 476--476
+\OT1/ptm/m/n/10 (-20) ``Home-own-er-ship, so-cial rent-ing and la-bor mo-bil-it
+y across
+ []
 
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 452.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 452.
+
+AED: lastpage setting LastPage
+[5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 479.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 479.
  (./housing_migration.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 452.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 452.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 479.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 479.
 Package logreq Info: Writing requests to 'housing_migration.run.xml'.
 \openout1 = `housing_migration.run.xml'.
 
  )
 (\end occurred inside a group at level 2)
 
-### simple group (level 2) entered at line 365 ({)
-### simple group (level 1) entered at line 357 ({)
+### simple group (level 2) entered at line 392 ({)
+### simple group (level 1) entered at line 384 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 19865 strings out of 492995
- 317306 string characters out of 6132704
- 654413 words of memory out of 5000000
- 22888 multiletter control sequences out of 15000+600000
- 71135 words of font info for 261 fonts, out of 8000000 for 9000
+ 19874 strings out of 492995
+ 317499 string characters out of 6132704
+ 648413 words of memory out of 5000000
+ 22893 multiletter control sequences out of 15000+600000
+ 71254 words of font info for 263 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,12n,54p,830b,1646s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,12n,54p,837b,1646s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc
-}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/marvosym/marvosym.pfb></usr
-/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/t
-exlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/
-2017/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/te
-xmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2017/texmf-di
-st/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
-pe1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/ti
-mes/utmri8a.pfb>
-Output written on housing_migration.pdf (5 pages, 131658 bytes).
+}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr
+/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
+/texlive/2017/texmf-dist/fonts/type1/public/marvosym/marvosym.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2
+017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/tex
+mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist
+/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2017/texmf-dist/fonts
+/type1/urw/symbol/usyr.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/
+times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr
+i8a.pfb>
+Output written on housing_migration.pdf (5 pages, 178152 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 128 PDF objects out of 1000 (max. 8388607)
+ 97 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 59920 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 59925 words of extra memory for PDF output out of 61914 (max. 10000000)
 
