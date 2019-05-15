@@ -24,7 +24,7 @@
 
 \usepackage[english]{babel} % Specify a different language here - english by default
 
-\usepackage{marvosym, epigraph, subfig, listings}
+\usepackage{marvosym, epigraph, subfig, listings, microtype}
 
 \usepackage[sortcites=false,style=authoryear-comp,bibencoding=utf8, natbib=true, firstinits=true, maxcitenames=2, maxbibnames = 99, uniquename=false, backend=bibtex, useprefix=true, backref=false,doi=false,isbn=false,url=false,dashed=true]{biblatex}
 \setlength\bibhang{20pt}
@@ -55,7 +55,7 @@
 %----------------------------------------------------------------------------------------
 
 \usepackage{hyperref} % Required for hyperlinks
-\hypersetup{hidelinks,colorlinks,breaklinks=true,urlcolor=color2,citecolor=color1,linkcolor=color1,bookmarksopen=false,pdftitle={What drives which region?},pdfauthor={Thomas de Graaff}}
+\hypersetup{hidelinks,colorlinks,breaklinks=true,urlcolor=color2,citecolor=color1,linkcolor=color1,bookmarksopen=false,pdftitle={Housing market and migration revisited: a multilevel gravity model for Dutch municipalities},pdfauthor={Thomas de Graaff}}
 
 %----------------------------------------------------------------------------------------
 %	ARTICLE INFORMATION
@@ -78,21 +78,16 @@
 %%----------------------------------------------------------------------------------------
 
 \Abstract{This paper revisits the impact of the housing market
-  structure on interregional migration, but adopts an alternative
-  modeling approach to regional migration flows. The starting
-  point is a gravity model, but instead of using fixed effects for
-  cities of origin and destination, I use a multilevel mixed effects
-  approach allowing me to simultaneously model migration flow
-  characteristics and the cities of origin and destination
-  varying effects. This approach has two main advantages. First, it
-  allows for simultaneous estimation of the impact of city
-  characteristics on migration flows, where the impact is not
-  necessarily symmetrical for cities of origin and
-  destination. Second, it allows for prediction of migration flows
-  between cities both in and out of sample. Preliminary results show
-  that homeownership decrease migration flows significantly with an
-  elasticity below $-1$. Municipal social renting rate has a negative
-  impact as well, but its elasticity is close to zero.}
+	structure on intercity migration, by adopting a Bayesian multilevel gravity modeling approach to regional migration flows. Where most of the existing literatures focuses on using fixed effects for
+	cities of origin and destination, I adopt a multilevel mixed effects
+	approach allowing me to simultaneously model the impact of migration flow
+	characteristics and origin and destination specific effects. This approach has two main advantages. First, it  allows for simultaneous estimation of first city specific effects and second the effects of city specific home-ownership and social renting rates on migration flows, where the impact is not
+	necessarily symmetrical for cities of origin and
+	destination. Second, it allows for prediction of migration flows
+	between cities both in- and out-of-sample. Preliminary results show
+	that home-ownership rates decrease migration flows significantly with an
+	elasticity below $-1$. Municipal social renting rate has a negative
+	impact as well, but its elasticity is close to zero.}
 
 %----------------------------------------------------------------------------------------
 \hypersetup{draft} 
@@ -107,10 +102,10 @@
 	
 	\section{Introduction} % The \section*{} command stops section numbering
 
-        In the 1990s, Andrew Oswald wrote two famous working papers
+        In the 1990s, Andrew Oswald wrote two influential working papers
         \citep{oswald1996conjecture, oswald1999housing} postulating
         that home-ownership rates would have a negative impact on labor
-        market behaviour, as the high costs of moving residence
+        market performance, as the high costs of moving residence
         associated with home-ownership would impede regional
         mobility. These two working papers evoked a large empirical
         literature \citep[see, e.g., ][]{munch2006homeowners,
@@ -121,80 +116,76 @@
         behaviour where at the individual level it is correlated with
         positive labour market performance.
         
-        Theoretically, this difference is explained by
-        sorting. Home-owners are indeed less mobile than renters
+        This difference between individual and aggregate level is explained by
+        sorting. Home-owners are indeed less mobile than private renters
         because of higher fixed and sunk moving costs which has a
-        negative aggregate effect on labour market
+        negative \emph{aggregate} effect on labour market
         performance. However, home-owners are different from renters
-        as they do individually better on the labour market (due to
-        unobservables).
-
-        That housing market structure has an effect on migration
-        decisions is empirically well-established, especially at the micro-level,
-        where it is widely accepted that home-ownership has a negative
-        effect on regional mobility \citep{dietz2003social}. For
-        example, \citet{palomares2018understanding} find that
-        home-ownership has a very strong immobility effect on
-        internal migration in Spain during the period 2001--2011.
-
-        On an aggregate level, \citet{amirault2016drags}, amongst others,
-        looked at the impact of home-ownership on migration flows
-        within a gravity model using a Poisson pseudo maximum
-        likelihood estimator and found an elasticity around
-        $-1$. 
+        as they do \emph{individually} better on the labour market (due to
+        unobservables). So home-owners in countries with high home-ownership rates perform worse on the labour market vis-\`a-vis home-owners in countries with low home-ownership rates; but they still perform better than private renters. For social renters, the effect is different from home-owners. On the individual level they are less mobile than renters at the free market as well, but their labor market performance is also worse than private renters \citep{hughes1981council, de2009homeownership}.
         
-        This papers revisits the relation between housing markets and
-        regional migration and adds two main elements to the
-        literature. First, it does not only consider home-ownership
-        but as well municipal social renting structure, which can be
-        argued to have a huge effect on regional mobility as well as
-        social renting rights are usually only valid locally (within
-        municipality) and are lost when moving residence between
-        municipalities.
-        
-        Secondly, we adopt an alternative Bayesian multi-level
+        This paper reconsiders the role of housing market structure as impediment for intercity migration an specifically focuses on the role of home-ownership and social renting rates. To this end, I adopt an Bayesian multi-level
         modelling approach which is not frequently encountered in the
-        gravity literature \citep[a notable exception is][in a trade
-        context]{ranjan2007bayesian}. Traditional gravity modelling
+        gravity literature\footnote{That is, in the economic literature; a notable exception is in a trade
+        context \citet{ranjan2007bayesian}. In the geographical literature this approach is more commonly adopted \citep[see within a migration context][]{congdon2010random, congdon2012spatial}}. Traditional gravity modelling
         has the disadvantage that either regional fixed effects of
         origins and destinations can be incorporated or the regions'
-        characteristics when not varying over flows. Moreover,
-        theoretically, regional effects should be incorporated leaving
-        no room in the traditional approach to incorporate regional
-        characteristics
-
-        This paper circumvents this disadvantage by adopting a
+        characteristics when not varying over flows. This paper circumvents this disadvantage by adopting a
         multilevel approach with partial pooling\footnote{There is a
-          whole variety of names for these types of models, including
-          varying effects, mixed effects and shrinkage models. I use
-          the more generic multilevel description as regions and flows
-          are by definition measured at a different level (scale).},
-        where the latter terms indicates that I adopt regions of
+        whole variety of names for these types of models, including
+        varying effects, mixed effects and shrinkage models. I use
+        the more generic multilevel description as regions and flows
+        are by definition measured at a different level (scale).},
+        where the latter terms indicates that I do not impose fixed effects to control for
         origin and destination specific effects, but that I ``draw''
         them from a distribution, hence the name partial pooling
         (where complete pooling states no group effects and no pooling
         fixed effects).
-
-        A partial pooling approach has another advantage, namely the
+               
+        This papers adds two main elements to the
+        literature. First, it does not only consider home-ownership
+        but as well municipal social renting structure, which can be
+        argued \citep[see, e.g.,][]{boyle1998migration, hughes1981council} to have a large effect on regional mobility as well as
+        social renting rights are usually only valid locally (within
+        municipality) and are lost when moving residence between
+        municipalities.
+        
+        Secondly, A partial pooling approach has another advantage, namely the
         regional varying effects are completely probabilistic, making
         it feasible to predict both within and out-of-sample. In other
-        words, with the results at hand I can predict flows between
-        existing \emph{and} hypothetical regions.
+        words, with the results at hand I can predict migrations flows between
+        existing \emph{and} hypothetical regions. The former might be used for looking at counterfactuals; for example, the changes in in-migration for all municipalities, when one municipality changes its housing structure. The latter is useful when one wants to assess new migrations flows between one or even two new municipalities outside the sample.\footnote{See for probabilistic predictions of internation migration \cite{azose2015bayesian}.}
 
-        This paper reads as follows. The next section describes the
+		The anticipate the results, I find strong negative effects of home-ownership rates on inter-municipal migration flows. Further, social renting rates also affect migration flows negatively, but the effect is far less pronounced than for home-ownership and overlaps zero to a large extent. A possible interpretation of this finding is that those who sort into social renting are by definition less mobile than those who sort into home-ownership \citep[this argument is put forward by][as well]{boyle1998migration}. Finally, I show that a 0.1 decrease in the rate of home-ownership in Amsterdam leads to in increase of x in-migration y out-migration and significant changes as well in the neighbouring municipaties. 
+
+        This paper reads as follows. The next section discusses the literature on the impact of housing market structure on interregional and intercity migration flows. Section 3 describes the
         data and focuses especially on the distribution of regional
         migration flows and regional labour market structure. Section
-        3 describes the modelling approach, where starting from
-        traditional gravity model and using the descriptives of
-        migration flows I argue for a specific type of model. Section
-        4. gives both the model results and their analysis. By the
-        latter I mean that this sections deals as well with
-        interpretation by giving prediction both within and
+        4 describes the modelling approach, where starting from
+        traditional gravity model and using the descriptives of the
+        migration flows, a Bayesian multilevel gravity model is constructed. Section
+        5. gives both the model results and interprets them by providing as well predictions within and
         out-of-sample. The last section concludes.
+
+		\section{Literature}
+
+		That housing market structure has an effect on migration
+		decisions is empirically well-established, especially at the micro-level,
+		where it is widely accepted that home-ownership has a negative
+		effect on regional mobility \citep{dietz2003social}. For
+		example, \citet{palomares2018understanding} find that
+		home-ownership has a very strong immobility effect on
+		internal migration in Spain during the period 2001--2011.
+		
+		On an aggregate level, \citet{amirault2016drags}, amongst others,
+		looked at the impact of home-ownership on migration flows
+		within a gravity model using a Poisson pseudo maximum
+		likelihood estimator and found an elasticity around
+		$-1$. 
 
         \section{Data}
 
-        \begin{figure*}[ht!]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+        \begin{figure*}[h!]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
           \includegraphics[width=0.8\linewidth]{../fig/hist_mig.pdf}
           \caption{Histogram of migrant flows. Left panel shows the
             histogram of small migrant flows ($N<0$) and the right
