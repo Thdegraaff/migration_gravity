@@ -76,11 +76,12 @@ hist_housing <- ggplot(data = housing, aes(x = Percentage)) +
 data_mig_large <- filter(data, migrants >= 20)
 data_mig_small <- filter(data, migrants < 20)
 hist_mig_small <- ggplot(data = data_mig_small, aes(migrants)) + 
-  geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20)
+  geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20) + theme_bw()
 hist_mig_large <- ggplot(data = data_mig_large, aes(migrants)) + 
-  geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20, breaks = seq(20, 4020, by =200)) +
-  xlim(c(20,4020))
-hist_mig <- plot_grid(hist_mig_small, hist_mig_large, labels = c("Small flows", "Large flows"))
+  geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20) +
+  scale_x_continuous(breaks=seq(20, 4020, 1000)) +
+  theme_bw()
+hist_mig <- plot_grid(hist_mig_small, hist_mig_large, labels = c("Small flows", "Large flows"), label_x = 0.5, label_y = 0.96) 
 
 pdf(file = "./fig/hist_mig.pdf" ,width=8,height=4) 
 hist_mig
