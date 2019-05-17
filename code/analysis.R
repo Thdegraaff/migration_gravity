@@ -25,25 +25,30 @@ d <- select(d, -code_o, -code_d)
 d <- d %>% filter(origin <= nr, destination <= nr)
 
 d$log_distance <- log(d$distance) - mean(log(d$distance))
-d$log_pop_o <- log(d$pop_o) - mean(log(d$pop_o))
-d$log_pop_d <- log(d$pop_d) - mean(log(d$pop_d))
-d$soc_o <- d$socialhousing_o/100 - mean(d$socialhousing_o/100 )
-d$soc_d <- d$socialhousing_d/100 - mean(d$socialhousing_d/100 )
-d$hom_o <- d$homeowners_o/100- mean(d$homeowners_o/100 )
-d$hom_d <- d$homeowners_d/100- mean(d$homeowners_d/100 )
+d$pop_o <- log(d$pop_o) - mean(log(d$pop_o) )
+d$pop_d <- log(d$pop_d) - mean(log(d$pop_d) )
+d$soc_d <- log(d$socialhousing_d + 0.0001 )
+d$soc_o <- log(d$socialhousing_o + 0.0001 )
+d$soc_d <- d$soc_d - mean(d$soc_d)
+d$soc_o <- d$soc_o - mean(d$soc_o)
+d$hom_o <- log(d$homeowners_o) - mean(log(d$homeowners_o))
+d$hom_d <- log(d$homeowners_d) - mean(log(d$homeowners_d))
 
-d_m1 <- d[ , c("migrants", "log_distance", "log_pop_d", "log_pop_o", "soc_o", "soc_d")]
+d_m1 <- d[ , c("migrants", "log_distance", "pop_d", 
+               "pop_o", "soc_o", "soc_d",
+               "destination", "origin")]
+
 m1 <- map2stan(
   alist(
     migrants ~ dzipois(p,  mu ), 
     logit(p) <- ap,
     log(mu) <- a + bd * log_distance + 
-      bpo * log_pop_o + bpd * log_pop_d + 
+      bpo * pop_o + bpd * pop_d + 
       bso * soc_o + bsd * soc_d, 
     c(a, bd, bso, bsd, bpo, bpd) ~ dnorm(0,2),
     ap ~ dnorm(0,1)
   ),
-  data = d, iter = 3000, warmup = 1000, chains = 3, cores = 3
+  data = d_m1, iter = 3000, warmup = 1000, chains = 3, cores = 3
 )
 
 m2 <- map2stan(
@@ -79,9 +84,9 @@ m4 <- map2stan(
   alist(
     migrants ~ dpois( lambda ), 
     log(lambda) <- a + A + B + b_d*log_distance, 
-      A <- b_po * log_pop_o + bso * soc_o + bho * hom_o + 
+      A <- b_po * pop_o + bso * soc_o + bho * hom_o + 
            a_origin[origin] * sigma_origin,
-      B <- b_pd * log_pop_d + bsd * soc_d + bhd * hom_d + 
+      B <- b_pd * pop_d + bsd * soc_d + bhd * hom_d + 
            a_destination[destination] * sigma_destination,
       a_origin[origin] ~ dnorm(0, 2),
       a_destination[destination] ~ dnorm(0, 2),

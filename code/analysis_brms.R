@@ -11,7 +11,7 @@ library("shinystan")
 # Get subsample of data
 ######################
 
-nr <- 100
+nr <- 20
 
 ######################
 # Read in data
@@ -47,7 +47,7 @@ d$hom_d <- log(d$homeowners_d) - mean(log(d$homeowners_d))
 #               family = poisson("log"), data = d, iter = 2000, warmup = 1000, cores = 4, chains = 4)
 
 m2_nb <- brm(migrants~ pop_d + pop_o +hom_d + hom_o + soc_o + soc_d + log_distance +
-                 (1 | destination) + (1 | origin),
+                 (1 | destination ) + (1 | origin),
                prior = c(prior(normal(0, 2), class = Intercept),
                          prior(normal(0, 2), class = b),
                          prior(cauchy(0, 1), class = sd),
