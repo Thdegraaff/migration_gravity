@@ -46,6 +46,21 @@ p_coef_in <- ggplot() + geom_sf(data = municipalities, aes(fill = coef_in)) + sc
 p_coef_out <- ggplot() + geom_sf(data = municipalities, aes(fill = coef_out)) + scale_fill_distiller("Relative\n push factor\n", palette = "RdBu", direction = -1) + 
   theme_bw() 
 
+p_homeown <- ggplot() + geom_sf(data = municipalities, aes(fill = P_KOOPWON)) + 
+  scale_fill_distiller("Percentage \nhomeownership", palette = "Blues", direction = 1) + 
+  theme_bw() 
+p_socrent <- ggplot() + geom_sf(data = municipalities, aes(fill = P_HUURCORP)) + 
+  scale_fill_distiller("Percentage \nsocial renting", palette = "Blues", direction = 1) + 
+  theme_bw() 
+
+pdf(file = "./fig/p_homeown.pdf" ,width = 9, height = 8) 
+p_homeown
+dev.off()
+
+pdf(file = "./fig/p_socrent.pdf" ,width = 9, height = 8) 
+p_socrent
+dev.off()
+
 pdf(file = "./fig/p_in.pdf" ,width = 9, height = 8) 
 p_in
 dev.off()
