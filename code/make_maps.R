@@ -7,6 +7,10 @@ library(RColorBrewer)
 load(file="./data/derived/migration.Rda")
 load(file="./output/m_nb.Rda")
 
+# Define colour palette
+
+myPal = colorRampPalette(brewer.pal(9,"PRGn"))(100)
+
 # Load map
 
 municipalities <- st_read(dsn = "./data/src/gem_2015.shp")
@@ -41,11 +45,11 @@ municipalities <- left_join(municipalities, in_m, by = c("GM_CODE" = "GM_CODE") 
 p_in <- ggplot() + geom_sf(data = municipalities, aes(fill = migrants_in)) + scale_fill_distiller(palette = "OrRd", direction = 1) + theme_bw()
 p_out <- ggplot() + geom_sf(data = municipalities, aes(fill = migrants_out)) + scale_fill_distiller(palette = "OrRd", direction = 1) + theme_bw()
 
-p_coef_in <- ggplot() + geom_sf(data = municipalities, aes(fill = coef_in)) + 
-  scale_fill_distiller("Relative\n pull factor\n", palette = "RdBu", direction = -1, limits = c(-2.5, 2.5) ) + 
+p_coef_in <- ggplot() + geom_sf(data = municipalities, aes(fill = coef_in), lwd = 0.4) + 
+  scale_fill_distiller("Relative\n pull factor\n", palette = "RdBu", direction = -1, limits = c(-3, 3) ) + 
   theme_bw() 
-p_coef_out <- ggplot() + geom_sf(data = municipalities, aes(fill = coef_out)) + 
-  scale_fill_distiller("Relative\n push factor\n", palette = "RdBu", direction = -1, limits = c(-2.5, 2.5) ) + 
+p_coef_out <- ggplot() + geom_sf(data = municipalities, aes(fill = coef_out), lwd = 0.4) + 
+  scale_fill_distiller("Relative\n push factor\n", palette = "RdBu", direction = -1, limits = c(-3, 3) ) + 
   theme_bw() 
 
 p_homeown <- ggplot() + geom_sf(data = municipalities, aes(fill = P_KOOPWON)) + 
