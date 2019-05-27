@@ -44,7 +44,8 @@ p_out <- ggplot() + geom_sf(data = municipalities, aes(fill = migrants_out)) + s
 p_coef_in <- ggplot() + geom_sf(data = municipalities, aes(fill = coef_in)) + 
   scale_fill_distiller("Relative\n pull factor\n", palette = "RdBu", direction = -1, limits = c(-2.5, 2.5) ) + 
   theme_bw() 
-p_coef_out <- ggplot() + geom_sf(data = municipalities, aes(fill = coef_out)) + scale_fill_distiller("Relative\n push factor\n", palette = "RdBu", direction = -1) + 
+p_coef_out <- ggplot() + geom_sf(data = municipalities, aes(fill = coef_out)) + 
+  scale_fill_distiller("Relative\n push factor\n", palette = "RdBu", direction = -1, limits = c(-2.5, 2.5) ) + 
   theme_bw() 
 
 p_homeown <- ggplot() + geom_sf(data = municipalities, aes(fill = P_KOOPWON)) + 
