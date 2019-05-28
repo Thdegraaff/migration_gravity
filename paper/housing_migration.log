@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.26)  27 MAY 2019 15:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.26)  28 MAY 2019 16:57
 entering extended mode
 **./housing_migration.tex
 (housing_migration.tex
@@ -1022,27 +1022,21 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <../fig/hist_mig.pdf, id=12, 578.16pt x 289.08pt>
 File: ../fig/hist_mig.pdf Graphic file (type pdf)
 <use ../fig/hist_mig.pdf>
-Package pdftex.def Info: ../fig/hist_mig.pdf  used on input line 189.
+Package pdftex.def Info: ../fig/hist_mig.pdf  used on input line 183.
 (pdftex.def)             Requested size: 400.38872pt x 200.19322pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 <../fig/hist_housing.pdf, id=13, 578.16pt x 289.08pt>
 File: ../fig/hist_housing.pdf Graphic file (type pdf)
 <use ../fig/hist_housing.pdf>
-Package pdftex.def Info: ../fig/hist_housing.pdf  used on input line 245.
+Package pdftex.def Info: ../fig/hist_housing.pdf  used on input line 239.
 (pdftex.def)             Requested size: 400.38872pt x 200.19322pt.
-[2]
-<../fig/gravity_network.pdf, id=20, 379.79593pt x 346.91708pt>
+ [2]
+<../fig/gravity_network.pdf, id=18, 379.79593pt x 346.91708pt>
 File: ../fig/gravity_network.pdf Graphic file (type pdf)
 <use ../fig/gravity_network.pdf>
-Package pdftex.def Info: ../fig/gravity_network.pdf  used on input line 302.
+Package pdftex.def Info: ../fig/gravity_network.pdf  used on input line 288.
 (pdftex.def)             Requested size: 242.41745pt x 221.43858pt.
  [3 <../fig/hist_mig.pdf> <../fig/hist_housing.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 399.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 387.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1pcr.fd"
@@ -1052,55 +1046,68 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcr' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-Overfull \hbox (2.52109pt too wide) in paragraph at lines 414--431
+ [4 <../fig/gravity_network.pdf>]
+Overfull \hbox (2.52109pt too wide) in paragraph at lines 402--419
  [][] 
  []
 
-<../fig/forestplot.pdf, id=41, 289.08pt x 216.81pt>
+<../fig/forestplot.pdf, id=82, 289.08pt x 216.81pt>
 File: ../fig/forestplot.pdf Graphic file (type pdf)
 <use ../fig/forestplot.pdf>
-Package pdftex.def Info: ../fig/forestplot.pdf  used on input line 434.
+Package pdftex.def Info: ../fig/forestplot.pdf  used on input line 422.
 (pdftex.def)             Requested size: 242.41745pt x 181.81148pt.
-[4 <../fig/gravity_network.pdf>]
-Overfull \hbox (3.8642pt too wide) in paragraph at lines 467--467
+<../fig/p_coef_out.pdf, id=83, 650.43pt x 578.16pt>
+File: ../fig/p_coef_out.pdf Graphic file (type pdf)
+<use ../fig/p_coef_out.pdf>
+Package pdftex.def Info: ../fig/p_coef_out.pdf  used on input line 443.
+(pdftex.def)             Requested size: 242.41745pt x 215.47734pt.
+<../fig/p_coef_in.pdf, id=84, 650.43pt x 578.16pt>
+File: ../fig/p_coef_in.pdf Graphic file (type pdf)
+<use ../fig/p_coef_in.pdf>
+Package pdftex.def Info: ../fig/p_coef_in.pdf  used on input line 451.
+(pdftex.def)             Requested size: 242.41745pt x 215.47734pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5 <../fig/forestplot.pdf> <../fig/p_coef_out.pdf>]
+Overfull \hbox (3.8642pt too wide) in paragraph at lines 476--476
 [][]\OT1/ptm/m/n/10 (-20) Carpenter, B., A. Gel-man, M. D. Hoff-man, D. Lee, B.
  Goodrich,
  []
 
 
-Overfull \hbox (1.61014pt too wide) in paragraph at lines 467--467
+Overfull \hbox (1.61014pt too wide) in paragraph at lines 476--476
 \OT1/ptm/m/n/10 (-20) ``Home-own-er-ship, so-cial rent-ing and la-bor mo-bil-it
 y across
  []
 
-[5 <../fig/forestplot.pdf>] 
+[6 <../fig/p_coef_in.pdf>] 
 AED: lastpage setting LastPage
-[6
+[7
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 470.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 470.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 479.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 479.
  (housing_migration.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 470.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 470.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 479.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 479.
 Package logreq Info: Writing requests to 'housing_migration.run.xml'.
 \openout1 = `housing_migration.run.xml'.
 
  )
 (\end occurred inside a group at level 2)
 
-### simple group (level 2) entered at line 383 ({)
-### simple group (level 1) entered at line 375 ({)
+### simple group (level 2) entered at line 371 ({)
+### simple group (level 1) entered at line 363 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 20003 strings out of 492945
- 327147 string characters out of 3135510
- 677847 words of memory out of 3000000
- 23352 multiletter control sequences out of 15000+200000
- 72213 words of font info for 278 fonts, out of 3000000 for 9000
+ 20058 strings out of 492945
+ 328337 string characters out of 3135510
+ 674854 words of memory out of 3000000
+ 23388 multiletter control sequences out of 15000+200000
+ 76993 words of font info for 292 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,12n,58p,832b,1769s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,12n,58p,1142b,1769s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program Files/MiKTe
@@ -1114,11 +1121,13 @@ rvosym.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/
 Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/
 MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/tgf200/AppData/Roaming/MiKTeX/2.9/f
-onts/type1/urw/symbol/usyr.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
-es/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on housing_migration.pdf (6 pages, 199001 bytes).
+onts/type1/urw/symbol/usyr.pfb><C:/Users/tgf200/AppData/Roaming/MiKTeX/2.9/font
+s/type1/urw/symbol/usyr.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/
+utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on housing_migration.pdf (7 pages, 6566644 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
+ 162 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 59925 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 59935 words of extra memory for PDF output out of 61914 (max. 10000000)
 

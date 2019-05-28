@@ -61,6 +61,34 @@
     \field{year}{2016}
   \endentry
 
+  \entry{anderson2011gravity}{article}{}
+    \name{author}{1}{}{%
+      {{hash=AJE}{%
+         family={Anderson},
+         familyi={A\bibinitperiod},
+         given={James\bibnamedelima E},
+         giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Annual Reviews}%
+    }
+    \strng{namehash}{AJE1}
+    \strng{fullhash}{AJE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2011}
+    \field{labeldatesource}{year}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{number}{1}
+    \field{pages}{133\bibrangedash 160}
+    \field{title}{The gravity model}
+    \field{volume}{3}
+    \field{journaltitle}{Annu. Rev. Econ.}
+    \field{year}{2011}
+  \endentry
+
   \entry{anderson2003gravity}{article}{}
     \name{author}{2}{}{%
       {{hash=AJE}{%
@@ -181,6 +209,47 @@
     \field{volume}{80}
     \field{journaltitle}{Journal of Statistical Software}
     \field{year}{2017}
+  \endentry
+
+  \entry{burger2009specification}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BM}{%
+         family={Burger},
+         familyi={B\bibinitperiod},
+         given={Martijn},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=VOF}{%
+         family={Van\bibnamedelima Oort},
+         familyi={V\bibinitperiod\bibinitdelim O\bibinitperiod},
+         given={Frank},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=LGJ}{%
+         family={Linders},
+         familyi={L\bibinitperiod},
+         given={Gert-Jan},
+         giveni={G\bibinithyphendelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Taylor \& Francis Group}%
+    }
+    \strng{namehash}{BM+1}
+    \strng{fullhash}{BMVOFLGJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2009}
+    \field{labeldatesource}{year}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{2}
+    \field{pages}{167\bibrangedash 190}
+    \field{title}{On the specification of the gravity model of trade: zeros,
+  excess zeros and zero-inflated estimation}
+    \field{volume}{4}
+    \field{journaltitle}{Spatial Economic Analysis}
+    \field{year}{2009}
   \endentry
 
   \entry{carpenter2017stan}{article}{}
@@ -329,6 +398,41 @@
     \field{year}{2010}
   \endentry
 
+  \entry{cushing2004crossing}{article}{}
+    \name{author}{2}{}{%
+      {{hash=CB}{%
+         family={Cushing},
+         familyi={C\bibinitperiod},
+         given={Brian},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Poot},
+         familyi={P\bibinitperiod},
+         given={Jacques},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{CBPJ1}
+    \strng{fullhash}{CBPJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2004}
+    \field{labeldatesource}{year}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{number}{1}
+    \field{pages}{317\bibrangedash 338}
+    \field{title}{Crossing boundaries and borders: Regional science advances in
+  migration modelling}
+    \field{volume}{83}
+    \field{journaltitle}{Papers in regional science}
+    \field{year}{2004}
+  \endentry
+
   \entry{de2013european}{article}{}
     \name{author}{2}{}{%
       {{hash=DGT}{%
@@ -438,6 +542,34 @@
     \field{year}{2003}
   \endentry
 
+  \entry{dohmen2005housing}{article}{}
+    \name{author}{1}{}{%
+      {{hash=DTJ}{%
+         family={Dohmen},
+         familyi={D\bibinitperiod},
+         given={Thomas\bibnamedelima J},
+         giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{DTJ1}
+    \strng{fullhash}{DTJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2005}
+    \field{labeldatesource}{year}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{number}{3}
+    \field{pages}{305\bibrangedash 325}
+    \field{title}{Housing, mobility and unemployment}
+    \field{volume}{35}
+    \field{journaltitle}{Regional Science and Urban Economics}
+    \field{year}{2005}
+  \endentry
+
   \entry{hoffman2014no}{article}{}
     \name{author}{2}{}{%
       {{hash=HMD}{%
@@ -503,6 +635,37 @@
     \field{volume}{91}
     \field{journaltitle}{The Economic Journal}
     \field{year}{1981}
+  \endentry
+
+  \entry{linders2006estimation}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LGJ}{%
+         family={Linders},
+         familyi={L\bibinitperiod},
+         given={Gert-Jan},
+         giveni={G\bibinithyphendelim J\bibinitperiod},
+      }}%
+      {{hash=DGHL}{%
+         family={De\bibnamedelima Groot},
+         familyi={D\bibinitperiod\bibinitdelim G\bibinitperiod},
+         given={Henri\bibnamedelima LF},
+         giveni={H\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Tinbergen Institute Discussion Paper}%
+    }
+    \strng{namehash}{LGJDGHL1}
+    \strng{fullhash}{LGJDGHL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2006}
+    \field{labeldatesource}{year}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Estimation of the gravity equation in the presence of zero
+  flows}
+    \field{year}{2006}
   \endentry
 
   \entry{munch2006homeowners}{article}{}
@@ -665,6 +828,50 @@
   Spain}
     \field{journaltitle}{Regional Studies}
     \field{year}{2018}
+  \endentry
+
+  \entry{poot2016gravity}{article}{}
+    \name{author}{4}{}{%
+      {{hash=PJ}{%
+         family={Poot},
+         familyi={P\bibinitperiod},
+         given={Jacques},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AO}{%
+         family={Alimi},
+         familyi={A\bibinitperiod},
+         given={Omoniyi},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=CMP}{%
+         family={Cameron},
+         familyi={C\bibinitperiod},
+         given={Michael\bibnamedelima P},
+         giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=MDC}{%
+         family={Mar{\'e}},
+         familyi={M\bibinitperiod},
+         given={David\bibnamedelima C},
+         giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PJ+1}
+    \strng{fullhash}{PJAOCMPMDC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{year}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{number}{36}
+    \field{pages}{63\bibrangedash 86}
+    \field{title}{The gravity model of migration: The successful comeback of an
+  ageing superstar in regional science}
+    \field{volume}{2016}
+    \field{journaltitle}{Investigaciones Regionales}
+    \field{year}{2016}
   \endentry
 
   \entry{ranjan2007bayesian}{article}{}
