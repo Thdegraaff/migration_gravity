@@ -1,4 +1,0 @@
-\beamer@sectionintoc {1}{The problem}{2}{0}{1}
-\beamer@sectionintoc {2}{Multilevel modeling}{6}{0}{2}
-\beamer@sectionintoc {3}{Data}{8}{0}{3}
-\beamer@sectionintoc {4}{Results}{9}{0}{4}

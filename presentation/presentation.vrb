@@ -1,39 +1,73 @@
 \frametitle{Gravity model data structure}
 \begin{figure}
-           \begin{tikzpicture}[
-             origin/.style={
-         circle,
-         draw=black,
-         fill=red,
-         fill opacity = 0.25,
-         text opacity=1,
-         inner sep=0pt,
-         minimum size=20pt,
-         font=\small},
-       destination/.style={
-         circle,
-         draw=black,
-         fill=blue,
-         fill opacity = 0.25,
-         text opacity=1,
-         inner sep=0pt,
-         minimum size=20pt,
-         font=\scriptsize},
-       var/.style = {rectangle, draw, fill=green!10, rounded corners, text centered, text width = 5em, minimum height = 2em, font= \small},
-node distance=0.5cm and 5cm
-      ]
-      \node[origin] (O1) {$O_1$};
-      \node[origin,below =  of O1] (O2) {$O_2$};
-      \node[origin,below =  of O2] (O3) {$O_3$};
+^^I^^I\begin{tikzpicture}[scale=0.85, thick]
 
-      \node[destination,right = of O1] (D1) {$D_1$};
-      \node[destination,below =  of D1] (D2) {$D_2$};
-      \node[destination,below =  of D2] (D3) {$D_3$};
+^^I^^I\tikzstyle{orig}=[rectangle, rounded corners, thin, fill=green!20, text=black, draw, minimum width=2.5cm]
+^^I^^I\tikzstyle{dest}=[rectangle, rounded corners, thin, fill=red!20, text=black, draw, minimum width=2.5cm]
+^^I^^I\tikzstyle{migrants}=[rectangle, rounded corners, thin, fill=blue!20, text=black, draw, minimum width=2.5cm]
+^^I^^I\tikzstyle{var}=[rectangle, rounded corners, thin, fill=black!10, text=black, draw, minimum width = 2.5cm]
 
-      \node[var,  above = of O1] (O) {origin specific variables};
-      \node[var,  above = of D1] (D) {destination specific variables};
-      \node[var,  right = 0.7cm of O] (FD) {Flow specific variables};
+^^I^^I\node[orig] (o1) at (0,0)  {\textsc{Origin$_1$}};
+^^I^^I\node[orig] (o2) at (0,-1) {\textsc{Origin$_2$}};
+^^I^^I\node[orig] (o3) at (0,-2) {\textsc{Origin$_3$}};
+^^I^^I\node (o4) at (0,-3) {\textsc{\vdots}};
+^^I^^I\node[orig] (o5) at (0,-4) {\textsc{Origin$_i$}};
+^^I^^I\node (o6) at (0,-5) {\textsc{\vdots}};
+^^I^^I\node[orig] (o7) at (0,-6) {\textsc{Origin$_R$}};
 
-\end{tikzpicture}
-^^I^^I\caption{Variables that can affect flows $F_{ij}$ between origins $O_i$ and destinations $D_j$}
+^^I^^I\node[dest] (d1) at (8,0)  {\textsc{Destination$_1$}};
+^^I^^I\node[dest] (d2) at (8,-1) {\textsc{Destination$_2$}};
+^^I^^I\node[dest] (d3) at (8,-2) {\textsc{Destination$_3$}};
+^^I^^I\node (d4) ^^I^^I at (8,-3) {\textsc{\vdots}};
+^^I^^I\node[dest] (d5) at (8,-4) {\textsc{Destination$_j$}};
+^^I^^I\node (d6) ^^I^^I at (8,-5) {\textsc{\vdots}};
+^^I^^I\node[dest] (d7) at (8,-6) {\textsc{Destination$_R$}};
+
+^^I^^I% Migratior links
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5, 0);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-0.8);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-1.8);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-3.8);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-5.6);
+
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-0.1);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-0.9);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-1.9);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-3.9);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-5.7);
+
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5, -0.2);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-1);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-2);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-4);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-5.8);
+
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-0.3);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-1.1);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-2.1);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-4.1);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-5.9);
+
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5, -0.4);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-1.2);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-2.2);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-4.2);
+^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-6);
+
+^^I^^I\node[migrants] (m) at (4,-3)  {\textsc{Migrant flows $i \rightarrow j$}};
+
+^^I^^I\node[var] (v1) at (0,-8)  {\textsc{Origin  ($o_i, \mathbf{X_i}$)}};
+^^I^^I\node[var] (v2) at (4,-8)  {\textsc{Flow ($\mathbf{X}_{ij}$) }};
+^^I^^I   \node[var] (v3) at (8,-8)  {\textsc{Destination ($d_j, \mathbf{X_j}$)}};
+
+^^I^^I   \begin{pgfonlayer}{background}
+^^I^^I   \filldraw [line width=4mm,join=round,black!10]
+^^I^^I   (o1.north -| o1.west)  rectangle (o7.south -| o7.east)
+^^I^^I   (d1.north -| d1.west)  rectangle (d7.south -| d7.east);
+^^I^^I   \end{pgfonlayer}
+
+^^I^^I   \draw[-latex, thick, black] (v1) -- (0,-6.5);
+^^I^^I\draw[-latex, thick, black] (v2) -- (4,-6.5);
+^^I^^I   \draw[-latex, thick, black] (v3) -- (8,-6.5);
+^^I^^I\end{tikzpicture}
 ^^I\end{figure}
