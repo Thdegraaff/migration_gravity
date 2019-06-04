@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.0 $
+% $ biblatex bbl format version 2.8 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -16,7 +16,7 @@
   {}
 \endgroup
 
-\datalist[entry]{nyt/global//global/global}
+\sortlist[entry]{nyt/global/}
   \entry{anderson2003gravity}{article}{}
     \name{author}{2}{}{%
       {{hash=AJE}{%
@@ -37,7 +37,6 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2003}
-    \field{labeldatesource}{year}
     \field{sortinit}{A}
     \field{sortinithash}{A}
     \field{number}{1}
@@ -65,7 +64,6 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{1998}
-    \field{labeldatesource}{year}
     \field{sortinit}{B}
     \field{sortinithash}{B}
     \field{number}{5}
@@ -94,7 +92,6 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2001}
-    \field{labeldatesource}{year}
     \field{sortinit}{B}
     \field{sortinithash}{B}
     \field{number}{3}
@@ -123,7 +120,6 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2010}
-    \field{labeldatesource}{year}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \field{number}{4}
@@ -165,7 +161,6 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2009}
-    \field{labeldatesource}{year}
     \field{sortinit}{D}
     \field{sortinithash}{D}
     \field{pages}{53\bibrangedash 81}
@@ -189,7 +184,6 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{1996}
-    \field{labeldatesource}{year}
     \field{sortinit}{O}
     \field{sortinithash}{O}
     \field{title}{A conjecture on the explanation for high unemployment in the
@@ -212,7 +206,6 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{1999}
-    \field{labeldatesource}{year}
     \field{sortinit}{O}
     \field{sortinithash}{O}
     \field{title}{The housing market and Europe’s unemployment: a
@@ -244,7 +237,6 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2007}
-    \field{labeldatesource}{year}
     \field{sortinit}{R}
     \field{sortinithash}{R}
     \field{number}{4}
@@ -278,7 +270,6 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2006}
-    \field{labeldatesource}{year}
     \field{sortinit}{S}
     \field{sortinithash}{S}
     \field{number}{4}
@@ -288,5 +279,5 @@
     \field{journaltitle}{The Review of Economics and statistics}
     \field{year}{2006}
   \endentry
-\enddatalist
+\endsortlist
 \endinput

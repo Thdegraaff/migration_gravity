@@ -2,7 +2,6 @@
 \usetheme[block = fill, titleformat title = allcaps, titleformat subtitle  = smallcaps,
 progressbar = foot, background = light]{metropolis}           % Use metropolis theme
 \usepackage{pgfplots}
-\usepackage{fontawesome}
 \usepackage{appendixnumberbeamer}
 \usepackage{booktabs}
 \usetikzlibrary{arrows.meta,positioning, shapes, backgrounds}
@@ -374,7 +373,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	& \beta_7 \log(\text{dist}_{ij})  \tag{\footnotesize \color{blue} linear model}  \\ \pause
 	o_{\text{mun}} \sim& \text{ Normal}(\alpha_o, \sigma_o)  \tag{\footnotesize \color{blue} origin effects}  \\ 
 	d_{\text{mun}} \sim& \text{ Normal}(\alpha_d, \sigma_d)   \tag{\footnotesize \color{blue} destination effects}  \\ \pause
-	\beta_1,\ldots, \beta_7,\alpha_o, \alpha_d \sim& \text{
+	\beta_1,\ldots, \beta_7 \sim& \text{
 		Normal}(0,2) \tag{\footnotesize \color{blue} priors} \\ 
 	\alpha_o, \alpha_d \sim& \text{ Normal}(0,2) \tag{\footnotesize \color{blue} priors}  \\
 	\sigma_o, \sigma_d \sim& \text{ HalfCauchy}(0,1) \tag{\footnotesize \color{blue} priors}  \\ 
@@ -387,7 +386,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 		\begin{columns}
 		\begin{column}{0.5\textwidth}
 			\begin{center}
-				\begin{footnotesize}
+				\begin{small}
 			  \begin{tabular}{lrr}
 				\toprule
 				Parameter & mean & sd \\ 
@@ -401,11 +400,11 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 				log(soc$_j$)   & $-0.06$ & 0.03 \\ 
 				log(dist$_{ij})$ & $-1.96$ & 0.01  \\ 
 				$\sigma_o$    & 0.45 & 0.02  \\ 
-				$\sigma_j$    & 0.61 & 0.02  \\ 
+				$\sigma_d$    & 0.61 & 0.02  \\ 
 				$\tau$        & 1.22 & 0.01  \\ 
 				\bottomrule
 			\end{tabular}
-		\end{footnotesize}
+		\end{small}
 		\end{center}
 		\end{column}
 		\begin{column}{0.5\textwidth} 
@@ -432,8 +431,19 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \end{columns}
 \end{frame}
 
-\begin{frame}{Predictions}
-content...
+\begin{frame}{Home-ownership rate in Amsterdam decreases with 10\%?}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=1.1\textwidth]{../fig/p_diff_out}      
+			\end{center}
+		\end{column}
+		\begin{column}{0.5\textwidth} 	
+			\begin{center}
+				\includegraphics[width=1.1\textwidth]{../fig/p_diff_in}      
+			\end{center}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Conclusions}
@@ -458,8 +468,6 @@ Multilevel gravity framework
 Paper, data and code can be retrieved from the project's GitHub page: 
 
 \begin{center}\url{https://github.com/Thdegraaff/migration\_gravity}\end{center}
-
-\faGithub\  \faCreativeCommons
 
 \end{frame}
 
