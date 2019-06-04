@@ -1,73 +1,19 @@
-\frametitle{Gravity model data structure}
-\begin{figure}
-^^I^^I\begin{tikzpicture}[scale=0.85, thick]
-
-^^I^^I\tikzstyle{orig}=[rectangle, rounded corners, thin, fill=green!20, text=black, draw, minimum width=2.5cm]
-^^I^^I\tikzstyle{dest}=[rectangle, rounded corners, thin, fill=red!20, text=black, draw, minimum width=2.5cm]
-^^I^^I\tikzstyle{migrants}=[rectangle, rounded corners, thin, fill=blue!20, text=black, draw, minimum width=2.5cm]
-^^I^^I\tikzstyle{var}=[rectangle, rounded corners, thin, fill=black!10, text=black, draw, minimum width = 2.5cm]
-
-^^I^^I\node[orig] (o1) at (0,0)  {\textsc{Origin$_1$}};
-^^I^^I\node[orig] (o2) at (0,-1) {\textsc{Origin$_2$}};
-^^I^^I\node[orig] (o3) at (0,-2) {\textsc{Origin$_3$}};
-^^I^^I\node (o4) at (0,-3) {\textsc{\vdots}};
-^^I^^I\node[orig] (o5) at (0,-4) {\textsc{Origin$_i$}};
-^^I^^I\node (o6) at (0,-5) {\textsc{\vdots}};
-^^I^^I\node[orig] (o7) at (0,-6) {\textsc{Origin$_R$}};
-
-^^I^^I\node[dest] (d1) at (8,0)  {\textsc{Destination$_1$}};
-^^I^^I\node[dest] (d2) at (8,-1) {\textsc{Destination$_2$}};
-^^I^^I\node[dest] (d3) at (8,-2) {\textsc{Destination$_3$}};
-^^I^^I\node (d4) ^^I^^I at (8,-3) {\textsc{\vdots}};
-^^I^^I\node[dest] (d5) at (8,-4) {\textsc{Destination$_j$}};
-^^I^^I\node (d6) ^^I^^I at (8,-5) {\textsc{\vdots}};
-^^I^^I\node[dest] (d7) at (8,-6) {\textsc{Destination$_R$}};
-
-^^I^^I% Migratior links
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5, 0);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-0.8);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-1.8);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-3.8);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-5.6);
-
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-0.1);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-0.9);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-1.9);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-3.9);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-5.7);
-
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5, -0.2);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-1);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-2);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-4);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-5.8);
-
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-0.3);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-1.1);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-2.1);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-4.1);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-5.9);
-
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5, -0.4);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-1.2);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-2.2);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-4.2);
-^^I^^I\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-6);
-
-^^I^^I\node[migrants] (m) at (4,-3)  {\textsc{Migrant flows $i \rightarrow j$}};
-
-^^I^^I\node[var] (v1) at (0,-8)  {\textsc{Origin  ($o_i, \mathbf{X_i}$)}};
-^^I^^I\node[var] (v2) at (4,-8)  {\textsc{Flow ($\mathbf{X}_{ij}$) }};
-^^I^^I   \node[var] (v3) at (8,-8)  {\textsc{Destination ($d_j, \mathbf{X_j}$)}};
-
-^^I^^I   \begin{pgfonlayer}{background}
-^^I^^I   \filldraw [line width=4mm,join=round,black!10]
-^^I^^I   (o1.north -| o1.west)  rectangle (o7.south -| o7.east)
-^^I^^I   (d1.north -| d1.west)  rectangle (d7.south -| d7.east);
-^^I^^I   \end{pgfonlayer}
-
-^^I^^I   \draw[-latex, thick, black] (v1) -- (0,-6.5);
-^^I^^I\draw[-latex, thick, black] (v2) -- (4,-6.5);
-^^I^^I   \draw[-latex, thick, black] (v3) -- (8,-6.5);
-^^I^^I\end{tikzpicture}
-^^I\end{figure}
+\frametitle{Modeling framework: multilevel gravity modeling}
+\begin{small}
+	\begin{align} \text{Migrants}_{ij} \sim & \text{ GammaPoisson}(\lambda_{ij}, \tau) \tag{\footnotesize \color{blue} outcome variable} \\ \pause
+	\log(\lambda_{ij}) =
+	& \alpha + o_{\text{mun}[i]} + d_{\text{mun}[j]} + \notag
+	\\ & \beta_1 \log(\text{pop}_i) + \notag
+	\beta_2\log(\text{pop}_j) + \notag \\ & \beta_3
+	\log(\text{home}_i) + \beta_4 \log(\text{home}_j) + \notag\\
+	& \beta_5 \log(\text{soc}_i) + \beta_6 \log(\text{soc}_j) + \notag \\
+	& \beta_7 \log(\text{dist}_{ij})  \tag{\footnotesize \color{blue} linear model}  \\ \pause
+	o_{\text{mun}} \sim& \text{ Normal}(\alpha_o, \sigma_o)  \tag{\footnotesize \color{blue} origin effects}  \\
+	d_{\text{mun}} \sim& \text{ Normal}(\alpha_d, \sigma_d)   \tag{\footnotesize \color{blue} destination effects}  \\ \pause
+	\beta_1,\ldots, \beta_7,\alpha_o, \alpha_d \sim& \text{
+		Normal}(0,2) \tag{\footnotesize \color{blue} priors} \\
+	\alpha_o, \alpha_d \sim& \text{ Normal}(0,2) \tag{\footnotesize \color{blue} priors}  \\
+	\sigma_o, \sigma_d \sim& \text{ HalfCauchy}(0,1) \tag{\footnotesize \color{blue} priors}  \\
+	\tau \sim& \text{ Gamma}(0.01, 0.01)  \tag{\footnotesize \color{blue} prior}
+	\end{align}
+\end{small}

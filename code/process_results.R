@@ -1,6 +1,10 @@
 library("shinystan")
 library("brms")
 
+library(bayesplot)
+library(ggthemes)
+color_scheme_set("orange")
+
 load(file = "./output/m_nb.Rda")
 
 forestplot <- stanplot(m2_neg)
