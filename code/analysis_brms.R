@@ -21,6 +21,9 @@ load(file = "./data/derived/migration.Rda")
 
 d <- data
 
+d_t <- data %>%
+  filter(code_o =="GM0363")
+
 d$origin <- as.numeric(as.factor(d$code_o))
 d$destination <- as.numeric(as.factor(d$code_d))
 d <- select(d, -code_o, -code_d)

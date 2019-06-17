@@ -2,7 +2,6 @@
 \usetheme[block = fill, titleformat title = allcaps, titleformat subtitle  = smallcaps,
 progressbar = foot, background = light]{metropolis}           % Use metropolis theme
 \usepackage{pgfplots}
-\usepackage{fontawesome}
 \usepackage{appendixnumberbeamer}
 \usepackage{booktabs}
 \usetikzlibrary{arrows.meta,positioning, shapes, backgrounds}
@@ -29,7 +28,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \makeatother
 
 \title{Housing market and migration revisited}
-\subtitle{A Bayesian multilevel gravity model for Dutch municipalities}
+\subtitle{A multilevel gravity model for Dutch municipalities}
 \date{\today}
 \author{Thomas de Graaff}
 \institute{Vrije Universiteit Amsterdam\\Department of Spatial Economics}
@@ -42,6 +41,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 			In economics: 
 			\begin{itemize}
 				\item \alert{causal} impact of $x$ on $y$
+				\item \alert{focuses} on $\hat{\beta}$
 				\item \alert{average} treatment effect
 		    \end{itemize}
 			\begin{center}
@@ -52,6 +52,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 		Outside economics: 
 			\begin{itemize}
 				\item \alert{model performance } 
+				\item \alert{focuses} on $\hat{y}$
 				\item \alert{prediction} of total effect
 			\end{itemize}
 			\begin{center}
@@ -63,9 +64,9 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 
   \begin{frame}{Background empirical application}
     	\begin{itemize}
-		\item Aggregate homeownership has negative impact on labour market performance, because of increased \alert{moving costs} \citep{oswald1996conjecture,oswald1999housing}
+		\item Aggregate home-ownership has negative impact on labour market performance, because of increased \alert{moving costs} \citep{oswald1996conjecture,oswald1999housing}
 		\newline
-		\item Large empirical literature (mostly on individual decisions)
+		\item Large empirical literature (mostly on individual choices)
 		\newline
 		\item Literature on impact of social renting on migration flows is scarce \citep{de2009homeownership}
 		\begin{itemize}
@@ -78,10 +79,31 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \begin{frame}{This paper}
 	\begin{description}
 
-		\item[Does what?] \alert{Revisits} the impact of housing market structure (homeownership and social renting) on within-country migration flows using a Bayesian multilevel gravity model \citep{congdon2010random}
+		\item[Does what?] \alert{Revisits} the impact of housing market structure (home-ownership and social renting rates) on within-country migration flows using a Bayesian multilevel gravity model \citep{congdon2010random}
 		\newline
-		\item[Aim] to be able to \alert{predict} all changes in incoming and outcoming migration flows of, e.g., Amsterdam, when housing market structure changes \alert{whilst} accounting for origin and destination specific effects \citep{ranjan2007bayesian}
+		\item[Aim] To \alert{predict} all changes in incoming and outcoming migration flows of, e.g., Amsterdam, when housing market structure changes \alert{whilst} accounting for origin and destination specific effects \citep{ranjan2007bayesian}
 	\end{description}
+\end{frame}
+
+\begin{frame}[fragile]{Gravity model data structure}
+\begin{figure}	
+	\begin{tikzpicture}[scale=0.90, thick]
+	
+	\tikzstyle{orig}=[rectangle, rounded corners, thin, fill=green!20, text=black, draw, minimum width=2.5cm]
+	\tikzstyle{dest}=[rectangle, rounded corners, thin, fill=red!20, text=black, draw, minimum width=2.5cm]
+	\tikzstyle{migrants}=[rectangle, rounded corners, thin, fill=blue!20, text=black, draw, minimum width=2.5cm]
+	\tikzstyle{var}=[rectangle, rounded corners, thin, fill=black!10, text=black, draw, text width = 3.5cm]
+	
+	\node[orig] (o1) at (0,0)  {\textsc{City$_1$}};
+	\node[orig] (o2) at (0,-1) {\textsc{City$_2$}};
+	\node[orig] (o3) at (0,-2) {\textsc{City$_3$}};
+	\node (o4) at (0,-3) {\textsc{\vdots}};
+	\node[orig] (o5) at (0,-4) {\textsc{City$_i$}};
+	\node (o6) at (0,-5) {\textsc{\vdots}};
+	\node[orig] (o7) at (0,-6) {\textsc{City$_I$}};
+	
+	\end{tikzpicture}
+\end{figure}
 \end{frame}
 
 \begin{frame}[fragile]{Gravity model data structure}
@@ -99,7 +121,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
    \node (o4) at (0,-3) {\textsc{\vdots}};
    \node[orig] (o5) at (0,-4) {\textsc{Origin$_i$}};
    \node (o6) at (0,-5) {\textsc{\vdots}};
-   \node[orig] (o7) at (0,-6) {\textsc{Origin$_R$}};
+   \node[orig] (o7) at (0,-6) {\textsc{Origin$_I$}};
    
    \node[dest] (d1) at (8,0)  {\textsc{Destination$_1$}};
    \node[dest] (d2) at (8,-1) {\textsc{Destination$_2$}};
@@ -107,7 +129,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
    \node (d4) 		 at (8,-3) {\textsc{\vdots}};
    \node[dest] (d5) at (8,-4) {\textsc{Destination$_j$}};
    \node (d6) 		 at (8,-5) {\textsc{\vdots}};
-   \node[dest] (d7) at (8,-6) {\textsc{Destination$_R$}};
+   \node[dest] (d7) at (8,-6) {\textsc{Destination$_J$}};
 %   
 %   % Migratior links
 %   \draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5, 0);
@@ -174,7 +196,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 		\node (o4) at (0,-3) {\textsc{\vdots}};
 		\node[orig] (o5) at (0,-4) {\textsc{Origin$_i$}};
 		\node (o6) at (0,-5) {\textsc{\vdots}};
-		\node[orig] (o7) at (0,-6) {\textsc{Origin$_R$}};
+		\node[orig] (o7) at (0,-6) {\textsc{Origin$_I$}};
 		
 		\node[dest] (d1) at (8,0)  {\textsc{Destination$_1$}};
 		\node[dest] (d2) at (8,-1) {\textsc{Destination$_2$}};
@@ -182,7 +204,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 		\node (d4) 		 at (8,-3) {\textsc{\vdots}};
 		\node[dest] (d5) at (8,-4) {\textsc{Destination$_j$}};
 		\node (d6) 		 at (8,-5) {\textsc{\vdots}};
-		\node[dest] (d7) at (8,-6) {\textsc{Destination$_R$}};
+		\node[dest] (d7) at (8,-6) {\textsc{Destination$_J$}};
 		   
 		   % Migratior links
 		   \draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5, 0);
@@ -249,7 +271,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 		\node (o4) at (0,-3) {\textsc{\vdots}};
 		\node[orig] (o5) at (0,-4) {\textsc{Origin$_i$}};
 		\node (o6) at (0,-5) {\textsc{\vdots}};
-		\node[orig] (o7) at (0,-6) {\textsc{Origin$_R$}};
+		\node[orig] (o7) at (0,-6) {\textsc{Origin$_I$}};
 		
 		\node[dest] (d1) at (8,0)  {\textsc{Destination$_1$}};
 		\node[dest] (d2) at (8,-1) {\textsc{Destination$_2$}};
@@ -257,7 +279,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 		\node (d4) 		 at (8,-3) {\textsc{\vdots}};
 		\node[dest] (d5) at (8,-4) {\textsc{Destination$_j$}};
 		\node (d6) 		 at (8,-5) {\textsc{\vdots}};
-		\node[dest] (d7) at (8,-6) {\textsc{Destination$_R$}};
+		\node[dest] (d7) at (8,-6) {\textsc{Destination$_J$}};
 		
 		% Migratior links
 		\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5, 0);
@@ -311,16 +333,16 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 
 \begin{frame}{Why a Bayesian multilevel approach?}
 \begin{itemize}
-	\item Frequently used---increases model \alert{performance} and \alert{flexibility} 
+	\item Frequently used---increases model \alert{performance} and \alert{flexibility} \pause
     \item \alert{Simultenous} modeling at various levels (e.g., cities, regions, flows, individuals) 
     \begin{itemize}
-    	\item No two-stage models anymore
+    	\item No two-stage models anymore \pause
     \end{itemize}
-    \item Many definitions (in a Bayesian context):
+    \item Many definitions (in a \alert{Bayesian} context):
 	    \begin{itemize}
-	    \item mixed effects, varying intercepts/parameter, shrinkage, partial pooling
+	    \item mixed effects, varying intercept/parameter, shrinkage, partial pooling models\pause
 	    \end{itemize}
-	\item \alert{Estimates} the level effects from a distribution, usually $\sim \text{ Normal}(\alpha, \sigma)$
+	\item \alert{Estimates} the level effects from a distribution, usually ($o_i, d_j) \sim \text{ Normal}(\alpha, \sigma)$
 	\begin{itemize}
 		\item $\sigma \longrightarrow 0$ : complete pooling
 		\item $\sigma \longrightarrow \infty$ : no pooling (fixed effects)
@@ -333,8 +355,8 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 		\includegraphics[width=0.8\textwidth]{../fig/hist_mig}      
 	\end{center}
 \begin{itemize}
-	\item Individual migrations flows \alert{between} 393 Dutch cities in 2015
-	\item Variance is 4 times expectation (dispersion)
+	\item Migration flows \alert{between} 393 Dutch municipalities in 2015($\approx 150,000$)
+	\item Variance is 4 times expectation: \alert{dispersion}
 \end{itemize}
 \end{frame}
 
@@ -344,7 +366,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \end{center}
 \begin{itemize}
 	\item Positive correlation between city size and social renting ($0.4$)
-	\item Negative correlation between social renting and homeownership ($-0.84)$
+	\item Negative correlation between social renting and home-ownership ($-0.84)$
 \end{itemize}
 \end{frame}
 
@@ -354,7 +376,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\label{eq:gravfixed}
 	\end{equation*} 
 	
-	Adopting fixed effects for multilateral resistance \citep{anderson2003gravity}, but
+	Adopting fixed effects for multilateral resistance \citep{anderson2003gravity}, but:
 	\begin{itemize}
 		\item what about zeros?
 		\item how to incorporate municipal housing structure?
@@ -372,11 +394,10 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\log(\text{home}_i) + \beta_4 \log(\text{home}_j) + \notag\\
 	& \beta_5 \log(\text{soc}_i) + \beta_6 \log(\text{soc}_j) + \notag \\ 
 	& \beta_7 \log(\text{dist}_{ij})  \tag{\footnotesize \color{blue} linear model}  \\ \pause
-	o_{\text{mun}} \sim& \text{ Normal}(\alpha_o, \sigma_o)  \tag{\footnotesize \color{blue} origin effects}  \\ 
-	d_{\text{mun}} \sim& \text{ Normal}(\alpha_d, \sigma_d)   \tag{\footnotesize \color{blue} destination effects}  \\ \pause
-	\beta_1,\ldots, \beta_7,\alpha_o, \alpha_d \sim& \text{
+	o_{\text{mun}} \sim& \text{ Normal}(0, \sigma_o)  \tag{\footnotesize \color{blue} origin effects}  \\ 
+	d_{\text{mun}} \sim& \text{ Normal}(0, \sigma_d)   \tag{\footnotesize \color{blue} destination effects}  \\ \pause
+	\alpha, \beta_1,\ldots, \beta_7 \sim& \text{
 		Normal}(0,2) \tag{\footnotesize \color{blue} priors} \\ 
-	\alpha_o, \alpha_d \sim& \text{ Normal}(0,2) \tag{\footnotesize \color{blue} priors}  \\
 	\sigma_o, \sigma_d \sim& \text{ HalfCauchy}(0,1) \tag{\footnotesize \color{blue} priors}  \\ 
 	\tau \sim& \text{ Gamma}(0.01, 0.01)  \tag{\footnotesize \color{blue} prior}  
 	\end{align}
@@ -387,7 +408,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 		\begin{columns}
 		\begin{column}{0.5\textwidth}
 			\begin{center}
-				\begin{footnotesize}
+				\begin{small}
 			  \begin{tabular}{lrr}
 				\toprule
 				Parameter & mean & sd \\ 
@@ -401,11 +422,11 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 				log(soc$_j$)   & $-0.06$ & 0.03 \\ 
 				log(dist$_{ij})$ & $-1.96$ & 0.01  \\ 
 				$\sigma_o$    & 0.45 & 0.02  \\ 
-				$\sigma_j$    & 0.61 & 0.02  \\ 
+				$\sigma_d$    & 0.61 & 0.02  \\ 
 				$\tau$        & 1.22 & 0.01  \\ 
 				\bottomrule
 			\end{tabular}
-		\end{footnotesize}
+		\end{small}
 		\end{center}
 		\end{column}
 		\begin{column}{0.5\textwidth} 
@@ -432,8 +453,19 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \end{columns}
 \end{frame}
 
-\begin{frame}{Predictions}
-content...
+\begin{frame}{Home-ownership rate in Amsterdam decreases with 10\%?}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=1.1\textwidth]{../fig/p_diff_out}      
+			\end{center}
+		\end{column}
+		\begin{column}{0.5\textwidth} 	
+			\begin{center}
+				\includegraphics[width=1.1\textwidth]{../fig/p_diff_in}      
+			\end{center}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Conclusions}
@@ -458,8 +490,6 @@ Multilevel gravity framework
 Paper, data and code can be retrieved from the project's GitHub page: 
 
 \begin{center}\url{https://github.com/Thdegraaff/migration\_gravity}\end{center}
-
-\faGithub\  \faCreativeCommons
 
 \end{frame}
 

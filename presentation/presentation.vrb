@@ -8,11 +8,10 @@
 	\log(\text{home}_i) + \beta_4 \log(\text{home}_j) + \notag\\
 	& \beta_5 \log(\text{soc}_i) + \beta_6 \log(\text{soc}_j) + \notag \\
 	& \beta_7 \log(\text{dist}_{ij})  \tag{\footnotesize \color{blue} linear model}  \\ \pause
-	o_{\text{mun}} \sim& \text{ Normal}(\alpha_o, \sigma_o)  \tag{\footnotesize \color{blue} origin effects}  \\
-	d_{\text{mun}} \sim& \text{ Normal}(\alpha_d, \sigma_d)   \tag{\footnotesize \color{blue} destination effects}  \\ \pause
-	\beta_1,\ldots, \beta_7,\alpha_o, \alpha_d \sim& \text{
+	o_{\text{mun}} \sim& \text{ Normal}(0, \sigma_o)  \tag{\footnotesize \color{blue} origin effects}  \\
+	d_{\text{mun}} \sim& \text{ Normal}(0, \sigma_d)   \tag{\footnotesize \color{blue} destination effects}  \\ \pause
+	\alpha, \beta_1,\ldots, \beta_7 \sim& \text{
 		Normal}(0,2) \tag{\footnotesize \color{blue} priors} \\
-	\alpha_o, \alpha_d \sim& \text{ Normal}(0,2) \tag{\footnotesize \color{blue} priors}  \\
 	\sigma_o, \sigma_d \sim& \text{ HalfCauchy}(0,1) \tag{\footnotesize \color{blue} priors}  \\
 	\tau \sim& \text{ Gamma}(0.01, 0.01)  \tag{\footnotesize \color{blue} prior}
 	\end{align}

@@ -1,14 +1,137 @@
-library("shinystan")
-library("brms")
-
+library(shinystan)
+library(brms)
+library(tidyverse)
 library(bayesplot)
 library(ggthemes)
-color_scheme_set("orange")
+library(sf)
+library(RColorBrewer)
+
+######################
+# Get subsample of data
+######################
+
+nr <- 393
 
 load(file = "./output/m_nb.Rda")
 
-forestplot <- stanplot(m2_neg)
+samples <- posterior_samples(m2_neg)
+samples <- samples %>%
+  rename(`Intercept` = `b_Intercept`, 
+         `log(pop_i)` = `b_pop_o`,
+         `log(pop_j)` = `b_pop_d`,
+         `log(home_i)` = `b_hom_o`,
+         `log(home_j)` = `b_hom_d`,
+         `log(soc_i)` = `b_soc_o`,
+         `log(soc_j)` = `b_soc_d`,
+         `log(dist_ij)` = `b_log_distance`,
+         `sigma_o` = `sd_origin__Intercept`,
+         `sigma_d` = `sd_destination__Intercept`,
+         `tau` = `shape`
+         )
 
-pdf(file = "./fig/forestplot.pdf", width = 4, height = 3)
+forestplot <- mcmc_intervals(samples, pars = c("Intercept", "log(pop_i)", "log(pop_j)", "log(home_i)", 
+                                   "log(home_j)", "log(soc_i)", "log(soc_j)", "log(dist_ij)", 
+                                   "sigma_o", "sigma_d", "tau")) +
+  theme_economist() +
+  geom_vline(xintercept = 0)
+
+pdf(file = "./fig/forestplot.pdf", width = 4, height = 5)
 forestplot
+dev.off()
+
+######################
+# Read in data
+######################
+
+load(file = "./data/derived/migration.Rda")
+
+d <- data
+
+d$origin <- as.numeric(as.factor(d$code_o))
+d$destination <- as.numeric(as.factor(d$code_d))
+d <- select(d, -code_o, -code_d)
+d <- d %>% filter(origin <= nr, destination <= nr)
+
+d$log_distance <- log(d$distance) - mean(log(d$distance))
+d$pop_o <- log(d$pop_o) - mean(log(d$pop_o) )
+d$pop_d <- log(d$pop_d) - mean(log(d$pop_d) )
+d$soc_d <- log(d$socialhousing_d + 0.0001 )
+d$soc_o <- log(d$socialhousing_o + 0.0001 )
+d$soc_d <- d$soc_d - mean(d$soc_d)
+d$soc_o <- d$soc_o - mean(d$soc_o)
+d$hom_o <- log(d$homeowners_o) - mean(log(d$homeowners_o))
+d$hom_d <- log(d$homeowners_d) - mean(log(d$homeowners_d))
+
+######################
+# Create new data and difference
+######################
+
+new_d <- d %>% 
+  mutate(
+    hom_o = ifelse(origin == 132, hom_o - 0.1, hom_o),
+    hom_d = ifelse(destination == 132, hom_d - 0.1, hom_d),
+  )
+
+fit_old <- fitted(m2_neg,  nsamples = 1000, scale = "response")
+mean_old <- fit_old[ , 1]
+fit_new <- fitted(m2_neg, nsamples = 1000, newdata = new_d, scale = "response")
+mean_new <- fit_new[ , 1]
+
+mean_diff <- mean_new - mean_old
+
+######################
+# adjust dataframe
+######################
+
+new_d <- data.frame(new_d, mean_diff)
+
+######################
+# read in map
+######################
+
+# Define colour palette
+
+myPal = colorRampPalette(brewer.pal(9,"PRGn"))(100)
+
+# Load map
+
+municipalities <- st_read(dsn = "./data/src/gem_2015.shp")
+st_crs(municipalities) = 28992
+
+# Filter out water areas (WATER = "JA") and
+# Belgium areas (Baarle Nassau; WATER = "B")
+
+municipalities <- municipalities %>%
+  filter(WATER == "NEE")
+
+diff_in <- new_d %>%
+  filter(destination == 132) %>%
+  select(origin, mean_diff) %>%
+  rbind(c("132", 0)) %>%
+  arrange(as.numeric(origin)) %>%
+  mutate(mean_diff = as.numeric(mean_diff))
+
+diff_out <- new_d %>%
+  filter(origin == 132) %>%
+  select(destination, mean_diff) %>%
+  rbind(c("132", 0)) %>%
+  arrange(as.numeric(destination)) %>%
+  mutate(mean_diff = as.numeric(mean_diff))
+
+municipalities$diff_in <- diff_in[ , 2]
+municipalities$diff_out <- diff_out[ , 2]
+
+p_diff_in <- ggplot() + geom_sf(data = municipalities, aes(fill = diff_in), lwd = 0.4) + 
+  scale_fill_distiller("Difference \nin in-flow ", palette = "Reds", direction = -1 ) + 
+  theme_bw() 
+p_diff_out <- ggplot() + geom_sf(data = municipalities, aes(fill = diff_out), lwd = 0.4) + 
+  scale_fill_distiller("Difference \nin out-flow", palette = "Reds", direction = -1 ) + 
+  theme_bw() 
+
+pdf(file = "./fig/p_diff_in.pdf" ,width = 9, height = 8) 
+p_diff_in 
+dev.off()
+
+pdf(file = "./fig/p_diff_out.pdf" ,width = 9, height = 8) 
+p_diff_out
 dev.off()
