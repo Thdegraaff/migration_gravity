@@ -74,6 +74,7 @@
 \headcommand {\slideentry {0}{0}{19}{27/27}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {27}{27}}
+\headcommand {\gdef \insertmainframenumber {17}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\partentry {\translate {Appendix}}{1}}
 \defcounter {refsection}{0}\relax 
@@ -96,6 +97,6 @@
 \headcommand {\beamer@subsectionpages {28}{29}}
 \headcommand {\beamer@sectionpages {28}{29}}
 \headcommand {\beamer@documentpages {29}}
-\headcommand {\def \inserttotalframenumber {2}}
-\headcommand {\def \inserttotalframenumber {17}}
-\headcommand {\def \appendixtotalframenumber {2}}
+\headcommand {\gdef \inserttotalframenumber {2}}
+\headcommand {\gdef \inserttotalframenumber {17}}
+\headcommand {\gdef \appendixtotalframenumber {2}}
