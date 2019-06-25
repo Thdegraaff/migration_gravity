@@ -1,19 +1,18 @@
 \frametitle{Modeling framework: multilevel gravity modeling}
 \begin{small}
-^^I\begin{align} \text{Migrants}_{ij} \sim & \text{ GammaPoisson}(\lambda_{ij}, \tau) \tag{\footnotesize \color{blue} outcome variable} \\ \pause
-^^I\log(\lambda_{ij}) =
-^^I& \alpha + o_{\text{mun}[i]} + d_{\text{mun}[j]} + \notag
-^^I\\ & \beta_1 \log(\text{pop}_i) + \notag
-^^I\beta_2\log(\text{pop}_j) + \notag \\ & \beta_3
-^^I\log(\text{home}_i) + \beta_4 \log(\text{home}_j) + \notag\\
-^^I& \beta_5 \log(\text{soc}_i) + \beta_6 \log(\text{soc}_j) + \notag \\
-^^I& \beta_7 \log(\text{dist}_{ij})  \tag{\footnotesize \color{blue} linear model}  \\ \pause
-^^Io_{\text{mun}} \sim& \text{ Normal}(\alpha_o, \sigma_o)  \tag{\footnotesize \color{blue} origin effects}  \\
-^^Id_{\text{mun}} \sim& \text{ Normal}(\alpha_d, \sigma_d)   \tag{\footnotesize \color{blue} destination effects}  \\ \pause
-^^I\beta_1,\ldots, \beta_7 \sim& \text{
-^^I^^INormal}(0,2) \tag{\footnotesize \color{blue} priors} \\
-^^I\alpha_o, \alpha_d \sim& \text{ Normal}(0,2) \tag{\footnotesize \color{blue} priors}  \\
-^^I\sigma_o, \sigma_d \sim& \text{ HalfCauchy}(0,1) \tag{\footnotesize \color{blue} priors}  \\
-^^I\tau \sim& \text{ Gamma}(0.01, 0.01)  \tag{\footnotesize \color{blue} prior}
-^^I\end{align}
+	\begin{align} \text{Migrants}_{ij} \sim & \text{ GammaPoisson}(\lambda_{ij}, \tau) \tag{\footnotesize \color{blue} outcome variable} \\ \pause
+	\log(\lambda_{ij}) =
+	& \alpha + o_{\text{mun}[i]} + d_{\text{mun}[j]} + \notag
+	\\ & \beta_1 \log(\text{pop}_i) + \notag
+	\beta_2\log(\text{pop}_j) + \notag \\ & \beta_3
+	\log(\text{home}_i) + \beta_4 \log(\text{home}_j) + \notag\\
+	& \beta_5 \log(\text{soc}_i) + \beta_6 \log(\text{soc}_j) + \notag \\
+	& \beta_7 \log(\text{dist}_{ij})  \tag{\footnotesize \color{blue} linear model}  \\ \pause
+	o_{\text{mun}} \sim& \text{ Normal}(0, \sigma_o)  \tag{\footnotesize \color{blue} origin effects}  \\
+	d_{\text{mun}} \sim& \text{ Normal}(0, \sigma_d)   \tag{\footnotesize \color{blue} destination effects}  \\ \pause
+	\alpha, \beta_1,\ldots, \beta_7 \sim& \text{
+		Normal}(0,2) \tag{\footnotesize \color{blue} priors} \\
+	\sigma_o, \sigma_d \sim& \text{ HalfCauchy}(0,1) \tag{\footnotesize \color{blue} priors}  \\
+	\tau \sim& \text{ Gamma}(0.01, 0.01)  \tag{\footnotesize \color{blue} prior}
+	\end{align}
 \end{small}
