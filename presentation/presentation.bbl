@@ -175,6 +175,41 @@
     \field{year}{2009}
   \endentry
 
+  \entry{dietz2003social}{article}{}
+    \name{author}{2}{}{%
+      {{hash=DRD}{%
+         family={Dietz},
+         familyi={D\bibinitperiod},
+         given={Robert\bibnamedelima D},
+         giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=HDR}{%
+         family={Haurin},
+         familyi={H\bibinitperiod},
+         given={Donald\bibnamedelima R},
+         giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{DRDHDR1}
+    \strng{fullhash}{DRDHDR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2003}
+    \field{labeldatesource}{year}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{number}{3}
+    \field{pages}{401\bibrangedash 450}
+    \field{title}{The social and private micro-level consequences of
+  homeownership}
+    \field{volume}{54}
+    \field{journaltitle}{Journal of urban Economics}
+    \field{year}{2003}
+  \endentry
+
   \entry{oswald1996conjecture}{report}{}
     \name{author}{1}{}{%
       {{hash=OAJ}{%
