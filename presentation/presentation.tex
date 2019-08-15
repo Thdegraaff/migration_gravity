@@ -28,7 +28,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \makeatother
 
 \title{Housing market and migration revisited}
-\subtitle{A Bayesian multilevel gravity model for Dutch municipalities}
+\subtitle{A  Bayesian multilevel gravity model for Dutch municipalities}
 \date{\today}
 \author{Thomas de Graaff}
 \institute{Vrije Universiteit Amsterdam\\Department of Spatial Economics}
@@ -44,35 +44,46 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
    			\item decrease in number of houses \alert{sold}
    			\item large \alert{regional} variation\newline
    		\end{itemize}
-   		\item These concerns might lead to change in housing market \alert{structure}: typically social housing $\longrightarrow$ home-ownership
-   		\newline
+                \item Policy debates about changes in housing market \alert{structure}
+                \begin{itemize}
+                \item $\longrightarrow$ Increase home-ownership rates\newline
+                \end{itemize}
    		\item Large literature of \alert{external} effects of home-ownership \citep{dietz2003social}
    		\begin{itemize}
    			\item \alert{positive}: savings, labor supply, health, maintenance, etc.
-   			\item \alert{negative}: migration (by increased moving costs) 
+   			\item \alert{negative}: migration (by increased moving costs) and on aggregate labour market performance \citep{oswald1996conjecture,oswald1999housing}
    		\end{itemize}
    	\end{itemize}
 \end{frame}
 
-\begin{frame}{Housing market and migration: why bother?---II}
-\begin{itemize}
-	\item Aggregate home-ownership has negative impact on labour market performance \citep{oswald1996conjecture,oswald1999housing}
-	\newline
-	\item Literature on impact of social renting on migration flows is scarce \citep{de2009homeownership}
+\begin{frame}{My contributions to the literature}
+  \begin{itemize}
+  \item Large empirical (economic) literature on impact home-ownership on migration, but:
+    \begin{itemize}
+    \item usually concerns \alert{marginal} effect of home-ownership
+    \item less attention to \alert{predictions} for the whole network\newline
+    \end{itemize}
+  \item Literature on impact of social renting on migration flows is
+    scarce \citep{de2009homeownership}
 	\begin{itemize}
-		\item In the Netherlands social renting is a large phenomenon ($\approx$ 40\% of total housing stock)
-		\item Social renting rights only valid \alert{within} city \citep{boyle1998migration}
-		\item Social renting is an \alert{urban} phenomenon ($\approx$ 40--50\% in Amsterdam)
-	\end{itemize}
+        \item In the Netherlands social renting is a large phenomenon
+          ($\approx$ 40\% of total housing stock)
+        \item Social renting rights only valid \alert{within} city
+          \citep{boyle1998migration}
+        \item Social renting is an \alert{urban} phenomenon ($\approx$
+          40--50\% in Amsterdam) 
+        \end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{This paper}
-\begin{description}
-	
-	\item[Does what?] \alert{Revisits} the impact of housing market structure (home-ownership and social renting rates) on within-country migration flows using a Bayesian multilevel gravity model \citep{congdon2010random}
-	\newline
-	\item[And] \alert{Predict} all changes in incoming and outcoming migration flows when housing market structure changes
+\begin{frame}{So, this paper}
+  \begin{description}
+  \item[Does what?] \alert{Revisits} the impact of housing market
+    structure (home-ownership and social renting rates) on within-country
+    migration flows using a Bayesian multilevel gravity model
+    \citep{congdon2010random} \newline
+  \item[And] \alert{Predict} all changes in incoming and
+    outcoming migration flows when housing market structure changes
 \end{description}
 \end{frame}
 
@@ -103,7 +114,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \end{columns}
 \end{frame}
 
-\begin{frame}[fragile]{Gravity model data structure}
+\begin{frame}[fragile]{Why a \textbf{multilevel} approach for the gravity model}
 \begin{figure}	
 	\begin{tikzpicture}[scale=0.90, thick]
 	
@@ -124,14 +135,14 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \end{figure}
 \end{frame}
 
-\begin{frame}[fragile]{Gravity model data structure}
+\begin{frame}[fragile]{Why a \textbf{multilevel} approach for the gravity model}
 	 \begin{figure}	
    \begin{tikzpicture}[scale=0.90, thick]
    
    \tikzstyle{orig}=[rectangle, rounded corners, thin, fill=green!20, text=black, draw, minimum width=2.5cm]
    \tikzstyle{dest}=[rectangle, rounded corners, thin, fill=red!20, text=black, draw, minimum width=2.5cm]
    \tikzstyle{migrants}=[rectangle, rounded corners, thin, fill=blue!20, text=black, draw, minimum width=2.5cm]
-   \tikzstyle{var}=[rectangle, rounded corners, thin, fill=black!10, text=black, draw, text width = 3.5cm]
+   \tikzstyle{var}=[rectangle, rounded corners, thin, fill=black!10, text=black, draw, minimum width = 2.5cm]
    
    \node[orig] (o1) at (0,0)  {\textsc{Origin$_1$}};
    \node[orig] (o2) at (0,-1) {\textsc{Origin$_2$}};
@@ -182,9 +193,9 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 %   
 %   \node[migrants] (m) at (4,-3)  {\textsc{Flows $i \rightarrow j$}};
 %   
-%   \node[var] (v1) at (0,-8)  {\textsc{Origin-specific variables ($o_i, \mathbf{X_i}$)}};
+   \node[var] (v1) at (0,-8)  { \textsc{Push factors} };
 %   \node[var] (v2) at (4,-8)  {\textsc{flow-specific variables ($\mathbf{X}_{ij}$) }};
-%   \node[var] (v3) at (8,-8)  {\textsc{Destination-specific variables  ($d_j, \mathbf{X_j}$)}};
+   \node[var] (v3) at (8,-8)  { \textsc{Pull factors} };
 %   
 %   \begin{pgfonlayer}{background}
 %   \filldraw [line width=4mm,join=round,black!10]
@@ -192,14 +203,14 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 %   (d1.north -| d1.west)  rectangle (d7.south -| d7.east);
 %   \end{pgfonlayer}
 %   
-%   \draw[-latex, thick, black] (v1) -- (0,-6.5);
+   \draw[-latex, thick, black] (v1) -- (0,-6.5);
 %   \draw[-latex, thick, black] (v2) -- (4,-6.5);
-%   \draw[-latex, thick, black] (v3) -- (8,-6.5);
+   \draw[-latex, thick, black] (v3) -- (8,-6.5);
    \end{tikzpicture}
 	\end{figure}
 \end{frame}
 
-\begin{frame}[fragile]{Gravity model data structure}
+\begin{frame}[fragile]{Why a \textbf{multilevel} approach structure for the gravity model}
 	\begin{figure}	
 		\begin{tikzpicture}[scale=0.90, thick]
 		
@@ -257,9 +268,9 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 		   
 		   \node[migrants] (m) at (4,-3)  {\textsc{Flows $i \rightarrow j$}};
 		   
-		%   \node[var] (v1) at (0,-8)  {\textsc{Origin-specific variables ($o_i, \mathbf{X_i}$)}};
-		   \node[var] (v2) at (4,-8)  {\textsc{Flow ($\mathbf{X}_{ij}$) }};
-		%   \node[var] (v3) at (8,-8)  {\textsc{Destination-specific variables  ($d_j, \mathbf{X_j}$)}};
+		   \node[var] (v1) at (0,-8)  {\textsc{Push factors}};
+		   \node[var] (v2) at (4,-8)  {\textsc{Frictions }};
+		   \node[var] (v3) at (8,-8)  {\textsc{Pull factors} };
 		%   
 		%   \begin{pgfonlayer}{background}
 		%   \filldraw [line width=4mm,join=round,black!10]
@@ -267,14 +278,14 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 		%   (d1.north -| d1.west)  rectangle (d7.south -| d7.east);
 		%   \end{pgfonlayer}
 		%   
-		%   \draw[-latex, thick, black] (v1) -- (0,-6.5);
+		   \draw[-latex, thick, black] (v1) -- (0,-6.5);
 		   \draw[-latex, thick, black] (v2) -- (4,-6.5);
-		%   \draw[-latex, thick, black] (v3) -- (8,-6.5);
+		   \draw[-latex, thick, black] (v3) -- (8,-6.5);
 		\end{tikzpicture}
 	\end{figure}
 \end{frame}
 
-\begin{frame}[fragile]{Gravity model data structure}
+\begin{frame}[fragile]{Why a \textbf{multilevel} approach for the gravity model}
 	\begin{figure}	
 		\begin{tikzpicture}[scale=0.90, thick]
 		
@@ -349,7 +360,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Why a Bayesian multilevel approach?}
+\begin{frame}{Why a \textbf{Bayesian} multilevel approach?}
 \begin{itemize}
 	 \item Many definitions:
 	\begin{itemize}
