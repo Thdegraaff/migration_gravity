@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.26)  25 JUN 2019 13:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.26)  15 AUG 2019 16:37
 entering extended mode
 **./housing_migration.tex
 (housing_migration.tex
@@ -787,7 +787,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 Package hyperref Info: Option `colorlinks' set `true' on input line 58.
 Package hyperref Info: Option `breaklinks' set `true' on input line 58.
 Package hyperref Info: Option `bookmarksopen' set `false' on input line 58.
-Package hyperref Info: Option `draft' set `true' on input line 92.
+Package hyperref Info: Option `draft' set `true' on input line 89.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -803,21 +803,21 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (housing_migration.aux)
 \openout1 = `housing_migration.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 93.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 90.
  ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -888,8 +888,8 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 93.
-LaTeX Info: Redefining \microtypecontext on input line 93.
+(lastpage)             ! on input line 90.
+LaTeX Info: Redefining \microtypecontext on input line 90.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -915,14 +915,14 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'housing_migration.bbl' found.
 
 (housing_migration.bbl)
-Package biblatex Info: Reference section=0 on input line 93.
-Package biblatex Info: Reference segment=0 on input line 93.
+Package biblatex Info: Reference section=0 on input line 90.
+Package biblatex Info: Reference segment=0 on input line 90.
 \AtBeginShipoutBox=\box34
 
 
 Package hyperref Warning: Draft mode on.
 
-Package hyperref Info: Link coloring ON on input line 93.
+Package hyperref Info: Link coloring ON on input line 90.
 ("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -931,10 +931,10 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count343
 )
-LaTeX Info: Redefining \ref on input line 93.
-LaTeX Info: Redefining \pageref on input line 93.
-LaTeX Info: Redefining \nameref on input line 93.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 98.
+LaTeX Info: Redefining \ref on input line 90.
+LaTeX Info: Redefining \pageref on input line 90.
+LaTeX Info: Redefining \nameref on input line 90.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 95.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1phv.fd"
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
@@ -944,12 +944,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 95.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 95.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 98.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 98
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 95.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 95
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1ztmcm.fd"
@@ -959,30 +959,30 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `ztmcm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 98
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 95
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\omlztmcm.fd"
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 98
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 95
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\omsztmcm.fd"
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 98
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 95
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\omxztmcm.fd"
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 95.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 95.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 95.
 
 (C:\Users\tgf200\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
@@ -991,27 +991,27 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 95.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 95.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 95.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 95.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 95.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 98.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 95.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 98.
-LaTeX Font Info:    Try loading font information for U+mvs on input line 98.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 95.
+LaTeX Font Info:    Try loading font information for U+mvs on input line 95.
 
 (C:\Users\tgf200\AppData\Roaming\MiKTeX\2.9\tex/latex/marvosym\umvs.fd)
 (C:\Users\tgf200\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\mt-mvs.cfg
 File: mt-mvs.cfg 2006/07/05 v1.1 microtype config. file: Marvosym Euro (RS)
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 102.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 99.
 
 Underfull \vbox (badness 3000) has occurred while \output is active []
 
@@ -1022,7 +1022,7 @@ Underfull \vbox (badness 3000) has occurred while \output is active []
 <../fig/hist_mig.pdf, id=12, 578.16pt x 289.08pt>
 File: ../fig/hist_mig.pdf Graphic file (type pdf)
 <use ../fig/hist_mig.pdf>
-Package pdftex.def Info: ../fig/hist_mig.pdf  used on input line 182.
+Package pdftex.def Info: ../fig/hist_mig.pdf  used on input line 179.
 (pdftex.def)             Requested size: 400.38872pt x 200.19322pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1030,20 +1030,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <../fig/hist_housing.pdf, id=13, 578.16pt x 289.08pt>
 File: ../fig/hist_housing.pdf Graphic file (type pdf)
 <use ../fig/hist_housing.pdf>
-Package pdftex.def Info: ../fig/hist_housing.pdf  used on input line 238.
+Package pdftex.def Info: ../fig/hist_housing.pdf  used on input line 235.
 (pdftex.def)             Requested size: 400.38872pt x 200.19322pt.
  [2]
 <../fig/gravity_network.pdf, id=18, 379.79593pt x 346.91708pt>
 File: ../fig/gravity_network.pdf Graphic file (type pdf)
 <use ../fig/gravity_network.pdf>
-Package pdftex.def Info: ../fig/gravity_network.pdf  used on input line 287.
+Package pdftex.def Info: ../fig/gravity_network.pdf  used on input line 284.
 (pdftex.def)             Requested size: 242.41745pt x 221.43858pt.
 
 Underfull \vbox (badness 8000) has occurred while \output is active []
 
  [3 <../fig/hist_mig.pdf> <../fig/hist_housing.pdf>] [4 <../fig/gravity_network
 .pdf>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 386.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 383.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1pcr.fd"
@@ -1056,12 +1056,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 <../fig/forestplot.pdf, id=82, 289.08pt x 361.35pt>
 File: ../fig/forestplot.pdf Graphic file (type pdf)
 <use ../fig/forestplot.pdf>
-Package pdftex.def Info: ../fig/forestplot.pdf  used on input line 421.
+Package pdftex.def Info: ../fig/forestplot.pdf  used on input line 418.
 (pdftex.def)             Requested size: 242.41745pt x 303.01915pt.
 <../fig/p_coef_out.pdf, id=83, 650.43pt x 578.16pt>
 File: ../fig/p_coef_out.pdf Graphic file (type pdf)
 <use ../fig/p_coef_out.pdf>
-Package pdftex.def Info: ../fig/p_coef_out.pdf  used on input line 442.
+Package pdftex.def Info: ../fig/p_coef_out.pdf  used on input line 439.
 (pdftex.def)             Requested size: 242.41745pt x 215.47734pt.
 
 
@@ -1071,16 +1071,16 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <../fig/p_coef_in.pdf, id=94, 650.43pt x 578.16pt>
 File: ../fig/p_coef_in.pdf Graphic file (type pdf)
 <use ../fig/p_coef_in.pdf>
-Package pdftex.def Info: ../fig/p_coef_in.pdf  used on input line 450.
+Package pdftex.def Info: ../fig/p_coef_in.pdf  used on input line 447.
 (pdftex.def)             Requested size: 242.41745pt x 215.47734pt.
 
-Overfull \hbox (3.8642pt too wide) in paragraph at lines 475--475
+Overfull \hbox (3.8642pt too wide) in paragraph at lines 472--472
 [][]\OT1/ptm/m/n/10 (-20) Carpenter, B., A. Gel-man, M. D. Hoff-man, D. Lee, B.
  Goodrich,
  []
 
 [6 <../fig/p_coef_out.pdf> <../fig/p_coef_in.pdf>]
-Overfull \hbox (1.61014pt too wide) in paragraph at lines 475--475
+Overfull \hbox (1.61014pt too wide) in paragraph at lines 472--472
 \OT1/ptm/m/n/10 (-20) ``Home-own-er-ship, so-cial rent-ing and la-bor mo-bil-it
 y across
  []
@@ -1088,26 +1088,26 @@ y across
 
 AED: lastpage setting LastPage
 [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 478.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 478.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 475.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 475.
  (housing_migration.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 478.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 478.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 475.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 475.
 Package logreq Info: Writing requests to 'housing_migration.run.xml'.
 \openout1 = `housing_migration.run.xml'.
 
  )
 (\end occurred inside a group at level 2)
 
-### simple group (level 2) entered at line 370 ({)
-### simple group (level 1) entered at line 362 ({)
+### simple group (level 2) entered at line 367 ({)
+### simple group (level 1) entered at line 359 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 20068 strings out of 492945
- 328424 string characters out of 3135510
- 675834 words of memory out of 3000000
+ 20065 strings out of 492945
+ 328397 string characters out of 3135510
+ 675808 words of memory out of 3000000
  23388 multiletter control sequences out of 15000+200000
- 77395 words of font info for 299 fonts, out of 3000000 for 9000
+ 77282 words of font info for 297 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,11n,58p,1142b,1769s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Pr
@@ -1127,7 +1127,7 @@ onts/type1/urw/symbol/usyr.pfb><C:/Users/tgf200/AppData/Roaming/MiKTeX/2.9/font
 s/type1/urw/symbol/usyr.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/
 utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on housing_migration.pdf (7 pages, 6566286 bytes).
+Output written on housing_migration.pdf (7 pages, 6566233 bytes).
 PDF statistics:
  161 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
