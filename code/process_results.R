@@ -5,6 +5,7 @@ library(bayesplot)
 library(ggthemes)
 library(sf)
 library(RColorBrewer)
+library("cowplot")
 
 ######################
 # Get subsample of data
@@ -68,14 +69,17 @@ d$hom_d <- log(d$homeowners_d) - mean(log(d$homeowners_d))
 
 new_d <- d %>% 
   mutate(
-    hom_o = ifelse(origin == 132, hom_o - 0.1, hom_o),
-    hom_d = ifelse(destination == 132, hom_d - 0.1, hom_d),
+    hom_o = ifelse(origin == 132, hom_o + 0.1, hom_o),
+    hom_d = ifelse(destination == 132, hom_d + 0.1, hom_d),
+    soc_o = ifelse(origin == 132, soc_o + 0.1, soc_o),
+    soc_d = ifelse(destination == 132, soc_d + 0.1, soc_d),
   )
 
 fit_old <- fitted(m2_neg,  nsamples = 1000, scale = "response")
 mean_old <- fit_old[ , 1]
 fit_new <- fitted(m2_neg, nsamples = 1000, newdata = new_d, scale = "response")
 mean_new <- fit_new[ , 1]
+
 
 mean_diff <- mean_new - mean_old
 
@@ -122,12 +126,12 @@ municipalities$diff_in <- diff_in[ , 2]
 municipalities$diff_out <- diff_out[ , 2]
 
 p_diff_in <- ggplot() + geom_sf(data = municipalities, aes(fill = diff_in), lwd = 0.4) + 
-  scale_fill_distiller("Difference \nin in-flow ", direction = 1 ) +
-  scale_color_gradient(low = "white", high = "red") + 
+  scale_fill_distiller("Difference \nin in-flow ", direction = -1 ) +
+  scale_color_gradient(high = "white", low = "red") + 
   theme_bw() 
 p_diff_out <- ggplot() + geom_sf(data = municipalities, aes(fill = diff_out), lwd = 0.4) + 
-  scale_fill_distiller("Difference \nin out-flow", palette = "Reds", direction = 1 ) +
-  scale_color_gradient(low = "white", high = "red") + 
+  scale_fill_distiller("Difference \nin out-flow",  direction = -1 ) +
+  scale_color_gradient(high = "white", low = "red") + 
   theme_bw() 
 
 pdf(file = "./fig/p_diff_in.pdf" ,width = 9, height = 8) 
@@ -138,4 +142,23 @@ pdf(file = "./fig/p_diff_out.pdf" ,width = 9, height = 8)
 p_diff_out
 dev.off()
 
-hist(fit_old)
+######################
+#  make histogram fitted
+######################
+
+fit <- as.data.frame(round(fit_old) )
+
+fit_large <- filter(fit, Estimate >= 20)
+fit_small <- filter(fit, Estimate < 20)
+hist_fit_small <- ggplot(data = fit_small, aes(Estimate)) + 
+  geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20) +
+  scale_y_continuous(breaks=seq(0, 100000, 25000)) + theme_bw()
+hist_fit_large <- ggplot(data = fit_large, aes(Estimate)) + 
+  geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20) +
+  scale_x_continuous(breaks=seq(20, 120000, 20000)) +
+  theme_bw()
+hist_fit <- plot_grid(hist_fit_small, hist_fit_large, labels = c("Small flows", "Large flows"), label_x = 0.5, label_y = 0.96) 
+
+pdf(file = "./fig/hist_fit.pdf" ,width=8,height=4) 
+hist_fit
+dev.off()
