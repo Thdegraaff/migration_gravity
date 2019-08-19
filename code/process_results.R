@@ -5,7 +5,8 @@ library(bayesplot)
 library(ggthemes)
 library(sf)
 library(RColorBrewer)
-library("cowplot")
+library(cowplot)
+library(hrbrthemes)
 
 ######################
 # Get subsample of data
@@ -146,18 +147,58 @@ dev.off()
 #  make histogram fitted
 ######################
 
+
+######################
+# first get migration data
+######################
+
+migration <- read.csv2(file = "./data/src/Tussen_gemeenten_verhuisde_personen_20122018_120551.csv", 
+                       header = TRUE)
+migration <- drop_na(migration) # drop all municapalities with NA; now dataset is 393 * 393 - 393
+i <- sapply(migration, is.factor)
+migration[i] <- lapply(migration[i], as.character)
+
+data <- rename(migration, 
+               origin = Regio.van.vertrek, 
+               destination = Regio.van.vestiging,
+               migrants= Tussen.gemeenten.verhuisde.personen..aantal.)
+
+######################
+# Then get fitted data
+######################
+
 fit <- as.data.frame(round(fit_old) )
+
+######################
+# Create new data frame
+######################
+
+nr_obs <- nr * nr
+
+fit_data <- data.frame(
+  type = c( rep("Observed", nr_obs), rep("Predicted", nr_obs) ),
+  value = c( data$migrants, fit$Estimate) )
+)
+
 
 fit_large <- filter(fit, Estimate >= 20)
 fit_small <- filter(fit, Estimate < 20)
 hist_fit_small <- ggplot(data = fit_small, aes(Estimate)) + 
   geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20) +
-  scale_y_continuous(breaks=seq(0, 100000, 25000)) + theme_bw()
+  theme_bw()
 hist_fit_large <- ggplot(data = fit_large, aes(Estimate)) + 
   geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20) +
-  scale_x_continuous(breaks=seq(20, 120000, 20000)) +
+  scale_x_continuous(breaks=seq(20, 120000, 25000)) +
   theme_bw()
 hist_fit <- plot_grid(hist_fit_small, hist_fit_large, labels = c("Small flows", "Large flows"), label_x = 0.5, label_y = 0.96) 
+
+p <- fit_data %>%
+  ggplot( aes(x=value, fill=type)) +
+  geom_histogram( color="#e9ecef", alpha=0.6, position = 'identity') +
+  scale_fill_manual(values=c("#69b3a2", "#404080")) +
+  theme_ipsum() +
+  labs(fill="")
+
 
 pdf(file = "./fig/hist_fit.pdf" ,width=8,height=4) 
 hist_fit
