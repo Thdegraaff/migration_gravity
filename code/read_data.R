@@ -28,7 +28,7 @@ migration[i] <- lapply(migration[i], as.character)
 data <- rename(migration, 
                     origin = Regio.van.vertrek, 
                     destination = Regio.van.vestiging,
-                    migrants= Tussen.gemeenten.verhuisde.personen..aantal.)
+                    Migrants= Tussen.gemeenten.verhuisde.personen..aantal.)
 origin <- rename(muni, origin = Regio.s)
 destination <- rename(muni, destination = Regio.s)
 
@@ -73,11 +73,11 @@ hist_housing <- ggplot(data = housing, aes(x = Percentage)) +
   theme_bw() + 
   labs(x = "Percentage (%)", y = "")
 
-data_mig_large <- filter(data, migrants >= 20)
-data_mig_small <- filter(data, migrants < 20)
-hist_mig_small <- ggplot(data = data_mig_small, aes(migrants)) + 
-  geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20) + theme_bw()
-hist_mig_large <- ggplot(data = data_mig_large, aes(migrants)) + 
+data_mig_large <- filter(data, Migrants >= 20)
+data_mig_small <- filter(data, Migrants < 20)
+hist_mig_small <- ggplot(data = data_mig_small, aes(Migrants)) + 
+  geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20) + theme_bw() 
+hist_mig_large <- ggplot(data = data_mig_large, aes(Migrants)) + 
   geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20) +
   scale_x_continuous(breaks=seq(20, 4020, 1000)) +
   theme_bw()
