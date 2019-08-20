@@ -434,44 +434,48 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \end{small}
 \end{frame}
 
+%
+%\begin{frame}[fragile]{Hamiltonian Monte Carlo (HMC) estimation results}
+%		\begin{columns}
+%		\begin{column}{0.5\textwidth}
+%			\begin{center}
+%				\begin{small}
+%			  \begin{tabular}{lrr}
+%				\toprule
+%				Parameter & mean & sd \\ 
+%				\midrule
+%				Intercept      & $-0.74$ & 0.04 \\ 
+%				log(pop$_i$)   & 0.89 & 0.03  \\ 
+%				log(pop$_j$)   & 0.88 & 0.04  \\ 
+%				log(home$_i$)  & $-1.48$ & 0.19 \\ 
+%				log(home$_j$)  & $-1.27$ & 0.25  \\ 
+%				log(soc$_i$)   & $-0.04$ & 0.04  \\
+%				log(soc$_j$)   & $-0.06$ & 0.03 \\ 
+%				log(dist$_{ij})$ & $-1.96$ & 0.01  \\ 
+%				$\sigma_o$    & 0.45 & 0.02  \\ 
+%				$\sigma_d$    & 0.61 & 0.02  \\ 
+%				$\tau$        & 1.22 & 0.01  \\ 
+%				\bottomrule
+%			\end{tabular}
+%		\end{small}
+%		\end{center}
+%		\end{column}
+%		\begin{column}{0.5\textwidth} 
+%
+%			\begin{center}
+%				\includegraphics[width=\textwidth]{../fig/forestplot}      
+%			\end{center}
+%		\end{column}
+%	\end{columns}
+%\end{frame}
 
-
-\begin{frame}{Hamiltonian Monte Carlo (HMC) estimation results}
-		\begin{columns}
-		\begin{column}{0.5\textwidth}
-			\begin{center}
-				\begin{small}
-			  \begin{tabular}{lrr}
-				\toprule
-				Parameter & mean & sd \\ 
-				\midrule
-				Intercept      & $-0.74$ & 0.04 \\ 
-				log(pop$_i$)   & 0.89 & 0.03  \\ 
-				log(pop$_j$)   & 0.88 & 0.04  \\ 
-				log(home$_i$)  & $-1.48$ & 0.19 \\ 
-				log(home$_j$)  & $-1.27$ & 0.25  \\ 
-				log(soc$_i$)   & $-0.04$ & 0.04  \\
-				log(soc$_j$)   & $-0.06$ & 0.03 \\ 
-				log(dist$_{ij})$ & $-1.96$ & 0.01  \\ 
-				$\sigma_o$    & 0.45 & 0.02  \\ 
-				$\sigma_d$    & 0.61 & 0.02  \\ 
-				$\tau$        & 1.22 & 0.01  \\ 
-				\bottomrule
-			\end{tabular}
-		\end{small}
-		\end{center}
-		\end{column}
-		\begin{column}{0.5\textwidth} 
-
-			\begin{center}
-				\includegraphics[width=\textwidth]{../fig/forestplot}      
-			\end{center}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}{how good are the predictions?}
-
+\begin{frame}{Observed versus predicted data}
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{../fig/hist_fit}      
+	\end{center}
+\begin{itemize}
+	\item Predictions have large outliers: Rotterdam (big population, low percentage home-ownership)
+\end{itemize}
 \end{frame}
 
 \begin{frame}{$d_{\text{mun}}$ as measure of attractivity?}
