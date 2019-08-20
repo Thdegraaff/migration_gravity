@@ -173,7 +173,7 @@ fit <- as.data.frame(round(fit_old) )
 # Create new data frame
 ######################
 
-nr_obs <- nr * nr
+nr_obs <- nr * (nr - 1)
 
 fit_data <- data.frame(
   type = c( rep("Observed", nr_obs), rep("Predicted", nr_obs) ),
@@ -198,14 +198,14 @@ fit_data <- data.frame(
 #   theme_ipsum() +
 #   labs(fill="")
 
-fit_large <- filter(fit_data, value >= 20 & value <= 4020)
-fit_small <- filter(fit_data, value < 20)
-hist_fit_small <- ggplot(data = fit_small, aes(value, fill = type)) + 
+fit_large <- filter(fit_data, Migrants >= 20 & Migrants <= 4020)
+fit_small <- filter(fit_data, Migrants < 20)
+hist_fit_small <- ggplot(data = fit_small, aes(Migrants, fill = type)) + 
                          geom_histogram( color="black", alpha=0.7, position = 'dodge' , bins = 20) +
                          scale_fill_manual(values=c("forest green", "deepskyblue")) +
                          theme_bw() +
                          labs(fill="") 
-hist_fit_large <- ggplot(data = fit_large, aes(value, fill = type)) + 
+hist_fit_large <- ggplot(data = fit_large, aes(Migrants, fill = type)) + 
                           geom_histogram( color="black", alpha=0.7, position = 'dodge', bins = 20) +
                           scale_x_continuous(breaks=seq(20, 4020, 1000)) +
                           scale_fill_manual(values=c("forest green", "deepskyblue")) +
