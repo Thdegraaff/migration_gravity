@@ -59,13 +59,13 @@
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {23}{23}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {0}{0}{16}{24/25}{}{0}}
+\headcommand {\slideentry {0}{0}{16}{24/24}{}{0}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\beamer@framepages {24}{25}}
+\headcommand {\beamer@framepages {24}{24}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {0}{0}{17}{26/26}{}{0}}
+\headcommand {\slideentry {0}{0}{17}{25/26}{}{0}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\beamer@framepages {25}{26}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\slideentry {0}{0}{18}{27/27}{}{0}}
 \defcounter {refsection}{0}\relax 
@@ -78,29 +78,33 @@
 \headcommand {\slideentry {0}{0}{20}{29/29}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {29}{29}}
-\headcommand {\gdef \insertmainframenumber {18}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {0}{0}{21}{30/30}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\gdef \insertmainframenumber {19}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\partentry {\translate {Appendix}}{1}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\beamer@partpages {1}{29}}
+\headcommand {\beamer@partpages {1}{30}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\beamer@sectionpages {1}{29}}
+\headcommand {\beamer@sectionpages {1}{30}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\beamer@subsectionpages {1}{29}}
+\headcommand {\beamer@subsectionpages {1}{30}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\beamer@appendixpages {30}}
+\headcommand {\beamer@appendixpages {31}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {0}{0}{21}{30/30}{}{1}}
+\headcommand {\slideentry {0}{0}{22}{31/31}{}{1}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\beamer@framepages {31}{31}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {0}{0}{21}{30/31}{}{1}}
+\headcommand {\slideentry {0}{0}{22}{31/32}{}{1}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\beamer@framepages {30}{31}}
-\headcommand {\beamer@partpages {30}{31}}
-\headcommand {\beamer@subsectionpages {30}{31}}
-\headcommand {\beamer@sectionpages {30}{31}}
-\headcommand {\beamer@documentpages {31}}
+\headcommand {\beamer@framepages {31}{32}}
+\headcommand {\beamer@partpages {31}{32}}
+\headcommand {\beamer@subsectionpages {31}{32}}
+\headcommand {\beamer@sectionpages {31}{32}}
+\headcommand {\beamer@documentpages {32}}
 \headcommand {\gdef \inserttotalframenumber {2}}
-\headcommand {\gdef \inserttotalframenumber {18}}
+\headcommand {\gdef \inserttotalframenumber {19}}
 \headcommand {\gdef \appendixtotalframenumber {2}}

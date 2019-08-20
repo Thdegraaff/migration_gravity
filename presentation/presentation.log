@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.26)  20 AUG 2019 11:50
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.26)  15 AUG 2019 15:18
+>>>>>>> parent of 1f91789... wrong commit (histograms)
 entering extended mode
 **./presentation.tex
 (presentation.tex
@@ -1682,95 +1686,97 @@ Overfull \vbox (8.89313pt too high) detected at line 435
 [22
 
 ]
-<../fig/hist_fit.pdf, id=180, 578.16pt x 289.08pt>
-File: ../fig/hist_fit.pdf Graphic file (type pdf)
-<use ../fig/hist_fit.pdf>
-Package pdftex.def Info: ../fig/hist_fit.pdf  used on input line 479.
-(pdftex.def)             Requested size: 276.559pt x 138.27602pt.
+<../fig/forestplot.pdf, id=180, 289.08pt x 361.35pt>
+File: ../fig/forestplot.pdf Graphic file (type pdf)
+<use ../fig/forestplot.pdf>
+Package pdftex.def Info: ../fig/forestplot.pdf  used on input line 471.
+(pdftex.def)             Requested size: 153.64493pt x 192.05493pt.
  [23
 
- <../fig/hist_fit.pdf>]
-<../fig/p_coef_out.pdf, id=195, 650.43pt x 578.16pt>
+ <../fig/forestplot.pdf>] [24
+
+]
+<../fig/p_coef_out.pdf, id=197, 650.43pt x 578.16pt>
 File: ../fig/p_coef_out.pdf Graphic file (type pdf)
 <use ../fig/p_coef_out.pdf>
-Package pdftex.def Info: ../fig/p_coef_out.pdf  used on input line 494.
+Package pdftex.def Info: ../fig/p_coef_out.pdf  used on input line 490.
 (pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
 
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 494--494
+Overfull \hbox (15.36542pt too wide) in paragraph at lines 490--490
  [] 
  []
 
-<../fig/p_coef_in.pdf, id=196, 650.43pt x 578.16pt>
+<../fig/p_coef_in.pdf, id=198, 650.43pt x 578.16pt>
 File: ../fig/p_coef_in.pdf Graphic file (type pdf)
 <use ../fig/p_coef_in.pdf>
-Package pdftex.def Info: ../fig/p_coef_in.pdf  used on input line 494.
+Package pdftex.def Info: ../fig/p_coef_in.pdf  used on input line 490.
 (pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
 
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 494--494
- [] 
- []
-
-[24
-
- <../fig/p_coef_out.pdf> <../fig/p_coef_in.pdf>]
-File: ../fig/p_coef_out.pdf Graphic file (type pdf)
-<use ../fig/p_coef_out.pdf>
-Package pdftex.def Info: ../fig/p_coef_out.pdf  used on input line 494.
-(pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
-
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 494--494
- [] 
- []
-
-File: ../fig/p_coef_in.pdf Graphic file (type pdf)
-<use ../fig/p_coef_in.pdf>
-Package pdftex.def Info: ../fig/p_coef_in.pdf  used on input line 494.
-(pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
-
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 494--494
+Overfull \hbox (15.36542pt too wide) in paragraph at lines 490--490
  [] 
  []
 
 [25
 
-]
-<../fig/p_diff_out.pdf, id=223, 650.43pt x 578.16pt>
-File: ../fig/p_diff_out.pdf Graphic file (type pdf)
-<use ../fig/p_diff_out.pdf>
-Package pdftex.def Info: ../fig/p_diff_out.pdf  used on input line 509.
+ <../fig/p_coef_out.pdf> <../fig/p_coef_in.pdf>]
+File: ../fig/p_coef_out.pdf Graphic file (type pdf)
+<use ../fig/p_coef_out.pdf>
+Package pdftex.def Info: ../fig/p_coef_out.pdf  used on input line 490.
 (pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
 
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 509--509
+Overfull \hbox (15.36542pt too wide) in paragraph at lines 490--490
  [] 
  []
 
-<../fig/p_diff_in.pdf, id=224, 650.43pt x 578.16pt>
-File: ../fig/p_diff_in.pdf Graphic file (type pdf)
-<use ../fig/p_diff_in.pdf>
-Package pdftex.def Info: ../fig/p_diff_in.pdf  used on input line 509.
+File: ../fig/p_coef_in.pdf Graphic file (type pdf)
+<use ../fig/p_coef_in.pdf>
+Package pdftex.def Info: ../fig/p_coef_in.pdf  used on input line 490.
 (pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
 
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 509--509
+Overfull \hbox (15.36542pt too wide) in paragraph at lines 490--490
  [] 
  []
 
 [26
 
- <../fig/p_diff_out.pdf> <../fig/p_diff_in.pdf>] [27
+]
+<../fig/p_diff_out.pdf, id=225, 650.43pt x 578.16pt>
+File: ../fig/p_diff_out.pdf Graphic file (type pdf)
+<use ../fig/p_diff_out.pdf>
+Package pdftex.def Info: ../fig/p_diff_out.pdf  used on input line 505.
+(pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
 
-] [28
+Overfull \hbox (15.36542pt too wide) in paragraph at lines 505--505
+ [] 
+ []
+
+<../fig/p_diff_in.pdf, id=226, 650.43pt x 578.16pt>
+File: ../fig/p_diff_in.pdf Graphic file (type pdf)
+<use ../fig/p_diff_in.pdf>
+Package pdftex.def Info: ../fig/p_diff_in.pdf  used on input line 505.
+(pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
+
+Overfull \hbox (15.36542pt too wide) in paragraph at lines 505--505
+ [] 
+ []
+
+[27
+
+ <../fig/p_diff_out.pdf> <../fig/p_diff_in.pdf>] [28
 
 ] [29
+
+] [30
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 540.
+(hyperref)                removing `\translate ' on input line 536.
 
-[30
+[31
 
  <C:/Users/tgf200/AppData/Roaming/MiKTeX/2.9/tex/latex/beamer/beamericonarticle
-.pdf>] [31
+.pdf>] [32
 
 
 ]
@@ -1783,11 +1789,11 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 \tf@snm=\write9
 \openout9 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 549.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 549.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 545.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 545.
  (presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 549.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 549.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 545.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 545.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: A7F4D589709A975A14292322A595ED53;42.
 
@@ -1799,10 +1805,10 @@ Package logreq Info: Writing requests to 'presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39474 strings out of 492945
- 947231 string characters out of 3135510
+ 39478 strings out of 492945
+ 947276 string characters out of 3135510
  1334027 words of memory out of 3000000
- 42545 multiletter control sequences out of 15000+200000
+ 42547 multiletter control sequences out of 15000+200000
  20282 words of font info for 73 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,14n,98p,1876b,1707s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1817,9 +1823,13 @@ onts/cm/cmssi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmssi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi9.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
 Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+<<<<<<< HEAD
 Output written on presentation.pdf (31 pages, 3527881 bytes).
+=======
+Output written on presentation.pdf (32 pages, 13045948 bytes).
+>>>>>>> parent of 1f91789... wrong commit (histograms)
 PDF statistics:
- 332 PDF objects out of 1000 (max. 8388607)
- 74 named destinations out of 1000 (max. 500000)
+ 342 PDF objects out of 1000 (max. 8388607)
+ 76 named destinations out of 1000 (max. 500000)
  96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

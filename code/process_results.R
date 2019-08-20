@@ -178,7 +178,11 @@ nr_obs <- nr * nr
 fit_data <- data.frame(
   type = c( rep("Observed", nr_obs), rep("Predicted", nr_obs) ),
 <<<<<<< HEAD
+<<<<<<< HEAD
   Migrants = c( data$migrants, fit$Estimate) 
+=======
+  value = c( data$migrants, fit$Estimate) 
+>>>>>>> parent of 1f91789... wrong commit (histograms)
   )
 
 =======
@@ -199,21 +203,27 @@ hist_fit_large <- ggplot(data = fit_large, aes(Estimate)) +
 hist_fit <- plot_grid(hist_fit_small, hist_fit_large, labels = c("Small flows", "Large flows"), label_x = 0.5, label_y = 0.96) 
 
 p <- fit_data %>%
-  ggplot( aes(x=Migrants, fill=type)) +
+  ggplot( aes(x=value, fill=type)) +
   geom_histogram( color="#e9ecef", alpha=0.6, position = 'identity') +
   scale_fill_manual(values=c("#69b3a2", "#404080")) +
   theme_ipsum() +
   labs(fill="")
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 fit_large <- filter(fit_data, Migrants >= 20 & Migrants <= 5000)
 fit_small <- filter(fit_data, Migrants < 20)
 hist_fit_small <- ggplot(data = fit_small, aes(Migrants, fill = type)) + 
+=======
+fit_large <- filter(fit_data, value >= 20 & value <= 5000)
+fit_small <- filter(fit_data, value < 20)
+hist_fit_small <- ggplot(data = fit_small, aes(value, fill = type)) + 
+>>>>>>> parent of 1f91789... wrong commit (histograms)
                            geom_histogram( color="black", alpha=0.7, position = 'identity' , bins = 20) +
                            scale_fill_manual(values=c("forest green", "red")) +
                            theme_bw() +
                            labs(fill="")
-hist_fit_large <- ggplot(data = fit_large, aes(Migrants, fill = type)) + 
+hist_fit_large <- ggplot(data = fit_large, aes(value, fill = type)) + 
   geom_histogram( color="#e9ecef", alpha=0.6, position = 'dodge') +
   scale_fill_manual(values=c("forest green", "red")) +
   theme_bw() +
