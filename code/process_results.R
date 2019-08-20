@@ -173,13 +173,18 @@ fit <- as.data.frame(round(fit_old) )
 # Create new data frame
 ######################
 
-nr_obs <- nr * (nr - 1)
+nr_obs <- nr * nr
 
 fit_data <- data.frame(
   type = c( rep("Observed", nr_obs), rep("Predicted", nr_obs) ),
+<<<<<<< HEAD
   Migrants = c( data$migrants, fit$Estimate) 
   )
 
+=======
+  value = c( data$migrants, fit$Estimate) )
+)
+>>>>>>> parent of 5c03139... add histogram fitted values
 
 
 fit_large <- filter(fit, Estimate >= 20)
@@ -200,6 +205,7 @@ p <- fit_data %>%
   theme_ipsum() +
   labs(fill="")
 
+<<<<<<< HEAD
 fit_large <- filter(fit_data, Migrants >= 20 & Migrants <= 5000)
 fit_small <- filter(fit_data, Migrants < 20)
 hist_fit_small <- ggplot(data = fit_small, aes(Migrants, fill = type)) + 
@@ -214,6 +220,8 @@ hist_fit_large <- ggplot(data = fit_large, aes(Migrants, fill = type)) +
   labs(fill="")
 hist_fit <- plot_grid(hist_fit_small, hist_fit_large, labels = c("Small flows", "Large flows"), label_x = 0.5, label_y = 0.96) 
 
+=======
+>>>>>>> parent of 5c03139... add histogram fitted values
 
 pdf(file = "./fig/hist_fit.pdf" ,width=8,height=4) 
 hist_fit
