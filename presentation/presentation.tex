@@ -360,17 +360,17 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Why a \textbf{Bayesian} multilevel approach?}
+\begin{frame}{Why a Bayesian multilevel approach?}
 \begin{itemize}
 	 \item Many definitions:
 	\begin{itemize}
 		\item hierarchical, mixed effects, varying intercept/parameter, shrinkage, partial pooling models\pause
 	\end{itemize}
 	\item Increasingly used---increases model \alert{performance} and \alert{flexibility} \pause
-    \item \alert{Simultenous} modeling at various levels (e.g., cities, regions, flows, individuals) 
+    \item \alert{Simultaneous} modeling at various levels (e.g., cities, regions, flows, individuals) 
     \begin{itemize}
     	\item no two-stage models anymore 
-    	\item precision (standard deviation) is correct\pause
+    	\item precision (standard errors) is correct\pause
     \end{itemize}
 	\item \alert{Partial pooling}: origin and destination specific effects are draws from a distribution: usually $\sim \text{ Normal}(\alpha, \sigma)$
 	\begin{itemize}
@@ -385,7 +385,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 		\includegraphics[width=0.8\textwidth]{../fig/hist_mig}      
 	\end{center}
 \begin{itemize}
-	\item Migration flows \alert{between} 393 Dutch municipalities in 2015($\approx 150,000$)
+	\item Migration flows \alert{between} 393 Dutch municipalities in 2015 ($\approx 150,000$)
 	\item Variance is 4 times expectation: \alert{dispersion}
 \end{itemize}
 \end{frame}
@@ -402,7 +402,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 
 \begin{frame}{Modeling framework: traditional gravity modeling}
 	\begin{equation*}
-	\log(\text{migrants}_{ij}) = o_i + d_j +  \log(\mathbf{X}_{ij})\beta + \gamma\log(\text{dist}_{ij}) + \epsilon_{ij}
+	\log(\text{Migrants}_{ij}) = o_i + d_j +  \log(\mathbf{X}_{ij})\beta + \gamma\log(\text{dist}_{ij}) + \epsilon_{ij}
 	\label{eq:gravfixed}
 	\end{equation*} 
 	
@@ -416,7 +416,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 
 \begin{frame}[fragile]{Modeling framework: multilevel gravity modeling}
 \begin{small}
-	\begin{align} \text{Migrants}_{ij} \sim & \text{ GammaPoisson}(\lambda_{ij}, \tau) \tag{\footnotesize \color{blue} flow of migrants} \\ \pause
+	\begin{align} \text{Migrants}_{ij} \sim & \text{ Gamma-Poisson}(\lambda_{ij}, \tau) \tag{\footnotesize \color{blue} flow of migrants} \\ \pause
 	\log(\lambda_{ij}) =
 	& \alpha + o_{\text{mun}[i]} + d_{\text{mun}[j]} + \tag{\footnotesize \color{blue} regional effects}  \\ \pause
 	& \beta_1 \log(\text{pop}_i) + \notag
@@ -477,7 +477,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\includegraphics[width=0.9\textwidth]{../fig/hist_fit}      
 \end{center}
 \begin{itemize}
-	\item Predictions have large outliers: caused by Rotterdam (large population, low percentage home-ownership)
+	\item \alert{Caveat}: predictions have large outliers: caused by Rotterdam (large population, low percentage home-ownership)
 \end{itemize}
 \end{frame}
 

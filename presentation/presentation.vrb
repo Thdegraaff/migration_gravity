@@ -1,6 +1,6 @@
 \frametitle{Modeling framework: multilevel gravity modeling}
 \begin{small}
-	\begin{align} \text{Migrants}_{ij} \sim & \text{ GammaPoisson}(\lambda_{ij}, \tau) \tag{\footnotesize \color{blue} flow of migrants} \\ \pause
+	\begin{align} \text{Migrants}_{ij} \sim & \text{ Gamma-Poisson}(\lambda_{ij}, \tau) \tag{\footnotesize \color{blue} flow of migrants} \\ \pause
 	\log(\lambda_{ij}) =
 	& \alpha + o_{\text{mun}[i]} + d_{\text{mun}[j]} + \tag{\footnotesize \color{blue} regional effects}  \\ \pause
 	& \beta_1 \log(\text{pop}_i) + \notag
