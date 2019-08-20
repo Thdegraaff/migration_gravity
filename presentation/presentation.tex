@@ -434,53 +434,11 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \end{small}
 \end{frame}
 
-<<<<<<< HEAD
-%
-%\begin{frame}[fragile]{Hamiltonian Monte Carlo (HMC) estimation results}
-%		\begin{columns}
-%		\begin{column}{0.5\textwidth}
-%			\begin{center}
-%				\begin{small}
-%			  \begin{tabular}{lrr}
-%				\toprule
-%				Parameter & mean & sd \\ 
-%				\midrule
-%				Intercept      & $-0.74$ & 0.04 \\ 
-%				log(pop$_i$)   & 0.89 & 0.03  \\ 
-%				log(pop$_j$)   & 0.88 & 0.04  \\ 
-%				log(home$_i$)  & $-1.48$ & 0.19 \\ 
-%				log(home$_j$)  & $-1.27$ & 0.25  \\ 
-%				log(soc$_i$)   & $-0.04$ & 0.04  \\
-%				log(soc$_j$)   & $-0.06$ & 0.03 \\ 
-%				log(dist$_{ij})$ & $-1.96$ & 0.01  \\ 
-%				$\sigma_o$    & 0.45 & 0.02  \\ 
-%				$\sigma_d$    & 0.61 & 0.02  \\ 
-%				$\tau$        & 1.22 & 0.01  \\ 
-%				\bottomrule
-%			\end{tabular}
-%		\end{small}
-%		\end{center}
-%		\end{column}
-%		\begin{column}{0.5\textwidth} 
-%
-%			\begin{center}
-%				\includegraphics[width=\textwidth]{../fig/forestplot}      
-%			\end{center}
-%		\end{column}
-%	\end{columns}
-%\end{frame}
-
-\begin{frame}{Observed versus predicted data}
-	\begin{center}
-		\includegraphics[width=0.9\textwidth]{../fig/hist_fit}      
-	\end{center}
-\begin{itemize}
-	\item Predictions have large outliers: caused by Rotterdam (large population, low percentage home-ownership)
-\end{itemize}
-=======
 
 
-\begin{frame}{Hamiltonian Monte Carlo (HMC) estimation results}
+
+
+\begin{frame}{Estimation results}
 		\begin{columns}
 		\begin{column}{0.5\textwidth}
 			\begin{center}
@@ -514,10 +472,15 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\end{columns}
 \end{frame}
 
-\begin{frame}{how good are the predictions?}
-
->>>>>>> parent of 1f91789... wrong commit (histograms)
+\begin{frame}{Observed versus predicted data}
+\begin{center}
+	\includegraphics[width=0.9\textwidth]{../fig/hist_fit}      
+\end{center}
+\begin{itemize}
+	\item Predictions have large outliers: caused by Rotterdam (large population, low percentage home-ownership)
+\end{itemize}
 \end{frame}
+
 
 \begin{frame}{$d_{\text{mun}}$ as measure of attractivity?}
 		\begin{columns}
@@ -550,19 +513,24 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \end{frame}
 
 \begin{frame}{Conclusions}
-\textbf{Migration flows}:
+\textbf{Flexibel and powerful Bayesian multilevel gravity model}:
 \begin{itemize}
 	\item homeownership has an \alert{elasticity} well below $-1$
 	\item social renting has negative elasticity as well, but close to \alert{zero} \citep{boyle1998migration}
-	\item most migration dynamics \emph{outside} the most popular areas 
+	\item not very \alert{scalable}; 154,056 obs. $\approx$ 6 hrs. of estimation
 \end{itemize}
 
-\textbf{Bayesian multilevel gravity framework}:
+\textbf{Now what?}:
 \begin{itemize}
-	\item \alert{flexible} and \alert{powerful}
-	\item suitable for predictions \alert{within} and \alert{outside} sample
-	\item with good model specification, estimation runs smoothly
-	\item not very \alert{scalable}; 154,056 obs. $\approx$ 6 hrs. of estimation
+	\item \alert{disentangle} city size and housing market structure
+	\begin{itemize}
+		\item interaction effects/varying slopes?
+	\end{itemize}
+	\item additional model structure
+	\begin{itemize}
+		\item correlation between $o_{\text{mun}[i]}$ and $d_{\text{mun}[j]}$
+		\item \alert{spatial} autocorrelation
+	\end{itemize}
 \end{itemize}
 \end{frame}
 
