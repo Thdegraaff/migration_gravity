@@ -30,12 +30,12 @@ municipalities$coef_out <- coef(m2_neg)$origin[,1,1]
 
 out_m <- data %>%
   group_by(code_o) %>%
-  summarize(migrants_out = (sum(migrants) )) %>%
+  summarize(migrants_out = (sum(Migrants) )) %>%
   rename(GM_CODE = code_o)
 
 in_m <- data %>%
   group_by(code_d) %>%
-  summarize(migrants_in = (sum(migrants) )) %>%
+  summarize(migrants_in = (sum(Migrants) )) %>%
   rename(GM_CODE = code_d)
 
 # Merge data

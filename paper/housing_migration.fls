@@ -387,6 +387,9 @@ INPUT ../fig/p_coef_out.pdf
 INPUT ../fig/p_coef_in.pdf
 INPUT ../fig/p_coef_in.pdf
 INPUT ../fig/p_coef_in.pdf
+INPUT ../fig/p_diff_out.pdf
+INPUT ../fig/p_diff_out.pdf
+INPUT ../fig/p_diff_out.pdf
 INPUT housing_migration.aux
 INPUT housing_migration.run.xml
 OUTPUT housing_migration.run.xml
