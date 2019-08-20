@@ -173,14 +173,12 @@ fit <- as.data.frame(round(fit_old) )
 # Create new data frame
 ######################
 
-nr_obs <- nr * (nr - 1)
+nr_obs <- nr * nr
 
 fit_data <- data.frame(
   type = c( rep("Observed", nr_obs), rep("Predicted", nr_obs) ),
-  value = c( data$migrants, fit$Estimate) 
-  )
-
-
+  Migrants = c( data$migrants, fit$Estimate) 
+)
 
 # fit_large <- filter(fit, Estimate >= 20)
 # fit_small <- filter(fit, Estimate < 20)

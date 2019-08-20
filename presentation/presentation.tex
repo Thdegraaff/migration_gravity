@@ -436,7 +436,9 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 
 
 
-\begin{frame}{Hamiltonian Monte Carlo (HMC) estimation results}
+
+
+\begin{frame}{Estimation results}
 		\begin{columns}
 		\begin{column}{0.5\textwidth}
 			\begin{center}
@@ -470,9 +472,15 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\end{columns}
 \end{frame}
 
-\begin{frame}{how good are the predictions?}
-
+\begin{frame}{Observed versus predicted data}
+\begin{center}
+	\includegraphics[width=0.9\textwidth]{../fig/hist_fit}      
+\end{center}
+\begin{itemize}
+	\item Predictions have large outliers: caused by Rotterdam (large population, low percentage home-ownership)
+\end{itemize}
 \end{frame}
+
 
 \begin{frame}{$d_{\text{mun}}$ as measure of attractivity?}
 		\begin{columns}
@@ -505,19 +513,24 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \end{frame}
 
 \begin{frame}{Conclusions}
-\textbf{Migration flows}:
+\textbf{Flexibel and powerful Bayesian multilevel gravity model}:
 \begin{itemize}
 	\item homeownership has an \alert{elasticity} well below $-1$
 	\item social renting has negative elasticity as well, but close to \alert{zero} \citep{boyle1998migration}
-	\item most migration dynamics \emph{outside} the most popular areas 
+	\item not very \alert{scalable}; 154,056 obs. $\approx$ 6 hrs. of estimation
 \end{itemize}
 
-\textbf{Bayesian multilevel gravity framework}:
+\textbf{Now what?}:
 \begin{itemize}
-	\item \alert{flexible} and \alert{powerful}
-	\item suitable for predictions \alert{within} and \alert{outside} sample
-	\item with good model specification, estimation runs smoothly
-	\item not very \alert{scalable}; 154,056 obs. $\approx$ 6 hrs. of estimation
+	\item \alert{disentangle} city size and housing market structure
+	\begin{itemize}
+		\item interaction effects/varying slopes?
+	\end{itemize}
+	\item additional model structure
+	\begin{itemize}
+		\item correlation between $o_{\text{mun}[i]}$ and $d_{\text{mun}[j]}$
+		\item \alert{spatial} autocorrelation
+	\end{itemize}
 \end{itemize}
 \end{frame}
 
