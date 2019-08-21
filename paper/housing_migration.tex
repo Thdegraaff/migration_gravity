@@ -109,31 +109,41 @@
 
         The current Dutch housing market is characterized by a low
         housing supply elasticity, high housing demand, and only a
-        small segment (5\%) that belongs to the private rental market
+        small segment (10\%) that belongs to the private rental market
         \citep{michielsen2017}. Because of the resulting large
         shortage of housing, many policy recommendations have been
         proposed, including plans for 700,000 new houses to be built
         in the coming decade. Unfortunately, the construction of a
         large amount of new dwellings is problematic in the
         Netherlands due to large and restrictive spatial constraints
-        \citep{michielsen2019}. Therefore, policy makers are also
-        looking at changing the housing structure, e.g., by converting
+        \citep{michielsen2019}. Therefore, policy makers consider 
+        as well to change the housing structure, e.g., by converting
         rent controlled housing to home-ownership properties, to
         tackle at least the high housing prices by enlarging the
         home-ownership segment.
         
+        There is already a large amount of literature looking into the positive
+        and negative effects of home-ownership---both from a private and from a social perspective \citep[see for an
+        overview][]{dietz2003social}. It is argued that home-ownership leads to,
+        e.g., better maintenance (of the own dwelling and the neighbourhood),
+        more savings, higher education outcomes, higher individual labor supply,
+        and even better health. One prominent negative effect of home-ownership
+        is that it leads to less incentives to move residence because of higher
+        moving costs vis-\`{a}-vis renting.  
         
-        To do so, I first revisit the role of housing market structure
+        This paper revisits the role of housing market structure
         as impediment for interregional migration and specifically
         focuses on the role of home-ownership and social renting
-        rates. To this end, I adopt a Bayesian multi-level modelling
-        approach which is not frequently encountered in the gravity
-        literature\footnote{That is, in the economic literature; a
+        rates. In addition, it gives a framework to predict changes 
+        in the whole network of migration flows, when housing market structure change locally. 
+        To this end, I adopt a Bayesian multilevel gravity model
+        which is not frequently encountered in the traditional gravity 
+        literature.\footnote{That is, in the economic literature; a
           notable exception is \citet{ranjan2007bayesian} in the
           economic trade literature. In the geographical literature
           this approach is more commonly adopted \citep[see within a
           migration context][]{congdon2010random,
-            congdon2012spatial}}. Traditional gravity modelling has
+            congdon2012spatial}} Traditional gravity modelling has
         the disadvantage that either regional fixed effects of origins
         and destinations can be incorporated or the regions'
         characteristics when not varying over flows. This paper
@@ -157,7 +167,7 @@
         as social renting rights are usually only valid locally (within
         municipality) and are lost when moving residence between municipalities.
         
-        Secondly, A partial pooling approach has another advantage, namely the
+        Second, a partial pooling approach has another advantage, namely the
         regional varying effects are completely probabilistic, making it
         feasible to predict both within and out-of-sample. In other words, with
         the results at hand I can predict migrations flows between existing
@@ -168,17 +178,29 @@
         one or even two new municipalities outside the sample.\footnote{See for
           probabilistic predictions of internation migration
           \cite{azose2015bayesian}.}
-        
-        There is already a large amount of literature looking into the positive
-        and negative effects of home-ownership \citep[see for an
-        overview][]{dietz2003social}. It is argued that home-ownership leads to,
-        e.g., better maintenance (of the own dwelling and the neighbourhood),
-        more savings, higher education outcomes, higher individual labor supply,
-        and even better health. One prominent negative effect of home-ownership
-        is that it leads to less incentives to move residence because of higher
-        moving costs vis-\`{a}-vis renting.  
-        
-        And higher moving costs are detrimental to the labor market
+	
+    	That housing market structure has a sizeable effect on migration
+    	decisions is empirically well-established, especially at the
+    	micro-level, where it is widely accepted that home-ownership has a
+    	negative effect on regional mobility \citep{dietz2003social,
+    		dohmen2005housing}. For example, \citet{palomares2018understanding}
+    	find that home-ownership has a very strong immobility effect on internal
+    	migration in Spain during the period 2001--2011.
+    	
+    	In the literature, less attention has been given to interregional
+    	migration on the aggregate level with respect to the housing market as a
+    	specific barrier.\footnote{See \citet{cushing2004crossing} for a
+    		historical overview of common themes within migration research.} For
+    	the UK, \citet{congdon2010random} found within a multilevel gravity
+    	model that social rented housing had little effect on the attractivity
+    	of a region, although it had a small positive effect on preventing
+    	people from moving residence. For the Canadian case,
+    	\citet{amirault2016drags} looked at the impact of home-ownership on
+    	migration flows within a gravity model using a Poisson pseudo maximum
+    	likelihood estimator and found an elasticity around $-1$.
+    	           
+        One of the main reasons to look into housing market structure and migration is that   
+        higher moving costs are detrimental to the aggregate labor market
         \citep{oswald1996conjecture, oswald1999housing}. These is a large
         empirical literature \citep[see, e.g., ][]{munch2006homeowners,
           munch2008home, de2013european} looking at the impact of individual and
@@ -199,29 +221,9 @@
         than private renters. For social renters, the effect is different from
         private renters. On the individual level they are less mobile than
         renters at the free market as well, but their labor market performance
-        is also worse than private renters \citep{hughes1981council,
+        is also worse than that of private renters \citep{hughes1981council,
           de2009homeownership}.
         
-               That housing market structure has a sizeable effect on migration
-        decisions is empirically well-established, especially at the
-        micro-level, where it is widely accepted that home-ownership has a
-        negative effect on regional mobility \citep{dietz2003social,
-          dohmen2005housing}. For example, \citet{palomares2018understanding}
-        find that home-ownership has a very strong immobility effect on internal
-        migration in Spain during the period 2001--2011.
-        
-        In the literature, less attention has been given to interregional
-        migration on the aggregate level with respect to the housing market as a
-        specific barrier.\footnote{See \citet{cushing2004crossing} for a
-          historical overview of common themes within migration research.} For
-        the UK, \citet{congdon2010random} found within a multilevel gravity
-        model that social rented housing had little effect on the attractivity
-        of a region, although it had a small positive effect on preventing
-        people from moving residence. For the Canadian case,
-        \citet{amirault2016drags} looked at the impact of home-ownership on
-        migration flows within a gravity model using a Poisson pseudo maximum
-        likelihood estimator and found an elasticity around $-1$.
-
         The anticipate the results of this paper, I find strong negative effects
         of home-ownership rates on inter-municipal migration flows. Further,
         social renting rates also affect migration flows negatively, but the
@@ -254,15 +256,14 @@
           \label{fig:hist_mig}
         \end{figure*}
 
-
         I use inter-municipal migration flows measured in individuals
-        between all of the the 393 Dutch municipalities in 2015. There
+        between all of the 393 Dutch municipalities in 2015. There
         is no information available on within municipality residential
-        migration. So, I have 393 regional characteristics (or doubled
-        when accounting for both regions of origin and destination)
+        migration. So, I have 393 municipal characteristics (or doubled
+        when accounting for both origin and destination municipalities)
         and 154,056 aggregate migration flows ($393 \times 393 - 393$).
 
-        Figure \ref{fig:hist_mig} shows the distribution of migrant
+        The histograms in Figure \ref{fig:hist_mig} show the distribution of migrant
         flows within my sample. The left panel deals with migrant
         flows below 20, the right panel with migrant flows of 20 and
         larger. Two main observations can be made.
@@ -272,14 +273,14 @@
         right `tail' in this distribution is rather thick.\footnote{The
           largest migration flows are between the municipalities of
           Amsterdam and Amstelveen and amount to about 3,500
-          migrants.} Thus, there are still observations quite far
+          migrants in 2015.} Thus, there are still observations quite far
         right in the distribution. Indeed, the sample mean is about
         10, while the sample variance is around 40, leading to a
         strong presence of \emph{overdispersion} (unconditional on
-        other explanatory variables).  Secondly, two thirds of the
+        other explanatory variables).  Second, two thirds of the
         dataset consists of zero observations. Although they do seem
         to be genuine observations and not caused by another process
-        (this will be checked later), they do need to be taken
+        (this will be checked later), the occurrence of zeros does need to be taken
         specifically into account.
 
         Zeven explanatory variables are added to the model. First, to account for
@@ -312,8 +313,9 @@
         Figure \ref{fig:housing_mig} shows the distribution of social renting
         and homeownership across Dutch municipalities in 2015.  Clearly, both
         home-ownership and social housing are prevalent across Dutch
-        municipalities, with an average of 25\% of social housing and around
-        60\% of homeownership. Moreover, it is worthwhile to note that social
+        municipalities, with an average per city of 25\% of social housing and around
+        60\% of homeownership
+    	Moreover, it is worthwhile to note that social
         renting is especially prevalent in the larger cities with a correlation
         of 0.4 between city size and social renting (e.g., Amsterdam has about a
         40\% social renting rate). Also, some smaller dutch municipalities do
@@ -326,13 +328,15 @@
 
         \subsection{The traditional gravity model}
 
-        A workhorse model to study aggregate migration flows has throughout time been the gravity model (see \citet{anderson2011gravity} for a generic survey of the use of gravity models and \citet{poot2016gravity} for an overview of migration applications). I therefore start by adopting the basic gravity model specification pioneered by
+        Throughout time, the workhorse model to study aggregate migration flows has been the gravity model (see \citet{anderson2011gravity} for a generic survey of the use of gravity models and \citet{poot2016gravity} for an overview of migration applications). I therefore start by adopting the basic gravity model specification pioneered by
         \citet{tinbergen1962shaping}, so:
         \begin{equation}
-          \text{migrants}_{ij} = \text{pop}_i^{\beta_1}\text{pop}_j^{\beta_2}\text{dist}_{ij}^\gamma
+          \text{migrants}_{ij} = \text{M}_i^{\beta_1}\text{M}_j^{\beta_2}\text{dist}_{ij}^\gamma,
           \label{eq:grav}
         \end{equation}
-        Note, that in model (\ref{eq:grav}) the variable
+        where $\text{migrants}_{ij}$ are the number of migrants going from $i$ to $j$, 
+        $\text{M}_i$ ($\text{M}_j$) denotes the `mass' of $i$ ($j$), and $\text{dist}_{ij}$
+        the distance between $i$ and $j$. Usually, the `mass' variables are proxied by population, gross domestic product, density, etcetera. Moreover, the variable
         $\text{dist}_{ij}$ may represent in general all sorts of frictions, not
         only physical distance.
         
@@ -356,12 +360,12 @@
         	\caption{Decomposition of variables impacting migration flows from $i$ to $j$ $\left(\{i,j\} \in \{1,\ldots, R\}\right)$}
         	\label{fig:gravity_network}
         \end{figure} 
-        Figure \ref{fig:gravity_network} denotes the problem schematically. Typically, one wants to model migration flows between $i$ and $j$, whilst taken into account both the regional specific effects ($o_i$ and $d_j$) and the regional variables ($\mathbf{X}_i$ and $\mathbf{X}_j$) one is interested  in, such as housing market, population structures and cultural variables. 
+        Figure \ref{fig:gravity_network} denotes the problem schematically in a generic dyadic type of network. Typically, one wants to model migration flows between $i$ and $j$, whilst taken into account both the regional specific effects ($o_i$ and $d_j$) and the regional variables ($\mathbf{X}_i$ and $\mathbf{X}_j$) one is interested  in, such as housing market, population structure or cultural variables. 
                   
         Moreover, equation
-        (\ref{eq:gravfixed} is typically estimated with regression
+        (\ref{eq:gravfixed} is typically estimated with linear regression
         type of models, which is often very cumbersome given the large
-        amount of zeros migrants flows. `Quick and dirty' remedies as adding a small amount to the flow variable or removing all zeros have been proven to seriously bias the parameters \citep{linders2006estimation, burger2009specification}.
+        amount of zeros migrants flows. `Quick and dirty' remedies as adding a small amount to the flow variable or removing all zeros have been proven to seriously bias the results \citep{linders2006estimation, burger2009specification}.
         	
 
         Therefore, I next allow for a different strategy, where I
@@ -372,33 +376,36 @@
 
         \subsection{A Bayesian multilevel gravity model}
 
-        Firstly, as regional migrants flows are discrete and
-        relatively rare give the size of the population, the most
-        appropriate way to go forward is to model number of migrants
+        First, as regional migrants flows are discrete, non-negative and
+        relatively rare give the size of the population, theoretically the most
+        appropriate way to go forward is to model migrant flows
         with a Poisson type of model. However, given that the sampling
         variance is four times the sampling mean of the migration
         flows (although not conditional on the covariates), we likely
         need to correct for overdispersion of heteroskedasticity
         \citep[][states that heteroskedasticity (rather than the
         presence of too many zeros) is responsible for the main
-        source of bias.]{silva2006log}. An often used distribution to
-        account for overdispersion is the gamma-poisson model (also
-        known as the negative binomial model). So, we use that for our
+        source of bias within gravity models.]{silva2006log}. An often used distribution to
+        account for overdispersion is the Gamma-Poisson model (which is under re-parametrization
+        similar to the perhaps better known negative binomial model). So, we use that for our
         outcome variable.
 
         To account for the multiplicative nature of the theoretical
-        model as in (\ref{eq:grav}), I adopt a log-link for the
-        expectation variable in the Poisson model.
+        model as in (\ref{eq:grav}), I adopt a log link for the
+        expected number of migrants $\lambda_{ij}$ in the Gamma-Poisson model. 
+        Apart from the theoretical model, note that this log link ensures 
+        as well that the expected number of migrants is always positive. 
+        Further, I assume that $\log(\lambda_{ij})$ is a linear function 
+        of the region specific variables and the distance between $i$ and $j$.
 
         Finally, to adopt both region effects and variables I adopt a
-        multilevel model with partial pooling. This entails that our
-        regional varying effects (the formerly fixed effecs) are now
+        multilevel model with partial pooling. This entails that the
+        regional varying effects (unlike fixed effects) are now
         drawn from a, in this case Normal, distribution, where the
         parameters of this distribution are estimated as well (in the
-        literature they are known as well as
-        hyper-parameters). Intuitively, this entails that regions are
-        partially pooled indicating that information between regions
-        is shared. This is very attractive, as fixed effects assume no
+        Bayesian literature they are known as well as hyper-parameters). 
+        Intuitively, this entails that regions are partially pooled 
+        indicating that information between regions is shared. This is an attractive feature, as fixed effects assume no
         pooling. In that case, the model only learns from the information contained
         in that specific region whereas with partial pooling it is ensured that
         outliers (very high or low effects) are effectively
@@ -406,10 +413,10 @@
         extension of that best feature of linear regression:
         regression towards the mean.
 
-        The total model looks now as follows:
+        The complete model now looks as follows:\footnote{I adopt here the model structure from \citet{mcelreath2018statistical}.}
         
         \begin{subequations}
-          \begin{align} \text{Migrants}_{ij} \sim & \text{ GammaPoisson}(\lambda_{ij}, \tau) \label{outcome}\\
+          \begin{align} \text{Migrants}_{ij} \sim & \text{Gamma-Poisson}(\lambda_{ij}, \tau) \label{outcome}\\
             \log(\lambda_{ij}) =
             & \alpha + o_{\text{mun}[i]} + d_{\text{mun}[j]} + \notag
             \\ & \beta_1 \log(\text{pop}_i) +
@@ -417,8 +424,8 @@
             \log(\text{home}_i) + \beta_4 \log(\text{home}_j) + \notag\\
             & \beta_5 \log(\text{soc}_i) + \beta_6 \log(\text{soc}_j)
             + \notag \\ & \beta_7 \log(\text{dist}_{ij}) \label{linear} \\
-            o_{\text{mun}} \sim& \text{ Normal}(\alpha_o, \sigma_o) \label{muno} \\
-            d_{\text{mun}} \sim& \text{ Normal}(\alpha_d, \sigma_d) \label{mund} \\
+            o_{\text{mun}} \sim& \text{ Normal}(0, \sigma_o) \label{muno} \\
+            d_{\text{mun}} \sim& \text{ Normal}(0, \sigma_d) \label{mund} \\
             \beta_1,\ldots, \beta_7 \sim& \text{
                                           Normal}(0,2)\\ \alpha_o, \alpha_d \sim& \text{ Normal}(0,2)\\
             \sigma_o, \sigma_d \sim& \text{ HalfCauchy}(0,1) \\ \tau
@@ -426,24 +433,26 @@
           \end{align}
           \label{model}
         \end{subequations}
-
-        The first line ({\ref{outcome}) models the outcome variable,
-          being the number of migrants, using a Poisson distribution
+		  The first part ({\ref{outcome}) models the outcome variable,
+          being the number of migrants, using a Gamma-Poisson distribution
           (with parameter $\lambda_{ij}$) allowing for overdispersion
           by using an additional parameter $\tau$. The linear part of
           the model is given by (\ref{linear}) and states that the
-          poisson outcome variable is on a log-scale and that most
+          poisson outcome variable is on a log-scale and that most explanatory
           variables are on a log-scale as well, allowing for direct
           comparison of the parameters being elasticities. Equations
           (\ref{muno}) and {(\ref{mund}) constitute the multilevel
             part, where parameters $\sigma_o$ and $\sigma_d$ measure
-            the amount of pooling. If they tend to zero, then the
+            the amount of pooling. If they go to zero, then the
             data exhibits complete pooling. If they become very large
-            (go to infinity) there is no pooling (thus fixed
-            effects). All the other parameters are priors (chosen such
-            that they are rather conservative but given the amount of
-            data they are of little influence).
-          
+            (go to infinity) there is no pooling (which is the fixed
+            effects case). Equations (3e)--(3h) denote priors for all parameter involved.
+            These priors are chosen that they are rather conservative. Namely, we know from previous empirical literature
+            that the $\beta$-parameters typically are not lower than $-2$ or higher than $2$. But given the amount of
+            data these priors are of little influence. The only structure 
+            I impose is that the standard deviations $\sigma_o$ and $\sigma_d$ are assumed to be non-negative with 
+            relatively probability in the their right tails. The Gamma prior for $\tau$ is a standard and as well very conservative prior.
+                      
         \section{Results}
 
         \subsection{Parameter estimates}
@@ -484,6 +493,16 @@
     \bottomrule
   \end{tabular}
 \end{table}
+\noindent Note again that both the outcome and the $\beta$-variables are on the log scale, so they constitute elasticities.
+Thus, population (both in city of origin and of destination) has an elasticity of about 0.9 with migration. If population doubles, migration increases by 90\%. 
+As expected, housing structure indeed impedes regional mobility, but it is primarily 
+home-ownership rates and not social renting rates that have a sizeable
+effect. Percentage home-ownership in the city of origin has an elasticity of about $-1.5$ and in the city of destination of $-1.3$ with migration. Social renting has a much smaller impact with only an elasticity of about $-0.04$ in the city of origin and $-0.06$ in the city of destination, but note the probability intervals overlap 0 to a considerable extent. The home-ownership elasticities I find are slightly larger in absolute
+size than what \citet{amirault2016drags} reported. The distance-decay parameter is conform previous literature and is $-1.96$ The latter is significantly larger in absolute value that typical parameters reported by regression type of models, but is more in less line with parameters estimated by negative binomial or poisson type of models. 
+
+Furthermore, if anything, the low values for the parameters $\sigma_o$ and $\sigma_d$ point to more
+pooling than less, so fixed effects in this case could lead to
+substantial overfitting. 
 
 \begin{figure}
   \includegraphics[width = \columnwidth]{../fig/forestplot.pdf}
@@ -493,19 +512,9 @@
   \label{fig:forestplot}
 \end{figure}
 
-Obviously, housing structure indeed impedes regional mobility, but that it is primarily 
-home-ownership rates and not social renting rates that have a negative
-effect. The home-ownership elasticities are slightly larger in absolute
-size than what \citet{amirault2016drags} reported. Furthermore, if anything, 
-estimations for parameters $\sigma_o$ and $\sigma_d$ point to more
-pooling than less, so fixed effects in this case could lead to
-substantial overfitting. 
+For each municipality the models estimates as well an origin specific effect ($o_i$) and a destination specific effect ($d_j$). These are depicted in maps \ref{fig:out} and \ref{fig:in} and can be interpreted as having relatively less or more migration \emph{relative} to population size and housing structure.
 
-The other variables are conform previous literature. The elasticities of population for both regions of origin and destination are around 0.9 and the distance-decay parameter is $-1.96$. The latter is significantly larger in absolute value that typical parameters reported by regression type of models, but is more in less line with parameters estimated by negative binomial or poisson type of models. 
-
-For each municipalities the models estimates as well an origin specific effect ($o_i$) and a destination specific effect ($d_j$). These are depicted in maps \ref{fig:out} and \ref{fig:in} and can be interpreted as having relatively less or more migration \emph{relative} to population size and housing structure.
-
-\begin{figure}[h!]
+\begin{figure}
 		\centering
 		\includegraphics[width = \columnwidth]{../fig/p_coef_out.pdf}
 		\caption{Region specific origin effects}\label{fig:out}
@@ -513,7 +522,7 @@ For each municipalities the models estimates as well an origin specific effect (
 
 Figure \ref{fig:out} first shows the region specific origin effects. Clearly, there is a relatively larger push factor in the peripheral Dutch municipalities. These are actually regions that loose population. The areas that loose relatively few people are to be found in the Dutch core region (the ``Randstad'') including the largest Dutch cities: Amsterdam, Rotterdam, The Hague and Utrecht.  
 
-\begin{figure}[h!]
+\begin{figure}
 	\centering
 	\includegraphics[width = \columnwidth]{../fig/p_coef_in.pdf}
 	\caption{Region specific destination effects}\label{fig:in}

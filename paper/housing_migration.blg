@@ -1,69 +1,10 @@
-This is BibTeX, Version 0.99d (TeX Live 2017)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
-The top-level auxiliary file: housing_migration.aux
+This is BibTeX, Version 0.99dThe top-level auxiliary file: housing_migration.aux
 The style file: biblatex.bst
-Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
-Reallocated global_strs (elt_size=20001) to 20 items from 10.
-Reallocated glb_str_end (elt_size=4) to 20 items from 10.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: housing_migration-blx.bib
 Database file #2: references.bib
 Repeated entry---line 184 of file references.bib
  : @article{dietz2003social
  :                         ,
 I'm skipping whatever remains of this entry
-Biblatex version: 3.3
-Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 30 entries,
-            6256 wiz_defined-function locations,
-            1360 strings with 13395 characters,
-and the built_in function-call counts, 172977 in all, are:
-= -- 11931
-> -- 3310
-< -- 1086
-+ -- 3911
-- -- 1093
-* -- 12634
-:= -- 16317
-add.period$ -- 0
-call.type$ -- 30
-change.case$ -- 705
-chr.to.int$ -- 30
-cite$ -- 58
-duplicate$ -- 18452
-empty$ -- 16505
-format.name$ -- 2133
-if$ -- 36292
-int.to.chr$ -- 0
-int.to.str$ -- 83
-missing$ -- 0
-newline$ -- 986
-num.names$ -- 1628
-pop$ -- 10178
-preamble$ -- 1
-purify$ -- 841
-quote$ -- 0
-skip$ -- 5748
-stack$ -- 0
-substring$ -- 19450
-swap$ -- 4853
-text.length$ -- 781
-text.prefix$ -- 37
-top$ -- 1
-type$ -- 1007
-warning$ -- 0
-while$ -- 1939
-width$ -- 0
-write$ -- 957
+Biblatex version: 3.11
 (There was 1 error message)
