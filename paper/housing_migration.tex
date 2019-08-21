@@ -62,7 +62,7 @@
 %----------------------------------------------------------------------------------------
 
 \JournalInfo{Conference paper} % Journal information 
-\Archive{Prepared for ERSA 2019} % Additional notes (e.g. copyright, DOI, review/research article)
+\Archive{Prepared for ERSA 2019} % Additional notes (e.g. copyrigh, DOI, review/research article)
 
 \PaperTitle{Housing market and migration revisited: a Bayesian multilevel gravity model for Dutch municipalities}
 
@@ -107,19 +107,68 @@
 	
 	\section{Introduction} % The \section*{} command stops section numbering
 
-        The Dutch housing market is characterized by a low housing supply
-        elasticity, large price increases, and only a small segment (5\%) that
-        belongs to the private rental market
+        The current Dutch housing market is characterized by a low
+        housing supply elasticity, high housing demand, and only a
+        small segment (5\%) that belongs to the private rental market
         \citep{michielsen2017}. Because of the resulting large
-        shortage of housing, many policy recommendations have been proposed,
-        including plans for 700,000 new houses to be built in the coming
-        decade. Unfortunately, the construction of a large amount of new
-        dwellings is problematic in the Netherlands due to spatial constraints
-        \citep{michielsen2019}. Therefore, policy makers are also looking at
-        changing the housing structure, e.g. by converting rent controlled housing
-        to home-ownership, to tackle at least the high housing prices by
-        enlarging the home-ownership segment.
-
+        shortage of housing, many policy recommendations have been
+        proposed, including plans for 700,000 new houses to be built
+        in the coming decade. Unfortunately, the construction of a
+        large amount of new dwellings is problematic in the
+        Netherlands due to large and restrictive spatial constraints
+        \citep{michielsen2019}. Therefore, policy makers are also
+        looking at changing the housing structure, e.g., by converting
+        rent controlled housing to home-ownership properties, to
+        tackle at least the high housing prices by enlarging the
+        home-ownership segment.
+        
+        
+        To do so, I first revisit the role of housing market structure
+        as impediment for interregional migration and specifically
+        focuses on the role of home-ownership and social renting
+        rates. To this end, I adopt a Bayesian multi-level modelling
+        approach which is not frequently encountered in the gravity
+        literature\footnote{That is, in the economic literature; a
+          notable exception is \citet{ranjan2007bayesian} in the
+          economic trade literature. In the geographical literature
+          this approach is more commonly adopted \citep[see within a
+          migration context][]{congdon2010random,
+            congdon2012spatial}}. Traditional gravity modelling has
+        the disadvantage that either regional fixed effects of origins
+        and destinations can be incorporated or the regions'
+        characteristics when not varying over flows. This paper
+        circumvents this disadvantage by adopting a multilevel
+        approach with partial pooling\footnote{There is a whole
+          variety of names for these types of models, including
+          hierarchical modeling, varying effects, mixed effects and
+          shrinkage models. I use the more generic multilevel
+          description as regions and flows are by definition measured
+          at a different level (scale).}, where the latter terms
+        indicates that I do not impose fixed effects to control for
+        origin and destination specific effects, but that I ``draw''
+        them from a distribution, hence the name partial pooling
+        (where complete pooling states no group effects and no pooling
+        fixed effects).
+               
+        This papers adds two main elements to the literature. First, it does not
+        only consider home-ownership but as well municipal social renting
+        structure, which can be argued \citep[see, e.g.,][]{boyle1998migration,
+          hughes1981council} to have a large effect on regional mobility as well
+        as social renting rights are usually only valid locally (within
+        municipality) and are lost when moving residence between municipalities.
+        
+        Secondly, A partial pooling approach has another advantage, namely the
+        regional varying effects are completely probabilistic, making it
+        feasible to predict both within and out-of-sample. In other words, with
+        the results at hand I can predict migrations flows between existing
+        \emph{and} hypothetical regions. The former might be used for looking at
+        counterfactuals; for example, the changes in in-migration for all
+        municipalities, when one municipality changes its housing structure. The
+        latter is useful when one wants to assess new migrations flows between
+        one or even two new municipalities outside the sample.\footnote{See for
+          probabilistic predictions of internation migration
+          \cite{azose2015bayesian}.}
+        
         There is already a large amount of literature looking into the positive
         and negative effects of home-ownership \citep[see for an
         overview][]{dietz2003social}. It is argued that home-ownership leads to,
@@ -153,49 +202,7 @@
         is also worse than private renters \citep{hughes1981council,
           de2009homeownership}.
         
-        This paper revisits the role of housing market structure as impediment
-        for interregional migration and specifically focuses on the role of
-        home-ownership and social renting rates. To this end, I adopt a Bayesian
-        multi-level modelling approach which is not frequently encountered in
-        the gravity literature\footnote{That is, in the economic literature; a
-          notable exception is \citet{ranjan2007bayesian} in the economic trade
-          literature. In the geographical literature this approach is more
-          commonly adopted \citep[see within a migration
-          context][]{congdon2010random, congdon2012spatial}}. Traditional
-        gravity modelling has the disadvantage that either regional fixed
-        effects of origins and destinations can be incorporated or the regions'
-        characteristics when not varying over flows. This paper circumvents this
-        disadvantage by adopting a multilevel approach with partial
-        pooling\footnote{There is a whole variety of names for these types of
-          models, including hierarchical modeling, varying effects, mixed
-          effects and shrinkage models. I use the more generic multilevel
-          description as regions and flows are by definition measured at a
-          different level (scale).}, where the latter terms indicates that I do
-        not impose fixed effects to control for origin and destination specific
-        effects, but that I ``draw'' them from a distribution, hence the name
-        partial pooling (where complete pooling states no group effects and no
-        pooling fixed effects).
-               
-        This papers adds two main elements to the literature. First, it does not
-        only consider home-ownership but as well municipal social renting
-        structure, which can be argued \citep[see, e.g.,][]{boyle1998migration,
-          hughes1981council} to have a large effect on regional mobility as well
-        as social renting rights are usually only valid locally (within
-        municipality) and are lost when moving residence between municipalities.
-        
-        Secondly, A partial pooling approach has another advantage, namely the
-        regional varying effects are completely probabilistic, making it
-        feasible to predict both within and out-of-sample. In other words, with
-        the results at hand I can predict migrations flows between existing
-        \emph{and} hypothetical regions. The former might be used for looking at
-        counterfactuals; for example, the changes in in-migration for all
-        municipalities, when one municipality changes its housing structure. The
-        latter is useful when one wants to assess new migrations flows between
-        one or even two new municipalities outside the sample.\footnote{See for
-          probabilistic predictions of internation migration
-          \cite{azose2015bayesian}.}
-        
-        That housing market structure has a sizeable effect on migration
+               That housing market structure has a sizeable effect on migration
         decisions is empirically well-established, especially at the
         micro-level, where it is widely accepted that home-ownership has a
         negative effect on regional mobility \citep{dietz2003social,
@@ -374,7 +381,7 @@
         need to correct for overdispersion of heteroskedasticity
         \citep[][states that heteroskedasticity (rather than the
         presence of too many zeros) is responsible for the main
-        differences.]{silva2006log}. An often used distribution to
+        source of bias.]{silva2006log}. An often used distribution to
         account for overdispersion is the gamma-poisson model (also
         known as the negative binomial model). So, we use that for our
         outcome variable.
@@ -518,20 +525,44 @@ Figures \ref{fig:out} and \ref{fig:in} indicates as well that the region specifi
 
 \subsection{Model predictions}
 
+\begin{figure*}[t!]\centering 
+  \includegraphics[width=0.8\linewidth]{../fig/hist_fit.pdf}
+  \caption{Histogram of observed and predicted migrant flows. Left
+    panel shows the histogram of small migrant flows ($0 \leq N < 20$)
+    and the right panel shows the histogram of large migrant flows
+    ($N \geq 20$). Note the different scale of the y-axes. Predicted
+    migrant flows above 4,020 were removed for reasons of clarity and
+    comparability with the observed migrant flows.  }
+  \label{fig:hist_fit}
+\end{figure*}
+
+To assess to what extent the model predictions are in line with the
+observed data, Figure \ref{fig:hist_fit} shows the histogram of both
+observed and predicted flows side by side. Eyeballing the evidence, it
+seems that the distribution of predicted flows comes very close to the
+distribution of the observed mgiration flows. The distribution of
+predicted migration flows seems somewhat flatter though, as it
+predicts around 12,500 less zeros and more or less the same amount
+more ones. What is not shown in the histogram (and if, it would be
+very difficult to discern) is that the model predicts a couple of
+large outliers---flows as large as 100,000 migrants.
+
+
 \begin{figure}[h!]
-		\centering
-		\includegraphics[width = \columnwidth]{../fig/p_diff_out.pdf}
-		\caption{Changes in migration flows when percentage
-                  home-ownership in Amsterdam increases by 10\%}\label{fig:diff_out}
+  \centering \includegraphics[width =
+  \columnwidth]{../fig/p_diff_out.pdf}
+  \caption{Changes in migration flows when percentage home-ownership
+    in Amsterdam increases by 10\%}\label{fig:diff_out}
 \end{figure}
 
 \section{In conclusion}
 
 \section*{Acknowledgments} % The \section*{} command stops section numbering
 
-I would like to thank Wim Bernasco for valuable comments on a first
-draft of this paper. Paper, data and code can be retrieved from the
-project's GitHub page:
+I would like to thank Wim Bernasco and participants at the 15$^{th}$
+biennial NECTAR conference in Helsinki for valuable comments on a first draft of
+this paper. Paper, data and code can be retrieved from the project's
+GitHub page:
 
 \href{https://github.com/Thdegraaff/migration_gravity}{https://github.com/Thdegraaff/migration\_gravity}.
 	%----------------------------------------------------------------------------------------
