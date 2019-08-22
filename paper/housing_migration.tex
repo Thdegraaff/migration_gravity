@@ -132,7 +132,7 @@
         moving costs vis-\`{a}-vis renting.  
         
         This paper revisits the role of housing market structure
-        as impediment for interregional migration and specifically
+        as impediment for inter-municipality migration and specifically
         focuses on the role of home-ownership and social renting
         rates. In addition, it gives a framework to predict changes 
         in the whole network of migration flows, when housing market structure change locally. 
@@ -144,16 +144,16 @@
           this approach is more commonly adopted \citep[see within a
           migration context][]{congdon2010random,
             congdon2012spatial}} Traditional gravity modelling has
-        the disadvantage that either regional fixed effects of origins
-        and destinations can be incorporated or the regions'
+        the disadvantage that either municipality fixed effects of origins
+        and destinations can be incorporated or the municipalities'
         characteristics when not varying over flows. This paper
         circumvents this disadvantage by adopting a multilevel
         approach with partial pooling\footnote{There is a whole
           variety of names for these types of models, including
           hierarchical modeling, varying effects, mixed effects and
           shrinkage models. I use the more generic multilevel
-          description as regions and flows are by definition measured
-          at a different level (scale).}, where the latter terms
+          description as municipality and flows are by definition measured
+          at a different level (scale) \citep[see][for an indepth discussion]{gelman2013bayesian}.}, where the latter terms
         indicates that I do not impose fixed effects to control for
         origin and destination specific effects, but that I ``draw''
         them from a distribution, hence the name partial pooling
@@ -162,16 +162,16 @@
                
         This papers adds two main elements to the literature. First, it does not
         only consider home-ownership but as well municipal social renting
-        structure, which can be argued \citep[see, e.g.,][]{boyle1998migration,
-          hughes1981council} to have a large effect on regional mobility as well
+        structure, which can be argued \citep[see, e.g.,][]{hughes1981council, boyle1997public,boyle1998migration}
+         to have a large effect on regional mobility as well
         as social renting rights are usually only valid locally (within
         municipality) and are lost when moving residence between municipalities.
         
         Second, a partial pooling approach has another advantage, namely the
-        regional varying effects are completely probabilistic, making it
+        municipal varying effects are completely probabilistic, making it
         feasible to predict both within and out-of-sample. In other words, with
         the results at hand I can predict migrations flows between existing
-        \emph{and} hypothetical regions. The former might be used for looking at
+        \emph{and} hypothetical cities. The former might be used for looking at
         counterfactuals; for example, the changes in in-migration for all
         municipalities, when one municipality changes its housing structure. The
         latter is useful when one wants to assess new migrations flows between
@@ -182,12 +182,12 @@
     	That housing market structure has a sizeable effect on migration
     	decisions is empirically well-established, especially at the
     	micro-level, where it is widely accepted that home-ownership has a
-    	negative effect on regional mobility \citep{dietz2003social,
+    	negative effect on municipal mobility \citep{dietz2003social,
     		dohmen2005housing}. For example, \citet{palomares2018understanding}
     	find that home-ownership has a very strong immobility effect on internal
     	migration in Spain during the period 2001--2011.
     	
-    	In the literature, less attention has been given to interregional
+    	In the literature, less attention has been given to inter-city
     	migration on the aggregate level with respect to the housing market as a
     	specific barrier.\footnote{See \citet{cushing2004crossing} for a
     		historical overview of common themes within migration research.} For
@@ -237,8 +237,8 @@
         neighbouring municipaties.
 
         This paper reads as follows. The next section describes the data and
-        focuses especially on the distribution of regional migration flows and
-        regional labour market structure. Section 4 describes the modelling
+        focuses especially on the distribution of municipal migration flows and
+        housing market structure. Section 4 describes the modelling
         approach, where starting from traditional gravity model and using the
         descriptives of the migration flows, a Bayesian multilevel gravity model
         is constructed. Section 5 gives both the model results and interprets
@@ -360,7 +360,7 @@
         	\caption{Decomposition of variables impacting migration flows from $i$ to $j$ $\left(\{i,j\} \in \{1,\ldots, R\}\right)$}
         	\label{fig:gravity_network}
         \end{figure} 
-        Figure \ref{fig:gravity_network} denotes the problem schematically in a generic dyadic type of network. Typically, one wants to model migration flows between $i$ and $j$, whilst taken into account both the regional specific effects ($o_i$ and $d_j$) and the regional variables ($\mathbf{X}_i$ and $\mathbf{X}_j$) one is interested  in, such as housing market, population structure or cultural variables. 
+        Figure \ref{fig:gravity_network} denotes the problem schematically in a generic dyadic type of network. Typically, one wants to model migration flows between $i$ and $j$, whilst taken into account both the municipal specific effects ($o_i$ and $d_j$) and the municipal variables ($\mathbf{X}_i$ and $\mathbf{X}_j$) one is interested  in, such as housing market, population structure or cultural variables. 
                   
         Moreover, equation
         (\ref{eq:gravfixed} is typically estimated with linear regression
@@ -376,7 +376,7 @@
 
         \subsection{A Bayesian multilevel gravity model}
 
-        First, as regional migrants flows are discrete, non-negative and
+        First, as municipal migrants flows are discrete, non-negative and
         relatively rare give the size of the population, theoretically the most
         appropriate way to go forward is to model migrant flows
         with a Poisson type of model. However, given that the sampling
@@ -396,18 +396,18 @@
         Apart from the theoretical model, note that this log link ensures 
         as well that the expected number of migrants is always positive. 
         Further, I assume that $\log(\lambda_{ij})$ is a linear function 
-        of the region specific variables and the distance between $i$ and $j$.
+        of the municipal specific variables and the distance between $i$ and $j$.
 
-        Finally, to adopt both region effects and variables I adopt a
+        Finally, to adopt both municipality effects and variables I adopt a
         multilevel model with partial pooling. This entails that the
-        regional varying effects (unlike fixed effects) are now
+        municipal varying effects (unlike fixed effects) are now
         drawn from a, in this case Normal, distribution, where the
         parameters of this distribution are estimated as well (in the
         Bayesian literature they are known as well as hyper-parameters). 
-        Intuitively, this entails that regions are partially pooled 
-        indicating that information between regions is shared. This is an attractive feature, as fixed effects assume no
+        Intuitively, this entails that municipalities are partially pooled 
+        indicating that (statistical) information between municipalities is shared. This is an attractive feature, as fixed effects assume no
         pooling. In that case, the model only learns from the information contained
-        in that specific region whereas with partial pooling it is ensured that
+        in that specific municipality whereas with partial pooling it is ensured that
         outliers (very high or low effects) are effectively
         \emph{shrunk} towards the mean. Indeed, this is a further
         extension of that best feature of linear regression:
@@ -464,7 +464,7 @@
         Chain Monte Carlo simulation) method, able to draw samples
         efficiently from large multilevel models
         \citep{hoffman2014no}. Parameter estimates and probability
-        intervals of the main parameters (so not the region specific
+        intervals of the main parameters (so not the municipality specific
         effects: there are 786 of them) are given in Table
         \ref{tab:coef}. Perhaps more insightful, they are as well graphically
         depicted in Figure \ref{fig:forestplot}.
@@ -495,7 +495,7 @@
 \end{table}
 \noindent Note again that both the outcome and the $\beta$-variables are on the log scale, so they constitute elasticities.
 Thus, population (both in city of origin and of destination) has an elasticity of about 0.9 with migration. If population doubles, migration increases by 90\%. 
-As expected, housing structure indeed impedes regional mobility, but it is primarily 
+As expected, housing structure indeed impedes municipal mobility, but it is primarily 
 home-ownership rates and not social renting rates that have a sizeable
 effect. Percentage home-ownership in the city of origin has an elasticity of about $-1.5$ and in the city of destination of $-1.3$ with migration. Social renting has a much smaller impact with only an elasticity of about $-0.04$ in the city of origin and $-0.06$ in the city of destination, but note the probability intervals overlap 0 to a considerable extent. The home-ownership elasticities I find are slightly larger in absolute
 size than what \citet{amirault2016drags} reported. The distance-decay parameter is conform previous literature and is $-1.96$ The latter is significantly larger in absolute value that typical parameters reported by regression type of models, but is more in less line with parameters estimated by negative binomial or poisson type of models. 
@@ -517,20 +517,20 @@ For each municipality the models estimates as well an origin specific effect ($o
 \begin{figure}
 		\centering
 		\includegraphics[width = \columnwidth]{../fig/p_coef_out.pdf}
-		\caption{Region specific origin effects}\label{fig:out}
+		\caption{Municipality specific origin effects}\label{fig:out}
 \end{figure}
 
-Figure \ref{fig:out} first shows the region specific origin effects. Clearly, there is a relatively larger push factor in the peripheral Dutch municipalities. These are actually regions that loose population. The areas that loose relatively few people are to be found in the Dutch core region (the ``Randstad'') including the largest Dutch cities: Amsterdam, Rotterdam, The Hague and Utrecht.  
+Figure \ref{fig:out} first shows the municipal specific origin effects. Clearly, there is a relatively larger push factor in the peripheral Dutch municipalities. These are actually regions that loose population. The areas that loose relatively few people are to be found in the Dutch core region (the ``Randstad'') including the largest Dutch cities: Amsterdam, Rotterdam, The Hague and Utrecht.  
 
 \begin{figure}
 	\centering
 	\includegraphics[width = \columnwidth]{../fig/p_coef_in.pdf}
-	\caption{Region specific destination effects}\label{fig:in}
+	\caption{Municipality specific destination effects}\label{fig:in}
 \end{figure}
 
-Figure \ref{fig:in} shows the region specific destination effects. Interestingly, these seem to mirror to a certain extent the region specific origin effects. Again, relatively most people seem to move to the peripheral municipalities---albeit to a lesser extent than the push factor. That means that controlling for housing and population, relatively few people move to the largest cities in the Netherlands. This is due to the scarcity of available housing in that period (partly due to the housing structure) and the fact that this model does not reflect price differences. The ``Randstad area'' in the Netherlands is very popular, but because of housing shortage this is mainly reflected in higher prices and an increasingly tighter housing market. Housing is still available in the least attractive regions of the Netherlands and this is where most dynamics in terms of moving residence take place. This indicates as well that the region specific destination effects should not be interpreted as attractivity effects as, e.g., in \citet{congdon2010random}.
+Figure \ref{fig:in} shows the municipality specific destination effects. Interestingly, these seem to mirror to a certain extent the municipality specific origin effects. Again, relatively most people seem to move to the peripheral municipalities---albeit to a lesser extent than the push factor. That means that controlling for housing and population, relatively few people move to the largest cities in the Netherlands. This is due to the scarcity of available housing in that period (partly due to the housing structure) and the fact that this model does not reflect price differences. The ``Randstad area'' in the Netherlands is very popular, but because of housing shortage this is mainly reflected in higher prices and an increasingly tighter housing market. Housing is still available in the least attractive regions of the Netherlands and this is where most dynamics in terms of moving residence take place. This indicates as well that the municipality specific destination effects should not be interpreted as attractivity effects as, e.g., in \citet{congdon2010random}.
 
-Figures \ref{fig:out} and \ref{fig:in} indicates as well that the region specific origin and destination effects are most likely highly correlated. Moreover, given the facts that nearby municipalities often show similar values, ideally both types of effects should be modelled as being spatially autocorrelated. 
+Figures \ref{fig:out} and \ref{fig:in} indicates as well that the municipality specific origin and destination effects are most likely highly correlated. Moreover, given the facts that nearby municipalities often show similar values, ideally both types of effects should be modelled as being spatially autocorrelated. 
 
 \subsection{Model predictions}
 
@@ -556,15 +556,39 @@ more ones. What is not shown in the histogram (and if, it would be
 very difficult to discern) is that the model predicts a couple of
 large outliers---flows as large as 100,000 migrants.
 
+\begin{figure}
+	\centering \includegraphics[width =
+	\columnwidth]{../fig/p_diff_in.pdf}
+	\caption{Changes in migrant flows into Amsterdam when percentage home-ownership
+		in Amsterdam increases by 10\%}\label{fig:diff_in}
+\end{figure}
 
-\begin{figure}[h!]
+\begin{figure}
   \centering \includegraphics[width =
   \columnwidth]{../fig/p_diff_out.pdf}
-  \caption{Changes in migration flows when percentage home-ownership
+  \caption{Changes in migrant flows from Amsterdam when percentage home-ownership
     in Amsterdam increases by 10\%}\label{fig:diff_out}
 \end{figure}
 
 \section{In conclusion}
+
+My goals with this paper are twofold. First, I revisit the impact of home-ownership and social renting rates on
+intercity migration. Second, I seek to provide a framework to produce predictions of intercity migration flows. 
+I applied a Bayesian multilevel gravity model to accomplish these goals. The resulting estimations are mostly in line with previous literature. 
+The distance decay parameter is close to $-2$ and the parameters associated with the population of origin and destination are both around 0.9.
+Home-ownership turns out to be a very important pull and push factors, having elasticities of $-1.48$ and $-1.27$, respectively. However, the impact of social renting is almost 
+0, both for origin and destination. Thus, within this modelling framework social renting structure neither works as pull or push factor, which is remarkable given the 
+fact that social renting right can only be acquired within the municipality. \citet{boyle1998migration} draws a similar conclusion and argues that social renters form a segment of the population that is not inclined to move residence regardless the housing tenure. However, we observe that there is a large correlation between city size and housing tenure---larger cities have more social renting and less home-ownership. So, the average effect may be close to zero but there could be huge variation over city size. 
+
+I show as well that the distribution of predicted migration flows is much in line with that of the observed migration flows and that the model is capable of predicting counterfactual flows when municipal housing structure changes. For example, if the percentage of home-ownership in Amsterdam increase by 10 percentage points, migration flows in and out of amsterdam decrease with an amount up to 600 migrants. Moreover, total inflow decreases with XXX and total outflows decreases with XXX migrants. 
+
+Obviously, model refinements can be made. First, the model predicts a handful of very large and unrealistic migrant flows (100,000 migrants) which are caused by the city of Rotterdam which both has a large population and a very low amount of home-ownership (25\%). At the moment the model still assumes a homogeneous impact of housing tenure, which is unlikely given the strong correlation between city size and housing tenure. To account for the likely heterogeneity of the impact of housing tenure one can either incorporate interaction terms between municipal population and housing tenure or impose varying effects in the parameters of housing tenure. The latter approach is more likely to capture heterogeneity but increases the amount of effective parameters considerably and increases the complexity in interpreting the results. 
+
+Second, it is very plausible that the origin and destination effects, $o_{\text{mun}[i]}$ and $d_{\text{mun}[j]}$, are highly correlated. Indeed, due to institutions, sector structure, religion, etcetera, some municipalities may be very open, whilst others may be very closed to outsiders. Allowing that these effects are correlated could greatly increase model performance. 
+
+Third, and finally, nearby municipalities may be correlated in behaviour as local labour market regions are typically larger than municipalities in the Netherlands. Incorporating a spatial structure, e.g., in the varying regional effects may further increase model performance by smoothing outliers \citep[see][for an example]{congdon2010random}.
+
+As Bayesian multilevel modelling is very flexible these further refinements of the model can all be readily incorporated. The only restriction is computer power as these types of models are not very scalable in observations or parameters. At the moment, drawing a reasonable amount of samples requires around six hours. On the other hand, a better model structure greatly improves the efficiency of sampling, The only problem that most likely remains is interpreting all results in an insightful and useful manner.
 
 \section*{Acknowledgments} % The \section*{} command stops section numbering
 

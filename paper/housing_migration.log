@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.26)  21 AUG 2019 16:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.26)  22 AUG 2019 11:46
 entering extended mode
 **./housing_migration.tex
 (housing_migration.tex
@@ -1069,41 +1069,43 @@ File: ../fig/hist_fit.pdf Graphic file (type pdf)
 <use ../fig/hist_fit.pdf>
 Package pdftex.def Info: ../fig/hist_fit.pdf  used on input line 538.
 (pdftex.def)             Requested size: 400.38872pt x 200.19322pt.
-<../fig/p_diff_out.pdf, id=90, 650.43pt x 578.16pt>
+<../fig/p_diff_in.pdf, id=90, 650.43pt x 578.16pt>
+File: ../fig/p_diff_in.pdf Graphic file (type pdf)
+<use ../fig/p_diff_in.pdf>
+Package pdftex.def Info: ../fig/p_diff_in.pdf  used on input line 561.
+(pdftex.def)             Requested size: 242.41745pt x 215.47734pt.
+<../fig/p_diff_out.pdf, id=91, 650.43pt x 578.16pt>
 File: ../fig/p_diff_out.pdf Graphic file (type pdf)
 <use ../fig/p_diff_out.pdf>
-Package pdftex.def Info: ../fig/p_diff_out.pdf  used on input line 562.
+Package pdftex.def Info: ../fig/p_diff_out.pdf  used on input line 568.
 (pdftex.def)             Requested size: 242.41745pt x 215.47734pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[6 <../fig/forestplot.pdf> <../fig/p_coef_out.pdf> <../fig/p_coef_in.pdf>]
-Overfull \hbox (3.8642pt too wide) in paragraph at lines 583--583
+ [6 <../fig/forestplot.pdf> <../fig/p_coef_out.pdf> <../fig/p_coef_in.pdf>] [7 
+<../fig/hist_fit.pdf> <../fig/p_diff_in.pdf> <../fig/p_diff_out.pdf>]
+Overfull \hbox (3.8642pt too wide) in paragraph at lines 607--607
 [][]\OT1/ptm/m/n/10 (-20) Carpenter, B., A. Gel-man, M. D. Hoff-man, D. Lee, B.
  Goodrich,
  []
 
-[7 <../fig/hist_fit.pdf> <../fig/p_diff_out.pdf>]
-Overfull \hbox (1.61014pt too wide) in paragraph at lines 583--583
+[8]
+Overfull \hbox (1.61014pt too wide) in paragraph at lines 607--607
 \OT1/ptm/m/n/10 (-20) ``Home-own-er-ship, so-cial rent-ing and la-bor mo-bil-it
 y across
  []
 
 
-Overfull \hbox (2.60086pt too wide) in paragraph at lines 583--583
+Overfull \hbox (2.60086pt too wide) in paragraph at lines 607--607
 [][]\OT1/ptm/m/n/10 (-20) McElreath, R. (2018). \OT1/ptm/m/it/10 (-20) Sta-tis-
 ti-cal re-think-ing: A Bayesian course
  []
 
 
 AED: lastpage setting LastPage
-[8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 586.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 586.
+[9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 610.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 610.
  (housing_migration.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 586.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 586.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 610.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 610.
 Package logreq Info: Writing requests to 'housing_migration.run.xml'.
 \openout1 = `housing_migration.run.xml'.
 
@@ -1114,13 +1116,13 @@ Package logreq Info: Writing requests to 'housing_migration.run.xml'.
 ### simple group (level 1) entered at line 436 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 20093 strings out of 492945
- 329111 string characters out of 3135510
- 681839 words of memory out of 3000000
- 23412 multiletter control sequences out of 15000+200000
- 77338 words of font info for 298 fonts, out of 3000000 for 9000
+ 20112 strings out of 492945
+ 329554 string characters out of 3135510
+ 679839 words of memory out of 3000000
+ 23427 multiletter control sequences out of 15000+200000
+ 77539 words of font info for 300 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,12n,58p,1142b,1767s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,12n,58p,1160b,1767s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program Files/MiKTe
@@ -1138,9 +1140,9 @@ onts/type1/urw/symbol/usyr.pfb><C:/Users/tgf200/AppData/Roaming/MiKTeX/2.9/font
 s/type1/urw/symbol/usyr.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/
 utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on housing_migration.pdf (8 pages, 9762748 bytes).
+Output written on housing_migration.pdf (9 pages, 12947095 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
+ 193 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 59945 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 59950 words of extra memory for PDF output out of 61914 (max. 10000000)
 
