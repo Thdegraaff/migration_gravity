@@ -24,7 +24,7 @@ By applying a Bayesian multilevel gravity model, this paper
 
 ## Reproduction
 
-To reproduce the results of the paper the following files have to run in order. Note, however that `analysis.brms` requires a considerable amount of time.
+To reproduce the results of the paper the following files have to run in order. Note, however that `analysis.brms` requires a considerable amount of time. Moreover, [Stan](https://mc-stan.org/) has to be installed to be able to run the commands from the wonderful `R`-package `brms`
 
 1. `read_data.R`
 2. `analysis_brms.R`

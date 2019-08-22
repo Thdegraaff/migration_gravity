@@ -129,7 +129,7 @@
         more savings, higher education outcomes, higher individual labor supply,
         and even better health. One prominent negative effect of home-ownership
         is that it leads to less incentives to move residence because of higher
-        moving costs vis-\`{a}-vis renting.  
+        moving costs vis-\`{a}-vis private renting.  
         
         This paper revisits the role of housing market structure
         as impediment for inter-municipality migration and specifically
@@ -170,7 +170,7 @@
         Second, a partial pooling approach has another advantage, namely the
         municipal varying effects are completely probabilistic, making it
         feasible to predict both within and out-of-sample. In other words, with
-        the results at hand I can predict migrations flows between existing
+        the results at hand I can predict migration flows between existing
         \emph{and} hypothetical cities. The former might be used for looking at
         counterfactuals; for example, the changes in in-migration for all
         municipalities, when one municipality changes its housing structure. The
@@ -201,7 +201,7 @@
     	           
         One of the main reasons to look into housing market structure and migration is that   
         higher moving costs are detrimental to the aggregate labor market
-        \citep{oswald1996conjecture, oswald1999housing}. These is a large
+        \citep{oswald1996conjecture, oswald1999housing}. There is a large
         empirical literature \citep[see, e.g., ][]{munch2006homeowners,
           munch2008home, de2013european} looking at the impact of individual and
         aggregate home-ownership on labour market performance, where seemingly
@@ -224,24 +224,24 @@
         is also worse than that of private renters \citep{hughes1981council,
           de2009homeownership}.
         
-        The anticipate the results of this paper, I find strong negative effects
+        To anticipate the results of this paper, I find strong negative effects
         of home-ownership rates on inter-municipal migration flows. Further,
         social renting rates also affect migration flows negatively, but the
         effect is far less pronounced than for home-ownership and overlaps zero
         to a large extent. A possible interpretation of this finding is that
         those who sort into social renting are by definition less mobile than
         those who sort into home-ownership \citep[this argument is put forward
-        by][as well]{boyle1998migration}. Finally, I show that a 0.1 decrease in
-        the rate of home-ownership in Amsterdam leads to in increase of x
-        in-migration y out-migration and significant changes as well in the
+        by][as well]{boyle1998migration}. Finally, I show that a 0.1 increase in
+        the rate of home-ownership in Amsterdam leads to an decrease of x
+        in-migration, y out-migration and significant changes as well in the
         neighbouring municipaties.
 
         This paper reads as follows. The next section describes the data and
         focuses especially on the distribution of municipal migration flows and
-        housing market structure. Section 4 describes the modelling
+        housing market structure. Section 3 describes the modelling
         approach, where starting from traditional gravity model and using the
         descriptives of the migration flows, a Bayesian multilevel gravity model
-        is constructed. Section 5 gives both the model results and interprets
+        is constructed. Section 4 gives both the model results and interprets
         them by providing as well predictions within and out-of-sample. The last
         section concludes.
         
@@ -280,7 +280,8 @@
         other explanatory variables).  Second, two thirds of the
         dataset consists of zero observations. Although they do seem
         to be genuine observations and not caused by another process
-        (this will be checked later), the occurrence of zeros does need to be taken
+        (I will check this by estimating a zero-inflated model as well),
+         the occurrence of zeros does need to be taken
         specifically into account.
 
         Zeven explanatory variables are added to the model. First, to account for
@@ -292,7 +293,7 @@
         destination (so $\text{pop}_i$ and $\text{pop}_j$). Finally,
         for housing market structure we use variables indicating
         percentage of homeownership ($\text{home}_i$ and
-        $\text{home}_j$ and percentage of social renting
+        $\text{home}_j$) and percentage of social renting
         ($\text{soc}_i$ and $\text{soc}_j$), again in both cities of
         origin and destination. Social renting in the Netherlands
         includes all kinds of rent controlled housing but typically
@@ -363,7 +364,7 @@
         Figure \ref{fig:gravity_network} denotes the problem schematically in a generic dyadic type of network. Typically, one wants to model migration flows between $i$ and $j$, whilst taken into account both the municipal specific effects ($o_i$ and $d_j$) and the municipal variables ($\mathbf{X}_i$ and $\mathbf{X}_j$) one is interested  in, such as housing market, population structure or cultural variables. 
                   
         Moreover, equation
-        (\ref{eq:gravfixed} is typically estimated with linear regression
+        (\ref{eq:gravfixed}) is typically estimated with linear regression
         type of models, which is often very cumbersome given the large
         amount of zeros migrants flows. `Quick and dirty' remedies as adding a small amount to the flow variable or removing all zeros have been proven to seriously bias the results \citep{linders2006estimation, burger2009specification}.
         	
@@ -451,16 +452,16 @@
             that the $\beta$-parameters typically are not lower than $-2$ or higher than $2$. But given the amount of
             data these priors are of little influence. The only structure 
             I impose is that the standard deviations $\sigma_o$ and $\sigma_d$ are assumed to be non-negative with 
-            relatively probability in the their right tails. The Gamma prior for $\tau$ is a standard and as well very conservative prior.
+            relatively probability in the their right tails. The Gamma prior for $\tau$ is a standard and as well a very conservative prior.
                       
         \section{Results}
 
         \subsection{Parameter estimates}
         
         Model (\ref{model}) is estimated by using the \emph{No U-Turn
-          Sampler} (NUTS) from the Stan application.\footnote{See \href{https://mc-stan.org/}{https://mc-stan.org/}. As interface to Stan
+          Sampler} (NUTS) from the Stan platform for statistical modeling and high-performance statistical computation.\footnote{See \href{https://mc-stan.org/}{https://mc-stan.org/}. As interface to Stan
           \citep[see for an overview article of
-          Stan][]{carpenter2017stan} I used the R-package \citep{brms} \texttt{brms}.} NUTS is a relatively recent developed Hamiltonian Monte Carlo (a specific form of Markov
+          Stan][]{carpenter2017stan} I used the R-package  \texttt{brms} \citep{brms}.} NUTS is a relatively recent developed Hamiltonian Monte Carlo (a specific form of Markov
         Chain Monte Carlo simulation) method, able to draw samples
         efficiently from large multilevel models
         \citep{hoffman2014no}. Parameter estimates and probability
@@ -541,7 +542,7 @@ Figures \ref{fig:out} and \ref{fig:in} indicates as well that the municipality s
     and the right panel shows the histogram of large migrant flows
     ($N \geq 20$). Note the different scale of the y-axes. Predicted
     migrant flows above 4,020 were removed for reasons of clarity and
-    comparability with the observed migrant flows.  }
+    comparability with the observed migrant flows.}
   \label{fig:hist_fit}
 \end{figure*}
 
@@ -549,26 +550,35 @@ To assess to what extent the model predictions are in line with the
 observed data, Figure \ref{fig:hist_fit} shows the histogram of both
 observed and predicted flows side by side. Eyeballing the evidence, it
 seems that the distribution of predicted flows comes very close to the
-distribution of the observed mgiration flows. The distribution of
+distribution of the observed migration flows. The distribution of
 predicted migration flows seems somewhat flatter though, as it
 predicts around 12,500 less zeros and more or less the same amount
 more ones. What is not shown in the histogram (and if, it would be
 very difficult to discern) is that the model predicts a couple of
-large outliers---flows as large as 100,000 migrants.
+large outliers---flows as large as 100,000 migrants. These outliers are mainly caused by the city of Rotterdam, which has a large population and with 25\% only a very small 
+percentage of home-ownership. Even though these flows constitute a very small percentage of total flows ($<$ 0.1\%), they are important in terms of size. The underlying reason
+for this over-prediction is the homogeneous impact of housing tenure on migration flows for all municipalities, regardless of population size. It is quite likely that housing tenure in larger cities
+has a different effect on migration than in smaller cities. 
 
 \begin{figure}
 	\centering \includegraphics[width =
 	\columnwidth]{../fig/p_diff_in.pdf}
 	\caption{Changes in migrant flows into Amsterdam when percentage home-ownership
-		in Amsterdam increases by 10\%}\label{fig:diff_in}
+		in Amsterdam increases by 10 percentage points}\label{fig:diff_in}
 \end{figure}
+
+To assess what happens we look at the counterfactual when Amsterdam increases its home-ownership rate with 10 percentage points---a large but not very unrealistic scenario. 
+As a result, due to the large negative elasticities of home-ownership, migration flows decrease significantly. Figure \ref{fig:diff_in} shows the resulting difference in migration flows to Amsterdam.
+The decrease in flows range between 0 and 650, with the largest decreases from neighbouring municipalities and from the larger cities in the Netherlands (Rotterdam, The Hague and Utrecht). In total, in-migration drops with XXX migrants.
 
 \begin{figure}
   \centering \includegraphics[width =
   \columnwidth]{../fig/p_diff_out.pdf}
   \caption{Changes in migrant flows from Amsterdam when percentage home-ownership
-    in Amsterdam increases by 10\%}\label{fig:diff_out}
+    in Amsterdam increases by 10  percentage points}\label{fig:diff_out}
 \end{figure}
+
+Figure \ref{fig:diff_out} shows the decrease in out-migration flows. The decrease is slightly less and ranges between 0 and 500, with more or less similar patters as Figure \ref{fig:diff_in}. Total out-migration drops now with XXX migrants. 
 
 \section{In conclusion}
 
