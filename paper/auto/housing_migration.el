@@ -44,6 +44,8 @@
     "fig:forestplot"
     "fig:out"
     "fig:in"
+    "fig:hist_fit"
+    "fig:diff_in"
     "fig:diff_out")
    (LaTeX-add-bibliographies
     "references.bib"))
