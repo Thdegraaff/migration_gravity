@@ -116,12 +116,16 @@ diff_in <- new_d %>%
   arrange(as.numeric(origin)) %>%
   mutate(mean_diff = as.numeric(mean_diff))
 
+sum(diff_in$mean_diff)
+
 diff_out <- new_d %>%
   filter(origin == 132) %>%
   select(destination, mean_diff) %>%
   rbind(c("132", 0)) %>%
   arrange(as.numeric(destination)) %>%
   mutate(mean_diff = as.numeric(mean_diff))
+
+sum(diff_out$mean_diff)
 
 municipalities$diff_in <- diff_in[ , 2]
 municipalities$diff_out <- diff_out[ , 2]

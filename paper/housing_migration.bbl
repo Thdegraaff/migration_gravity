@@ -177,6 +177,40 @@
     \field{year}{1998}
   \endentry
 
+  \entry{boyle1997public}{article}{}
+    \name{author}{2}{}{%
+      {{hash=BP}{%
+         family={Boyle},
+         familyi={B\bibinitperiod},
+         given={Paul},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Shen},
+         familyi={S\bibinitperiod},
+         given={Jianfa},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{BPSJ1}
+    \strng{fullhash}{BPSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1997}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{3}
+    \field{pages}{227\bibrangedash 242}
+    \field{title}{Public housing and migration: a multi-level modelling
+  approach}
+    \field{volume}{3}
+    \field{journaltitle}{International Journal of Population Geography}
+    \field{year}{1997}
+  \endentry
+
   \entry{burger2009specification}{article}{}
     \name{author}{3}{}{%
       {{hash=BM}{%
@@ -555,6 +589,60 @@
     \field{year}{2005}
   \endentry
 
+  \entry{gelman2013bayesian}{book}{}
+    \name{author}{6}{}{%
+      {{hash=GA}{%
+         family={Gelman},
+         familyi={G\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=CJB}{%
+         family={Carlin},
+         familyi={C\bibinitperiod},
+         given={John\bibnamedelima B},
+         giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=SHS}{%
+         family={Stern},
+         familyi={S\bibinitperiod},
+         given={Hal\bibnamedelima S},
+         giveni={H\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=DDB}{%
+         family={Dunson},
+         familyi={D\bibinitperiod},
+         given={David\bibnamedelima B},
+         giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=VA}{%
+         family={Vehtari},
+         familyi={V\bibinitperiod},
+         given={Aki},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RDB}{%
+         family={Rubin},
+         familyi={R\bibinitperiod},
+         given={Donald\bibnamedelima B},
+         giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {Chapman}%
+      {Hall/CRC}%
+    }
+    \strng{namehash}{GA+1}
+    \strng{fullhash}{GACJBSHSDDBVARDB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{title}{Bayesian data analysis}
+    \field{year}{2013}
+  \endentry
+
   \entry{hoffman2014no}{article}{}
     \name{author}{2}{}{%
       {{hash=HMD}{%
@@ -648,6 +736,31 @@
     \field{title}{Estimation of the gravity equation in the presence of zero
   flows}
     \field{year}{2006}
+  \endentry
+
+  \entry{mcelreath2018statistical}{book}{}
+    \name{author}{1}{}{%
+      {{hash=MR}{%
+         family={McElreath},
+         familyi={M\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {Chapman}%
+      {Hall/CRC}%
+    }
+    \strng{namehash}{MR1}
+    \strng{fullhash}{MR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Statistical rethinking: A Bayesian course with examples in R
+  and Stan}
+    \field{year}{2018}
   \endentry
 
   \entry{michielsen2017}{article}{}
