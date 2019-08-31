@@ -11,7 +11,7 @@ library("shinystan")
 # Get subsample of data
 ######################
 
-nr <- 20
+nr <- 150
 
 ######################
 # Read in data
@@ -49,13 +49,14 @@ d$hom_d <- log(d$homeowners_d) - mean(log(d$homeowners_d))
 #                         prior(cauchy(0, 1), class = sd)),
 #               family = poisson("log"), data = d, iter = 2000, warmup = 1000, cores = 4, chains = 4)
 
-m2_nb <- brm(migrants~ pop_d + pop_o +hom_d + hom_o + soc_o + soc_d + log_distance +
+m2_nb <- brm(Migrants~ pop_d*hom_d + pop_d*soc_d + pop_o*hom_o + pop_o*soc_o + 
+               log_distance +
                  (1 | destination ) + (1 | origin),
                prior = c(prior(normal(0, 2), class = Intercept),
                          prior(normal(0, 2), class = b),
                          prior(cauchy(0, 1), class = sd),
                          prior(gamma(0.01, 0.01), class = shape)),
-               family = negbinomial, data = d, iter = 4000, warmup = 1000, cores = 4, chains = 4)
+               family = negbinomial, data = d, iter = 3000, warmup = 1000, cores = 4, chains = 4)
 
 # Did the analysis, but zero inflated parameter very close to zero, and model_weights give
 # 69% weight on non-zero inflated model and 31% on zero-inflated model. 
