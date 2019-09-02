@@ -18,7 +18,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: presentation-blx.bib
 Database file #2: ../paper/references.bib
-Repeated entry---line 184 of file ../paper/references.bib
+Repeated entry---line 195 of file ../paper/references.bib
  : @article{dietz2003social
  :                         ,
 I'm skipping whatever remains of this entry

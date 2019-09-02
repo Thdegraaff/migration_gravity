@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.8)  20 AUG 2019 17:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.28)  29 AUG 2019 11:17
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1491,70 +1491,71 @@ Overfull \vbox (15.63992pt too high) detected at line 36
 [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 57.
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 63.
 
-LaTeX Font Info:    No file OMScmss.fd. on input line 57.
+LaTeX Font Info:    No file OMScmss.fd. on input line 63.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 57.
+(Font)              for symbol `textbullet' on input line 63.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 57.
+LaTeX Font Info:    Try loading font information for U+msa on input line 63.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 57.
+LaTeX Font Info:    Try loading font information for U+msb on input line 63.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 57.
+line 63.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
-)
-Overfull \vbox (2.15298pt too high) detected at line 57
- []
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 57.
-
-[2
-
-] [3
-
-] [4
-
-] <../fig/harmless.jpeg, id=55, 700.6175pt x 1084.05pt>
+) <../fig/harmless.jpeg, id=27, 700.6175pt x 1084.05pt>
 File: ../fig/harmless.jpeg Graphic file (type jpg)
 
 <use ../fig/harmless.jpeg>
-Package pdftex.def Info: ../fig/harmless.jpeg used on input line 115.
+Package pdftex.def Info: ../fig/harmless.jpeg used on input line 63.
 (pdftex.def)             Requested size: 76.82246pt x 118.86542pt.
 
-<../fig/rethinking.jpg, id=56, 533.995pt x 843.15pt>
+<../fig/rethinking.jpg, id=28, 533.995pt x 843.15pt>
 File: ../fig/rethinking.jpg Graphic file (type jpg)
 
 <use ../fig/rethinking.jpg>
-Package pdftex.def Info: ../fig/rethinking.jpg used on input line 115.
+Package pdftex.def Info: ../fig/rethinking.jpg used on input line 63.
 (pdftex.def)             Requested size: 76.82246pt x 121.29514pt.
- [5
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
+(Font)              size <5> substituted on input line 63.
+
+[2
 
  <../fig/harmless.jpeg> <../fig/rethinking.jpg>]
 File: ../fig/harmless.jpeg Graphic file (type jpg)
-
-<use ../fig/harmless.jpeg>
-Package pdftex.def Info: ../fig/harmless.jpeg used on input line 115.
+ <use ../fig/harmless.jpeg>
+Package pdftex.def Info: ../fig/harmless.jpeg used on input line 63.
 (pdftex.def)             Requested size: 76.82246pt x 118.86542pt.
 File: ../fig/rethinking.jpg Graphic file (type jpg)
- <use ../fig/rethinking.jpg>
-Package pdftex.def Info: ../fig/rethinking.jpg used on input line 115.
+
+<use ../fig/rethinking.jpg>
+Package pdftex.def Info: ../fig/rethinking.jpg used on input line 63.
 (pdftex.def)             Requested size: 76.82246pt x 121.29514pt.
- [6
+ [3
+
+]
+Overfull \vbox (2.15298pt too high) detected at line 85
+ []
+
+[4
+
+] [5
+
+] [6
 
 ]
 \openout4 = `presentation.vrb'.
@@ -1570,7 +1571,7 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
 \openout4 = `presentation.vrb'.
 
  (./presentation.vrb)
-Overfull \vbox (21.51538pt too high) detected at line 211
+Overfull \vbox (21.51538pt too high) detected at line 213
  []
 
 [8
@@ -1579,7 +1580,7 @@ Overfull \vbox (21.51538pt too high) detected at line 211
 \openout4 = `presentation.vrb'.
 
  (./presentation.vrb)
-Overfull \vbox (21.51538pt too high) detected at line 286
+Overfull \vbox (21.51538pt too high) detected at line 288
  []
 
 [9
@@ -1588,7 +1589,7 @@ Overfull \vbox (21.51538pt too high) detected at line 286
 \openout4 = `presentation.vrb'.
 
  (./presentation.vrb)
-Overfull \vbox (23.55011pt too high) detected at line 361
+Overfull \vbox (23.55011pt too high) detected at line 363
  []
 
 [10
@@ -1605,7 +1606,7 @@ Overfull \vbox (23.55011pt too high) detected at line 361
 File: ../fig/hist_mig.pdf Graphic file (type pdf)
 
 <use ../fig/hist_mig.pdf>
-Package pdftex.def Info: ../fig/hist_mig.pdf used on input line 391.
+Package pdftex.def Info: ../fig/hist_mig.pdf used on input line 393.
 (pdftex.def)             Requested size: 245.83282pt x 122.9125pt.
  [15
 
@@ -1614,7 +1615,7 @@ Package pdftex.def Info: ../fig/hist_mig.pdf used on input line 391.
 File: ../fig/hist_housing.pdf Graphic file (type pdf)
 
 <use ../fig/hist_housing.pdf>
-Package pdftex.def Info: ../fig/hist_housing.pdf used on input line 401.
+Package pdftex.def Info: ../fig/hist_housing.pdf used on input line 403.
 (pdftex.def)             Requested size: 245.83282pt x 122.9125pt.
  [16
 
@@ -1625,31 +1626,31 @@ Package pdftex.def Info: ../fig/hist_housing.pdf used on input line 401.
 
 
 (./presentation.vrb)
-Overfull \vbox (8.89313pt too high) detected at line 435
+Overfull \vbox (8.89313pt too high) detected at line 438
  []
 
 [18
 
 ] (./presentation.vrb)
-Overfull \vbox (8.89313pt too high) detected at line 435
+Overfull \vbox (8.89313pt too high) detected at line 438
  []
 
 [19
 
 ] (./presentation.vrb)
-Overfull \vbox (8.89313pt too high) detected at line 435
+Overfull \vbox (8.89313pt too high) detected at line 438
  []
 
 [20
 
 ] (./presentation.vrb)
-Overfull \vbox (8.89313pt too high) detected at line 435
+Overfull \vbox (8.89313pt too high) detected at line 438
  []
 
 [21
 
 ] (./presentation.vrb)
-Overfull \vbox (8.89313pt too high) detected at line 435
+Overfull \vbox (8.89313pt too high) detected at line 438
  []
 
 [22
@@ -1658,7 +1659,7 @@ Overfull \vbox (8.89313pt too high) detected at line 435
 File: ../fig/forestplot.pdf Graphic file (type pdf)
 
 <use ../fig/forestplot.pdf>
-Package pdftex.def Info: ../fig/forestplot.pdf used on input line 473.
+Package pdftex.def Info: ../fig/forestplot.pdf used on input line 476.
 (pdftex.def)             Requested size: 153.64493pt x 192.05493pt.
  [23
 
@@ -1666,7 +1667,7 @@ Package pdftex.def Info: ../fig/forestplot.pdf used on input line 473.
 <../fig/hist_fit.pdf, id=194, 578.16pt x 289.08pt>
 File: ../fig/hist_fit.pdf Graphic file (type pdf)
  <use ../fig/hist_fit.pdf>
-Package pdftex.def Info: ../fig/hist_fit.pdf used on input line 482.
+Package pdftex.def Info: ../fig/hist_fit.pdf used on input line 485.
 (pdftex.def)             Requested size: 276.559pt x 138.27602pt.
 
 [24
@@ -1676,88 +1677,67 @@ Package pdftex.def Info: ../fig/hist_fit.pdf used on input line 482.
 File: ../fig/p_coef_out.pdf Graphic file (type pdf)
 
 <use ../fig/p_coef_out.pdf>
-Package pdftex.def Info: ../fig/p_coef_out.pdf used on input line 498.
+Package pdftex.def Info: ../fig/p_coef_out.pdf used on input line 501.
 (pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
 
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 498--498
+Overfull \hbox (15.36542pt too wide) in paragraph at lines 501--501
  [] 
  []
 
 <../fig/p_coef_in.pdf, id=210, 650.43pt x 578.16pt>
 File: ../fig/p_coef_in.pdf Graphic file (type pdf)
  <use ../fig/p_coef_in.pdf>
-Package pdftex.def Info: ../fig/p_coef_in.pdf used on input line 498.
+Package pdftex.def Info: ../fig/p_coef_in.pdf used on input line 501.
 (pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
 
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 498--498
+Overfull \hbox (15.36542pt too wide) in paragraph at lines 501--501
  [] 
  []
 
 [25
 
  <../fig/p_coef_out.pdf> <../fig/p_coef_in.pdf>]
-File: ../fig/p_coef_out.pdf Graphic file (type pdf)
+<../fig/p_diff_out.pdf, id=232, 650.43pt x 578.16pt>
+File: ../fig/p_diff_out.pdf Graphic file (type pdf)
 
-<use ../fig/p_coef_out.pdf>
-Package pdftex.def Info: ../fig/p_coef_out.pdf used on input line 498.
+<use ../fig/p_diff_out.pdf>
+Package pdftex.def Info: ../fig/p_diff_out.pdf used on input line 516.
 (pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
 
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 498--498
+Overfull \hbox (15.36542pt too wide) in paragraph at lines 516--516
  [] 
  []
 
-File: ../fig/p_coef_in.pdf Graphic file (type pdf)
-<use ../fig/p_coef_in.pdf>
-Package pdftex.def Info: ../fig/p_coef_in.pdf used on input line 498.
+<../fig/p_diff_in.pdf, id=233, 650.43pt x 578.16pt>
+File: ../fig/p_diff_in.pdf Graphic file (type pdf)
+ <use ../fig/p_diff_in.pdf>
+Package pdftex.def Info: ../fig/p_diff_in.pdf used on input line 516.
 (pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
 
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 498--498
+Overfull \hbox (15.36542pt too wide) in paragraph at lines 516--516
  [] 
  []
 
 [26
 
-] <../fig/p_diff_out.pdf, id=237, 650.43pt x 578.16pt>
-File: ../fig/p_diff_out.pdf Graphic file (type pdf)
+ <../fig/p_diff_out.pdf> <../fig/p_diff_in.pdf>] [27
 
-<use ../fig/p_diff_out.pdf>
-Package pdftex.def Info: ../fig/p_diff_out.pdf used on input line 513.
-(pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
-
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 513--513
- [] 
- []
-
-<../fig/p_diff_in.pdf, id=238, 650.43pt x 578.16pt>
-File: ../fig/p_diff_in.pdf Graphic file (type pdf)
- <use ../fig/p_diff_in.pdf>
-Package pdftex.def Info: ../fig/p_diff_in.pdf used on input line 513.
-(pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
-
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 513--513
- [] 
- []
-
-[27
-
- <../fig/p_diff_out.pdf> <../fig/p_diff_in.pdf>] [28
+] [28
 
 ] [29
-
-] [30
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 549.
+(hyperref)                removing `\translate ' on input line 552.
 
 Missing character: There is no â in font cmss9!
 Missing character: There is no € in font cmss9!
 Missing character: There is no ™ in font cmss9!
-[31
+[30
 
  </usr/local/texlive/2017/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf
->] [32
+>] [31
 
 
 ]
@@ -1770,11 +1750,11 @@ Missing character: There is no ™ in font cmss9!
 \tf@snm=\write10
 \openout10 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 558.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 558.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 561.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 561.
  (./presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 558.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 558.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 561.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 561.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D9694BC855D0C50CCAD6B8D6DEDF7609;41.
 
@@ -1790,13 +1770,13 @@ Package logreq Info: Writing requests to 'presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38906 strings out of 492995
- 926176 string characters out of 6132704
- 1297834 words of memory out of 5000000
+ 38904 strings out of 492995
+ 926157 string characters out of 6132704
+ 1297828 words of memory out of 5000000
  41619 multiletter control sequences out of 15000+600000
  19626 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,14n,98p,1934b,1625s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,14n,98p,1934b,1624s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pf
 b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb>
@@ -1809,10 +1789,10 @@ sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></us
 r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr
 /local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
 local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on presentation.pdf (32 pages, 13025974 bytes).
+Output written on presentation.pdf (31 pages, 13024808 bytes).
 PDF statistics:
- 354 PDF objects out of 1000 (max. 8388607)
- 274 compressed objects within 3 object streams
- 76 named destinations out of 1000 (max. 500000)
+ 349 PDF objects out of 1000 (max. 8388607)
+ 270 compressed objects within 3 object streams
+ 74 named destinations out of 1000 (max. 500000)
  101 words of extra memory for PDF output out of 10000 (max. 10000000)
 

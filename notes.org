@@ -1,0 +1,12 @@
+* Comments
+** Presentation Lyon 29-8-2019
+   1. How big are the variance effects (intuition)
+   2. How big is the effect of social renting (really zero?)
+   3. Look into heterogeneity of social renting
+   4. What about spatial dependence of social renting (cannot find a home in
+      Utrecht so surrounding areas
+   5. Compare years (why 2015?); would 2005 not be better and cleaner (no
+      recession)
+   6. run model with subgroups (e.g., no large cities) or only higher skilled
+   7. Mundlak correction (name in paper)
+   8. Household size per municipality?
