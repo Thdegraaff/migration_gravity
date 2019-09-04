@@ -11,7 +11,7 @@ library("shinystan")
 # Get subsample of data
 ######################
 
-nr <- 150
+nr <- 50
 
 ######################
 # Read in data
@@ -29,15 +29,21 @@ d$destination <- as.numeric(as.factor(d$code_d))
 d <- select(d, -code_o, -code_d)
 d <- d %>% filter(origin <= nr, destination <= nr)
 
-d$log_distance <- log(d$distance) - mean(log(d$distance))
-d$pop_o <- log(d$pop_o) - mean(log(d$pop_o) )
-d$pop_d <- log(d$pop_d) - mean(log(d$pop_d) )
-d$soc_d <- log(d$socialhousing_d + 0.0001 )
-d$soc_o <- log(d$socialhousing_o + 0.0001 )
-d$soc_d <- d$soc_d - mean(d$soc_d)
-d$soc_o <- d$soc_o - mean(d$soc_o)
-d$hom_o <- log(d$homeowners_o) - mean(log(d$homeowners_o))
-d$hom_d <- log(d$homeowners_d) - mean(log(d$homeowners_d))
+d$log_distance <- log(d$distance) #- mean(log(d$distance))
+# d$soc_d <- d$socialhousing_d/100 * d$woningen_d
+# d$soc_o <- d$socialhousing_o/100 * d$woningen_o
+# d$hom_d <- d$homeowners_d/100 * d$woningen_d
+# d$hom_o <- d$homeowners_o/100 * d$woningen_o
+d$pop_o <- log(d$pop_o) #- mean(log(d$pop_o) )
+d$pop_d <- log(d$pop_d) #- mean(log(d$pop_d) )
+d$soc_d <- log(d$socialhousing_d + 0.001 )
+d$soc_o <- log(d$socialhousing_o + 0.001 )
+d$soc_d <- d$soc_d #- mean(d$soc_d)
+d$soc_o <- d$soc_o #- mean(d$soc_o)
+d$hom_o <- log(d$homeowners_o) #- mean(log(d$hom_o))
+d$hom_d <- log(d$homeowners_d) #- mean(log(d$hom_d))
+d$socdis_o <- log((d$socialhousing_o + 0.001)*d$distance)
+d$socdis_d <- log((d$socialhousing_d + 0.001)*d$distance)
 
 ################ Analysis #############
 
@@ -49,8 +55,7 @@ d$hom_d <- log(d$homeowners_d) - mean(log(d$homeowners_d))
 #                         prior(cauchy(0, 1), class = sd)),
 #               family = poisson("log"), data = d, iter = 2000, warmup = 1000, cores = 4, chains = 4)
 
-m2_nb <- brm(Migrants~ pop_d*hom_d + pop_d*soc_d + pop_o*hom_o + pop_o*soc_o + 
-               log_distance +
+m2_nb <- brm(Migrants~ pop_d + pop_o  + hom_o  + hom_d  + soc_o + soc_d + log_distance + socdis_o + socdis_d +
                  (1 | destination ) + (1 | origin),
                prior = c(prior(normal(0, 2), class = Intercept),
                          prior(normal(0, 2), class = b),

@@ -59,6 +59,7 @@ municipalities <- municipalities %>%
 # Make descriptive plots
 ########################
 
+
 housing <- gather(municipalities, key = "Housing_type", value = "Percentage", c("P_KOOPWON", "P_HUURCORP") ) %>%
   select(GM_CODE, GM_NAAM, Housing_type, Percentage)
 
@@ -115,19 +116,23 @@ data <- left_join(data, distance, by = c("code_o" = "code_o", "code_d" = "code_d
 # Add variables
 municipalities$GM_CODE <- as.character(municipalities$GM_CODE)
 muni_o <- municipalities %>%
-  select(GM_CODE, AANT_INW, WOZ, P_KOOPWON, P_HUURCORP) %>%
+  select(GM_CODE, AANT_INW, WOZ, WONINGEN, P_KOOPWON, P_HUURCORP, GEM_HH_GR) %>%
   rename(pop_o = AANT_INW, 
          housevalue_o = WOZ,
+         woningen_o = WONINGEN,
          homeowners_o = P_KOOPWON, 
-         socialhousing_o = P_HUURCORP) %>%
+         socialhousing_o = P_HUURCORP,
+         hhgrootte_o = GEM_HH_GR) %>%
   st_drop_geometry
 
 muni_d <- municipalities %>%
-  select(GM_CODE, AANT_INW, WOZ, P_KOOPWON, P_HUURCORP) %>%
+  select(GM_CODE, AANT_INW, WOZ, WONINGEN, P_KOOPWON, P_HUURCORP, GEM_HH_GR) %>%
   rename(pop_d = AANT_INW, 
          housevalue_d = WOZ,
+         woningen_d = WONINGEN,
          homeowners_d = P_KOOPWON, 
-         socialhousing_d = P_HUURCORP) %>%
+         socialhousing_d = P_HUURCORP, 
+         hhgrootte_d = GEM_HH_GR) %>%
   st_drop_geometry
 
 data <- left_join(data, muni_o, by = c("code_o" = "GM_CODE") ) 
