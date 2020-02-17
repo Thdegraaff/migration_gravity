@@ -43,7 +43,7 @@ data <- left_join(data, destination) %>%
 
 ######################
 # Read in Shapefile
-# origin: https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische%20data/wijk-en-buurtkaart-2015
+# origin: https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data/wijk-en-buurtkaart-2018
 ######################
 
 municipalities <- st_read(dsn = "./data/src/gem_2015.shp")
