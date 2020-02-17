@@ -104,95 +104,91 @@
 	
 	\section{Introduction} % The \section*{} command stops section numbering
 
-        The current Dutch housing market is characterized by a low
-        housing supply elasticity, high housing demand, and only a
-        small segment (10\%) that belongs to the private rental market
-        \citep{michielsen2017}. Because of the resulting large
-        shortage of housing, many policy recommendations have been
-        proposed, including plans for 700,000 new houses to be built
-        in the coming decade. Unfortunately, the construction of a
-        large amount of new dwellings is problematic in the
-        Netherlands due to large and restrictive spatial constraints
-        \citep{michielsen2019}. Therefore, policy makers consider 
-        as well to change the housing structure, e.g., by converting
-        rent controlled housing to home-ownership properties, to
-        tackle at least the high housing prices by enlarging the
-        home-ownership segment.
+    The current Dutch housing market is characterized by a low housing supply
+    elasticity, high housing demand, and only a small segment (10\%) that
+    belongs to the private rental market \citep{michielsen2017}. Because of the
+    resulting large shortage of housing, many policy recommendations have been
+    proposed, including plans for 700,000 new houses to be built in the coming
+    decade. Unfortunately, the construction of a large amount of new dwellings
+    is problematic in the Netherlands due to large and restrictive spatial
+    constraints \citep{michielsen2019}. Therefore, policy makers consider as
+    well to change the housing structure, e.g., by converting rent controlled
+    housing to home-ownership properties, to tackle at least the high housing
+    prices by enlarging the home-ownership segment.
         
-        There is already a large amount of literature looking into the positive
-        and negative effects of home-ownership---both from a private and from a social perspective \citep[see for an
-        overview][]{dietz2003social}. It is argued that home-ownership leads to,
-        e.g., better maintenance (of the own dwelling and the neighbourhood),
-        more savings, higher education outcomes, higher individual labor supply,
-        and even better health. One prominent negative effect of home-ownership
-        is that it leads to less incentives to move residence because of higher
-        moving costs vis-\`{a}-vis private renting.  
+    There is already a large amount of literature looking into the positive and
+    negative effects of home-ownership---both from a private and from a social
+    perspective \citep[see for an overview][]{dietz2003social}. It is argued
+    that home-ownership leads to, e.g., better maintenance (of the own dwelling
+    and the neighbourhood), more savings, higher education outcomes, higher
+    individual labor supply, and even better health. One prominent negative
+    effect of home-ownership is that it leads to less incentives to move
+    residence because of higher moving costs vis-\`{a}-vis private renting.
         
-        This paper revisits the role of housing market structure as impediment
-        for inter-municipality migration and specifically focuses on the role of
-        home-ownership and social renting rates. In addition, it gives a
-        framework to predict changes in the whole network of migration flows,
-        when housing market structure change locally.  To this end, I adopt a
-        Bayesian multilevel gravity model which is not frequently encountered in
-        the traditional gravity literature.\footnote{That is, in the economic
-          literature; a notable exception is \citet{ranjan2007bayesian} in the
-          economic trade literature. In the geographical literature this
-          approach is more commonly adopted \citep[see within a migration
-          context][]{congdon2010random, congdon2012spatial}} Traditional gravity
-        modelling has the disadvantage that either municipality fixed effects of
-        origins and destinations can be incorporated or the municipalities'
-        characteristics when not varying over flows. This paper circumvents this
-        disadvantage by adopting a multilevel approach with partial
-        pooling\footnote{There is a whole variety of names for these types of
-          models, including hierarchical modeling, varying effects, mixed
-          effects and shrinkage models. I use the more generic multilevel
-          description as municipality and flows are by definition measured at a
-          different level (scale) \citep[see][for an indepth
-          discussion]{gelman2013bayesian}.}, where the latter terms indicates
-        that I do not impose fixed effects to control for origin and destination
-        specific effects, but that I ``draw'' them from a distribution, hence
-        the name partial pooling (where complete pooling states no group effects
-        and no pooling fixed effects).
+    This paper revisits the role of housing market structure as impediment for
+    inter-municipality migration and specifically focuses on the role of
+    home-ownership and social renting rates. In addition, it gives a framework
+    to predict changes in the whole network of migration flows, when housing
+    market structure change locally. To this end, I adopt a Bayesian multilevel
+    gravity model which is not frequently encountered in the traditional gravity
+    literature.\footnote{That is, in the economic literature; a notable
+      exception is \citet{ranjan2007bayesian} in the economic trade literature.
+      In the geographical literature this approach is more commonly adopted
+      \citep[see within a migration context][]{congdon2010random,
+        congdon2012spatial}} Traditional gravity modelling has the disadvantage
+    that either municipality fixed effects of origins and destinations can be
+    flows. This paper circumvents this disadvantage by adopting a multilevel
+    incorporated or the municipalities' characteristics when not varying over
+    approach with partial pooling\footnote{There is a whole variety of names for
+      these types of models, including hierarchical modeling, varying effects,
+      mixed effects and shrinkage models. I use the more generic multilevel
+      description as municipality and flows are by definition measured at a
+      different level (scale) \citep[see][for an indepth
+      discussion]{gelman2013bayesian}.}, where the latter terms indicates that I
+    do not impose fixed effects to control for origin and destination specific
+    effects, but that I ``draw'' them from a distribution, hence the name
+    partial pooling (where complete pooling states no group effects and no
+    pooling fixed effects).
                
-        This papers adds two main elements to the literature. First, it does not
-        only consider home-ownership but as well municipal social renting
-        structure, which can be argued \citep[see, e.g.,][]{hughes1981council,
-          boyle1997public,boyle1998migration} to have a large effect on regional
-        mobility as well as social renting rights are usually only valid locally
-        (within municipality) and are lost when moving residence between
-        municipalities.
+    This papers adds two main elements to the literature. First, it does not
+    only consider home-ownership but as well municipal social renting structure,
+    which can be argued \citep[see, e.g.,][]{hughes1981council,
+      boyle1997public,boyle1998migration} to have a large effect on regional
+    mobility as well as social renting rights are usually only valid locally
+    (within municipality) and are lost when moving residence between
+    municipalities.
         
-        Second, a partial pooling approach has another advantage, namely the
-        municipal varying effects are completely probabilistic, making it
-        feasible to predict both within and out-of-sample. In other words, with
-        the results at hand I can predict migration flows between existing
-        \emph{and} hypothetical cities. The former might be used for looking at
-        counterfactuals; for example, the changes in in-migration for all
-        municipalities, when one municipality changes its housing structure. The
-        latter is useful when one wants to assess new migrations flows between
-        one or even two new municipalities outside the sample.\footnote{See for
-          probabilistic predictions of internation migration
-          \cite{azose2015bayesian}.}
+    Second, a partial pooling approach has another advantage, namely the
+    municipal varying effects are completely probabilistic, making it feasible
+    to predict both within and out-of-sample. In other words, with the results
+    at hand I can predict migration flows between existing \emph{and}
+    hypothetical cities. The former might be used for looking at
+    counterfactuals; for example, the changes in in-migration for all
+    municipalities, when one municipality changes its housing structure. The
+    latter is useful when one wants to assess new migrations flows between one
+    or even two new municipalities outside the sample.\footnote{See for
+      probabilistic predictions of internation migration
+      \cite{azose2015bayesian}.}
 	
-    	That housing market structure has a sizeable effect on migration
-    	decisions is empirically well-established, especially at the
-    	micro-level, where it is widely accepted that home-ownership has a
-    	negative effect on municipal mobility \citep{dietz2003social,
-    		dohmen2005housing}. For example, \citet{palomares2018understanding}
-    	find that home-ownership has a very strong immobility effect on internal
-    	migration in Spain during the period 2001--2011.
+    That housing market structure has a sizeable effect on migration decisions
+    is empirically well-established, especially at the micro-level, where it is
+    widely accepted that home-ownership has a negative effect on municipal
+    mobility \citep{dietz2003social, dohmen2005housing}. For example,
+    \citet{palomares2018understanding} find that home-ownership has a very
+    strong immobility effect on internal migration in Spain during the period
+    2001--2011.
     	
-    	In the literature, less attention has been given to inter-city
-    	migration on the aggregate level with respect to the housing market as a
-    	specific barrier.\footnote{See \citet{cushing2004crossing} for a
-    		historical overview of common themes within migration research.} For
-    	the UK, \citet{congdon2010random} found within a multilevel gravity
-    	model that social rented housing had little effect on the attractivity
-    	of a region, although it had a small positive effect on preventing
-    	people from moving residence. For the Canadian case,
-    	\citet{amirault2016drags} looked at the impact of home-ownership on
-    	migration flows within a gravity model using a Poisson pseudo maximum
-    	likelihood estimator and found an elasticity around $-1$.
+    In the literature, less attention has been given to inter-city migration on
+    the aggregate level with respect to the housing market as a specific
+    barrier.\footnote{See \citet{cushing2004crossing} for a historical overview
+      of common themes within migration research.} For the UK,
+    \citet{congdon2010random} found within a multilevel gravity model that
+    social rented housing had little effect on the attractivity of a region,
+    although it had a small positive effect on preventing people from moving
+    residence. For the Canadian case, \citet{amirault2016drags} looked at the
+    impact of home-ownership on migration flows within a gravity model using a
+    Poisson pseudo maximum likelihood estimator and found an elasticity around
+    $-1$.
     	           
         One of the main reasons to look into housing market structure and migration is that   
         higher moving costs are detrimental to the aggregate labor market
