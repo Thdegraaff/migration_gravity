@@ -24,6 +24,13 @@ load(file = "./data/derived/migration_2018.Rda")
 
 d <- data
 
+cor_d <- d %>% select(
+  homeowners_d, socialhousing_d, private_rent_d, pop_d
+)
+
+round(cor(cor_d, use = "complete.obs"), 2)
+
+
 d_t <- data %>%
   filter(code_o =="GM0363")
 
@@ -85,7 +92,7 @@ d$hom_d <- log(d$homeowners_d) - mean(log(d$homeowners_d))
 #                 #control = list(adapt_delta = 0.9) )
 
 # This one works where home < soc (=0) < priv
-m2_total <- brm(Migrants~ log_distance +  pop_d + pop_o + hom_o + hom_d + soc_o + soc_d + pri_o + pri_d +
+m2_total <- brm(Migrants~ 0 + log_distance +  pop_d + pop_o + hom_o + hom_d + soc_o + soc_d + pri_o + pri_d +
                         (1 | destination ) + (1 | origin),
                       prior = c(prior(normal(0, 2), class = Intercept),
                                 prior(normal(0, 2), class = b),
