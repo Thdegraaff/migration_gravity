@@ -66,6 +66,7 @@ d$hom_d <- log(d$homeowners_d) - mean(log(d$homeowners_d))
 
 ######################
 # Create new data and difference
+# Ok; this is wrong given the logs!
 ######################
 
 new_d <- d %>% 

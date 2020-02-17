@@ -10,3 +10,22 @@
    6. run model with subgroups (e.g., no large cities) or only higher skilled
    7. Mundlak correction (name in paper)
    8. Household size per municipality?
+** Comments by Trond Husby 02-09-2019
+*** Openblas
+    For faster computation on a low-level (for linear algebra) use
+    Openblas. Tried, does not work on Mac as Blas is firmly installed
+*** cbsodataR
+    Wonderful package on R where data from CBS can be retrieved via an API!
+    using the package cbsodataR. Tried and works!
+*** Cross-validation
+    How does cross-validation really works in Bayesian shrinkage models? Compare
+    with fixed effects models
+*** Distance interaction effects
+    Migration over longer distance is different than migration nearby-would this
+    be especially so for social renting. If there is much social renting you
+    cannot find a house in your own municipality and will go to cities in the
+    neighborhood: positive effect. But negative effect for further away!
+* Onderzoeksdagboek
+** 02-09-2019
+   Ik focus op wooncorporaties met interactie effecten tussen distance en
+   bevolking. Helaas, nog nergens zie ik effecten. 
