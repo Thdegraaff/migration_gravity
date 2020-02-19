@@ -14,6 +14,15 @@ muni <- read.csv2(file = "./data/src/2018/Gebieden_in_Nederland_2018_10022020_17
 muni <- muni[ ,1:2] # only keep first two variables
 names(muni)[2] <- "code"
 
+# Okay, The Hague and Groningen are of course wrongly spelled (with gemeente in addition); 
+# we have to change these names
+
+muni$Regio.s <- recode(muni$Regio.s,
+  'Groningen (gemeente)' = 'Groningen',
+  "'s-Gravenhage (gemeente)" = "'s-Gravenhage",
+  "Utrecht (gemeente)" = "Utrecht"
+)
+
 migration <- read.csv2(file = "./data/src/2018/Tussen_gemeenten_verhuisde_personen_10022020_172654.csv", 
                        header = TRUE)
 migration <- drop_na(migration) # drop all municapalities with NA; now dataset is 380 * 380 - 380
@@ -35,7 +44,6 @@ origin$origin <- as.character(origin$origin)
 data <- left_join(data, origin) %>%
   rename(code_o = code)
 data$code_o <- gsub(" ","",data$code_o)
-
 
 destination$destination <- as.character(destination$destination)
 data <- left_join(data, destination) %>%

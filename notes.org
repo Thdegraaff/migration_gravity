@@ -28,4 +28,10 @@
 * Onderzoeksdagboek
 ** 02-09-2019
    Ik focus op wooncorporaties met interactie effecten tussen distance en
-   bevolking. Helaas, nog nergens zie ik effecten. 
+   bevolking. Helaas, nog nergens zie ik effecten.
+** 19-02-2020
+ Het effect van sociale woningen (corporaties) blijft op het moment dat private
+ huur meegenomen wordt. Effect van private huur is grote dan sociale huur welke
+ weer groter is dan koopwoningen. Op het moment dat huishoudsgrootte meegenomen
+ wordt blijven alle effecten gelijk, behalve koopwoningen welke positief wordt.
+ Dit laatste is logisch, maar wat zegt dit over causaliteit?
