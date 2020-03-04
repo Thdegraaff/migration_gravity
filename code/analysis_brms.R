@@ -95,16 +95,14 @@ d$hhsize_o <- log(d$hhgrootte_o) - mean(log(d$hhgrootte_o))
 
 # This one works where home < soc (=0) < priv
 
-m2_total <- brm(Migrants~ log_distance +  pop_d + pop_o + hom_o + hom_d + 
-                          soc_o + soc_d + pri_o + pri_d + 
-                        (1 | destination ) + (1 | origin),
-                      prior = c(
-                                prior(normal(0, 2), class = Intercept),
-                                prior(normal(0, 2), class = b),
-                                prior(cauchy(0, 1), class = sd),
-                                prior(gamma(0.01, 0.01), class = shape)),
-                      family = negbinomial, data = d, iter = 4000,
-                      warmup = 2000, cores = 4, chains = 4) #,
+m_total_p <- brm(Migrants ~  log_distance +  pop_d + pop_o + hom_o + hom_d + 
+                  soc_o + soc_d + pri_o + pri_d +
+                  (1|origin) + (1|destination),
+                  prior = c(prior(normal(0, 2), class = Intercept),
+                            prior(normal(0, 2), class = b),
+                            prior(cauchy(0, 1), class = sd)),
+                  family = poisson, data = d, iter = 4000,
+                  warmup = 2000, cores = 4, chains = 4) #,
 #control = list(adapt_delta = 0.9) )
 
 # Did the analysis, but zero inflated parameter very close to zero, and model_weights give
@@ -118,5 +116,4 @@ m2_total <- brm(Migrants~ log_distance +  pop_d + pop_o + hom_o + hom_d +
 #           family = zero_inflated_negbinomial, data = d, iter = 4000, warmup = 1000, cores = 4, chains = 4)
 
 
-save(m2_total, file = "./output/m_total.rda")
-save(m2_total_hhize, file = "./output/m_hhsize.rda")
+save(m_total_p, file = "./output/m_total_p.rda")
