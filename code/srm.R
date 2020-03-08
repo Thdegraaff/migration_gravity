@@ -57,7 +57,7 @@ d$hhsize_o <- log(d$hhgrootte_o) - mean(log(d$hhgrootte_o))
 mig_data <- list(
   migrants  = d$Migrants,
   # N = nrow(d),
-  N_households = nr,
+  N_regions = nr,
   origin = d$origin,
   destination = d$destination,
   log_distance = d$log_distance,
@@ -77,11 +77,20 @@ m2 <- ulam(
       b_hom_o*hom_o + b_hom_d*hom_d  +
       b_soc_o*soc_o + b_soc_d*soc_d  + 
       b_d*log_distance,
-    c(a, b_pop_o, b_pop_d, b_hom_o, b_hom_d, b_soc_o, b_soc_d) ~ normal(0,1),
-    b_d ~ dnorm(-1,1),
+    c(b_pop_o, b_pop_d, b_hom_o, b_hom_d, b_soc_o, b_soc_d) ~ dnorm(0,1),
+    b_d ~ dnorm(-1, 1),
+    a ~ dnorm(1, 0.5),
          
     ## gr matrix of varying effects
-    vector[2]:gr[N_households] ~ multi_normal(0,Rho_gr,sigma_gr),
+
+    # transpars> matrix[N_regions,2]: gr <-
+    #   compose_noncentered( sigma_gr , L_Rho_d , z ),
+    # matrix[2,N_regions]: z ~ normal( 0 , 1 ),
+    # cholesky_factor_corr[2]:L_Rho_d ~ lkj_corr_cholesky( 2 ),
+    # vector[2]:sigma_gr ~ dexp(1)
+    
+    
+    vector[2]:gr[N_regions] ~ multi_normal(0,Rho_gr,sigma_gr),
     Rho_gr ~ lkj_corr(2),
     sigma_gr ~ exponential(2)
   ),
@@ -89,6 +98,8 @@ m2 <- ulam(
 )
 
 # save(m2, file = "./output/m_srm.rda")
+ load(file = "./output/m_srm.rda")
+
 
 o_group <- d %>% 
   group_by(origin) %>%
@@ -104,10 +115,16 @@ d_group <- d %>%
             hom_d_m = mean(hom_d)
   )
 
-precis( m2 )
+precis(m2, depth = 1 , corr = true)
 precis( m2 , depth=3 , pars=c("Rho_gr","sigma_gr") )
 
 post <- extract.samples( m2 )
+
+plot(post$b_soc_d, post$bp_soc_d, col=rangi2)
+m1 <- lm(post$b_soc_d~post$b_pop_d + post$b_hom_d + post$bp_soc_d)
+plot(post$b_soc_o, post$b_pop_o, col = rangi2)
+m2 <- lm(post$b_soc_o~post$b_pop_o + post$b_hom_o)
+
 ori <- sapply( 1:nr , function(i) post$a + post$gr[,i,1] + 
                  post$b_soc_o * o_group$soc_o_m + 
                  post$b_hom_o * o_group$hom_o_m + 
@@ -135,24 +152,24 @@ for ( i in 1:nr) {
 
 points( Eo_mu , Ed_mu , pch=21 , bg="white" , lwd=1.5 )
 
-m2 <- ulam(
-  alist(
-    migrants ~ dgampois( lambda, scale ),
-    log(lambda) <- a + gr[origin,1]  + gr[destination,2] + 
-      b_pop_o*pop_o + b_pop_d*pop_d  + 
-      b_hom_o*hom_o + b_hom_d*hom_d  +
-      b_soc_o*soc_o + b_soc_d*soc_d  + 
-      b_d*log_distance,
-    c(a, b_pop_o, b_pop_d, b_hom_o, b_hom_d, b_soc_o, b_soc_d) ~ normal(0,1),
-    b_d ~ dnorm(-1,1),
-    scale ~ dcauchy(0, 2),
-    
-    ## gr matrix of varying effects
-    vector[2]:gr[N_households] ~ multi_normal(0,Rho_gr,sigma_gr),
-    Rho_gr ~ lkj_corr(2),
-    sigma_gr ~ exponential(2)
-  ),
-  data = mig_data, iter = 3000, warmup = 1500, chains = 4, cores = 4,
-  constraints=list(scale="lower=0"),
-  start=list(scale=2) 
-)
+# m2 <- ulam(
+#   alist(
+#     migrants ~ dgampois( lambda, scale ),
+#     log(lambda) <- a + gr[origin,1]  + gr[destination,2] + 
+#       b_pop_o*pop_o + b_pop_d*pop_d  + 
+#       b_hom_o*hom_o + b_hom_d*hom_d  +
+#       b_soc_o*soc_o + b_soc_d*soc_d  + 
+#       b_d*log_distance,
+#     c(a, b_pop_o, b_pop_d, b_hom_o, b_hom_d, b_soc_o, b_soc_d) ~ normal(0,1),
+#     b_d ~ dnorm(-1,1),
+#     scale ~ dcauchy(0, 2),
+#     
+#     ## gr matrix of varying effects
+#     vector[2]:gr[N_households] ~ multi_normal(0,Rho_gr,sigma_gr),
+#     Rho_gr ~ lkj_corr(2),
+#     sigma_gr ~ exponential(2)
+#   ),
+#   data = mig_data, iter = 3000, warmup = 1500, chains = 4, cores = 4,
+#   constraints=list(scale="lower=0"),
+#   start=list(scale=2) 
+# )
