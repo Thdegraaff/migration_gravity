@@ -9,7 +9,7 @@ library("rethinking")
 # Get subsample of data
 ######################
 
-nr <- 380
+nr <- 20
 
 ######################
 # Read in data
@@ -85,19 +85,39 @@ m2 <- ulam(
     Rho_gr ~ lkj_corr(2),
     sigma_gr ~ exponential(2)
   ),
-  data = mig_data, iter = 10000, warmup = 1500, chains = 1, cores = 1
+  data = mig_data, iter = 3000, warmup = 1500, chains = 4, cores = 4
 )
 
 # save(m2, file = "./output/m_srm.rda")
 
-precis( m2, depth = 3)
+o_group <- d %>% 
+  group_by(origin) %>%
+  summarize(pop_o_m = mean(pop_o),
+            soc_o_m = mean(soc_o),
+            hom_o_m = mean(hom_o)
+  )
+
+d_group <- d %>% 
+  group_by(destination) %>%
+  summarize(pop_d_m = mean(pop_d),
+            soc_d_m = mean(soc_d),
+            hom_d_m = mean(hom_d)
+  )
+
+precis( m2 )
 precis( m2 , depth=3 , pars=c("Rho_gr","sigma_gr") )
 
 post <- extract.samples( m2 )
-o <- sapply( 1:nr , function(i) post$a + post$gr[,i,1] )
-d <- sapply( 1:nr , function(i) post$a + post$gr[,i,2] )
-Eo_mu <- apply( exp(o) , 2 , mean )
-Ed_mu <- apply( exp(d) , 2 , mean )
+ori <- sapply( 1:nr , function(i) post$a + post$gr[,i,1] + 
+                 post$b_soc_o * o_group$soc_o_m + 
+                 post$b_hom_o * o_group$hom_o_m + 
+                 post$b_pop_o * o_group$pop_o_m)
+des <- sapply( 1:nr , function(i) post$a + post$gr[,i,2] + 
+                 post$b_soc_d * d_group$soc_d_m + 
+                 post$b_hom_d * d_group$hom_d_m + 
+                 post$b_pop_d * d_group$pop_d_m)
+Eo_mu <- apply( exp(ori) , 2 , mean )
+Ed_mu <- apply( exp(des) , 2 , mean )
 
 plot( NULL , xlim=c(0,6) , ylim=c(0,6) , xlab="generalized origin" ,
       ylab="generalized destination" , lwd=1.5 )
@@ -105,8 +125,8 @@ abline(a=0,b=1,lty=2)
 
 library(ellipse)
 for ( i in 1:nr) {
-  Sigma <- cov( cbind( o[,i] , d[,i] ) )
-  Mu <- c( mean(o[,i]) , mean(d[,i]) )
+  Sigma <- cov( cbind( ori[,i] , des[,i] ) )
+  Mu <- c( mean(ori[,i]) , mean(des[,i]) )
   for ( l in c(0.5) ) {
     el <- ellipse( Sigma , centre=Mu , level=l )
     lines( exp(el) , col=col.alpha("black",0.5) )
@@ -115,3 +135,24 @@ for ( i in 1:nr) {
 
 points( Eo_mu , Ed_mu , pch=21 , bg="white" , lwd=1.5 )
 
+m2 <- ulam(
+  alist(
+    migrants ~ dgampois( lambda, scale ),
+    log(lambda) <- a + gr[origin,1]  + gr[destination,2] + 
+      b_pop_o*pop_o + b_pop_d*pop_d  + 
+      b_hom_o*hom_o + b_hom_d*hom_d  +
+      b_soc_o*soc_o + b_soc_d*soc_d  + 
+      b_d*log_distance,
+    c(a, b_pop_o, b_pop_d, b_hom_o, b_hom_d, b_soc_o, b_soc_d) ~ normal(0,1),
+    b_d ~ dnorm(-1,1),
+    scale ~ dcauchy(0, 2),
+    
+    ## gr matrix of varying effects
+    vector[2]:gr[N_households] ~ multi_normal(0,Rho_gr,sigma_gr),
+    Rho_gr ~ lkj_corr(2),
+    sigma_gr ~ exponential(2)
+  ),
+  data = mig_data, iter = 3000, warmup = 1500, chains = 4, cores = 4,
+  constraints=list(scale="lower=0"),
+  start=list(scale=2) 
+)
