@@ -9,7 +9,7 @@ library("rethinking")
 # Get subsample of data
 ######################
 
-nr <- 30
+nr <- 380
 
 ######################
 # Read in data
@@ -85,12 +85,12 @@ m2 <- ulam(
     Rho_gr ~ lkj_corr(2),
     sigma_gr ~ exponential(2)
   ),
-  data = mig_data, iter = 4000, warmup = 1000, chains = 4, cores = 4
+  data = mig_data, iter = 10000, warmup = 1500, chains = 1, cores = 1
 )
 
-#save(m2, file = "./output/m_srm.rda")
+# save(m2, file = "./output/m_srm.rda")
 
-precis( m2 )
+precis( m2, depth = 3)
 precis( m2 , depth=3 , pars=c("Rho_gr","sigma_gr") )
 
 post <- extract.samples( m2 )
@@ -99,7 +99,7 @@ d <- sapply( 1:nr , function(i) post$a + post$gr[,i,2] )
 Eo_mu <- apply( exp(o) , 2 , mean )
 Ed_mu <- apply( exp(d) , 2 , mean )
 
-plot( NULL , xlim=c(0,20) , ylim=c(0,20) , xlab="generalized origin" ,
+plot( NULL , xlim=c(0,6) , ylim=c(0,6) , xlab="generalized origin" ,
       ylab="generalized destination" , lwd=1.5 )
 abline(a=0,b=1,lty=2)
 
