@@ -4,6 +4,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \usepackage{pgfplots}
 \usepackage{appendixnumberbeamer}
 \usepackage{booktabs}
+\usepackage{amsmath, array}
 \usetikzlibrary{arrows.meta,positioning, shapes, backgrounds}
 
 \usepackage[sortcites=false,style=authoryear-comp,bibencoding=utf8, natbib=true, firstinits=true, maxcitenames=2, maxbibnames = 99, uniquename=false, backend=bibtex, useprefix=true, backref=false,doi=false,isbn=false,url=false,dashed=true]{biblatex}
@@ -28,8 +29,8 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \makeatother
 
 \title{Housing market and migration revisited}
-\subtitle{A  Bayesian multilevel gravity model for Dutch municipalities}
-\date{\today}
+\subtitle{A multilevel gravity model for Dutch municipalities}
+\date{March 12, 2020}
 \author{Thomas de Graaff}
 \institute{Vrije Universiteit Amsterdam\\Tinbergen Institute Amsterdam}
 \begin{document}
@@ -109,7 +110,10 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
   \item[Does what?] \alert{Revisits} the impact of housing market
     structure (home-ownership and social renting rates) on within-country
     migration flows using a Bayesian multilevel gravity model
-    \citep{congdon2010random} \newline
+	\begin{itemize}
+		\item UK context by \citet{congdon2010random}
+		\item Model \emph{cf.} \citet{koster2014food} \newline
+	\end{itemize}
   \item[And] \alert{Predict} all changes in incoming and
     outcoming migration flows when housing market structure changes
 \end{description}
@@ -387,8 +391,8 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 		\includegraphics[width=0.8\textwidth]{../fig/hist_mig}      
 	\end{center}
 \begin{itemize}
-	\item Migration flows \alert{between} 393 Dutch municipalities in 2015 ($\approx 150,000$)
-	\item Variance is 4 times expectation: \alert{dispersion}
+	\item Migration flows \alert{between} 380 Dutch municipalities in 2018 ($\approx 144,000$)
+	\item Variance is 4 times expectation: \alert{over dispersion}
 \end{itemize}
 \end{frame}
 
@@ -418,21 +422,23 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 
 \begin{frame}[fragile]{Modeling framework: multilevel gravity modeling}
 \begin{small}
-	\begin{align} \text{Migrants}_{ij} \sim & \text{ Gamma-Poisson}(\lambda_{ij}, \tau) \tag{\footnotesize \color{blue} flow of migrants} \\ \pause
+	\begin{align} \text{Migrants}_{ij} \sim & \text{ Poisson}(\lambda_{ij}) \tag{\footnotesize \color{blue} flow of migrants} \\ \pause
 	\log(\lambda_{ij}) =
-	& \alpha + o_{\text{mun}[i]} + d_{\text{mun}[j]} + \tag{\footnotesize
+	& \: \alpha + o_{\text{mun}[i]} + d_{\text{mun}[j]} + \tag{\footnotesize
    \color{blue} city effects}  \\ \pause
-	& \beta_1 \log(\text{pop}_i) + \notag
+	& \: \beta_1 \log(\text{pop}_i) + \notag
 	\beta_2\log(\text{pop}_j) + \notag \\ & \beta_3
 	\log(\text{home}_i) + \beta_4 \log(\text{home}_j) + \notag\\
-	& \beta_5 \log(\text{soc}_i) + \beta_6 \log(\text{soc}_j) + \notag \\ 
-	& \beta_7 \log(\text{dist}_{ij})  \tag{\footnotesize \color{blue} explanatory variables}  \\ \pause
-	o_{\text{mun}} \sim& \text{ Normal}(0, \sigma_o)  \tag{\footnotesize \color{blue} origin effects}  \\ 
+	& \: \beta_5 \log(\text{soc}_i) + \beta_6 \log(\text{soc}_j) + \notag \\ 
+	& \: \beta_7 \log(\text{dist}_{ij})  \tag{\footnotesize \color{blue} explanatory variables}  \\ \pause
+	\left(\begin{matrix} 
+	o_{\text{mun}} \\
+	d_{\text{mun}}
+	\end{matrix}\right) \sim& \text{ MVNormal}(\left( \right) , \sigma_o)  \tag{\footnotesize \color{blue} origin effects}  \\ 
 	d_{\text{mun}} \sim& \text{ Normal}(0, \sigma_d)   \tag{\footnotesize \color{blue} destination effects}  \\ \pause
 	\alpha, \beta_1,\ldots, \beta_7 \sim& \text{
 		Normal}(0,2) \tag{\footnotesize \color{blue} priors} \\ 
-	\sigma_o, \sigma_d \sim& \text{ HalfCauchy}(0,1) \tag{\footnotesize \color{blue} priors}  \\ 
-	\tau \sim& \text{ Gamma}(0.01, 0.01)  \tag{\footnotesize \color{blue} prior}  
+	\sigma_o, \sigma_d \sim& \text{ HalfCauchy}(0,1) \tag{\footnotesize \color{blue} priors} 
 	\end{align}
 \end{small}
 \end{frame}
