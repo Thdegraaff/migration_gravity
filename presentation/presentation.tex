@@ -110,10 +110,12 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
   \item[Does what?] \alert{Revisits} the impact of housing market
     structure (home-ownership and social renting rates) on within-country
     migration flows using a Bayesian multilevel gravity model
+    \begin{small}
 	\begin{itemize}
-		\item UK context by \citet{congdon2010random}
-		\item Model \emph{cf.} \citet{koster2014food} \newline
-	\end{itemize}
+	\item \small UK context by \citet{congdon2010random}
+	\item \small Social relations model \emph{cf.} \citet{koster2014food} \newline
+\end{itemize}
+    \end{small}
   \item[And] \alert{Predict} all changes in incoming and
     outcoming migration flows when housing market structure changes
 \end{description}
@@ -420,6 +422,24 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{Poisson versus negative binomial\footnote{
+			\emph{We urge researchers to resist the siren song of the Negative
+			Binomial \citep{head2014gravity}}
+			}}
+	
+	\begin{itemize}
+		\item Counts of migrants\newline 
+		\item 	With Poisson \& regional effects of origin and destination the following origin and destination \alert{constraints} automatically hold
+		$$
+		\sum_{j=1}^{R} {\widehat{\text{Migrants} }_{ij} } = O_i \qquad \sum_{i=1}^{R} {\widehat{\text{Migrants} }_{ij} } = D_j
+		$$
+
+	\item  Does not apply with negative binomial \newline
+	\item Multilevel model accounts for dispersion
+		\end{itemize}
+
+\end{frame}
+
 \begin{frame}[fragile]{Modeling framework: multilevel gravity modeling}
 \begin{small}
 	\begin{align} \text{Migrants}_{ij} \sim & \text{ Poisson}(\lambda_{ij}) \tag{\footnotesize \color{blue} flow of migrants} \\ \pause
@@ -434,9 +454,15 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\left(\begin{matrix} 
 	o_{\text{mun}} \\
 	d_{\text{mun}}
-	\end{matrix}\right) \sim& \text{ MVNormal}(\left( \right) , \sigma_o)  \tag{\footnotesize \color{blue} origin effects}  \\ 
-	d_{\text{mun}} \sim& \text{ Normal}(0, \sigma_d)   \tag{\footnotesize \color{blue} destination effects}  \\ \pause
-	\alpha, \beta_1,\ldots, \beta_7 \sim& \text{
+	\end{matrix}\right) \sim& \text{ MVNormal}\left( \left( \begin{matrix}
+	0 \\
+	0 
+	\end{matrix}\right) , \left(\begin{matrix}
+	\sigma_o^2 & \sigma_o \sigma_d \rho \\
+	 \sigma_o \sigma_d \rho  & \sigma_d^2
+	\end{matrix}\right) \right)  \tag{\footnotesize \color{blue} varying region effects}  \\ \pause
+			\alpha, \sim& \text{ Normal}(1,2) \tag{\footnotesize \color{blue} prior} \\ 
+	\beta_1,\ldots, \beta_7 \sim& \text{
 		Normal}(0,2) \tag{\footnotesize \color{blue} priors} \\ 
 	\sigma_o, \sigma_d \sim& \text{ HalfCauchy}(0,1) \tag{\footnotesize \color{blue} priors} 
 	\end{align}
@@ -456,17 +482,17 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 				\toprule
 				Parameter & mean & sd \\ 
 				\midrule
-				Intercept      & $-0.74$ & 0.04 \\ 
-				log(pop$_i$)   & 0.89 & 0.03  \\ 
-				log(pop$_j$)   & 0.88 & 0.04  \\ 
-				log(home$_i$)  & $-1.48$ & 0.19 \\ 
-				log(home$_j$)  & $-1.27$ & 0.25  \\ 
-				log(soc$_i$)   & $-0.04$ & 0.04  \\
-				log(soc$_j$)   & $-0.06$ & 0.03 \\ 
-				log(dist$_{ij})$ & $-1.96$ & 0.01  \\ 
-				$\sigma_o$    & 0.45 & 0.02  \\ 
-				$\sigma_d$    & 0.61 & 0.02  \\ 
-				$\tau$        & 1.22 & 0.01  \\ 
+				Intercept      & $-0.34$ & 0.05 \\ 
+				log(pop$_i$)   & 0.88 & 0.04  \\ 
+				log(pop$_j$)   & 0.91 & 0.05  \\ 
+				log(home$_i$)  & $-0.44$ & 0.18 \\ 
+				log(home$_j$)  & $-0.69$ & 0.22  \\ 
+				log(soc$_i$)   & $-0.08$ & 0.03  \\
+				log(soc$_j$)   & $-0.08$ & 0.04 \\ 
+				log(dist$_{ij})$ & $-1.88$ & 0.01  \\ 
+				$\sigma_o$    & 0.54 & 0.02  \\ 
+				$\sigma_d$    & 0.43 & 0.02  \\ 
+				$\rho$        & 0.88 & 0.01  \\ 
 				\bottomrule
 			\end{tabular}
 		\end{small}
@@ -486,8 +512,15 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\includegraphics[width=0.9\textwidth]{../fig/hist_fit}      
 \end{center}
 \begin{itemize}
-	\item \alert{Caveat}: predictions have large outliers: caused by Rotterdam (large population, low percentage home-ownership)
+	\item \alert{maximum} observed: 3,573
+	\item \alert{maximum} predicted: 3,584
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Correlation between origin an destination $\rho = 0.88$}
+				\begin{center}
+		\includegraphics[width=\textwidth]{../fig/correlation}      
+	\end{center}
 \end{frame}
 
 

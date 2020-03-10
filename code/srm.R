@@ -9,7 +9,7 @@ library("rethinking")
 # Get subsample of data
 ######################
 
-nr <- 20
+nr <- 200
 
 ######################
 # Read in data
@@ -69,7 +69,7 @@ mig_data <- list(
   soc_d = d$soc_d  
 )
 
-m2 <- ulam(
+m2_alt <- ulam(
   alist(
     migrants ~ poisson( lambda ),
     log(lambda) <- a + gr[origin,1]  + gr[destination,2] + 
@@ -83,22 +83,22 @@ m2 <- ulam(
          
     ## gr matrix of varying effects
 
-    # transpars> matrix[N_regions,2]: gr <-
-    #   compose_noncentered( sigma_gr , L_Rho_d , z ),
-    # matrix[2,N_regions]: z ~ normal( 0 , 1 ),
-    # cholesky_factor_corr[2]:L_Rho_d ~ lkj_corr_cholesky( 2 ),
-    # vector[2]:sigma_gr ~ dexp(1)
+    transpars> matrix[N_regions,2]: gr <-
+      compose_noncentered( sigma_gr , L_Rho_d , z ),
+    matrix[2,N_regions]: z ~ normal( 0 , 1 ),
+    cholesky_factor_corr[2]:L_Rho_d ~ lkj_corr_cholesky( 2 ),
+    vector[2]:sigma_gr ~ dexp(1)
     
     
-    vector[2]:gr[N_regions] ~ multi_normal(0,Rho_gr,sigma_gr),
-    Rho_gr ~ lkj_corr(2),
-    sigma_gr ~ exponential(2)
+    # vector[2]:gr[N_regions] ~ multi_normal(0,Rho_gr,sigma_gr),
+    # Rho_gr ~ lkj_corr(2),
+    # sigma_gr ~ exponential(2)
   ),
-  data = mig_data, iter = 3000, warmup = 1500, chains = 4, cores = 4
+  data = mig_data, iter = 4000, warmup = 1500, chains = 4, cores = 4
 )
 
 # save(m2, file = "./output/m_srm.rda")
- load(file = "./output/m_srm.rda")
+# load(file = "./output/m_srm.rda")
 
 
 o_group <- d %>% 
@@ -118,25 +118,19 @@ d_group <- d %>%
 precis(m2, depth = 1 , corr = true)
 precis( m2 , depth=3 , pars=c("Rho_gr","sigma_gr") )
 
-post <- extract.samples( m2 )
+post <- extract.samples( m2_alt )
 
 plot(post$b_soc_d, post$bp_soc_d, col=rangi2)
-m1 <- lm(post$b_soc_d~post$b_pop_d + post$b_hom_d + post$bp_soc_d)
+m1 <- lm(post$b_soc_d~post$b_pop_d + post$b_hom_d)
 plot(post$b_soc_o, post$b_pop_o, col = rangi2)
 m2 <- lm(post$b_soc_o~post$b_pop_o + post$b_hom_o)
 
-ori <- sapply( 1:nr , function(i) post$a + post$gr[,i,1] + 
-                 post$b_soc_o * o_group$soc_o_m + 
-                 post$b_hom_o * o_group$hom_o_m + 
-                 post$b_pop_o * o_group$pop_o_m)
-des <- sapply( 1:nr , function(i) post$a + post$gr[,i,2] + 
-                 post$b_soc_d * d_group$soc_d_m + 
-                 post$b_hom_d * d_group$hom_d_m + 
-                 post$b_pop_d * d_group$pop_d_m)
+ori <- sapply( 1:nr , function(i) post$a + post$gr[,i,1] )
+des <- sapply( 1:nr , function(i) post$a + post$gr[,i,2] )
 Eo_mu <- apply( exp(ori) , 2 , mean )
 Ed_mu <- apply( exp(des) , 2 , mean )
 
-plot( NULL , xlim=c(0,6) , ylim=c(0,6) , xlab="generalized origin" ,
+plot( NULL , xlim=c(0,8) , ylim=c(0,8) , xlab="generalized origin" ,
       ylab="generalized destination" , lwd=1.5 )
 abline(a=0,b=1,lty=2)
 

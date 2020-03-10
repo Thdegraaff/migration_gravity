@@ -12,29 +12,38 @@ library(hrbrthemes)
 # Get subsample of data
 ######################
 
-nr <- 393
+nr <- 380
 
-load(file = "./output/m_nb.Rda")
+load(file = "./output/m_srm.rda")
 
-samples <- posterior_samples(m2_neg)
+
+######## From rethinking package
+library(rethinking)
+precis(m2)
+list <-  extract.samples( m2 )
+samples <- data.frame(list[1:8], list[10:11])
+samples <- samples[, c(1:8, 10, 13, 14)]
+
+
+
 samples <- samples %>%
-  rename(`Intercept` = `b_Intercept`, 
+  rename(`Intercept` = `a`, 
          `log(pop_i)` = `b_pop_o`,
          `log(pop_j)` = `b_pop_d`,
          `log(home_i)` = `b_hom_o`,
          `log(home_j)` = `b_hom_d`,
          `log(soc_i)` = `b_soc_o`,
          `log(soc_j)` = `b_soc_d`,
-         `log(dist_ij)` = `b_log_distance`,
-         `sigma_o` = `sd_origin__Intercept`,
-         `sigma_d` = `sd_destination__Intercept`,
-         `tau` = `shape`
+         `log(dist_ij)` = `b_d`,
+         `sigma_o` = `sigma_gr.1`,
+         `sigma_d` = `sigma_gr.2`,
+         `rho` = `Rho_gr.2`
          )
 
 forestplot <- mcmc_intervals(samples, pars = c("Intercept", "log(pop_i)", "log(pop_j)", "log(home_i)", 
                                    "log(home_j)", "log(soc_i)", "log(soc_j)", "log(dist_ij)", 
-                                   "sigma_o", "sigma_d", "tau")) +
-  theme_economist() +
+                                   "sigma_o", "sigma_d", "rho")) +
+  theme_fivethirtyeight() +
   geom_vline(xintercept = 0)
 
 pdf(file = "./fig/forestplot.pdf", width = 4, height = 5)
@@ -42,27 +51,96 @@ forestplot
 dev.off()
 
 ######################
+# Create new data frame
+######################
+
+nr_obs <- nr * (nr - 1)
+
+fit_data <- data.frame(
+  type = c( rep("Observed", nr_obs), rep("Predicted", nr_obs) ),
+  Migrants = c( data$migrants, fit$Estimate) 
+)
+
+######################
 # Read in data
 ######################
 
-load(file = "./data/derived/migration.Rda")
+load(file = "./data/derived/migration_2018.Rda")
 
 d <- data
+
+cor_d <- d %>% select(
+  homeowners_d, socialhousing_d, private_rent_d, pop_d, hhgrootte_d
+)
+
+round(cor(cor_d, use = "complete.obs"), 2)
+
+d_t <- data %>%
+  filter(code_o =="GM0363")
 
 d$origin <- as.numeric(as.factor(d$code_o))
 d$destination <- as.numeric(as.factor(d$code_d))
 d <- select(d, -code_o, -code_d)
 d <- d %>% filter(origin <= nr, destination <= nr)
 
+# d <- d %>%
+#   filter(housevalue_o > 0, housevalue_d >0)
+
 d$log_distance <- log(d$distance) - mean(log(d$distance))
 d$pop_o <- log(d$pop_o) - mean(log(d$pop_o) )
 d$pop_d <- log(d$pop_d) - mean(log(d$pop_d) )
-d$soc_d <- log(d$socialhousing_d + 0.0001 )
-d$soc_o <- log(d$socialhousing_o + 0.0001 )
+d$soc_d <- log(d$socialhousing_d + 0.001 )
+d$soc_o <- log(d$socialhousing_o + 0.001 )
+d$pri_d <- log(d$private_rent_d + 0.001 )
+d$pri_o <- log(d$private_rent_o + 0.001 )
 d$soc_d <- d$soc_d - mean(d$soc_d)
 d$soc_o <- d$soc_o - mean(d$soc_o)
+d$pri_d <- d$pri_d - mean(d$pri_d)
+d$pri_o <- d$pri_o - mean(d$pri_o)
+# d$hv_d <- log(d$housevalue_d) - mean(log(d$housevalue_d))
+# d$hv_o <- log(d$housevalue_o) - mean(log(d$housevalue_o))
 d$hom_o <- log(d$homeowners_o) - mean(log(d$homeowners_o))
 d$hom_d <- log(d$homeowners_d) - mean(log(d$homeowners_d))
+d$hhsize_d <- log(d$hhgrootte_d) - mean(log(d$hhgrootte_d))
+d$hhsize_o <- log(d$hhgrootte_o) - mean(log(d$hhgrootte_o))
+
+mig_data <- list(
+  migrants  = d$Migrants,
+  # N = nrow(d),
+  N_regions = nr,
+  origin = d$origin,
+  destination = d$destination,
+  log_distance = d$log_distance,
+  pop_o = d$pop_o,
+  pop_d = d$pop_d,
+  hom_o = d$hom_o,
+  hom_d = d$hom_d,
+  soc_o = d$soc_o,
+  soc_d = d$soc_d  
+)
+
+
+#############################
+# Careful, will take some time
+##############################
+p <- link(m2, data = mig_data, n = 1)
+
+######################
+# Create new data frame
+######################
+
+nr_obs <- nr * (nr - 1)
+
+fit_data <- data.frame(
+  type = c( rep("Observed", nr_obs), rep("Predicted", nr_obs) ),
+  Migrants = c( data$migrants, fit$Estimate) 
+)
+
+
+
+
+
+
 
 ######################
 # Create new data and difference
