@@ -9,7 +9,7 @@ library("rethinking")
 # Get subsample of data
 ######################
 
-nr <- 200
+nr <- 380
 
 ######################
 # Read in data
@@ -98,7 +98,7 @@ m2_alt <- ulam(
 )
 
 # save(m2, file = "./output/m_srm.rda")
-# load(file = "./output/m_srm.rda")
+ load(file = "./output/m_srm.rda")
 
 
 o_group <- d %>% 
@@ -118,7 +118,7 @@ d_group <- d %>%
 precis(m2, depth = 1 , corr = true)
 precis( m2 , depth=3 , pars=c("Rho_gr","sigma_gr") )
 
-post <- extract.samples( m2_alt )
+post <- extract.samples(m2 )
 
 plot(post$b_soc_d, post$bp_soc_d, col=rangi2)
 m1 <- lm(post$b_soc_d~post$b_pop_d + post$b_hom_d)
@@ -130,7 +130,7 @@ des <- sapply( 1:nr , function(i) post$a + post$gr[,i,2] )
 Eo_mu <- apply( exp(ori) , 2 , mean )
 Ed_mu <- apply( exp(des) , 2 , mean )
 
-plot( NULL , xlim=c(0,8) , ylim=c(0,8) , xlab="generalized origin" ,
+plot( NULL , xlim=c(0,6) , ylim=c(0,6) , xlab="generalized origin" ,
       ylab="generalized destination" , lwd=1.5 )
 abline(a=0,b=1,lty=2)
 
