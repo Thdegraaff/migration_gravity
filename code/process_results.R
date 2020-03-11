@@ -24,8 +24,6 @@ list <-  extract.samples( m2 )
 samples <- data.frame(list[1:8], list[10:11])
 samples <- samples[, c(1:8, 10, 13, 14)]
 
-
-
 samples <- samples %>%
   rename(`Intercept` = `a`, 
          `log(pop_i)` = `b_pop_o`,
@@ -69,11 +67,7 @@ d_t <- data %>%
 
 d$origin <- as.numeric(as.factor(d$code_o))
 d$destination <- as.numeric(as.factor(d$code_d))
-d <- select(d, -code_o, -code_d)
 d <- d %>% filter(origin <= nr, destination <= nr)
-
-# d <- d %>%
-#   filter(housevalue_o > 0, housevalue_d >0)
 
 d$log_distance <- log(d$distance) - mean(log(d$distance))
 d$pop_o <- log(d$pop_o) - mean(log(d$pop_o) )
@@ -107,7 +101,6 @@ mig_data <- list(
   soc_o = d$soc_o,
   soc_d = d$soc_d  
 )
-
 
 #############################
 # Careful, will take some time
@@ -156,31 +149,43 @@ pdf(file = "./fig/hist_fit.pdf" ,width=8,height=4)
 hist_fit
 dev.off()
 
-
-
-
-
-
 ######################
-# Create new data and difference
-# Ok; this is wrong given the logs!
+# Create new data and difference the pmean predicted outcomes
 ######################
 
 new_d <- d %>% 
   mutate(
-    hom_o = ifelse(origin == 132, hom_o + 0.1, hom_o),
-    hom_d = ifelse(destination == 132, hom_d + 0.1, hom_d),
-    soc_o = ifelse(origin == 132, soc_o + 0.1, soc_o),
-    soc_d = ifelse(destination == 132, soc_d + 0.1, soc_d),
+    homeowners_o = ifelse(origin == 122, homeowners_o + 10, homeowners_o),
+    homeowners_d = ifelse(destination == 122, homeowners_d + 10, homeowners_d),
+    socialhousing_o = ifelse(origin == 122, socialhousing_o - 10, socialhousing_o),
+    socialhousing_d = ifelse(destination == 122, socialhousing_d - 10, socialhousing_d),
   )
 
-fit_old <- fitted(m2_neg,  nsamples = 1000, scale = "response")
-mean_old <- fit_old[ , 1]
-fit_new <- fitted(m2_neg, nsamples = 1000, newdata = new_d, scale = "response")
-mean_new <- fit_new[ , 1]
+new_d$soc_d <- log(new_d$socialhousing_d + 0.001 )
+new_d$soc_o <- log(new_d$socialhousing_o + 0.001 )
+new_d$soc_d <- new_d$soc_d - mean(new_d$soc_d)
+new_d$soc_o <- new_d$soc_o - mean(new_d$soc_o)
+new_d$hom_o <- log(new_d$homeowners_o) - mean(log(new_d$homeowners_o))
+new_d$hom_d <- log(new_d$homeowners_d) - mean(log(new_d$homeowners_d))
 
+new_mig_data <- list(
+  migrants  = d$Migrants,
+  # N = nrow(d),
+  N_regions = nr,
+  origin = d$origin,
+  destination = d$destination,
+  log_distance = d$log_distance,
+  pop_o = d$pop_o,
+  pop_d = d$pop_d,
+  hom_o = new_d$hom_o,
+  hom_d = new_d$hom_d,
+  soc_o = new_d$soc_o,
+  soc_d = new_d$soc_d  
+)
 
-mean_diff <- mean_new - mean_old
+p_new <- link(m2, data = new_mig_data, post = samplesp)
+predict_new <- round(colMeans(p_new) )
+mean_diff <- predict_new - predict
 
 ######################
 # adjust dataframe
@@ -198,7 +203,7 @@ myPal = colorRampPalette(brewer.pal(9,"PRGn"))(100)
 
 # Load map
 
-municipalities <- st_read(dsn = "./data/src/gem_2015.shp")
+municipalities <- st_read(dsn = "./data/src/2018/gemeente_2018_v2.shp")
 st_crs(municipalities) = 28992
 
 # Filter out water areas (WATER = "JA") and
@@ -208,18 +213,18 @@ municipalities <- municipalities %>%
   filter(WATER == "NEE")
 
 diff_in <- new_d %>%
-  filter(destination == 132) %>%
+  filter(destination == 122) %>%
   select(origin, mean_diff) %>%
-  rbind(c("132", 0)) %>%
+  rbind(c("122", 0)) %>%
   arrange(as.numeric(origin)) %>%
   mutate(mean_diff = as.numeric(mean_diff))
 
 sum(diff_in$mean_diff)
 
 diff_out <- new_d %>%
-  filter(origin == 132) %>%
+  filter(origin == 122) %>%
   select(destination, mean_diff) %>%
-  rbind(c("132", 0)) %>%
+  rbind(c("122", 0)) %>%
   arrange(as.numeric(destination)) %>%
   mutate(mean_diff = as.numeric(mean_diff))
 
@@ -229,8 +234,8 @@ municipalities$diff_in <- diff_in[ , 2]
 municipalities$diff_out <- diff_out[ , 2]
 
 p_diff_in <- ggplot() + geom_sf(data = municipalities, aes(fill = diff_in), lwd = 0.4) + 
-  scale_fill_distiller("Difference \nin in-flow ", direction = -1 ) +
-  scale_color_gradient(high = "white", low = "red") + 
+  scale_fill_distiller("Difference \nin in-flow ", direction = 1 ) +
+  scale_color_gradient(low = "white", high = "red") + 
   theme_bw() 
 p_diff_out <- ggplot() + geom_sf(data = municipalities, aes(fill = diff_out), lwd = 0.4) + 
   scale_fill_distiller("Difference \nin out-flow",  direction = -1 ) +
@@ -244,51 +249,5 @@ dev.off()
 pdf(file = "./fig/p_diff_out.pdf" ,width = 9, height = 8) 
 p_diff_out
 dev.off()
-
-######################
-#  make histogram fitted
-######################
-
-
-######################
-# first get migration data
-######################
-
-migration <- read.csv2(file = "./data/src/Tussen_gemeenten_verhuisde_personen_20122018_120551.csv", 
-                       header = TRUE)
-migration <- drop_na(migration) # drop all municapalities with NA; now dataset is 393 * 393 - 393
-i <- sapply(migration, is.factor)
-migration[i] <- lapply(migration[i], as.character)
-
-data <- rename(migration, 
-               origin = Regio.van.vertrek, 
-               destination = Regio.van.vestiging,
-               migrants= Tussen.gemeenten.verhuisde.personen..aantal.)
-
-######################
-# Then get fitted data
-######################
-
-fit <- as.data.frame(round(fit_old) )
-
-
-
-# fit_large <- filter(fit, Estimate >= 20)
-# fit_small <- filter(fit, Estimate < 20)
-# hist_fit_small <- ggplot(data = fit_small, aes(Estimate)) + 
-#   geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20) +
-#   theme_bw()
-# hist_fit_large <- ggplot(data = fit_large, aes(Estimate)) + 
-#   geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20) +
-#   scale_x_continuous(breaks=seq(20, 120000, 25000)) +
-#   theme_bw()
-# hist_fit <- plot_grid(hist_fit_small, hist_fit_large, labels = c("Small flows", "Large flows"), label_x = 0.5, label_y = 0.96) 
-
-# p <- fit_data %>%
-#   ggplot( aes(x=value, fill=type)) +
-#   geom_histogram( color="#e9ecef", alpha=0.6, position = 'identity') +
-#   scale_fill_manual(values=c("#69b3a2", "#404080")) +
-#   theme_ipsum() +
-#   labs(fill="")
 
 

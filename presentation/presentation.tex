@@ -43,7 +43,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 		\begin{itemize}
 			\item \alert{causal} impact of $x$ on $y$
 			\item \alert{focuses} on $\hat{\beta}$
-			\item \alert{average} treatment effect
+			\item \alert{marginal} effect
 		\end{itemize}
 		\begin{center}
 			\includegraphics[width=0.5\textwidth]{../fig/harmless}      
@@ -66,9 +66,9 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 
 \begin{frame}{Housing market and migration: why bother?}
    	\begin{itemize}
-   		\item \alert{Concerns} about current housing market in the Netherlands:
+   		\item Current Dutch housing market:
    		\begin{itemize}
-   			\item large \alert{shortage} of dwellings (especially in popular, urban, regions and for non-controlled rental housing)
+   			\item large \alert{shortage} of dwellings (especially in popular, urban, regions and for private rental housing)
    			\item large yearly prices \alert{increases} (8\% in 2018)
    			\item decrease in number of houses \alert{sold}
    			\item large \alert{regional} variation\newline
@@ -98,8 +98,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
         \item In the Netherlands social renting is a large phenomenon
           ($\approx$ 24\% of total housing stock)
         \item Social renting rights only valid \alert{within} city
-          \footnotesize{\citep{boyle1998migration} }
-        \item Social renting is an \alert{urban} phenomenon ($\approx$
+        \item Social renting is an \alert{urban} phenomenon (e.g. $\approx$
           40--50\% in Amsterdam) 
         \end{itemize}
 \end{itemize}
@@ -370,11 +369,8 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 
 \begin{frame}{Why a Bayesian multilevel approach?}
 \begin{itemize}
-	 \item Many \alert{definitions}:
-	\begin{itemize}
-		\item hierarchical, mixed effects, varying intercept/parameter, shrinkage, partial pooling models\pause
-	\end{itemize}
-	\item Increasingly used---increases model \alert{performance} and \alert{flexibility} \pause
+	\item Hierarchical, mixed effects, varying intercept/parameter, shrinkage, partial pooling models\pause
+	\item Increasingly used for model \alert{performance} and \alert{flexibility} \pause
     \item \alert{Simultaneous} modeling at various levels (e.g., cities, regions, flows, individuals) 
     \begin{itemize}
     	\item no two-stage models anymore 
@@ -410,7 +406,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 
 \begin{frame}{Modeling framework: traditional gravity modeling}
 	\begin{equation*}
-	\log(\text{Migrants}_{ij}) = o_i + d_j +  \log(\mathbf{X}_{ij})\beta + \gamma\log(\text{dist}_{ij}) + \epsilon_{ij}
+	\log(\text{Migrants}_{ij}) = o_i + d_j + \gamma\log(\text{dist}_{ij}) + \epsilon_{ij}
 	\label{eq:gravfixed}
 	\end{equation*} 
 	
@@ -507,14 +503,11 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Robustness checks for social renting}
+\begin{frame}{Robustness checks for impact social renting}
 			\begin{columns}
 		\begin{column}{0.5\textwidth}
 			\begin{itemize}
-				\item In general $home < soc < pri$
-				\begin{itemize}
-					\item But impact $soc \approx 0$\pause
-				\end{itemize} 
+				\item  \alert{impact} $soc \approx 0$ \newline \pause
 				\item Robust to:
 				\begin{itemize}
 					\item year
@@ -525,9 +518,9 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.5\textwidth} 
-			
+			\alert{Assuming} the following causal graph (\emph{dag} )
 			\begin{center}
-				\includegraphics[width=\textwidth]{../fig/forestplot}      
+				\includegraphics[width=\textwidth]{../fig/dag}      
 			\end{center}
 		\end{column}
 	\end{columns}
@@ -565,7 +558,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \end{columns}
 \end{frame}
 
-\begin{frame}{Home-ownership rate in Amsterdam decreases with 10\%?}
+\begin{frame}{Home-ownership rate in Amsterdam increases with 10\% and social renting decreases with 10\%}
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
 			\begin{center}
@@ -583,22 +576,23 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \begin{frame}{Conclusions}
 \textbf{Flexibel and powerful Bayesian multilevel gravity model}:
 \begin{itemize}
-	\item homeownership has an \alert{elasticity} well below $-1$
-	\item social renting has negative elasticity as well, but close to \alert{zero} \citep{boyle1998migration}
-	\item not very \alert{scalable}; 154,056 obs. $\approx$ 6 hrs. of estimation
+	\item homeownership has a a high negative impact on migration
+	\item social renting has elasticity close to \alert{zero} \citep{boyle1998migration}
+	\begin{itemize}
+		\item social housing is almost \alert{a different ball game}
+		\item no interaction with homeowership, private renting or household size
+	\end{itemize}
 \end{itemize}
 
-\textbf{Now what?}:
+\textbf{Now what?}
 \begin{itemize}
-	\item \alert{disentangle} city size and housing market structure
-	\begin{itemize}
-		\item interaction effects/varying slopes?
-	\end{itemize}
 	\item additional model structure
 	\begin{itemize}
-		\item correlation between $o_{\text{mun}[i]}$ and $d_{\text{mun}[j]}$
-		\item \alert{spatial} autocorrelation
+		\item correlation between \alert{dyads} ($\text{Migrants}_{ij}$ and $\text{Migrants}_{ji}$)
+		\item \alert{spatial} autocorrelation in regional varying effects
+		\item create panel data
 	\end{itemize}
+\item Additional covariates (age, income)
 \end{itemize}
 \end{frame}
 

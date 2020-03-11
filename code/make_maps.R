@@ -6,7 +6,7 @@ library(RColorBrewer)
 # Load Data files
 
 load(file="./data/derived/migration.Rda")
-load(file="./output/m_nb.Rda")
+load(file="./output/m_srm.rda.Rda")
 
 # Define colour palette
 
