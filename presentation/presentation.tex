@@ -36,7 +36,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \begin{document}
 \maketitle
 
-\begin{frame}{Background: two different cultures \citep{breiman2001statistical}}
+\begin{frame}{Background: two different cultures \footnotesize{\citep{breiman2001statistical}} }
 \begin{columns}
 	\begin{column}{0.5\textwidth}
 		In economics: 
@@ -77,10 +77,10 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
                 \begin{itemize}
                 \item $\longrightarrow$ Increase home-ownership rates\newline
                 \end{itemize}
-   		\item Large literature of \alert{external} effects of home-ownership \citep{dietz2003social}
+   		\item Large literature of \alert{external} effects of home-ownership \footnotesize{\citep{dietz2003social}}
    		\begin{itemize}
    			\item \alert{positive}: savings, labor supply, health, maintenance, etc.
-   			\item \alert{negative}: migration (by increased moving costs) and on aggregate labour market performance \citep{oswald1996conjecture,oswald1999housing}
+   			\item \alert{negative}: migration (by increased moving costs) and on aggregate labour market performance \footnotesize{\citep{oswald1996conjecture,oswald1999housing}}
    		\end{itemize}
    	\end{itemize}
 \end{frame}
@@ -93,12 +93,12 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
     \item less attention to \alert{predictions} for the whole network\newline
     \end{itemize}
   \item Literature on impact of social renting on migration flows is
-    scarce \citep{de2009homeownership}
+    scarce \footnotesize{\citep{de2009homeownership} }
 	\begin{itemize}
         \item In the Netherlands social renting is a large phenomenon
           ($\approx$ 24\% of total housing stock)
         \item Social renting rights only valid \alert{within} city
-          \citep{boyle1998migration}
+          \footnotesize{\citep{boyle1998migration} }
         \item Social renting is an \alert{urban} phenomenon ($\approx$
           40--50\% in Amsterdam) 
         \end{itemize}
@@ -108,14 +108,14 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \begin{frame}{So, this paper}
   \begin{description}
   \item[Does what?] \alert{Revisits} the impact of housing market
-    structure (home-ownership and social renting rates) on within-country
+    structure (with focus on social renting) on within-country
     migration flows using a Bayesian multilevel gravity model
-    \begin{small}
+    \begin{footnotesize}
 	\begin{itemize}
-	\item \small UK context by \citet{congdon2010random}
-	\item \small Social relations model \emph{cf.} \citet{koster2014food} \newline
+	\item \footnotesize UK context by \citet{congdon2010random}
+	\item \footnotesize Social relations model \emph{cf.} \citet{koster2014food} \newline
 \end{itemize}
-    \end{small}
+    \end{footnotesize}
   \item[And] \alert{Predict} all changes in incoming and
     outcoming migration flows when housing market structure changes
 \end{description}
@@ -370,7 +370,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 
 \begin{frame}{Why a Bayesian multilevel approach?}
 \begin{itemize}
-	 \item Many definitions:
+	 \item Many \alert{definitions}:
 	\begin{itemize}
 		\item hierarchical, mixed effects, varying intercept/parameter, shrinkage, partial pooling models\pause
 	\end{itemize}
@@ -393,8 +393,8 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 		\includegraphics[width=0.8\textwidth]{../fig/hist_mig}      
 	\end{center}
 \begin{itemize}
-	\item Migration flows \alert{between} 380 Dutch municipalities in 2018 ($\approx 144,000$)
-	\item Variance is 4 times expectation: \alert{over dispersion}
+	\item Migration flows \alert{between} 380 Dutch municipalities in 2018 ($\approx 144,000$ flows)
+	\item Variance is 4 times expectation: \alert{over-dispersion}
 \end{itemize}
 \end{frame}
 
@@ -414,17 +414,17 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\label{eq:gravfixed}
 	\end{equation*} 
 	
-	Origin and destination specific \alert{fixed} effects for multilateral resistance \citep{anderson2003gravity}, but:
+	Origin and destination specific \alert{fixed} effects for multilateral resistance  \citep{anderson2003gravity} , but:
 	\begin{itemize}
-		\item what about \alert{zeros} in $\text{migrants}_{ij}$?
+		\item what about \alert{zeros} in $\text{Migrants}_{ij}$?
 		\item how to incorporate \alert{housing} structure in the presence of $o_i$ and $d_j$?
-		\item \alert{dispersion} and \alert{heteroskedasticity} \citep{silva2006log}
+		\item \alert{over-dispersion} and \alert{heteroskedasticity} \footnotesize{\citep{silva2006log} }
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Poisson versus negative binomial\footnote{
 			\emph{We urge researchers to resist the siren song of the Negative
-			Binomial \citep{head2014gravity}}
+			Binomial \footnotesize{ \citep{head2014gravity}} }
 			}}
 	
 	\begin{itemize}
@@ -461,8 +461,8 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\sigma_o^2 & \sigma_o \sigma_d \rho \\
 	 \sigma_o \sigma_d \rho  & \sigma_d^2
 	\end{matrix}\right) \right)  \tag{\footnotesize \color{blue} varying region effects}  \\ \pause
-			\alpha, \sim& \text{ Normal}(1,2) \tag{\footnotesize \color{blue} prior} \\ 
-	\beta_1,\ldots, \beta_7 \sim& \text{
+			\beta_7 \sim& \text{ Normal}(-1,1) \tag{\footnotesize \color{blue} prior} \\ 
+	\alpha, \beta_1,\ldots, \beta_6 \sim& \text{
 		Normal}(0,2) \tag{\footnotesize \color{blue} priors} \\ 
 	\sigma_o, \sigma_d \sim& \text{ HalfCauchy}(0,1) \tag{\footnotesize \color{blue} priors} 
 	\end{align}
@@ -507,13 +507,39 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Observed versus predicted data}
+\begin{frame}{Robustness checks for social renting}
+			\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item In general $home < soc < pri$
+				\begin{itemize}
+					\item But impact $soc \approx 0$\pause
+				\end{itemize} 
+				\item Robust to:
+				\begin{itemize}
+					\item year
+					\item interaction effects with population \& home-ownership
+					\item varying slopes (e.g, $o_{\text{mun}[i]} + \beta_{\text{mun}[i]} \log(\text{soc}_i)$) 
+					\item Inclusion of household size\pause
+				\end{itemize}
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth} 
+			
+			\begin{center}
+				\includegraphics[width=\textwidth]{../fig/forestplot}      
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Observed versus predicted flows}
 \begin{center}
 	\includegraphics[width=0.9\textwidth]{../fig/hist_fit}      
 \end{center}
 \begin{itemize}
-	\item \alert{maximum} observed: 3,573
-	\item \alert{maximum} predicted: 3,584
+	\item \alert{maximum} observed flow: 3,573
+	\item \alert{maximum} predicted flow: 3,584
 \end{itemize}
 \end{frame}
 
