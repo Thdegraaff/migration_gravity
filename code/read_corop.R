@@ -22,13 +22,13 @@ regions <- nl_corop
 
 region_cent <- st_centroid(regions)
 distance <- st_distance(region_cent)
-dmat <- matrix(distance/100000, 40, 40) # in kilometer
+dmat <- matrix(distance/100000, 40, 40) # in hundred kilometer
 rownames(distance) <- region_cent$corop_nr
 colnames(distance) <- region_cent$corop_nr
 distance <- list(
   origin = as.integer( rownames(distance)[row(distance)] %||% row(distance) ),
   destination = as.integer( colnames(distance)[col(distance)] %||% col(distance) ),
-  distance = distance/1000
+  distance = distance/100000
 ) %>% 
   map_dfc(as.vector)
 
@@ -110,14 +110,12 @@ d <- d %>%
     lpopA = log(popA) - mean( log(popA) ),
     lpopB = log(popB) - mean( log(popB) ),
     lhomA = log(homA) - mean( log(homA) ),
-    lsocA = log(socA) - mean( log(socA) ),
     lhomB = log(homB) - mean( log(homB) ),
+    lsocA = log(socA) - mean( log(socA) ),
     lsocB = log(socB) - mean( log(socB) ),
     lrentA = log(rentA) - mean( log(rentA) ),
     lrentB = log(rentB) - mean( log(rentB) )                               
   )  
-
-df <- d
 
 ######################
 # tranform to dyad database
@@ -156,7 +154,7 @@ df <- df %>%
 # First descriptive plot
 ######################
 
-plot(df$mAB, df$mBA, col = col.alpha(rangi2, 0.7), pch = 16,
+plot(df$mAB, df$mBA, 
      xlab = "Migrants from A to B", ylab = "Migrants from B to A",
      xlim = c(0,7000), ylim = c(0, 7000))
 abline(a = 0, b = 1, lty = 2)
@@ -165,8 +163,7 @@ d_wonen %>%
   gather(key = "housing_type", value = "percentage", ownership, socialrent) %>%
   ggplot(aes(percentage, fill = housing_type) ) + geom_histogram(position="dodge")+ facet_wrap(d_wonen$year)
 
-d_temp <- d
-d_temp %>%
+d %>%
   ggplot(aes(number) ) + geom_histogram(position="dodge") +facet_wrap(d_temp$year)
 
 ##########################
