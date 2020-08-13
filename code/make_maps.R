@@ -1,12 +1,11 @@
 library("tidyverse")
 library("sf")
-library(RColorBrewer)
-
+library("RColorBrewer")
 
 # Load Data files
 
-load(file="./data/derived/migration.Rda")
-load(file="./output/m_srm.rda.Rda")
+load(file="./data/derived/migration_2018.Rda")
+load(file="./output/m_srm.Rda")
 
 # Define colour palette
 
@@ -14,7 +13,7 @@ myPal = colorRampPalette(brewer.pal(9,"PRGn"))(100)
 
 # Load map
 
-municipalities <- st_read(dsn = "./data/src/gem_2015.shp")
+municipalities <- st_read(dsn = "./data/src/2018/gemeente_2018_v2.shp")
 st_crs(municipalities) = 28992
 
 # Filter out water areas (WATER = "JA") and
@@ -25,8 +24,15 @@ municipalities <- municipalities %>%
 
 # Prepare data for making maps
 
-municipalities$coef_in <- coef(m2_neg)$destination[,1,1]
-municipalities$coef_out <- coef(m2_neg)$origin[,1,1]
+post <- extract.samples(m2 )
+
+ori <- sapply( 1:nr , function(i) post$gr[,i,1] )
+des <- sapply( 1:nr , function(i) post$gr[,i,2] )
+ori <- apply( ori , 2 , mean )
+des <- apply( des , 2 , mean )
+
+municipalities$coef_in <- ori
+municipalities$coef_out <- des
 
 out_m <- data %>%
   group_by(code_o) %>%
@@ -47,10 +53,10 @@ p_in <- ggplot() + geom_sf(data = municipalities, aes(fill = migrants_in)) + sca
 p_out <- ggplot() + geom_sf(data = municipalities, aes(fill = migrants_out)) + scale_fill_distiller(palette = "OrRd", direction = 1) + theme_bw()
 
 p_coef_in <- ggplot() + geom_sf(data = municipalities, aes(fill = coef_in), lwd = 0.4) + 
-  scale_fill_distiller("Relative\n pull factor\n", palette = "RdBu", direction = -1, limits = c(-3, 3) ) + 
+  scale_fill_distiller("Relative\n pull factor\n", palette = "RdBu", direction = -1, limits = c(-1, 1) ) + 
   theme_bw() 
 p_coef_out <- ggplot() + geom_sf(data = municipalities, aes(fill = coef_out), lwd = 0.4) + 
-  scale_fill_distiller("Relative\n push factor\n", palette = "RdBu", direction = -1, limits = c(-3, 3) ) + 
+  scale_fill_distiller("Relative\n push factor\n", palette = "RdBu", direction = -1, limits = c(-1, 1) ) + 
   theme_bw() 
 
 p_homeown <- ggplot() + geom_sf(data = municipalities, aes(fill = P_KOOPWON)) + 

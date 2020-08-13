@@ -234,8 +234,8 @@ municipalities$diff_in <- diff_in[ , 2]
 municipalities$diff_out <- diff_out[ , 2]
 
 p_diff_in <- ggplot() + geom_sf(data = municipalities, aes(fill = diff_in), lwd = 0.4) + 
-  scale_fill_distiller("Difference \nin in-flow ", direction = 1 ) +
-  scale_color_gradient(low = "white", high = "red") + 
+  scale_fill_distiller("Difference \nin in-flow ", direction = -1 ) +
+  scale_color_gradient(high = "white", low = "red") + 
   theme_bw() 
 p_diff_out <- ggplot() + geom_sf(data = municipalities, aes(fill = diff_out), lwd = 0.4) + 
   scale_fill_distiller("Difference \nin out-flow",  direction = -1 ) +
