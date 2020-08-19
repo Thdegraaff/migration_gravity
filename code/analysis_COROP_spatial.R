@@ -160,7 +160,7 @@ abline(a=0, b=1, lty=2)
 
 # plot the posterior median covariance function
 plot( NULL , xlab="distance (hundred km)" , ylab="spatial covariance" ,
-      xlim=c(0,3.5) , ylim=c(0,0.7) )
+      xlim=c(0,1) , ylim=c(0,0.5) )
 
 # compute posterior mean covariance
 x_seq <- seq( from=0 , to=3.5 , length.out=100 )
