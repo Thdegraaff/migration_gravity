@@ -17,8 +17,8 @@ set.seed(5)
 load(file = "./data/derived/migration_COROP.Rda")
 load(file = "./data/derived/dmat.Rda")
 
- # df <- df %>%
- #     filter(year == 2014 | year == 2015 | year == 2016)
+#  df <- df %>%
+#      filter(year == 2013 | year == 2013 | year == 2014 | year == 2015 | year == 2016 | year == 2018)
 
 cor_df <- df %>% select(
   lhomA, lhomB, lsocA, lsocB, lrentA, lrentB, lpopA, lpopB
@@ -56,30 +56,29 @@ m <- ulam(
   alist(
     mAB ~ poisson( lambdaAB ),
     mBA ~ poisson( lambdaBA ),
-    log(lambdaAB) <- consA + 
-      lpopA + lpopB + 
-      b_dist*ldist +  
-      # b_hA  * lhomA + b_hB * lhomB + b_sA * lsocA + b_sB * lsocB + 
-      gsA[origin] + gsB[destination] +
-      # gr[origin, 1] + gr[destination, 2] +
-      # y[year] + 
-       d[did,1],
-    log(lambdaBA) <- consB + 
-      lpopA + lpopB + 
-      b_dist*ldist +  
-      # b_hA  * lhomB + b_hB * lhomA + b_sA * lsocB + b_sB * lsocA + 
+    log(lambdaAB) <- cons + 
+      b_popA * lpopA + b_popB * lpopB + 
+      b_dist*ldist + 
+      b_hA  * lhomA + b_hB * lhomB + b_sA * lsocA + b_sB * lsocB + 
+      #b_hA_int  * lhomA * lpopA + b_hB_int * lhomB * lpopB + b_sA_int * lsocA * lpopA + b_sB_int * lsocB * lpopB + 
+      gsA[origin] + gsB[destination] +   
+      y[year] + 
+      d[did,1],
+    log(lambdaBA) <- cons + 
+      b_popB * lpopA + b_popA * lpopB + 
+      b_dist*ldist + 
+      b_hA  * lhomB + b_hB * lhomA + b_sA * lsocB + b_sB * lsocA + 
+      #b_hB_int  * lhomA * lpopA + b_hA_int * lhomB * lpopB + b_sB_int * lsocA * lpopA + b_sA_int * lsocB * lpopB + 
       gsA[destination] + gsB[origin] +   
-      # gr[destination, 1] + gr[origin, 2] +
-      # y[year] + 
-       d[did, 2],
+      y[year] + 
+      d[did, 2],
     b_dist ~ normal(-1.5, 0.5),
-    #c(b_popA, b_popB) ~ normal(1, 0.5),
-    #c(b_hA, b_sA, b_hB, b_sB) ~ normal(0, 1),
-    c(consA, consB) ~ normal(3,3),
-    #y[year] ~ normal(4.5, sigma_y),
-    #sigma_y ~ dexp(2),
-
-
+    c(b_popA, b_popB) ~ normal(1, 0.5),
+    c(b_hA, b_sA, b_hB, b_sB) ~ normal(0, 1),
+    #c(b_hA_int, b_sA_int, b_hB_int, b_sB_int) ~ normal(0, 1),
+    cons ~ normal(3,3),
+    y[year] ~ normal(0, sigma_y),
+    sigma_y ~ dexp(2),
 
     ## gs matrix and vectors of spatial varying regional effects
     # transpars> vector[nr_regions]: gs_A <<- L_SIGMA * gr[ , 1],
@@ -91,8 +90,8 @@ m <- ulam(
     transpars> matrix[nr_regions, nr_regions]:L_SIGMA <<- cholesky_decompose( SIGMA ),
     transpars> matrix[nr_regions, nr_regions]:SIGMA <- cov_GPL2(dmat, etasq, rhosq, 0.01),
 
-    etasq ~ dexp( 2 ),
-    rhosq ~ dexp( 0.5 ),
+    etasq ~ dexp( 4 ),
+    rhosq ~ dexp( 0.4 ),
 
     ## gr matrix of varying effects
     # transpars> matrix[nr_regions, 2]: gr <-
@@ -117,13 +116,13 @@ m <- ulam(
     
     ## compute correlation matrix for spatial weight
     gq> matrix[40,40]:Rho_sp <<- Chol_to_Corr( L_SIGMA )
-  ), data = m_data , chains = 4 , cores = 4 , iter = 3000 )
+  ), data = m_data , chains = 4 , cores = 4 , iter = 4000, warmup = 1000 )
 
 precis(m)
 save(m, file = "./output/corop_null_model_spatial.rda")
 
 precis( m , depth=3 , pars=c("Rho_sp") ) #, "Rho_d","sigma_d") )
-precis( m , depth=3 , pars=c("gs_A") ) #, "Rho_d","sigma_d") )
+precis( m , depth=3 , pars=c("gsA") ) #, "Rho_d","sigma_d") )
 precis( m , depth=3 , pars=c("Rho_1", "Rho_2", "sigma_d", "sigma_gr") ) #, "Rho_d","sigma_d") )
 pairs(m@stanfit, pars=c("b_sA", "b_sB", "b_hA", "b_hB") )
 pairs(m@stanfit, pars=c("b_popA", "b_popB") )#, "b_sd", "b_so") )
@@ -131,12 +130,12 @@ traceplot(m, pars=c("b_dist"))#, "b_sA", "b_sB", "b_hA", "b_hB", "sigma_y") )
 trankplot(m, pars=c("b_dist","b_sA", "b_sB", "b_hA", "b_hB", "sigma_d") )
 
 post <- extract.samples( m )
-ori <- sapply( 1:nr_regions , function(i) post$consA + post$gs_A[,i] )
-des <- sapply( 1:nr_regions , function(i) post$consB + post$gs_B[,i] )
+ori <- sapply( 1:nr_regions , function(i) post$cons + post$gsA[,i] )
+des <- sapply( 1:nr_regions , function(i) post$cons + post$gsB[,i] )
 Eo_mu <- apply( exp(ori) , 2 , mean )
 Ed_mu <- apply( exp(des) , 2 , mean )
 
-plot( NULL , xlim=c(0 , 1500) , ylim=c(0 , 550) , xlab="generalized origin" ,
+plot( NULL , xlim=c(0 , 700) , ylim=c(0 , 300) , xlab="generalized origin" ,
       ylab="generalized destination" , lwd= 1.5 )
 abline(a=0, b=1, lty=2)
 
@@ -159,11 +158,9 @@ abline(0, 0, lty = 2)
 abline(v = 0, lty =2)
 abline(a=0, b=1, lty=2)
 
-post <- extract.samples(m14.8)
-
 # plot the posterior median covariance function
 plot( NULL , xlab="distance (hundred km)" , ylab="spatial covariance" ,
-      xlim=c(0,3.5) , ylim=c(0,0.7) )
+      xlim=c(0,1) , ylim=c(0,0.5) )
 
 # compute posterior mean covariance
 x_seq <- seq( from=0 , to=3.5 , length.out=100 )
