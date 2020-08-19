@@ -1,0 +1,27 @@
+\frametitle{Modeling framework: multilevel gravity modeling}
+\begin{small}
+	\begin{align} \text{Migrants}_{ij} \sim & \text{ Poisson}(\lambda_{ij}) \tag{\footnotesize \color{blue} flow of migrants} \\ \pause
+	\log(\lambda_{ij}) =
+	& \: \alpha + o_{\text{mun}[i]} + d_{\text{mun}[j]} + \tag{\footnotesize
+   \color{blue} city effects}  \\ \pause
+	& \: \beta_1 \log(\text{pop}_i) + \notag
+	\beta_2\log(\text{pop}_j) + \notag \\ & \beta_3
+	\log(\text{home}_i) + \beta_4 \log(\text{home}_j) + \notag\\
+	& \: \beta_5 \log(\text{soc}_i) + \beta_6 \log(\text{soc}_j) + \notag \\
+	& \: \beta_7 \log(\text{dist}_{ij})  \tag{\footnotesize \color{blue} explanatory variables}  \\ \pause
+	\left(\begin{matrix}
+	o_{\text{mun}} \\
+	d_{\text{mun}}
+	\end{matrix}\right) \sim& \text{ MVNormal}\left( \left( \begin{matrix}
+	0 \\
+	0
+	\end{matrix}\right) , \left(\begin{matrix}
+	\sigma_o^2 & \sigma_o \sigma_d \rho \\
+	 \sigma_o \sigma_d \rho  & \sigma_d^2
+	\end{matrix}\right) \right)  \tag{\footnotesize \color{blue} varying region effects}  \\ \pause
+			\beta_7 \sim& \text{ Normal}(-1,1) \tag{\footnotesize \color{blue} prior} \\
+	\alpha, \beta_1,\ldots, \beta_6 \sim& \text{
+		Normal}(0,2) \tag{\footnotesize \color{blue} priors} \\
+	\sigma_o, \sigma_d \sim& \text{ HalfCauchy}(0,1) \tag{\footnotesize \color{blue} priors}
+	\end{align}
+\end{small}
