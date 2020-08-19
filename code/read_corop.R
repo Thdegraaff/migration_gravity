@@ -68,10 +68,18 @@ d_wonen <- d_wonen %>%
     ownership = total_own/total_houses,
     socialrent = total_social_rent/total_houses,
     rent = total_other/total_houses
-    
-  ) %>%
+    ) %>% 
   select(corop, year,  ownership, socialrent, rent) %>%
   filter(corop <= nr_corop)
+
+######################
+# pairs plot
+######################
+
+df_pairs <- d_wonen %>%
+  left_join(d_bev, by = c("corop" = "corop", "year" = "year") ) %>%
+  filter(year == 2015)
+pairs(~ ownership + socialrent + rent + population, data = df_pairs, col = rangi2)
 
 ######################
 # Merge databases 
@@ -114,7 +122,7 @@ d <- d %>%
     lsocA = log(socA) - mean( log(socA) ),
     lsocB = log(socB) - mean( log(socB) ),
     lrentA = log(rentA) - mean( log(rentA) ),
-    lrentB = log(rentB) - mean( log(rentB) )                               
+    lrentB = log(rentB) - mean( log(rentB) )
   )  
 
 ######################

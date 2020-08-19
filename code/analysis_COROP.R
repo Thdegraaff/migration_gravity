@@ -16,15 +16,6 @@ set.seed(5)
 
 load(file = "./data/derived/migration_COROP.Rda")
 
-#df <- df %>%
-#     filter(year == 2018)# | year == 2014)# | year == 2015 | year == 2016)
-
-cor_df <- df %>% select(
-  lhomA, lhomB, lsocA, lsocB, lrentA, lrentB, lpopA, lpopB
-)
-
-round(cor(cor_df, use = "complete.obs"), 2)
-
 nr_regions = max(df$destination)
 
 m_data <- list(
@@ -55,25 +46,28 @@ m <- ulam(
     mAB ~ poisson( lambdaAB ),
     mBA ~ poisson( lambdaBA ),
     log(lambdaAB) <- cons + 
-      lpopA + lpopB + 
-      # b_dist*ldist + 
-      # b_hA  * lhomA + b_hB * lhomB + b_sA * lsocA + b_sB * lsocB + 
+      b_popA * lpopA + b_popB * lpopB + 
+      b_dist*ldist + 
+      b_hA  * lhomA + b_hB * lhomB + b_sA * lsocA + b_sB * lsocB + 
+      #b_hA_int  * lhomA * lpopA + b_hB_int * lhomB * lpopB + b_sA_int * lsocA * lpopA + b_sB_int * lsocB * lpopB + 
       gr[origin,1] + gr[destination,2] +   
-      # y[year] + 
+      y[year] + 
       d[did,1],
     log(lambdaBA) <- cons + 
-      lpopA + lpopB + 
-      # b_dist*ldist + 
-      # b_hA  * lhomB + b_hB * lhomA + b_sA * lsocB + b_sB * lsocA + 
+      b_popB * lpopA + b_popA * lpopB + 
+       b_dist*ldist + 
+       b_hA  * lhomB + b_hB * lhomA + b_sA * lsocB + b_sB * lsocA + 
+       #b_hB_int  * lhomA * lpopA + b_hA_int * lhomB * lpopB + b_sB_int * lsocA * lpopA + b_sA_int * lsocB * lpopB + 
       gr[destination,1] + gr[origin,2] +   
-      # y[year] + 
+      y[year] + 
       d[did, 2],
-    #b_dist ~ normal(-1.5, 0.5),
-    #c(b_popA, b_popB) ~ normal(1, 0.5),
-    #c(b_hA, b_sA, b_hB, b_sB) ~ normal(0, 1),
+    b_dist ~ normal(-1.5, 0.5),
+    c(b_popA, b_popB) ~ normal(1, 0.5),
+    c(b_hA, b_sA, b_hB, b_sB) ~ normal(0, 1),
+    #c(b_hA_int, b_sA_int, b_hB_int, b_sB_int) ~ normal(0, 1),
     cons ~ normal(3,3),
-    #y[year] ~ normal(4.5, sigma_y),
-    #sigma_y ~ dexp(2),
+    y[year] ~ normal(0, sigma_y),
+    sigma_y ~ dexp(2),
     
     ## gr matrix of varying effects
     transpars> matrix[nr_regions, 2]: gr <-
@@ -94,12 +88,12 @@ m <- ulam(
     
     ## compute correlation matrix for dyads
     gq> matrix[2,2]:Rho_2 <<- Chol_to_Corr( L_Rho_d2 )
-  ), data = m_data , chains = 4 , cores = 4 , iter = 2000 )
+  ), data = m_data , chains = 4 , cores = 4 , iter = 4000, warmup = 1000 )
 
 precis(m)
-save(m, file = "./output/corop_null_model.rda")
+save(m, file = "./output/corop_final_model.rda")
 precis( m , depth=3 , pars=c("Rho_1", "Rho_2", "sigma_d", "sigma_gr") ) #, "Rho_d","sigma_d") )
-pairs(m@stanfit, pars=c("b_sA", "b_sB", "b_hA", "b_hB") )
+pairs(m@stanfit, pars=c("b_sA", "b_sB", "b_hA", "b_hB", "b_popA", "b_popB") )
 pairs(m@stanfit, pars=c("b_popA", "b_popB") )#, "b_sd", "b_so") )
 traceplot(m, pars=c("b_dist"))#, "b_sA", "b_sB", "b_hA", "b_hB", "sigma_y") )
 trankplot(m, pars=c("b_dist","b_sA", "b_sB", "b_hA", "b_hB", "sigma_d") )
@@ -110,7 +104,7 @@ des <- sapply( 1:nr_regions , function(i) post$cons + post$gr[,i,2] )
 Eo_mu <- apply( exp(ori) , 2 , mean )
 Ed_mu <- apply( exp(des) , 2 , mean )
 
-plot( NULL , xlim=c(0 , 700) , ylim=c(0 , 700) , xlab="generalized origin" ,
+plot( NULL , xlim=c(0 , 400) , ylim=c(0 , 300) , xlab="generalized origin" ,
       ylab="generalized destination" , lwd= 1.5 )
 abline(a=0, b=1, lty=2)
 
@@ -118,9 +112,9 @@ abline(a=0, b=1, lty=2)
 for ( i in 1:nr_regions ) {
   Sigma <- cov( cbind( ori[,i] , des[,i] ) )
   Mu <- c( mean(ori[,i]) , mean(des[,i]) )
-  for ( l in c(0.5) ) {
+  for ( l in c(0.95) ) {
     el <- ellipse( Sigma , centre=Mu , level=l )
-    lines( exp(el) , col=col.alpha("black",0.95) )
+    lines( exp(el) , col=col.alpha("black",0.5) )
   }
 }
 # household means
