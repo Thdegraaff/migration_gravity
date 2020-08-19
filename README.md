@@ -25,7 +25,9 @@ By applying a Bayesian multilevel gravity model, this paper revisits the impact
 To reproduce the results of the paper the following files have to run in order.
 Note, however that `analysis.brms` requires a considerable amount of time.
 Moreover, [Stan](https://mc-stan.org/) has to be installed to be able to run the
-commands from the wonderful `R`-package `brms`
+commands from the `R`-package `rethinking`. The latter package is written by
+  Richard McElreath and has to be installed from GitHub (see for more information
+[rethinking](https://github.com/rmcelreath/rethinking))
 
 1. `read_corop.R`
 2. `analysis_COROP.R`
