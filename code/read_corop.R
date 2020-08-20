@@ -49,6 +49,8 @@ d <- d %>%
   select( -id ) %>% # we do not need this variable
   filter(destination != origin, year != 2011, origin <= nr_corop, destination <= nr_corop) # not interested in within migration
 
+d_for_plot <- d
+
 bev <- read.csv2(file = "./data/src/COROP/bevolking.csv", sep = ";", header = FALSE, skip = 1)
 bev$V1<- as.character(bev$V1)
 d_bev <- separate(bev, V1,  c("id", "Geslacht", "Leeftijd", "BurgerlijkeStaat", "COROP", "year", "population"))
@@ -80,6 +82,12 @@ df_pairs <- d_wonen %>%
   left_join(d_bev, by = c("corop" = "corop", "year" = "year") ) %>%
   filter(year == 2015)
 pairs(~ ownership + socialrent + rent + population, data = df_pairs, col = rangi2)
+
+######################
+# descriptives
+######################
+
+cor(df_pairs)
 
 ######################
 # Merge databases 
@@ -171,8 +179,53 @@ d_wonen %>%
   gather(key = "housing_type", value = "percentage", ownership, socialrent) %>%
   ggplot(aes(percentage, fill = housing_type) ) + geom_histogram(position="dodge")+ facet_wrap(d_wonen$year)
 
-d %>%
+hist_panel <- d %>%
   ggplot(aes(number) ) + geom_histogram(position="dodge") +facet_wrap(d_temp$year)
+
+########################
+# Make descriptive plots
+########################
+
+housing <- d_wonen %>%
+  filter(year == 2018) %>%
+  gather(key = "housing_type", value = "percentage", ownership, socialrent) %>%
+  mutate(
+    percentage = 100 * percentage
+  )
+
+variable_names <- c(
+  "socialrent" = "Social Housing" ,
+  "ownership" = "Homeownership"
+)
+
+hist_housing <- ggplot(data = housing, aes(x = percentage)) + 
+  geom_histogram(aes(y = ..density..) ,col = "black", fill= "forest green", alpha = 0.7, breaks=seq(0, 100, by=5), position = "identity") +
+  facet_wrap(~ housing_type, labeller = labeller(housing_type= variable_names)) +
+  theme_bw() + 
+  labs(x = "Percentage (%)", y = "")
+
+d_for_plot <- d_for_plot %>%
+  filter(year == 2018)
+data_mig_large <- filter(d_for_plot, number >= 100)
+data_mig_small <- filter(d_for_plot, number < 100)
+hist_mig_small <- ggplot(data = data_mig_small, aes(number)) + 
+  geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20) + theme_bw() +
+  xlab("Interregional migrants") + ylab("")
+hist_mig_large <- ggplot(data = data_mig_large, aes(number)) + 
+  geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20) +
+  scale_x_continuous(breaks=seq(100, 7100, 1000)) +
+  theme_bw() +
+  xlab("Interregional migrants") + ylab("")
+hist_mig <- plot_grid(hist_mig_small, hist_mig_large, labels = c("Small flows", "Large flows"), label_x = 0.5, label_y = 0.96)
+  
+
+pdf(file = "./fig/hist_mig_corop.pdf" ,width=8,height=4) 
+hist_mig
+dev.off()
+
+pdf(file = "./fig/hist_housing_panel_corop.pdf" ,width=8,height=4) 
+hist_housing 
+dev.off()
 
 ##########################
 # Save resulting database

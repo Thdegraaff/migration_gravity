@@ -41,18 +41,18 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
    	\begin{itemize}
    		\item Current Dutch housing market:
    		\begin{itemize}
-   			\item large \alert{shortage} of housing (especially in popular, urban, regions and for private rental housing)
-   			\item large yearly prices \alert{increases} (8\% in 2018)
-   			\item decrease in number of houses \alert{sold}
-   			\item large \alert{regional} variation\newline
+   			\item large \alert{shortage} of housing
+   			\item large yearly prices \alert{increases} ($\approx 10\%$ annually)
+   			\item decrease in housing \alert{transactions}
+   			\item large \alert{regional} variation\newline \pause
    		\end{itemize}
-                \item Policy debates about changes in housing market \alert{structure}
-                \begin{itemize}
-                \item $\longrightarrow$ Increase home-ownership rates\newline
-                \end{itemize}
+            \item Regional Dutch population projections (PEARL)  $\longrightarrow$ difficulties with \alert{interregional} migration
+            \begin{itemize}
+            \item especially long-distance migration  
+            \item input for changes in local housing supply \newline \pause
+            \end{itemize}
    		\item Large literature of \alert{external} effects of home-ownership \footnotesize{\citep{dietz2003social}}
    		\begin{itemize}
-   			\item \alert{positive}: savings, labor supply, health, maintenance, etc.
    			\item \alert{negative}: migration (by increased moving costs) and on aggregate labour market performance \footnotesize{\citep{oswald1996conjecture,oswald1999housing}}
    		\end{itemize}
    	\end{itemize}
@@ -94,250 +94,57 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \end{frame}
 
 
-\begin{frame}[fragile]{Why a \textbf{multilevel} approach for the gravity model}
-\begin{figure}	
+\begin{frame}[fragile]{Why a \textbf{multilevel} approach for migration?}
+There are at least two \alert{levels} in migration (I use three)
+\begin{description}
+	\item[Observed migration \alert{flows}] Migration between $i$ and $j$ with friction (e.g., distance) attributes (obs = $R^2 - R$)
+		\begin{figure}	
+		\begin{tikzpicture}[scale=0.90, thick]
+		
+		\tikzstyle{orig}=[rectangle, rounded corners, thin, fill=green!20, text=black, draw, minimum width=2cm]
+		\tikzstyle{dest}=[rectangle, rounded corners, thin, fill=red!20, text=black, draw, minimum width=2cm]
+	\tikzstyle{var}=[rectangle, rounded corners, thin, fill=black!10, text=black, draw, minimum width = 0.6cm, minimum height = 0.4cm]
+		\node[orig] (o1) at (0,0)  {\textsc{region$_i$}};
+		\node[dest] (d1) at (6,0)  {\textsc{region$_j$}};	
+		% Migration links
+		\draw[-latex, black, thick] (1.5,0) -- (4.5, 0);
+		\node[var] (m) at (3,0)  {\scriptsize \textsc{$\mathbf{X}_{ij}$}};
+
+		\end{tikzpicture}
+	\end{figure}\pause
+	\item[Observed push \& pull factors] Attributes of $i$ and $j$ (obs $= R$)
+		\begin{figure}	
 	\begin{tikzpicture}[scale=0.90, thick]
 	
-	\tikzstyle{orig}=[rectangle, rounded corners, thin, fill=green!20, text=black, draw, minimum width=2.5cm]
-	\tikzstyle{dest}=[rectangle, rounded corners, thin, fill=red!20, text=black, draw, minimum width=2.5cm]
-	\tikzstyle{migrants}=[rectangle, rounded corners, thin, fill=blue!20, text=black, draw, minimum width=2.5cm]
-	\tikzstyle{var}=[rectangle, rounded corners, thin, fill=black!10, text=black, draw, text width = 3.5cm]
-	
-	\node[orig] (o1) at (0,0)  {\textsc{City$_1$}};
-	\node[orig] (o2) at (0,-1) {\textsc{City$_2$}};
-	\node[orig] (o3) at (0,-2) {\textsc{City$_3$}};
-	\node (o4) at (0,-3) {\textsc{\vdots}};
-	\node[orig] (o5) at (0,-4) {\textsc{City$_i$}};
-	\node (o6) at (0,-5) {\textsc{\vdots}};
-	\node[orig] (o7) at (0,-6) {\textsc{City$_I$}};
+	\tikzstyle{orig}=[rectangle, rounded corners, thin, fill=green!20, text=black, draw, minimum width=2cm]
+	\tikzstyle{dest}=[rectangle, rounded corners, thin, fill=red!20, text=black, draw, minimum width=2cm]
+	\tikzstyle{var}=[rectangle, rounded corners, thin, fill=black!10, text=black, draw, minimum width = 0.6cm, minimum height = 0.4cm]
+	\node[orig] (o1) at (0,0)  {\textsc{region$_i$}};
+	\node[dest] (d1) at (6,0)  {\textsc{region$_j$}};	
+
+	\node[var] (v1) at (0,-1.2)  {\scriptsize \textsc{$\mathbf{X}_i$}};
+	\node[var] (v3) at (6,-1.2)  {\scriptsize \textsc{$\mathbf{X}_j$} };
+
+	\draw[-latex, thick, black] (v1) -- (o1);
+	\draw[-latex, thick, black] (v3) -- (d1);
 	
 	\end{tikzpicture}
-\end{figure}
-\end{frame}
-
-\begin{frame}[fragile]{Why a \textbf{multilevel} approach for the gravity model}
-	 \begin{figure}	
-   \begin{tikzpicture}[scale=0.90, thick]
-   
-   \tikzstyle{orig}=[rectangle, rounded corners, thin, fill=green!20, text=black, draw, minimum width=2.5cm]
-   \tikzstyle{dest}=[rectangle, rounded corners, thin, fill=red!20, text=black, draw, minimum width=2.5cm]
-   \tikzstyle{migrants}=[rectangle, rounded corners, thin, fill=blue!20, text=black, draw, minimum width=2.5cm]
-   \tikzstyle{var}=[rectangle, rounded corners, thin, fill=black!10, text=black, draw, minimum width = 2.5cm]
-   
-   \node[orig] (o1) at (0,0)  {\textsc{Origin$_1$}};
-   \node[orig] (o2) at (0,-1) {\textsc{Origin$_2$}};
-   \node[orig] (o3) at (0,-2) {\textsc{Origin$_3$}};
-   \node (o4) at (0,-3) {\textsc{\vdots}};
-   \node[orig] (o5) at (0,-4) {\textsc{Origin$_i$}};
-   \node (o6) at (0,-5) {\textsc{\vdots}};
-   \node[orig] (o7) at (0,-6) {\textsc{Origin$_I$}};
-   
-   \node[dest] (d1) at (8,0)  {\textsc{Destination$_1$}};
-   \node[dest] (d2) at (8,-1) {\textsc{Destination$_2$}};
-   \node[dest] (d3) at (8,-2) {\textsc{Destination$_3$}};
-   \node (d4) 		 at (8,-3) {\textsc{\vdots}};
-   \node[dest] (d5) at (8,-4) {\textsc{Destination$_j$}};
-   \node (d6) 		 at (8,-5) {\textsc{\vdots}};
-   \node[dest] (d7) at (8,-6) {\textsc{Destination$_J$}};
-%   
-%   % Migratior links
-%   \draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5, 0);
-%   \draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-0.8);
-%   \draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-1.8);
-%   \draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-3.8);
-%   \draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-5.6);
-%   
-%   \draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-0.1);
-%   \draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-0.9);
-%   \draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-1.9);
-%   \draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-3.9);
-%   \draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-5.7);
-%   
-%   \draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5, -0.2);
-%   \draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-1);
-%   \draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-2);
-%   \draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-4);
-%   \draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-5.8);
-%   
-%   \draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-0.3);
-%   \draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-1.1);
-%   \draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-2.1);
-%   \draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-4.1);
-%   \draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-5.9);
-%   
-%   \draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5, -0.4);
-%   \draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-1.2);
-%   \draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-2.2);
-%   \draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-4.2);
-%   \draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-6);
-%   
-%   \node[migrants] (m) at (4,-3)  {\textsc{Flows $i \rightarrow j$}};
-%   
-   \node[var] (v1) at (0,-8)  { \textsc{Push factors} };
-%   \node[var] (v2) at (4,-8)  {\textsc{flow-specific variables ($\mathbf{X}_{ij}$) }};
-   \node[var] (v3) at (8,-8)  { \textsc{Pull factors} };
-%   
-%   \begin{pgfonlayer}{background}
-%   \filldraw [line width=4mm,join=round,black!10]
-%   (o1.north -| o1.west)  rectangle (o7.south -| o7.east)
-%   (d1.north -| d1.west)  rectangle (d7.south -| d7.east);
-%   \end{pgfonlayer}
-%   
-   \draw[-latex, thick, black] (v1) -- (0,-6.5);
-%   \draw[-latex, thick, black] (v2) -- (4,-6.5);
-   \draw[-latex, thick, black] (v3) -- (8,-6.5);
-   \end{tikzpicture}
-	\end{figure}
-\end{frame}
-
-\begin{frame}[fragile]{Why a \textbf{multilevel} approach structure for the gravity model}
-	\begin{figure}	
+\end{figure}\pause	
+	\item[Observed flows between region \alert{pairs}] migration from $i \rightarrow j$ is correlated with migration from $j \rightarrow i$ (obs $= R^2/2$)
+			\begin{figure}	
 		\begin{tikzpicture}[scale=0.90, thick]
 		
-		\tikzstyle{orig}=[rectangle, rounded corners, thin, fill=green!20, text=black, draw, minimum width=2.5cm]
-		\tikzstyle{dest}=[rectangle, rounded corners, thin, fill=red!20, text=black, draw, minimum width=2.5cm]
-		\tikzstyle{migrants}=[rectangle, rounded corners, thin, fill=blue!20, text=black, draw, minimum width=2.5cm]
-		\tikzstyle{var}=[rectangle, rounded corners, thin, fill=black!10, text=black, draw, minimum width = 2.5cm]
+		\tikzstyle{orig}=[rectangle, rounded corners, thin, fill=green!20, text=black, draw, minimum width=2cm]
+		\tikzstyle{dest}=[rectangle, rounded corners, thin, fill=red!20, text=black, draw, minimum width=2cm]
+		\node[orig] (o1) at (0,0)  {\textsc{region$_i$}};
+		\node[dest] (d1) at (6,0)  {\textsc{region$_j$}};	
+		% Migration links
+		\draw[-latex, black, thick] (1.5,0.15) -- (4.5, 0.15);
+		\draw[-latex, black, thick] (4.5,-0.15) -- (1.5, -0.15);		
 		
-		\node[orig] (o1) at (0,0)  {\textsc{Origin$_1$}};
-		\node[orig] (o2) at (0,-1) {\textsc{Origin$_2$}};
-		\node[orig] (o3) at (0,-2) {\textsc{Origin$_3$}};
-		\node (o4) at (0,-3) {\textsc{\vdots}};
-		\node[orig] (o5) at (0,-4) {\textsc{Origin$_i$}};
-		\node (o6) at (0,-5) {\textsc{\vdots}};
-		\node[orig] (o7) at (0,-6) {\textsc{Origin$_I$}};
-		
-		\node[dest] (d1) at (8,0)  {\textsc{Destination$_1$}};
-		\node[dest] (d2) at (8,-1) {\textsc{Destination$_2$}};
-		\node[dest] (d3) at (8,-2) {\textsc{Destination$_3$}};
-		\node (d4) 		 at (8,-3) {\textsc{\vdots}};
-		\node[dest] (d5) at (8,-4) {\textsc{Destination$_j$}};
-		\node (d6) 		 at (8,-5) {\textsc{\vdots}};
-		\node[dest] (d7) at (8,-6) {\textsc{Destination$_J$}};
-		   
-		   % Migratior links
-		   \draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5, 0);
-		   \draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-0.8);
-		   \draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-1.8);
-		   \draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-3.8);
-		   \draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-5.6);
-		   
-		   \draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-0.1);
-		   \draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-0.9);
-		   \draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-1.9);
-		   \draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-3.9);
-		   \draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-5.7);
-		   
-		   \draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5, -0.2);
-		   \draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-1);
-		   \draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-2);
-		   \draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-4);
-		   \draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-5.8);
-		   
-		   \draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-0.3);
-		   \draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-1.1);
-		   \draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-2.1);
-		   \draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-4.1);
-		   \draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-5.9);
-		   
-		   \draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5, -0.4);
-		   \draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-1.2);
-		   \draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-2.2);
-		   \draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-4.2);
-		   \draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-6);
-		   
-		   \node[migrants] (m) at (4,-3)  {\textsc{Flows $i \rightarrow j$}};
-		   
-		   \node[var] (v1) at (0,-8)  {\textsc{Push factors}};
-		   \node[var] (v2) at (4,-8)  {\textsc{Frictions }};
-		   \node[var] (v3) at (8,-8)  {\textsc{Pull factors} };
-		%   
-		%   \begin{pgfonlayer}{background}
-		%   \filldraw [line width=4mm,join=round,black!10]
-		%   (o1.north -| o1.west)  rectangle (o7.south -| o7.east)
-		%   (d1.north -| d1.west)  rectangle (d7.south -| d7.east);
-		%   \end{pgfonlayer}
-		%   
-		   \draw[-latex, thick, black] (v1) -- (0,-6.5);
-		   \draw[-latex, thick, black] (v2) -- (4,-6.5);
-		   \draw[-latex, thick, black] (v3) -- (8,-6.5);
 		\end{tikzpicture}
 	\end{figure}
-\end{frame}
-
-\begin{frame}[fragile]{Why a \textbf{multilevel} approach for the gravity model}
-	\begin{figure}	
-		\begin{tikzpicture}[scale=0.90, thick]
-		
-		\tikzstyle{orig}=[rectangle, rounded corners, thin, fill=green!20, text=black, draw, minimum width=2.5cm]
-		\tikzstyle{dest}=[rectangle, rounded corners, thin, fill=red!20, text=black, draw, minimum width=2.5cm]
-		\tikzstyle{migrants}=[rectangle, rounded corners, thin, fill=blue!20, text=black, draw, minimum width=2.5cm]
-		\tikzstyle{var}=[rectangle, rounded corners, thin, fill=black!10, text=black, draw, minimum width = 2.5cm]
-		
-		\node[orig] (o1) at (0,0)  {\textsc{Origin$_1$}};
-		\node[orig] (o2) at (0,-1) {\textsc{Origin$_2$}};
-		\node[orig] (o3) at (0,-2) {\textsc{Origin$_3$}};
-		\node (o4) at (0,-3) {\textsc{\vdots}};
-		\node[orig] (o5) at (0,-4) {\textsc{Origin$_i$}};
-		\node (o6) at (0,-5) {\textsc{\vdots}};
-		\node[orig] (o7) at (0,-6) {\textsc{Origin$_I$}};
-		
-		\node[dest] (d1) at (8,0)  {\textsc{Destination$_1$}};
-		\node[dest] (d2) at (8,-1) {\textsc{Destination$_2$}};
-		\node[dest] (d3) at (8,-2) {\textsc{Destination$_3$}};
-		\node (d4) 		 at (8,-3) {\textsc{\vdots}};
-		\node[dest] (d5) at (8,-4) {\textsc{Destination$_j$}};
-		\node (d6) 		 at (8,-5) {\textsc{\vdots}};
-		\node[dest] (d7) at (8,-6) {\textsc{Destination$_J$}};
-		
-		% Migratior links
-		\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5, 0);
-		\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-0.8);
-		\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-1.8);
-		\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-3.8);
-		\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-5.6);
-		
-		\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-0.1);
-		\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-0.9);
-		\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-1.9);
-		\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-3.9);
-		\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-5.7);
-		
-		\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5, -0.2);
-		\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-1);
-		\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-2);
-		\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-4);
-		\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-5.8);
-		
-		\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-0.3);
-		\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-1.1);
-		\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-2.1);
-		\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-4.1);
-		\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-5.9);
-		
-		\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5, -0.4);
-		\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-1.2);
-		\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-2.2);
-		\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-4.2);
-		\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-6);
-		
-		\node[migrants] (m) at (4,-3)  {\textsc{Flows $i \rightarrow j$}};
-		
-		\node[var] (v1) at (0,-8)  {\textsc{Origin  ($o_i, \mathbf{X_i}$)}};
-		\node[var] (v2) at (4,-8)  {\textsc{Flow ($\mathbf{X}_{ij}$) }};
-		   \node[var] (v3) at (8,-8)  {\textsc{Destination ($d_j, \mathbf{X_j}$)}};
-		   
-%		   \begin{pgfonlayer}{background}
-%		   \filldraw [line width=4mm,join=round,black!10]
-%		   (o1.north -| o1.west)  rectangle (o7.south -| o7.east)
-%		   (d1.north -| d1.west)  rectangle (d7.south -| d7.east);
-%		   \end{pgfonlayer}
-		   
-		   \draw[-latex, thick, black] (v1) -- (0,-6.5);
-		\draw[-latex, thick, black] (v2) -- (4,-6.5);
-		   \draw[-latex, thick, black] (v3) -- (8,-6.5);
-		\end{tikzpicture}
-	\end{figure}
+\end{description}
 \end{frame}
 
 \begin{frame}{Why a Bayesian multilevel approach?}
@@ -357,23 +164,24 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Data: migrations flows}
+\begin{frame}{Data: migrations flows in 2018}
 	\begin{center}
-		\includegraphics[width=0.8\textwidth]{../../fig/hist_mig}      
+		\includegraphics[width=0.8\textwidth]{../../fig/hist_mig_corop}      
 	\end{center}
 \begin{itemize}
-	\item Migration flows \alert{between} 380 Dutch municipalities in 2018 ($\approx 144,000$ flows)
-	\item Variance is 4 times expectation: \alert{over-dispersion}
+	\item Panel for the period 2012--2018
+	\item Migration flows \alert{between} 40 Dutch regions ($1,560$ flows per year)
+	\item Variance $\gg$ mean: \alert{over-dispersion}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Data: municipal housing structure}
+\begin{frame}{Data: regional housing structure in 2018}
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{../../fig/hist_housing}      
 \end{center}
 \begin{itemize}
-	\item Positive correlation between city size and social renting ($0.4$)
-	\item Negative correlation between social renting and home-ownership ($-0.84)$
+	\item Positive correlation between region size and share social renting ($0.46$)
+	\item Negative correlation between share social renting and share home-ownership ($-0.88)$
 \end{itemize}
 \end{frame}
 
@@ -383,7 +191,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\label{eq:gravfixed}
 	\end{equation*} 
 	
-	Origin and destination specific \alert{fixed} effects for multilateral resistance  \citep{anderson2003gravity} , but:
+	Origin and destination specific \alert{fixed} effects for multilateral resistance  \citep{anderson2003gravity}, but:
 	\begin{itemize}
 		\item what about \alert{zeros} in $\text{Migrants}_{ij}$?
 		\item how to incorporate \alert{housing} structure in the presence of $o_i$ and $d_j$?

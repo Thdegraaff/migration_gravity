@@ -1,6 +1,7 @@
 library("tidyverse")
 library("sf")
 library("RColorBrewer")
+library("rethinking")
 
 # Load Data files
 

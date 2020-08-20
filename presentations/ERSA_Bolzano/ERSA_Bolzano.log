@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.26)  19 AUG 2020 13:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.26)  20 AUG 2020 14:53
 entering extended mode
 **./ERSA_Bolzano.tex
 (ERSA_Bolzano.tex
@@ -1570,44 +1570,27 @@ thkerncmss.
 
 ] [4
 
+] [5
+
+] [6
+
 ]
 \openout4 = `ERSA_Bolzano.vrb'.
 
  (ERSA_Bolzano.vrb
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 10.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 11.
 
-) [5
 
-]
-\openout4 = `ERSA_Bolzano.vrb'.
+LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <8> not available
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 15.
 
- (ERSA_Bolzano.vrb)
-Overfull \vbox (17.51538pt too high) detected at line 191
- []
+) [7
 
-[6
+] (ERSA_Bolzano.vrb) [8
 
-]
-\openout4 = `ERSA_Bolzano.vrb'.
-
- (ERSA_Bolzano.vrb)
-Overfull \vbox (17.51538pt too high) detected at line 266
- []
-
-[7
-
-]
-\openout4 = `ERSA_Bolzano.vrb'.
-
- (ERSA_Bolzano.vrb)
-Overfull \vbox (19.55011pt too high) detected at line 341
- []
-
-[8
-
-] [9
+] (ERSA_Bolzano.vrb) [9
 
 ] [10
 
@@ -1615,171 +1598,175 @@ Overfull \vbox (19.55011pt too high) detected at line 341
 
 ] [12
 
-]
-<../../fig/hist_mig.pdf, id=101, 578.16pt x 289.08pt>
-File: ../../fig/hist_mig.pdf Graphic file (type pdf)
-<use ../../fig/hist_mig.pdf>
-Package pdftex.def Info: ../../fig/hist_mig.pdf  used on input line 368.
-(pdftex.def)             Requested size: 245.83282pt x 122.9125pt.
- [13
+] [13
 
- <../../fig/hist_mig.pdf>]
-<../../fig/hist_housing.pdf, id=117, 578.16pt x 289.08pt>
+]
+<../../fig/hist_mig_corop.pdf, id=113, 578.16pt x 289.08pt>
+File: ../../fig/hist_mig_corop.pdf Graphic file (type pdf)
+<use ../../fig/hist_mig_corop.pdf>
+Package pdftex.def Info: ../../fig/hist_mig_corop.pdf  used on input line 176.
+(pdftex.def)             Requested size: 245.83282pt x 122.9125pt.
+
+[14
+
+ <../../fig/hist_mig_corop.pdf>]
+<../../fig/hist_housing.pdf, id=128, 578.16pt x 289.08pt>
 File: ../../fig/hist_housing.pdf Graphic file (type pdf)
 <use ../../fig/hist_housing.pdf>
-Package pdftex.def Info: ../../fig/hist_housing.pdf  used on input line 378.
+Package pdftex.def Info: ../../fig/hist_housing.pdf  used on input line 186.
 (pdftex.def)             Requested size: 245.83282pt x 122.9125pt.
- [14
+ [15
 
- <../../fig/hist_housing.pdf>] [15
+ <../../fig/hist_housing.pdf>] [16
 
-] [16
+]
+[17
 
 ]
 \openout4 = `ERSA_Bolzano.vrb'.
 
  (ERSA_Bolzano.vrb)
-Overfull \vbox (25.09346pt too high) detected at line 439
- []
-
-[17
-
-] (ERSA_Bolzano.vrb)
-Overfull \vbox (25.09346pt too high) detected at line 439
+Overfull \vbox (25.09346pt too high) detected at line 247
  []
 
 [18
 
 ] (ERSA_Bolzano.vrb)
-Overfull \vbox (25.09346pt too high) detected at line 439
+Overfull \vbox (25.09346pt too high) detected at line 247
  []
 
 [19
 
 ] (ERSA_Bolzano.vrb)
-Overfull \vbox (25.09346pt too high) detected at line 439
+Overfull \vbox (25.09346pt too high) detected at line 247
  []
 
 [20
 
 ] (ERSA_Bolzano.vrb)
-Overfull \vbox (25.09346pt too high) detected at line 439
+Overfull \vbox (25.09346pt too high) detected at line 247
  []
 
 [21
 
+] (ERSA_Bolzano.vrb)
+Overfull \vbox (25.09346pt too high) detected at line 247
+ []
+
+[22
+
 ]
-<../../fig/forestplot.pdf, id=176, 289.08pt x 361.35pt>
+<../../fig/forestplot.pdf, id=187, 289.08pt x 361.35pt>
 File: ../../fig/forestplot.pdf Graphic file (type pdf)
 <use ../../fig/forestplot.pdf>
-Package pdftex.def Info: ../../fig/forestplot.pdf  used on input line 477.
+Package pdftex.def Info: ../../fig/forestplot.pdf  used on input line 285.
 (pdftex.def)             Requested size: 153.64493pt x 192.05493pt.
- [22
+ [23
 
  <../../fig/forestplot.pdf>]
-<../../fig/dag.pdf, id=188, 433.62pt x 289.08pt>
+<../../fig/dag.pdf, id=199, 433.62pt x 289.08pt>
 File: ../../fig/dag.pdf Graphic file (type pdf)
 <use ../../fig/dag.pdf>
-Package pdftex.def Info: ../../fig/dag.pdf  used on input line 500.
+Package pdftex.def Info: ../../fig/dag.pdf  used on input line 308.
 (pdftex.def)             Requested size: 153.64493pt x 102.42783pt.
- [23
+ [24
 
  <../../fig/dag.pdf>]
 File: ../../fig/dag.pdf Graphic file (type pdf)
 <use ../../fig/dag.pdf>
-Package pdftex.def Info: ../../fig/dag.pdf  used on input line 500.
-(pdftex.def)             Requested size: 153.64493pt x 102.42783pt.
- [24
-
-]
-File: ../../fig/dag.pdf Graphic file (type pdf)
-<use ../../fig/dag.pdf>
-Package pdftex.def Info: ../../fig/dag.pdf  used on input line 500.
+Package pdftex.def Info: ../../fig/dag.pdf  used on input line 308.
 (pdftex.def)             Requested size: 153.64493pt x 102.42783pt.
  [25
 
 ]
-<../../fig/hist_fit.pdf, id=211, 578.16pt x 289.08pt>
+File: ../../fig/dag.pdf Graphic file (type pdf)
+<use ../../fig/dag.pdf>
+Package pdftex.def Info: ../../fig/dag.pdf  used on input line 308.
+(pdftex.def)             Requested size: 153.64493pt x 102.42783pt.
+ [26
+
+]
+<../../fig/hist_fit.pdf, id=222, 578.16pt x 289.08pt>
 File: ../../fig/hist_fit.pdf Graphic file (type pdf)
 <use ../../fig/hist_fit.pdf>
-Package pdftex.def Info: ../../fig/hist_fit.pdf  used on input line 510.
+Package pdftex.def Info: ../../fig/hist_fit.pdf  used on input line 318.
 (pdftex.def)             Requested size: 276.559pt x 138.27602pt.
-
-[26
-
- <../../fig/hist_fit.pdf>]
-<../../fig/correlation.pdf, id=226, 433.62pt x 289.08pt>
-File: ../../fig/correlation.pdf Graphic file (type pdf)
-<use ../../fig/correlation.pdf>
-Package pdftex.def Info: ../../fig/correlation.pdf  used on input line 516.
-(pdftex.def)             Requested size: 307.28987pt x 204.86888pt.
-
-Overfull \vbox (1.52296pt too high) detected at line 516
- []
 
 [27
 
- <../../fig/correlation.pdf>]
-<../../fig/p_coef_out.pdf, id=242, 650.43pt x 578.16pt>
-File: ../../fig/p_coef_out.pdf Graphic file (type pdf)
-<use ../../fig/p_coef_out.pdf>
-Package pdftex.def Info: ../../fig/p_coef_out.pdf  used on input line 532.
-(pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
+ <../../fig/hist_fit.pdf>]
+<../../fig/correlation.pdf, id=237, 433.62pt x 289.08pt>
+File: ../../fig/correlation.pdf Graphic file (type pdf)
+<use ../../fig/correlation.pdf>
+Package pdftex.def Info: ../../fig/correlation.pdf  used on input line 324.
+(pdftex.def)             Requested size: 307.28987pt x 204.86888pt.
 
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 532--532
- [] 
- []
-
-<../../fig/p_coef_in.pdf, id=243, 650.43pt x 578.16pt>
-File: ../../fig/p_coef_in.pdf Graphic file (type pdf)
-<use ../../fig/p_coef_in.pdf>
-Package pdftex.def Info: ../../fig/p_coef_in.pdf  used on input line 532.
-(pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
-
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 532--532
- [] 
+Overfull \vbox (1.52296pt too high) detected at line 324
  []
 
 [28
 
- <../../fig/p_coef_out.pdf> <../../fig/p_coef_in.pdf>]
-<../../fig/p_diff_out.pdf, id=264, 650.43pt x 578.16pt>
-File: ../../fig/p_diff_out.pdf Graphic file (type pdf)
-<use ../../fig/p_diff_out.pdf>
-Package pdftex.def Info: ../../fig/p_diff_out.pdf  used on input line 547.
+ <../../fig/correlation.pdf>]
+<../../fig/p_coef_out.pdf, id=253, 650.43pt x 578.16pt>
+File: ../../fig/p_coef_out.pdf Graphic file (type pdf)
+<use ../../fig/p_coef_out.pdf>
+Package pdftex.def Info: ../../fig/p_coef_out.pdf  used on input line 340.
 (pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
 
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 547--547
+Overfull \hbox (15.36542pt too wide) in paragraph at lines 340--340
  [] 
  []
 
-<../../fig/p_diff_in.pdf, id=265, 650.43pt x 578.16pt>
-File: ../../fig/p_diff_in.pdf Graphic file (type pdf)
-<use ../../fig/p_diff_in.pdf>
-Package pdftex.def Info: ../../fig/p_diff_in.pdf  used on input line 547.
+<../../fig/p_coef_in.pdf, id=254, 650.43pt x 578.16pt>
+File: ../../fig/p_coef_in.pdf Graphic file (type pdf)
+<use ../../fig/p_coef_in.pdf>
+Package pdftex.def Info: ../../fig/p_coef_in.pdf  used on input line 340.
 (pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
 
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 547--547
+Overfull \hbox (15.36542pt too wide) in paragraph at lines 340--340
  [] 
  []
 
 [29
 
- <../../fig/p_diff_out.pdf> <../../fig/p_diff_in.pdf>] [30
+ <../../fig/p_coef_out.pdf> <../../fig/p_coef_in.pdf>]
+<../../fig/p_diff_out.pdf, id=275, 650.43pt x 578.16pt>
+File: ../../fig/p_diff_out.pdf Graphic file (type pdf)
+<use ../../fig/p_diff_out.pdf>
+Package pdftex.def Info: ../../fig/p_diff_out.pdf  used on input line 355.
+(pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
 
-] [31
+Overfull \hbox (15.36542pt too wide) in paragraph at lines 355--355
+ [] 
+ []
+
+<../../fig/p_diff_in.pdf, id=276, 650.43pt x 578.16pt>
+File: ../../fig/p_diff_in.pdf Graphic file (type pdf)
+<use ../../fig/p_diff_in.pdf>
+Package pdftex.def Info: ../../fig/p_diff_in.pdf  used on input line 355.
+(pdftex.def)             Requested size: 169.01035pt x 150.22983pt.
+
+Overfull \hbox (15.36542pt too wide) in paragraph at lines 355--355
+ [] 
+ []
+
+[30
+
+ <../../fig/p_diff_out.pdf> <../../fig/p_diff_in.pdf>] [31
 
 ] [32
+
+] [33
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 584.
+(hyperref)                removing `\translate ' on input line 392.
 
-[33
+[34
 
  <C:/Users/tgf200/AppData/Roaming/MiKTeX/2.9/tex/latex/beamer/beamericonarticle
-.pdf>] [34
+.pdf>] [35
 
 
 ]
@@ -1792,11 +1779,11 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 \tf@snm=\write9
 \openout9 = `ERSA_Bolzano.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 593.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 593.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 401.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 401.
  (ERSA_Bolzano.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 593.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 593.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 401.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 401.
 Package rerunfilecheck Info: File `ERSA_Bolzano.out' has not changed.
 (rerunfilecheck)             Checksum: A7F4D589709A975A14292322A595ED53;42.
 
@@ -1808,11 +1795,11 @@ Package logreq Info: Writing requests to 'ERSA_Bolzano.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39574 strings out of 492945
- 949333 string characters out of 3135510
- 1334862 words of memory out of 3000000
- 42635 multiletter control sequences out of 15000+200000
- 22223 words of font info for 80 fonts, out of 3000000 for 9000
+ 39449 strings out of 492945
+ 947529 string characters out of 3135510
+ 1333862 words of memory out of 3000000
+ 42510 multiletter control sequences out of 15000+200000
+ 22524 words of font info for 81 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,19n,98p,1876b,1923s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/P
@@ -1831,9 +1818,9 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/symbols/msbm10.pfb>
-Output written on ERSA_Bolzano.pdf (34 pages, 13388155 bytes).
+Output written on ERSA_Bolzano.pdf (35 pages, 13388226 bytes).
 PDF statistics:
- 397 PDF objects out of 1000 (max. 8388607)
- 82 named destinations out of 1000 (max. 500000)
+ 408 PDF objects out of 1000 (max. 8388607)
+ 84 named destinations out of 1000 (max. 500000)
  101 words of extra memory for PDF output out of 10000 (max. 10000000)
 
