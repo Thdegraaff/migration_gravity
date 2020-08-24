@@ -141,7 +141,7 @@ hist_fit_small <- ggplot(data = fit_small, aes(Migrants, fill = type)) +
   labs(fill="") 
 hist_fit_large <- ggplot(data = fit_large, aes(Migrants, fill = type)) + 
   geom_histogram(color = "#100F14", bins = 10, position = 'dodge') +
-  scale_x_continuous(breaks=seq(100, 7100, 1000)) +
+  scale_x_continuous(breaks=seq(100, 6100, 1000)) +
   scale_fill_manual(values=c("#DCA258", "#80A0C7")) +
   labs(fill="")
 hist_fit <- plot_grid(hist_fit_small + theme(legend.position = "none"), 
