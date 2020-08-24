@@ -1,10 +1,69 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: ERSA_Bolzano.aux
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: ERSA_Bolzano.aux
 The style file: biblatex.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ERSA_Bolzano-blx.bib
 Database file #2: ../../paper/references.bib
 Repeated entry---line 215 of file ../../paper/references.bib
  : @article{dietz2003social
  :                         ,
 I'm skipping whatever remains of this entry
-Biblatex version: 3.11
+Biblatex version: 3.3
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 12 entries,
+            6256 wiz_defined-function locations,
+            1244 strings with 10339 characters,
+and the built_in function-call counts, 58967 in all, are:
+= -- 3852
+> -- 1238
+< -- 423
++ -- 1163
+- -- 395
+* -- 4195
+:= -- 5260
+add.period$ -- 0
+call.type$ -- 12
+change.case$ -- 263
+chr.to.int$ -- 30
+cite$ -- 22
+duplicate$ -- 6085
+empty$ -- 5807
+format.name$ -- 733
+if$ -- 12667
+int.to.chr$ -- 0
+int.to.str$ -- 32
+missing$ -- 0
+newline$ -- 337
+num.names$ -- 619
+pop$ -- 3801
+preamble$ -- 1
+purify$ -- 304
+quote$ -- 0
+skip$ -- 2221
+stack$ -- 0
+substring$ -- 6141
+swap$ -- 1719
+text.length$ -- 306
+text.prefix$ -- 12
+top$ -- 1
+type$ -- 395
+warning$ -- 0
+while$ -- 607
+width$ -- 0
+write$ -- 326
 (There was 1 error message)

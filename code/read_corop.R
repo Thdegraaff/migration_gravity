@@ -7,6 +7,35 @@ library("sf")
 library("cowplot")
 library("spatialrisk")
 library("rethinking")
+library("dutchmasters")
+
+######################
+# Set Dutch masters theme
+######################
+
+theme_pearl_earring <- function(light_color = "#E8DCCF", 
+                                dark_color = "#100F14", 
+                                my_family = "Courier",
+                                ...) {
+  
+  theme(line = element_line(color = light_color),
+        text = element_text(color = light_color, family = my_family),
+        strip.text = element_text(color = light_color, family = my_family),
+        axis.text = element_text(color = light_color),
+        axis.ticks = element_line(color = light_color),
+        axis.line = element_blank(),
+        legend.background = element_rect(fill = dark_color, color = "transparent"),
+        legend.key = element_rect(fill = dark_color, color = "transparent"),
+        panel.background = element_rect(fill = dark_color, color = light_color),
+        panel.grid = element_blank(),
+        plot.background = element_rect(fill = dark_color, color = dark_color),
+        strip.background = element_rect(fill = dark_color, color = "transparent"),
+        ...)
+  
+}
+
+# now set `theme_pearl_earring()` as the default theme
+theme_set(theme_pearl_earring())
 
 ######################
 # Read in Shapefile
@@ -73,6 +102,8 @@ d_wonen <- d_wonen %>%
     ) %>% 
   select(corop, year,  ownership, socialrent, rent) %>%
   filter(corop <= nr_corop)
+
+save(d_wonen, file="./data/derived/d_wonen.Rda")
 
 ######################
 # pairs plot
@@ -199,9 +230,8 @@ variable_names <- c(
 )
 
 hist_housing <- ggplot(data = housing, aes(x = percentage)) + 
-  geom_histogram(aes(y = ..density..) ,col = "black", fill= "forest green", alpha = 0.7, breaks=seq(0, 100, by=5), position = "identity") +
+  geom_histogram(aes(y = ..density..) ,fill = "#EEDA9D", color = "#DCA258", breaks=seq(0, 100, by=5), position = "identity") +
   facet_wrap(~ housing_type, labeller = labeller(housing_type= variable_names)) +
-  theme_bw() + 
   labs(x = "Percentage (%)", y = "")
 
 d_for_plot <- d_for_plot %>%
@@ -209,21 +239,20 @@ d_for_plot <- d_for_plot %>%
 data_mig_large <- filter(d_for_plot, number >= 100)
 data_mig_small <- filter(d_for_plot, number < 100)
 hist_mig_small <- ggplot(data = data_mig_small, aes(number)) + 
-  geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20) + theme_bw() +
+  geom_histogram(fill = "#EEDA9D", color = "#DCA258", bins = 10) +
   xlab("Interregional migrants") + ylab("")
 hist_mig_large <- ggplot(data = data_mig_large, aes(number)) + 
-  geom_histogram(col = "black", fill = "forest green", alpha = 0.7, bins = 20) +
+  geom_histogram(fill = "#EEDA9D", color = "#DCA258", bins = 10) +
   scale_x_continuous(breaks=seq(100, 7100, 1000)) +
-  theme_bw() +
   xlab("Interregional migrants") + ylab("")
-hist_mig <- plot_grid(hist_mig_small, hist_mig_large, labels = c("Small flows", "Large flows"), label_x = 0.5, label_y = 0.96)
-  
+hist_mig <- plot_grid(hist_mig_small, hist_mig_large, labels = c("Small flows", "Large flows"), label_x = 0.4, label_y = 0.96)
+hist_mig
 
 pdf(file = "./fig/hist_mig_corop.pdf" ,width=8,height=4) 
 hist_mig
 dev.off()
 
-pdf(file = "./fig/hist_housing_panel_corop.pdf" ,width=8,height=4) 
+pdf(file = "./fig/hist_housing_corop.pdf" ,width=8,height=4) 
 hist_housing 
 dev.off()
 

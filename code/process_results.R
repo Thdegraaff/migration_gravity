@@ -7,42 +7,72 @@ library(sf)
 library(RColorBrewer)
 library(cowplot)
 library(hrbrthemes)
+library(dutchmasters)
+library(rethinking)
+
+######################
+# Set Dutch masters theme
+######################
+
+theme_pearl_earring <- function(light_color = "#E8DCCF", 
+                                dark_color = "#100F14", 
+                                my_family = "Courier",
+                                ...) {
+  
+  theme(line = element_line(color = light_color),
+        text = element_text(color = light_color, family = my_family),
+        strip.text = element_text(color = light_color, family = my_family),
+        axis.text = element_text(color = light_color),
+        axis.ticks = element_line(color = light_color),
+        axis.line = element_blank(),
+        legend.background = element_rect(fill = dark_color, color = "transparent"),
+        legend.key = element_rect(fill = dark_color, color = "transparent"),
+        panel.background = element_rect(fill = dark_color, color = light_color),
+        panel.grid = element_blank(),
+        plot.background = element_rect(fill = dark_color, color = dark_color),
+        strip.background = element_rect(fill = dark_color, color = "transparent"),
+        ...)
+  
+}
+
+# now set `theme_pearl_earring()` as the default theme
+theme_set(theme_pearl_earring())
+
+######################
+# Read in data
+######################
 
 ######################
 # Get subsample of data
 ######################
 
-nr <- 380
+nr <- 40
 
-load(file = "./output/m_srm.rda")
+load(file = "./output/corop_final_model.rda")
 
 
 ######## From rethinking package
-library(rethinking)
-precis(m2)
-list <-  extract.samples( m2 )
-samples <- data.frame(list[1:8], list[10:11])
-samples <- samples[, c(1:8, 10, 13, 14)]
+
+precis(m)
+list <-  extract.samples( m )
+samples <- data.frame(list[1:10])
+samples <- samples[, c(1:8)]
 
 samples <- samples %>%
-  rename(`Intercept` = `a`, 
-         `log(pop_i)` = `b_pop_o`,
-         `log(pop_j)` = `b_pop_d`,
-         `log(home_i)` = `b_hom_o`,
-         `log(home_j)` = `b_hom_d`,
-         `log(soc_i)` = `b_soc_o`,
-         `log(soc_j)` = `b_soc_d`,
-         `log(dist_ij)` = `b_d`,
-         `sigma_o` = `sigma_gr.1`,
-         `sigma_d` = `sigma_gr.2`,
-         `rho` = `Rho_gr.2`
+  rename(`Intercept` = `cons`, 
+         `log(pop_i)` = `b_popA`,
+         `log(pop_j)` = `b_popB`,
+         `log(home_i)` = `b_hA`,
+         `log(home_j)` = `b_hB`,
+         `log(soc_i)` = `b_sA`,
+         `log(soc_j)` = `b_sB`,
+         `log(dist_ij)` = `b_dist`
          )
 
+
 forestplot <- mcmc_intervals(samples, pars = c("Intercept", "log(pop_i)", "log(pop_j)", "log(home_i)", 
-                                   "log(home_j)", "log(soc_i)", "log(soc_j)", "log(dist_ij)", 
-                                   "sigma_o", "sigma_d", "rho")) +
-  theme_fivethirtyeight() +
-  geom_vline(xintercept = 0)
+                                   "log(home_j)", "log(soc_i)", "log(soc_j)", "log(dist_ij)"))  +
+  geom_vline(xintercept = c(-2, -1, 0, 1, 2, 3 , 4), linetype = c(2, 2, 1, 2, 2, 2,2), size = c(1/4, 1/4, 1/2, 1/4, 1/4, 1/4, 1/4), color = "#FCF9F0", alpha = 1/4) 
 
 pdf(file = "./fig/forestplot.pdf", width = 4, height = 5)
 forestplot
@@ -52,65 +82,45 @@ dev.off()
 # Read in data
 ######################
 
-load(file = "./data/derived/migration_2018.Rda")
+load(file = "./data/derived/migration_COROP.Rda")
 
-d <- data
+df <- df %>% filter(year == 2018)
 
-cor_d <- d %>% select(
-  homeowners_d, socialhousing_d, private_rent_d, pop_d, hhgrootte_d
-)
-
-round(cor(cor_d, use = "complete.obs"), 2)
-
-d_t <- data %>%
-  filter(code_o =="GM0363")
-
-d$origin <- as.numeric(as.factor(d$code_o))
-d$destination <- as.numeric(as.factor(d$code_d))
-d <- d %>% filter(origin <= nr, destination <= nr)
-
-d$log_distance <- log(d$distance) - mean(log(d$distance))
-d$pop_o <- log(d$pop_o) - mean(log(d$pop_o) )
-d$pop_d <- log(d$pop_d) - mean(log(d$pop_d) )
-d$soc_d <- log(d$socialhousing_d + 0.001 )
-d$soc_o <- log(d$socialhousing_o + 0.001 )
-d$pri_d <- log(d$private_rent_d + 0.001 )
-d$pri_o <- log(d$private_rent_o + 0.001 )
-d$soc_d <- d$soc_d - mean(d$soc_d)
-d$soc_o <- d$soc_o - mean(d$soc_o)
-d$pri_d <- d$pri_d - mean(d$pri_d)
-d$pri_o <- d$pri_o - mean(d$pri_o)
-# d$hv_d <- log(d$housevalue_d) - mean(log(d$housevalue_d))
-# d$hv_o <- log(d$housevalue_o) - mean(log(d$housevalue_o))
-d$hom_o <- log(d$homeowners_o) - mean(log(d$homeowners_o))
-d$hom_d <- log(d$homeowners_d) - mean(log(d$homeowners_d))
-d$hhsize_d <- log(d$hhgrootte_d) - mean(log(d$hhgrootte_d))
-d$hhsize_o <- log(d$hhgrootte_o) - mean(log(d$hhgrootte_o))
+nr_regions = max(df$destination)
 
 mig_data <- list(
-  migrants  = d$Migrants,
-  # N = nrow(d),
-  N_regions = nr,
-  origin = d$origin,
-  destination = d$destination,
-  log_distance = d$log_distance,
-  pop_o = d$pop_o,
-  pop_d = d$pop_d,
-  hom_o = d$hom_o,
-  hom_d = d$hom_d,
-  soc_o = d$soc_o,
-  soc_d = d$soc_d  
+  origin = df$origin,
+  destination = df$destination,  
+  year = as.factor(df$year),
+  did = df$did,
+  mAB = df$mAB,
+  mBA = df$mBA,
+  nr_regions = max(df$destination),
+  nr = max(df$did),
+  ldist = df$ldist,
+  lpopA = df$lpopA,
+  lpopB = df$lpopB,
+  lhomA = df$lhomA,
+  lsocA = df$lsocA,
+  lhomB = df$lhomB,
+  lsocB = df$lsocB,
+  lrentA = df$lrentA,
+  lrentB = df$lrentB
 )
 
 #############################
 # Careful, will take some time
 ##############################
 
-samplesp <- extract.samples(m2, n = 500)
+samplesp <- extract.samples(m, n = 500)
 
-p <- link(m2, data = mig_data, post = samplesp)
+p <- link(m, data = mig_data, post = samplesp)
+mABp <- round(colMeans(p$lambdaAB))
+mBAp <- round(colMeans(p$lambdaBA))
 
-predict <- round(colMeans(p) )
+
+predict <- c(mABp, mBAp)
+migrants <- c(df$mAB, df$mBA)
 
 ######################
 # Create new data frame
@@ -120,26 +130,24 @@ nr_obs <- nr * (nr - 1)
 
 fit_data <- data.frame(
   type = c( rep("Observed", nr_obs), rep("Predicted", nr_obs) ),
-  Migrants = c( data$Migrants, predict) 
+  Migrants = c(migrants, predict) 
 )
 
-fit_large <- filter(fit_data, Migrants >= 20 & Migrants <= 4020)
-fit_small <- filter(fit_data, Migrants < 20)
+fit_large <- filter(fit_data, Migrants >= 100)
+fit_small <- filter(fit_data, Migrants < 100)
 hist_fit_small <- ggplot(data = fit_small, aes(Migrants, fill = type)) + 
-  geom_histogram( color="black", alpha=0.7, position = 'dodge' , bins = 20) +
-  scale_fill_manual(values=c("forest green", "deepskyblue")) +
-  theme_bw() +
+  geom_histogram( color = "#100F14" , bins = 10, position = 'dodge') +
+  scale_fill_manual(values=c("#DCA258", "#80A0C7")) +
   labs(fill="") 
 hist_fit_large <- ggplot(data = fit_large, aes(Migrants, fill = type)) + 
-  geom_histogram( color="black", alpha=0.7, position = 'dodge', bins = 20) +
+  geom_histogram(color = "#100F14", bins = 10, position = 'dodge') +
   scale_x_continuous(breaks=seq(20, 4020, 1000)) +
-  scale_fill_manual(values=c("forest green", "deepskyblue")) +
-  theme_bw() +
+  scale_fill_manual(values=c("#DCA258", "#80A0C7")) +
   labs(fill="")
 hist_fit <- plot_grid(hist_fit_small + theme(legend.position = "none"), 
                       hist_fit_large + theme(legend.position = "none"), 
                       labels = c("Small flows", "Large flows"), 
-                      label_x = 0.5, label_y = 0.96) 
+                      label_x = 0.4, label_y = 0.96) 
 
 legend_b <- get_legend(hist_fit_small + theme(legend.position="bottom"))
 

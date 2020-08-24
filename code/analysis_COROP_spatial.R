@@ -7,8 +7,39 @@ library("rethinking")
 library("brms")
 library("rcartocolor")
 library("ellipse")
+library("ggplot2")
+library("dutchmasters")
 
 set.seed(5)
+
+######################
+# Set Dutch masters theme
+######################
+
+theme_pearl_earring <- function(light_color = "#E8DCCF", 
+                                dark_color = "#100F14", 
+                                my_family = "Courier",
+                                ...) {
+  
+  theme(line = element_line(color = light_color),
+        text = element_text(color = light_color, family = my_family),
+        strip.text = element_text(color = light_color, family = my_family),
+        axis.text = element_text(color = light_color),
+        axis.ticks = element_line(color = light_color),
+        axis.line = element_blank(),
+        legend.background = element_rect(fill = dark_color, color = "transparent"),
+        legend.key = element_rect(fill = dark_color, color = "transparent"),
+        panel.background = element_rect(fill = dark_color, color = light_color),
+        panel.grid = element_blank(),
+        plot.background = element_rect(fill = dark_color, color = dark_color),
+        strip.background = element_rect(fill = dark_color, color = "transparent"),
+        ...)
+  
+}
+
+# now set `theme_pearl_earring()` as the default theme
+theme_set(theme_pearl_earring())
+
 
 ######################
 # Read in data
@@ -119,7 +150,7 @@ m <- ulam(
   ), data = m_data , chains = 4 , cores = 4 , iter = 4000, warmup = 1000 )
 
 precis(m)
-save(m, file = "./output/corop_null_model_spatial.rda")
+save(m, file = "./output/corop_model_spatial.rda")
 
 precis( m , depth=3 , pars=c("Rho_sp") ) #, "Rho_d","sigma_d") )
 precis( m , depth=3 , pars=c("gsA") ) #, "Rho_d","sigma_d") )
@@ -130,45 +161,85 @@ traceplot(m, pars=c("b_dist"))#, "b_sA", "b_sB", "b_hA", "b_hB", "sigma_y") )
 trankplot(m, pars=c("b_dist","b_sA", "b_sB", "b_hA", "b_hB", "sigma_d") )
 
 post <- extract.samples( m )
-ori <- sapply( 1:nr_regions , function(i) post$cons + post$gsA[,i] )
-des <- sapply( 1:nr_regions , function(i) post$cons + post$gsB[,i] )
-Eo_mu <- apply( exp(ori) , 2 , mean )
-Ed_mu <- apply( exp(des) , 2 , mean )
+g <- sapply( 1:nr_regions , function(i) post$cons + post$gsA[,i] )
+r <- sapply( 1:nr_regions , function(i) post$cons + post$gsB[,i] )
+tibble(g = exp(g[, 1]),
+       r = exp(r[, 1])) %>% 
+  ggplot(aes(x = g, y = r)) +
+  geom_abline(color = "#FCF9F0", linetype = 2, alpha = 1/3) + # white "#FCF9F0" # gold "#B1934A"
+  geom_point(color = "#B1934A", alpha = 1/3, size = 1/4) +
+  stat_ellipse(type = "norm", level = .5, size = 1/2, color = "#80A0C7") +
+  stat_ellipse(type = "norm", level = .9, size = 1/2, color = "#80A0C7") +
+  labs(x = expression(giving[italic(i)==1]),
+       y = expression(receiving[italic(i)==1])) +
+  coord_equal(xlim = c(0, 700),
+              ylim = c(0, 250))
 
-plot( NULL , xlim=c(0 , 700) , ylim=c(0 , 300) , xlab="generalized origin" ,
-      ylab="generalized destination" , lwd= 1.5 )
-abline(a=0, b=1, lty=2)
+data_scatter <- rbind(exp(g), exp(r)) %>% 
+  data.frame() %>% 
+  set_names(1:nr_regions) %>% 
+  mutate(parameter = rep(c("g", "r"), each = n() / 2),
+         iter      = rep(1:12000, times = 2)) %>% 
+  pivot_longer(-c(parameter, iter),
+               names_to = "region") %>% 
+  pivot_wider(names_from = parameter,
+              values_from = value) %>% 
+  group_by(region) %>% 
+  mutate(mu_g = mean(g),
+         mu_r = mean(r)) %>% 
+  nest(data = c("g", "r", "iter")) 
+  
+p_scatter<-  ggplot(data = data_scatter, aes(group = region)) +
+  geom_abline(color = "#FCF9F0", linetype = 2, alpha = 1/3) +
+  stat_ellipse(data = . %>% unnest(data),
+               aes(x = g, y = r),
+               type = "norm", level = .5, size = 1/2, alpha = 1/2, color = "#80A0C7") +
+  geom_point(aes(x = mu_g, y = mu_r),
+             color = "#DCA258") +
+  labs(x = "generalized push",
+       y = "generalized pull") +
+  coord_equal(xlim = c(0, 400),
+              ylim = c(0, 400))
 
-# ellipses1
-for ( i in 1:nr_regions ) {
-  Sigma <- cov( cbind( ori[,i] , des[,i] ) )
-  Mu <- c( mean(ori[,i]) , mean(des[,i]) )
-  for ( l in c(0.5) ) {
-    el <- ellipse( Sigma , centre=Mu , level=l )
-    lines( exp(el) , col=col.alpha("black",0.75) )
-  }
-}
-# household means
-points( Eo_mu , Ed_mu , pch=21 , bg="black" , lwd=1.5 )
+pdf(file = "./fig/scatter.pdf" ,width=5,height=4) 
+p_scatter
+dev.off()
 
 dy1 <- apply( post$d[,,1] , 2 , mean )
 dy2 <- apply( post$d[,,2] , 2 , mean )
-plot( dy1 , dy2, col = col.alpha(rangi2, 0.7) )
-abline(0, 0, lty = 2)
-abline(v = 0, lty =2)
-abline(a=0, b=1, lty=2)
 
-# plot the posterior median covariance function
-plot( NULL , xlab="distance (hundred km)" , ylab="spatial covariance" ,
-      xlim=c(0,1) , ylim=c(0,0.5) )
+p_dyad <- ggplot(data = data.frame(dy1, dy2), aes(dy1, dy2), color = col.alpha("blue",1)) + 
+  geom_point(color = "#8B9DAF", alpha = 1/2, size = 1/2) +
+  xlab("Region i in dyad")+ 
+  ylab("region j in dyad") + 
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + 
+  geom_hline(yintercept=0, color = "#FCF9F0", linetype = 2, alpha = 1/3) + 
+  geom_vline(xintercept=0, color = "#FCF9F0", linetype = 2, alpha = 1/3) + 
+  geom_abline(intercept = 0, slope = 1,  color = "#FCF9F0", linetype = 2, alpha = 1/3)
+p_dyad
 
-# compute posterior mean covariance
-x_seq <- seq( from=0 , to=3.5 , length.out=100 )
-pmcov <- sapply( x_seq , function(x) post$etasq*exp(-post$rhosq*x^2) )
-pmcov_mu <- apply( pmcov , 2 , mean )
-lines( x_seq , pmcov_mu , lwd=5 )
+pdf(file = "./fig/dyad.pdf" ,width=5,height=4) 
+p_dyad
+dev.off()
 
-# plot 50 functions sampled from posterior
-for ( i in 1:100 )
-  curve( post$etasq[i]*exp(-post$rhosq[i]*x^2) , add=TRUE ,
-         col=col.alpha("black",0.2) )
+eta2 <- mean(post$etasq)
+rho2 <- mean(post$rhosq)
+
+# Create plot and add first layer
+p <- ggplot(data = data.frame(x = 0:1, y = 0:1), 
+            aes(x = x, y = y) ) + 
+            ylim(0, 0.5) +
+            xlab("distance (hundred kilometers)")+ 
+            ylab("spatial ovariance") + 
+            theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+
+# Then cycle in all the curve
+for (i in 1:25) {
+  p <- p + stat_function(fun = function(x, i) (post$etasq[i]*exp(-post$rhosq[i]*x^2) ), size = 1/4, alpha = 1/4, color = "#EEDA9D", args=list(i=i)) 
+}
+p <- p + stat_function(fun = function(x) (eta2*exp(-rho2*x^2) ), color = "#DCA258", size = 1) 
+print(p)
+
+pdf(file = "./fig/spatial_autocorrelation.pdf" ,width=4,height=4) 
+p
+dev.off()

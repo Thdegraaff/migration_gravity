@@ -39,7 +39,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 
 \begin{frame}{Housing market and interregional migration: why bother?}
    	\begin{itemize}
-   		\item Current Dutch housing market:
+   		\item Current Dutch (tight) housing market:
    		\begin{itemize}
    			\item large \alert{shortage} of housing
    			\item large yearly prices \alert{increases} ($\approx 10\%$ annually)
@@ -84,13 +84,15 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
     migration flows using a Bayesian multilevel gravity model
     \begin{footnotesize}
 	\begin{itemize}
-	\item \footnotesize UK context by \citet{congdon2010random}
-	\item \footnotesize Social relations model \emph{cf.} \citet{koster2014food} \newline
-\end{itemize}
-    \end{footnotesize}
-  \item[And] \alert{Predict} all changes in incoming and
-    outcoming migration flows when housing market structure changes
-\end{description}
+	  \item \footnotesize UK context by \citet{congdon2010random}
+	  \item \footnotesize social relations model \emph{cf.}
+		\citet{koster2014food}
+		\item \footnotesize code mostly from \citet{mcelreath2018statistical}
+		\item \footnotesize diagrams from \href{https://bookdown.org/content/4857/}{Solomon Kurz}\newline
+	\end{itemize}
+  \end{footnotesize}
+	\item[Aim] To \alert{model} the impact of housing market structure on the whole \alert{network} of interregional migration flows
+  \end{description}
 \end{frame}
 
 
@@ -130,7 +132,7 @@ There are at least two \alert{levels} in migration (I use three)
 	
 	\end{tikzpicture}
 \end{figure}\pause	
-	\item[Observed flows between region \alert{pairs}] migration from $i \rightarrow j$ is correlated with migration from $j \rightarrow i$ (obs $= R^2/2$)
+	\item[Observed flows between region \alert{dyads}] migration from $i \rightarrow j$ is correlated with migration from $j \rightarrow i$ (obs $= R^2/2$)
 			\begin{figure}	
 		\begin{tikzpicture}[scale=0.90, thick]
 		
@@ -177,13 +179,35 @@ There are at least two \alert{levels} in migration (I use three)
 
 \begin{frame}{Data: regional housing structure in 2018}
 \begin{center}
-	\includegraphics[width=0.8\textwidth]{../../fig/hist_housing}      
+	\includegraphics[width=0.8\textwidth]{../../fig/hist_housing_corop}
 \end{center}
 \begin{itemize}
 	\item Positive correlation between region size and share social renting ($0.46$)
 	\item Negative correlation between share social renting and share home-ownership ($-0.88)$
 \end{itemize}
 \end{frame}
+
+\begin{frame}{Data: regional housing structure in 2018 (cont.)}
+		\begin{columns}
+	\begin{column}{0.5\textwidth}
+	  \begin{center}
+		\begin{figure}
+		  \includegraphics[width=1.1\textwidth]{../../fig/p_homeown}
+		  \caption{Share of homeownership}
+		  \end{figure}
+		\end{center}
+	\end{column}
+	\begin{column}{0.5\textwidth}
+		\begin{center}
+		  \begin{figure}
+		  \includegraphics[width=1.1\textwidth]{../../fig/p_socrent}
+		  \caption{Share of social renting}
+		  \end{figure}
+		\end{center}
+	\end{column}
+\end{columns}
+\end{frame}
+
 
 \begin{frame}{Modeling framework: traditional gravity modeling}
 	\begin{equation*}
@@ -219,29 +243,33 @@ There are at least two \alert{levels} in migration (I use three)
 
 \begin{frame}[fragile]{Modeling framework: multilevel gravity modeling}
 \begin{small}
-	\begin{align} \text{Migrants}_{ij} \sim & \text{ Poisson}(\lambda_{ij}) \tag{\footnotesize \color{blue} flow of migrants} \\ \pause
-	\log(\lambda_{ij}) =
-	& \: \alpha + o_{\text{mun}[i]} + d_{\text{mun}[j]} + \tag{\footnotesize
-   \color{blue} city effects}  \\ \pause
-	& \: \beta_1 \log(\text{pop}_i) + \notag
-	\beta_2\log(\text{pop}_j) + \notag \\ & \beta_3
-	\log(\text{home}_i) + \beta_4 \log(\text{home}_j) + \notag\\
-	& \: \beta_5 \log(\text{soc}_i) + \beta_6 \log(\text{soc}_j) + \notag \\ 
-	& \: \beta_7 \log(\text{dist}_{ij})  \tag{\footnotesize \color{blue} explanatory variables}  \\ \pause
+  \begin{align}
+	\text{Migrants}_{ij} \sim & \text{ Poisson}(\lambda_{ij}) \notag \\
+	\text{Migrants}_{ji} \sim & \text{ Poisson}(\lambda_{ji}) \tag{\footnotesize \color{blue} flow of migrants} \\ \pause
+	\log(\lambda_{ij}) =  & \: \alpha + o_{i} + d_{j} + \text{dyad}_{ij} +\tag{\footnotesize
+							\color{blue} correlation structure}  \\ \pause
+							  & \: \mathbf{X}_{i}  \beta_{i}+ \mathbf{X}_{j} \beta_{j}  \tag{\footnotesize \color{blue} explanatory variables}  \\ \pause
+	\log(\lambda_{ji}) =  & \: \alpha + o_{j} + d_{i} + \text{dyad}_{ji} + \notag \\
+							  & \: \mathbf{X}_{j}  \beta_{i}+ \mathbf{X}_{i} \beta_{j} \notag  \\ \pause
 	\left(\begin{matrix} 
-	o_{\text{mun}} \\
-	d_{\text{mun}}
+		o_{i} \\
+		d_{j}
 	\end{matrix}\right) \sim& \text{ MVNormal}\left( \left( \begin{matrix}
 	0 \\
 	0 
 	\end{matrix}\right) , \left(\begin{matrix}
 	\sigma_o^2 & \sigma_o \sigma_d \rho \\
 	 \sigma_o \sigma_d \rho  & \sigma_d^2
-	\end{matrix}\right) \right)  \tag{\footnotesize \color{blue} varying region effects}  \\ \pause
-			\beta_7 \sim& \text{ Normal}(-1,1) \tag{\footnotesize \color{blue} prior} \\ 
-	\alpha, \beta_1,\ldots, \beta_6 \sim& \text{
-		Normal}(0,2) \tag{\footnotesize \color{blue} priors} \\ 
-	\sigma_o, \sigma_d \sim& \text{ HalfCauchy}(0,1) \tag{\footnotesize \color{blue} priors} 
+	\end{matrix}\right) \right)  \tag{\footnotesize \color{blue} varying region effects}  \\ \pause 	\left(\begin{matrix} 
+		\text{dyad}_{ij} \\
+		\text{dyad}_{ji}
+	\end{matrix}\right) \sim& \text{ MVNormal}\left( \left( \begin{matrix}
+	0 \\
+	0 
+	\end{matrix}\right) , \left(\begin{matrix}
+	\sigma_{\text{dyad}}^2 & \sigma_{\text{dyad}}^2 \rho_{\text{dyad}} \\
+	 \sigma_{\text{dyad}}^2 \rho_{\text{dyad}}  & \sigma_{\text{dyad}}^2
+	\end{matrix}\right) \right)  \tag{\footnotesize \color{blue} varying dyad effects}
 	\end{align}
 \end{small}
 \end{frame}
@@ -259,17 +287,14 @@ There are at least two \alert{levels} in migration (I use three)
 				\toprule
 				Parameter & mean & sd \\ 
 				\midrule
-				Intercept      & $-0.34$ & 0.05 \\ 
-				log(pop$_i$)   & 0.88 & 0.04  \\ 
-				log(pop$_j$)   & 0.91 & 0.05  \\ 
-				log(home$_i$)  & $-0.44$ & 0.18 \\ 
-				log(home$_j$)  & $-0.69$ & 0.22  \\ 
-				log(soc$_i$)   & $-0.08$ & 0.03  \\
-				log(soc$_j$)   & $-0.08$ & 0.04 \\ 
-				log(dist$_{ij})$ & $-1.88$ & 0.01  \\ 
-				$\sigma_o$    & 0.54 & 0.02  \\ 
-				$\sigma_d$    & 0.43 & 0.02  \\ 
-				$\rho$        & 0.88 & 0.01  \\ 
+				Intercept ($\alpha$)      & $4.49$ & 0.15 \\
+				log(pop$_i$)   & 0.40 & 0.04  \\
+				log(pop$_j$)   & 0.64 & 0.03  \\
+				log(home$_i$)  & $1.80$ & 0.10 \\
+				log(home$_j$)  & $-0.50$ & 0.09 \\
+				log(soc$_i$)   & $0.77$ & 0.07 \\
+				log(soc$_j$)   & $0.06$ & 0.07 \\
+				log(dist$_{ij})$ & $-1.62$ & 0.03  \\
 				\bottomrule
 			\end{tabular}
 		\end{small}
@@ -284,47 +309,26 @@ There are at least two \alert{levels} in migration (I use three)
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Robustness checks for impact social renting}
-			\begin{columns}
-		\begin{column}{0.5\textwidth}
-			\begin{itemize}
-				\item  \alert{impact} $soc \approx 0$ \newline \pause
-				\item Robust to:
-				\begin{itemize}
-					\item year
-					\item interaction effects with population \& home-ownership
-					\item varying slopes (e.g, $o_{\text{mun}[i]} + \beta_{\text{mun}[i]} \log(\text{soc}_i)$) 
-					\item Inclusion of household size\pause
-				\end{itemize}
-			\end{itemize}
-		\end{column}
-		\begin{column}{0.5\textwidth} 
-			\alert{Assuming} the following causal graph (\emph{dag} )
-			\begin{center}
-				\includegraphics[width=\textwidth]{../../fig/dag}      
-			\end{center}
-		\end{column}
-	\end{columns}
-\end{frame}
 
-\begin{frame}{Observed versus predicted flows}
+
+\begin{frame}{Observed versus predicted flows (correlation $\approx 0.99$ )}
 \begin{center}
 	\includegraphics[width=0.9\textwidth]{../../fig/hist_fit}      
 \end{center}
 \begin{itemize}
-	\item \alert{maximum} observed flow: 3,573
-	\item \alert{maximum} predicted flow: 3,584
+	\item \alert{maximum} observed flow: 6,555
+	\item \alert{maximum} predicted flow: 4,704
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Correlation between origin an destination $\rho = 0.88$}
+\begin{frame}{Correlation between origin and destination $\rho = 0.88$}
 				\begin{center}
-		\includegraphics[width=\textwidth]{../../fig/correlation}      
+		\includegraphics[width=0.9\textwidth]{../../fig/scatter}
 	\end{center}
 \end{frame}
 
 
-\begin{frame}{$d_{\text{mun}}$ as measure of attractivity?}
+\begin{frame}{Asymmetric push and pull factors}
 		\begin{columns}
 	\begin{column}{0.5\textwidth}
 		\begin{center}
@@ -339,16 +343,32 @@ There are at least two \alert{levels} in migration (I use three)
 \end{columns}
 \end{frame}
 
-\begin{frame}{Home-ownership rate in Amsterdam increases with 10\% and social renting decreases with 10\%}
-	\begin{columns}
+\begin{frame}{Dyad specific effects $\rho = 0.8$}
+				\begin{center}
+		\includegraphics[width=0.9\textwidth]{../../fig/dyad}
+	\end{center}
+\end{frame}
+
+\begin{frame}{sensitivity checks}
+			\begin{columns}
 		\begin{column}{0.5\textwidth}
-			\begin{center}
-				\includegraphics[width=1.1\textwidth]{../../fig/p_diff_out}      
-			\end{center}
+				Results are \alert{robust} to
+				\begin{itemize}
+					\item year\pause
+					\item interaction effects with population \pause
+				  \item inclusion of household size \pause
+				  \item spatial autocorrelation in regional effects:
+					\begin{eqnarray*}
+					  o_{i}, d_{j}& \sim &\text{MVNormal}(0, \mathbf{K})\\
+					  \mathbf{K}_{ij} & = & \eta^{2}\exp(\rho^{2}\mathbf{D}_{ij})
+					\end{eqnarray*}
+					\pause
+				  \end{itemize}
 		\end{column}
-		\begin{column}{0.5\textwidth} 	
+		\begin{column}{0.5\textwidth}
+			\alert{Modest} spatial autocorrelation
 			\begin{center}
-				\includegraphics[width=1.1\textwidth]{../../fig/p_diff_in}      
+				\includegraphics[width=\textwidth]{../../fig/spatial_autocorrelation}
 			\end{center}
 		\end{column}
 	\end{columns}
@@ -357,23 +377,26 @@ There are at least two \alert{levels} in migration (I use three)
 \begin{frame}{Conclusions}
 \textbf{Flexibel and powerful Bayesian multilevel gravity model}:
 \begin{itemize}
-	\item homeownership has a a high negative impact on migration
-	\item social renting has elasticity close to \alert{zero} \citep{boyle1998migration}
+  \item housing structure asymmetric impact on migration
+  \begin{itemize}
+	\item positive on push/negative on pull
+	\item push factor large in large cities
+  \end{itemize}
+	\item impact social renting smaller than homeowership
+\citep{boyle1998migration}
 	\begin{itemize}
-		\item social housing is almost \alert{a different ball game}
-		\item no interaction with homeowership, private renting or household size
+	  \item social housing is like a \alert{different ball game}
 	\end{itemize}
+	\item tight housing market
 \end{itemize}
 
 \textbf{Now what?}
 \begin{itemize}
-	\item additional model structure
+	\item model \alert{performance} is quite good
 	\begin{itemize}
-		\item correlation between \alert{dyads} ($\text{Migrants}_{ij}$ and $\text{Migrants}_{ji}$)
-		\item \alert{spatial} autocorrelation in regional varying effects
-		\item create panel data
+	  \item out-of-sample prediction
+	  \item \alert{long-distance} migration (dyad effects)
 	\end{itemize}
-\item Additional covariates (age, income)
 \end{itemize}
 \end{frame}
 
