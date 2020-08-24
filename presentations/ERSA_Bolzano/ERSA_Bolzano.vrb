@@ -10,7 +10,7 @@
 							  & \: \mathbf{X}_{j}  \beta_{i}+ \mathbf{X}_{i} \beta_{j} \notag  \\ \pause
 	\left(\begin{matrix}
 		o_{i} \\
-		d_{j}
+		d_{i}
 	\end{matrix}\right) \sim& \text{ MVNormal}\left( \left( \begin{matrix}
 	0 \\
 	0

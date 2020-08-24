@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.8)  24 AUG 2020 09:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.8)  24 AUG 2020 14:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1557,7 +1557,8 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <8> not available
 
 ] (./ERSA_Bolzano.vrb) [9
 
-] [10
+] (./ERSA_Bolzano.vrb)
+[10
 
 ] [11
 
@@ -1565,27 +1566,29 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <8> not available
 
 ] [13
 
+] [14
+
 ]
-<../../fig/hist_mig_corop.pdf, id=117, 578.16pt x 289.08pt>
+<../../fig/hist_mig_corop.pdf, id=124, 578.16pt x 289.08pt>
 File: ../../fig/hist_mig_corop.pdf Graphic file (type pdf)
 
 <use ../../fig/hist_mig_corop.pdf>
 Package pdftex.def Info: ../../fig/hist_mig_corop.pdf used on input line 178.
 (pdftex.def)             Requested size: 245.83282pt x 122.9125pt.
- [14
+ [15
 
  <../../fig/hist_mig_corop.pdf>]
-<../../fig/hist_housing_corop.pdf, id=129, 578.16pt x 289.08pt>
+<../../fig/hist_housing_corop.pdf, id=136, 578.16pt x 289.08pt>
 File: ../../fig/hist_housing_corop.pdf Graphic file (type pdf)
 
 <use ../../fig/hist_housing_corop.pdf>
 Package pdftex.def Info: ../../fig/hist_housing_corop.pdf used on input line 18
 8.
 (pdftex.def)             Requested size: 245.83282pt x 122.9125pt.
- [15
+ [16
 
  <../../fig/hist_housing_corop.pdf>]
-<../../fig/p_homeown.pdf, id=140, 650.43pt x 578.16pt>
+<../../fig/p_homeown.pdf, id=147, 650.43pt x 578.16pt>
 File: ../../fig/p_homeown.pdf Graphic file (type pdf)
 
 <use ../../fig/p_homeown.pdf>
@@ -1596,7 +1599,7 @@ Overfull \hbox (15.36542pt too wide) in paragraph at lines 209--209
  [] 
  []
 
-<../../fig/p_socrent.pdf, id=141, 650.43pt x 578.16pt>
+<../../fig/p_socrent.pdf, id=148, 650.43pt x 578.16pt>
 File: ../../fig/p_socrent.pdf Graphic file (type pdf)
 
 <use ../../fig/p_socrent.pdf>
@@ -1607,23 +1610,17 @@ Overfull \hbox (15.36542pt too wide) in paragraph at lines 209--209
  [] 
  []
 
-[16
+[17
 
- <../../fig/p_homeown.pdf> <../../fig/p_socrent.pdf>] [17
+ <../../fig/p_homeown.pdf> <../../fig/p_socrent.pdf>] [18
 
-] [18
+] [19
 
 ]
 \openout4 = `ERSA_Bolzano.vrb'.
 
 
 (./ERSA_Bolzano.vrb)
-Overfull \vbox (11.99399pt too high) detected at line 275
- []
-
-[19
-
-] (./ERSA_Bolzano.vrb)
 Overfull \vbox (11.99399pt too high) detected at line 275
  []
 
@@ -1653,25 +1650,31 @@ Overfull \vbox (11.99399pt too high) detected at line 275
 
 [24
 
-] <../../fig/forestplot.pdf, id=212, 289.08pt x 361.35pt>
+] (./ERSA_Bolzano.vrb)
+Overfull \vbox (11.99399pt too high) detected at line 275
+ []
+
+[25
+
+] <../../fig/forestplot.pdf, id=220, 289.08pt x 361.35pt>
 File: ../../fig/forestplot.pdf Graphic file (type pdf)
 
 <use ../../fig/forestplot.pdf>
 Package pdftex.def Info: ../../fig/forestplot.pdf used on input line 310.
 (pdftex.def)             Requested size: 153.64493pt x 192.05493pt.
- [25
+ [26
 
  <../../fig/forestplot.pdf>]
-<../../fig/hist_fit.pdf, id=229, 578.16pt x 289.08pt>
+<../../fig/hist_fit.pdf, id=236, 578.16pt x 289.08pt>
 File: ../../fig/hist_fit.pdf Graphic file (type pdf)
 
 <use ../../fig/hist_fit.pdf>
 Package pdftex.def Info: ../../fig/hist_fit.pdf used on input line 322.
 (pdftex.def)             Requested size: 276.559pt x 138.27602pt.
- [26
+ [27
 
  <../../fig/hist_fit.pdf>]
-<../../fig/scatter.pdf, id=243, 361.35pt x 289.08pt>
+<../../fig/scatter.pdf, id=250, 361.35pt x 289.08pt>
 File: ../../fig/scatter.pdf Graphic file (type pdf)
 
 <use ../../fig/scatter.pdf>
@@ -1681,10 +1684,10 @@ Package pdftex.def Info: ../../fig/scatter.pdf used on input line 328.
 Overfull \vbox (21.901pt too high) detected at line 328
  []
 
-[27
+[28
 
  <../../fig/scatter.pdf>]
-<../../fig/p_coef_out.pdf, id=259, 650.43pt x 578.16pt>
+<../../fig/p_coef_out.pdf, id=266, 650.43pt x 578.16pt>
 File: ../../fig/p_coef_out.pdf Graphic file (type pdf)
 
 <use ../../fig/p_coef_out.pdf>
@@ -1695,7 +1698,7 @@ Overfull \hbox (15.36542pt too wide) in paragraph at lines 344--344
  [] 
  []
 
-<../../fig/p_coef_in.pdf, id=260, 650.43pt x 578.16pt>
+<../../fig/p_coef_in.pdf, id=267, 650.43pt x 578.16pt>
 File: ../../fig/p_coef_in.pdf Graphic file (type pdf)
 
 <use ../../fig/p_coef_in.pdf>
@@ -1706,10 +1709,10 @@ Overfull \hbox (15.36542pt too wide) in paragraph at lines 344--344
  [] 
  []
 
-[28
+[29
 
  <../../fig/p_coef_out.pdf> <../../fig/p_coef_in.pdf>]
-<../../fig/dyad.pdf, id=280, 361.35pt x 289.08pt>
+<../../fig/dyad.pdf, id=287, 361.35pt x 289.08pt>
 File: ../../fig/dyad.pdf Graphic file (type pdf)
  <use ../../fig/dyad.pdf>
 Package pdftex.def Info: ../../fig/dyad.pdf used on input line 350.
@@ -1718,30 +1721,21 @@ Package pdftex.def Info: ../../fig/dyad.pdf used on input line 350.
 Overfull \vbox (21.901pt too high) detected at line 350
  []
 
-[29
+[30
 
  <../../fig/dyad.pdf>]
-<../../fig/spatial_autocorrelation.pdf, id=296, 289.08pt x 289.08pt>
+<../../fig/spatial_autocorrelation.pdf, id=304, 289.08pt x 289.08pt>
 File: ../../fig/spatial_autocorrelation.pdf Graphic file (type pdf)
 
 <use ../../fig/spatial_autocorrelation.pdf>
-Package pdftex.def Info: ../../fig/spatial_autocorrelation.pdf used on input li
-ne 375.
-(pdftex.def)             Requested size: 153.64493pt x 153.64394pt.
- [30
-
- <../../fig/spatial_autocorrelation.pdf>]
-File: ../../fig/spatial_autocorrelation.pdf Graphic file (type pdf)
- <use ../../fig/spatial_autocorrelation.pdf>
 Package pdftex.def Info: ../../fig/spatial_autocorrelation.pdf used on input li
 ne 375.
 (pdftex.def)             Requested size: 153.64493pt x 153.64394pt.
  [31
 
-]
+ <../../fig/spatial_autocorrelation.pdf>]
 File: ../../fig/spatial_autocorrelation.pdf Graphic file (type pdf)
-
-<use ../../fig/spatial_autocorrelation.pdf>
+ <use ../../fig/spatial_autocorrelation.pdf>
 Package pdftex.def Info: ../../fig/spatial_autocorrelation.pdf used on input li
 ne 375.
 (pdftex.def)             Requested size: 153.64493pt x 153.64394pt.
@@ -1765,11 +1759,20 @@ ne 375.
 (pdftex.def)             Requested size: 153.64493pt x 153.64394pt.
  [34
 
-] [35
+]
+File: ../../fig/spatial_autocorrelation.pdf Graphic file (type pdf)
+
+<use ../../fig/spatial_autocorrelation.pdf>
+Package pdftex.def Info: ../../fig/spatial_autocorrelation.pdf used on input li
+ne 375.
+(pdftex.def)             Requested size: 153.64493pt x 153.64394pt.
+ [35
 
 ] [36
 
 ] [37
+
+] [38
 
 ]
 
@@ -1779,10 +1782,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Missing character: There is no â in font cmss9!
 Missing character: There is no € in font cmss9!
 Missing character: There is no ™ in font cmss9!
-[38
+[39
 
  </usr/local/texlive/2017/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf
->] [39
+>] [40
 
 
 ]
@@ -1815,11 +1818,11 @@ Package logreq Info: Writing requests to 'ERSA_Bolzano.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38909 strings out of 492995
- 926841 string characters out of 6132704
+ 38915 strings out of 492995
+ 926913 string characters out of 6132704
  1300484 words of memory out of 5000000
- 41602 multiletter control sequences out of 15000+600000
- 21868 words of font info for 79 fonts, out of 8000000 for 9000
+ 41603 multiletter control sequences out of 15000+600000
+ 22035 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,20n,98p,1934b,1836s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pf
@@ -1835,13 +1838,15 @@ local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/
 local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/l
 ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/lo
 cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
-al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/
-texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ERSA_Bolzano.pdf (39 pages, 355919 bytes).
+al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local
+/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on ERSA_Bolzano.pdf (40 pages, 374076 bytes).
 PDF statistics:
- 445 PDF objects out of 1000 (max. 8388607)
- 349 compressed objects within 4 object streams
- 92 named destinations out of 1000 (max. 500000)
+ 458 PDF objects out of 1000 (max. 8388607)
+ 359 compressed objects within 4 object streams
+ 94 named destinations out of 1000 (max. 500000)
  106 words of extra memory for PDF output out of 10000 (max. 10000000)
 

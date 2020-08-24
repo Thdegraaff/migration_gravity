@@ -18,7 +18,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ERSA_Bolzano-blx.bib
 Database file #2: ../../paper/references.bib
-Repeated entry---line 215 of file ../../paper/references.bib
+Repeated entry---line 192 of file ../../paper/references.bib
  : @article{dietz2003social
  :                         ,
 I'm skipping whatever remains of this entry
@@ -27,37 +27,37 @@ Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 You've used 12 entries,
             6256 wiz_defined-function locations,
-            1244 strings with 10339 characters,
-and the built_in function-call counts, 58967 in all, are:
-= -- 3852
-> -- 1238
-< -- 423
-+ -- 1163
-- -- 395
-* -- 4195
-:= -- 5260
+            1244 strings with 10328 characters,
+and the built_in function-call counts, 58745 in all, are:
+= -- 3828
+> -- 1232
+< -- 417
++ -- 1157
+- -- 394
+* -- 4191
+:= -- 5253
 add.period$ -- 0
 call.type$ -- 12
-change.case$ -- 263
+change.case$ -- 257
 chr.to.int$ -- 30
 cite$ -- 22
-duplicate$ -- 6085
-empty$ -- 5807
+duplicate$ -- 6064
+empty$ -- 5793
 format.name$ -- 733
-if$ -- 12667
+if$ -- 12611
 int.to.chr$ -- 0
 int.to.str$ -- 32
 missing$ -- 0
-newline$ -- 337
-num.names$ -- 619
-pop$ -- 3801
+newline$ -- 336
+num.names$ -- 613
+pop$ -- 3800
 preamble$ -- 1
-purify$ -- 304
+purify$ -- 298
 quote$ -- 0
-skip$ -- 2221
+skip$ -- 2204
 stack$ -- 0
-substring$ -- 6141
-swap$ -- 1719
+substring$ -- 6110
+swap$ -- 1711
 text.length$ -- 306
 text.prefix$ -- 12
 top$ -- 1
@@ -65,5 +65,5 @@ type$ -- 395
 warning$ -- 0
 while$ -- 607
 width$ -- 0
-write$ -- 326
+write$ -- 325
 (There was 1 error message)

@@ -39,17 +39,17 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 
 \begin{frame}{Housing market and interregional migration: why bother?}
    	\begin{itemize}
-   		\item Current Dutch (tight) housing market:
+   		\item Dutch housing market: tight and regulated
    		\begin{itemize}
    			\item large \alert{shortage} of housing
-   			\item large yearly prices \alert{increases} ($\approx 10\%$ annually)
+   			\item large yearly prices \alert{increases} ($\approx 5\%-9\%$ annually)
    			\item decrease in housing \alert{transactions}
    			\item large \alert{regional} variation\newline \pause
    		\end{itemize}
             \item Regional Dutch population projections (PEARL)  $\longrightarrow$ difficulties with \alert{interregional} migration
             \begin{itemize}
             \item especially long-distance migration  
-            \item input for changes in local housing supply \newline \pause
+            \item changes in local housing supply as input \newline \pause
             \end{itemize}
    		\item Large literature of \alert{external} effects of home-ownership \footnotesize{\citep{dietz2003social}}
    		\begin{itemize}
@@ -87,8 +87,8 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	  \item \footnotesize UK context by \citet{congdon2010random}
 	  \item \footnotesize social relations model \emph{cf.}
 		\citet{koster2014food}
-		\item \footnotesize code mostly from \citet{mcelreath2018statistical}
-		\item \footnotesize diagrams from \href{https://bookdown.org/content/4857/}{Solomon Kurz}\newline
+		\item \footnotesize \emph{Statistical Rethinking} from \citet{mcelreath2020statistical}
+		\item \footnotesize \texttt{ggplot2} code from \href{https://bookdown.org/content/4857/}{Solomon Kurz} (2020) \newline
 	\end{itemize}
   \end{footnotesize}
 	\item[Aim] To \alert{model} the impact of housing market structure on the whole \alert{network} of interregional migration flows
@@ -97,7 +97,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 
 
 \begin{frame}[fragile]{Why a \textbf{multilevel} approach for migration?}
-There are at least two \alert{levels} in migration (I use three)
+There are at least two \alert{levels} in migration (I use three) \pause
 \begin{description}
 	\item[Observed migration \alert{flows}] Migration between $i$ and $j$ with friction (e.g., distance) attributes (obs = $R^2 - R$)
 		\begin{figure}	
@@ -132,7 +132,7 @@ There are at least two \alert{levels} in migration (I use three)
 	
 	\end{tikzpicture}
 \end{figure}\pause	
-	\item[Observed flows between region \alert{dyads}] migration from $i \rightarrow j$ is correlated with migration from $j \rightarrow i$ (obs $= R^2/2$)
+	\item[Observed flows between region \alert{dyads}] migration from $i \rightarrow j$ is correlated with migration from $j \rightarrow i$ (obs $= \frac{R^{2}- R}{2}$)
 			\begin{figure}	
 		\begin{tikzpicture}[scale=0.90, thick]
 		
@@ -158,7 +158,7 @@ There are at least two \alert{levels} in migration (I use three)
     	\item no two-stage models anymore 
     	\item precision (standard errors) is correct\pause
     \end{itemize}
-	\item \alert{Partial pooling}: origin and destination specific effects are draws from a distribution: usually $\sim \text{ Normal}(\alpha, \sigma)$
+	\item \alert{Partial pooling}: For example, origin specific effects are drawn from a distribution: usually $\sim \text{ Normal}(\alpha, \sigma)$
 	\begin{itemize}
 		\item $\sigma \longrightarrow 0$ : complete pooling
 		\item $\sigma \longrightarrow \infty$ : no pooling (fixed effects)
@@ -253,7 +253,7 @@ There are at least two \alert{levels} in migration (I use three)
 							  & \: \mathbf{X}_{j}  \beta_{i}+ \mathbf{X}_{i} \beta_{j} \notag  \\ \pause
 	\left(\begin{matrix} 
 		o_{i} \\
-		d_{j}
+		d_{i}
 	\end{matrix}\right) \sim& \text{ MVNormal}\left( \left( \begin{matrix}
 	0 \\
 	0 
@@ -360,7 +360,7 @@ There are at least two \alert{levels} in migration (I use three)
 				  \item spatial autocorrelation in regional effects:
 					\begin{eqnarray*}
 					  o_{i}, d_{j}& \sim &\text{MVNormal}(0, \mathbf{K})\\
-					  \mathbf{K}_{ij} & = & \eta^{2}\exp(\rho^{2}\mathbf{D}_{ij})
+					  \mathbf{K}_{ij} & = & \eta^{2}\exp(-\rho^{2}\mathbf{D}_{ij})
 					\end{eqnarray*}
 					\pause
 				  \end{itemize}

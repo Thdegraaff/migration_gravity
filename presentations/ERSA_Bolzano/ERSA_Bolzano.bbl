@@ -240,7 +240,7 @@
     \field{year}{2014}
   \endentry
 
-  \entry{mcelreath2018statistical}{book}{}
+  \entry{mcelreath2020statistical}{book}{}
     \name{author}{1}{}{%
       {{hash=MR}{%
          family={McElreath},
@@ -249,20 +249,19 @@
          giveni={R\bibinitperiod},
       }}%
     }
-    \list{publisher}{2}{%
-      {Chapman}%
-      {Hall/CRC}%
+    \list{publisher}{1}{%
+      {CRC press}%
     }
     \strng{namehash}{MR1}
     \strng{fullhash}{MR1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2018}
+    \field{labelyear}{2020}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{title}{Statistical rethinking: A Bayesian course with examples in R
   and Stan}
-    \field{year}{2018}
+    \field{year}{2020}
   \endentry
 
   \entry{oswald1996conjecture}{report}{}
