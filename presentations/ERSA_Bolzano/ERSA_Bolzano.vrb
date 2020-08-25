@@ -4,7 +4,7 @@
 	\text{Migrants}_{ij} \sim & \text{ Poisson}(\lambda_{ij}) \notag \\
 	\text{Migrants}_{ji} \sim & \text{ Poisson}(\lambda_{ji}) \tag{\footnotesize \color{blue} flow of migrants} \\ \pause
 	\log(\lambda_{ij}) =  & \: \alpha + o_{i} + d_{j} + \text{dyad}_{ij} +\tag{\footnotesize
-							\color{blue} correlation structure}  \\ \pause
+							\color{blue} varying effects}  \\ \pause
 							  & \: \mathbf{X}_{i}  \beta_{i}+ \mathbf{X}_{j} \beta_{j}  \tag{\footnotesize \color{blue} explanatory variables}  \\ \pause
 	\log(\lambda_{ji}) =  & \: \alpha + o_{j} + d_{i} + \text{dyad}_{ji} + \notag \\
 							  & \: \mathbf{X}_{j}  \beta_{i}+ \mathbf{X}_{i} \beta_{j} \notag  \\ \pause

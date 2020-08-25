@@ -230,7 +230,7 @@ p <- ggplot(data = data.frame(x = 0:1, y = 0:1),
             aes(x = x, y = y) ) + 
             ylim(0, 0.5) +
             xlab("distance (hundred kilometers)")+ 
-            ylab("spatial ovariance") + 
+            ylab("spatial covariance") + 
             theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
 
 # Then cycle in all the curve
