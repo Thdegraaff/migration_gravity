@@ -27,11 +27,20 @@
     neighborhood: positive effect. But negative effect for further away!
 * Onderzoeksdagboek
 ** 02-09-2019
-   Ik focus op wooncorporaties met interactie effecten tussen distance en
-   bevolking. Helaas, nog nergens zie ik effecten.
+    Ik focus op wooncorporaties met interactie effecten tussen distance en
+    bevolking. Helaas, nog nergens zie ik effecten.
 ** 19-02-2020
- Het effect van sociale woningen (corporaties) blijft op het moment dat private
- huur meegenomen wordt. Effect van private huur is grote dan sociale huur welke
- weer groter is dan koopwoningen. Op het moment dat huishoudsgrootte meegenomen
- wordt blijven alle effecten gelijk, behalve koopwoningen welke positief wordt.
- Dit laatste is logisch, maar wat zegt dit over causaliteit?
+ Het effect van sociale woningen (corporaties) blijft op het moment dat
+ private huur meegenomen wordt. Effect van private huur is grote dan sociale
+ huur welke weer groter is dan koopwoningen. Op het moment dat huishoudsgrootte
+ meegenomen wordt blijven alle effecten gelijk, behalve koopwoningen welke
+ positief wordt. Dit laatste is logisch, maar wat zegt dit over causaliteit?
+** 26-08-2020
+    Presented yesterday online at ERSA. Comment from Viktor about whether the size
+    of regions is accociated with push factor (it sort of is). So points in
+    scatterplot are now related to size of the regions. Key-note
+    Pierre-Alexandre Balland mentioned the word Exodus. Is that also not what we
+    see. An exodus from cities by the incumbent population in search for
+    better/suitable/bigger/cheaper housing. Or in other words: the triumph of
+    the city is only for a few--most of the population experiences something
+    else.

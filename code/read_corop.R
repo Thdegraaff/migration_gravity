@@ -78,6 +78,19 @@ d <- d %>%
   select( -id ) %>% # we do not need this variable
   filter(destination != origin, year != 2011, origin <= nr_corop, destination <= nr_corop) # not interested in within migration
 
+d_in <- d %>% 
+  filter(destination == 23) %>% 
+  group_by(year) %>%
+  summarise(total_in = sum(number))
+
+d_out <- d %>% 
+  filter(origin == 23) %>% 
+  group_by(year) %>%
+  summarise(total_out = sum(number))
+
+mig_adam <- right_join(d_in, d_out, by = "year") %>%
+  mutate(net_out = total_out - total_in)
+
 d_for_plot <- d
 
 bev <- read.csv2(file = "./data/src/COROP/bevolking.csv", sep = ";", header = FALSE, skip = 1)
@@ -119,6 +132,13 @@ pairs(~ ownership + socialrent + rent + population, data = df_pairs, col = rangi
 ######################
 
 cor(df_pairs)
+
+plot_adam <- ggplot(mig_adam, aes(x = year, y= net_out)) + 
+  geom_bar(stat = "identity", fill = "#EEDA9D", color = "#DCA258") + 
+  ylab("Net outmigration") + 
+  xlab("Year") + 
+  ggtitle("Net interregional outmigration of Amsterdam ")
+plot_adam
 
 ######################
 # Merge databases 
@@ -260,6 +280,7 @@ dev.off()
 # Save resulting database
 ##########################
 
+save(d_bev, file="./data/derived/population.Rda")
 save(df, file="./data/derived/migration_COROP.Rda")
 save(dmat, file="./data/derived/dmat.Rda")
 

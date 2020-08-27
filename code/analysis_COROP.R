@@ -156,12 +156,20 @@ data_scatter <- rbind(exp(g), exp(r)) %>%
          mu_r = mean(r)) %>% 
   nest(data = c("g", "r", "iter")) 
 
+load(file = "./data/derived/population.Rda")
+df_size <- d_bev %>%
+  filter(year == 2018 ) %>%
+  mutate(population = population/100000) %>%
+  select(population)
+data_scatter = tibble(data_scatter, df_size)
+
 p_scatter<-  ggplot(data = data_scatter, aes(group = region)) +
   geom_abline(color = "#FCF9F0", linetype = 2, alpha = 1/3) +
   stat_ellipse(data = . %>% unnest(data),
                aes(x = g, y = r),
                type = "norm", level = .5, size = 1/2, alpha = 1/2, color = "#80A0C7") +
-  geom_point(aes(x = mu_g, y = mu_r),
+  geom_point(aes(x = mu_g, y = mu_r, size = population ),
+             show.legend = FALSE,
              color = "#DCA258") +
   labs(x = "generalized push",
        y = "generalized pull") +
