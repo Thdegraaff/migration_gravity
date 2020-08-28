@@ -94,3 +94,7 @@ plot_adam <- ggplot(df, aes(x = year, y= value)) +
 pdf(file = "./fig/outmig_amsterdam.pdf" ,width=8,height=4) 
 plot_adam
 dev.off()
+
+png(file = "./fig/outmig_amsterdam.png" ,width=8,height=4) 
+plot_adam
+dev.off()
