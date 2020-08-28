@@ -133,13 +133,6 @@ pairs(~ ownership + socialrent + rent + population, data = df_pairs, col = rangi
 
 cor(df_pairs)
 
-plot_adam <- ggplot(mig_adam, aes(x = year, y= net_out)) + 
-  geom_bar(stat = "identity", fill = "#EEDA9D", color = "#DCA258") + 
-  ylab("Net outmigration") + 
-  xlab("Year") + 
-  ggtitle("Net interregional outmigration of Amsterdam ")
-plot_adam
-
 ######################
 # Merge databases 
 ######################

@@ -44,6 +44,10 @@ impact on in-migration. Moreover, largest cities (especially Amsterdam) have
 more out than in-migration (descriptive barplot shows this beautifully for
 Amsterdam + plus effect is growing over time. Attractive cities become too
 succesful and displacement of incumbents?
+
+#+ATTR_HTML: :style margin-left: auto; margin-right: auto;
+[[./fig/outmig_amsterdam.pdf]]
+
 ** 26-08-2020
     Presented yesterday online at ERSA. Comment from Viktor about whether the size
     of regions is accociated with push factor (it sort of is). So points in

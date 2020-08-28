@@ -90,4 +90,7 @@ plot_adam <- ggplot(df, aes(x = year, y= value)) +
   xlab("Year") + 
   ggtitle("Net interregional outmigration of Amsterdam (2011-2019)") + facet_wrap(~name)  +
   scale_x_discrete(labels=c("2011" = "", "2013" = "", "2014" = "", "2016" = "", "2017" = "", "2019" = ""))
+
+pdf(file = "./fig/outmig_amsterdam.pdf" ,width=8,height=4) 
 plot_adam
+dev.off()
