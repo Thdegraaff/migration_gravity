@@ -95,6 +95,6 @@ pdf(file = "./fig/outmig_amsterdam.pdf" ,width=8,height=4)
 plot_adam
 dev.off()
 
-png(file = "./fig/outmig_amsterdam.png" ,width=8,height=4) 
+png(file = "./fig/outmig_amsterdam.png") 
 plot_adam
 dev.off()
