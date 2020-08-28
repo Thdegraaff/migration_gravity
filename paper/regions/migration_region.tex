@@ -1,0 +1,125 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Stylish Article
+% LaTeX Template
+% Version 2.1 (1/10/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Mathias Legrand (legrand.mathias@gmail.com) 
+% With extensive modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[fleqn,10pt]{SelfArx} % Document font size and equations flushed
+% left
+
+\usepackage[english]{babel} % Specify a different language here - english by default
+
+\usepackage{marvosym, epigraph, subfig, listings, microtype}
+
+\usepackage[sortcites=false,style=authoryear-comp,bibencoding=utf8, natbib=true, firstinits=true, maxcitenames=2, maxbibnames = 99, uniquename=false, backend=bibtex, useprefix=true, backref=false,doi=false,isbn=false,url=false,dashed=true]{biblatex}
+\setlength\bibhang{20pt}
+\bibliography{references.bib}
+\AtEveryBibitem{%
+	\clearfield{day}%
+	\clearfield{month}%
+	\clearfield{endday}%
+	\clearfield{endmonth}%
+}
+
+%----------------------------------------------------------------------------------------
+%	COLUMNS
+%----------------------------------------------------------------------------------------
+
+\setlength{\columnsep}{0.55cm} % Distance between the two columns of text
+\setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
+
+%----------------------------------------------------------------------------------------
+%	COLORS
+%----------------------------------------------------------------------------------------
+
+\definecolor{color1}{RGB}{0,0,90} % Color of the article title and sections
+\definecolor{color2}{RGB}{0,20,20} % Color of the boxes behind the abstract and headings
+
+%----------------------------------------------------------------------------------------
+%	HYPERLINKS
+%----------------------------------------------------------------------------------------
+
+\usepackage{hyperref} % Required for hyperlinks
+\hypersetup{hidelinks,colorlinks,breaklinks=true,urlcolor=color2,citecolor=color1,linkcolor=color1,bookmarksopen=false,pdftitle={Housing market and migration revisited: a Bayesian multilevel gravity model for Dutch municipalities},pdfauthor={Thomas de Graaff}}
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE INFORMATION
+%----------------------------------------------------------------------------------------
+
+\JournalInfo{Journal of Regional Science} % Journal information
+\Archive{Working paper} % Additional notes (e.g. copyrigh, DOI, review/research article)
+
+\PaperTitle{Urban exodus: housing market and interregional migration revisited}
+
+\Authors{Thomas de Graaff\textsuperscript{1}*} % Authors
+\affiliation{\textsuperscript{1}\textit{Department of Spatial Economics, Vrije Universiteit Amsterdam, Amsterdam, The Netherlands}} % Author affiliation
+\affiliation{*\textbf{Corresponding author}: \Letter{} t.de.graaff@vu.n; \Mundus{} \href{thomasdegraaff.nl}{thomasdegraaff.nl}} % Corresponding author
+
+\Keywords{Gravity model --- housing market --- interregional migration --- multilevel model --- cities}
+\newcommand{\keywordname}{Keywords} 
+
+%%----------------------------------------------------------------------------------------
+%%	ABSTRACT
+%%----------------------------------------------------------------------------------------
+
+\Abstract{}
+
+%----------------------------------------------------------------------------------------
+\hypersetup{draft} 
+\begin{document}
+
+\flushbottom
+\maketitle
+\thispagestyle{empty}
+
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+In the recent decade cities have been proclaimed to be the overall ``winners'' within the regional landscape \citep[]{glaeser2012triumph}. There is a large literature that finds that especially large cities exhibit relatively more employment, more innovation and produce overall more added value \citep[see, e.g.,][]{balland2020complex}. Most of this success of (large) cities can be attributed to positive regional and urban agglomeration economies \citep[see for a recent overview of the size, scope and nature of these urban economies][]{duranton2020, rosenthal2020}
+
+Arguably, however, urban succes does not accrue to everyone and recent research has shown as well the negative aspects of this success.
+
+\begin{figure*}[t!]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+  \includegraphics[width=1\linewidth]{../../fig/outmig_amsterdam.pdf}
+  \caption{Interregional migration out of Amsterdam in the period 2011-2019 for various age cohorts (including total out-migration in the most left-panel)}
+  \label{fig:adam_mig}
+\end{figure*}
+
+\section*{Acknowledgments}
+
+I would like to thank Wim Bernasco, Thor Husby, Viktor Venhorst, Maureen
+Lanhuizen, participants at the 15$^{\text{th}}$ biennial NECTAR conference in
+Helsinki, participants at the 59$^{\text{th}}$ ERSA conference in Lyon and
+seminar participants at the VU University Amsterdam for valuable comments on a
+first draft of this paper. Paper, data and code can be retrieved from the
+following project's GitHub page:
+
+\href{https://github.com/Thdegraaff/migration_gravity}{https://github.com/Thdegraaff/migration\_gravity}.
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+
+\addcontentsline{toc}{section}{references} % Adds this section to the table of contents
+\printbibliography
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

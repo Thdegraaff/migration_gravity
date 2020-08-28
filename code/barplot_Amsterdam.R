@@ -87,9 +87,10 @@ df <- df_adam %>%
 plot_adam <- ggplot(df, aes(x = year, y= value)) + 
   geom_bar(stat = "identity", fill = "#EEDA9D", color = "#DCA258") + 
   ylab("Net outmigration") + 
+  #theme(axis.title.y=element_text(hjust=0.9, angle = 90)) +
   xlab("Year") + 
-  ggtitle("Net interregional outmigration of Amsterdam (2011-2019)") + facet_wrap(~name)  +
-  scale_x_discrete(labels=c("2011" = "", "2013" = "", "2014" = "", "2016" = "", "2017" = "", "2019" = ""))
+  ggtitle("Net interregional migration out of Amsterdam (2011-2019)") + facet_wrap(~name, nrow = 1)  +
+  scale_x_discrete(labels=c("2011" = "", "2013" = "", "2014" = "", "2015" = "", "2016" = "", "2017" = "", "2019" = ""))
 
 pdf(file = "./fig/outmig_amsterdam.pdf" ,width=8,height=4) 
 plot_adam

@@ -1,0 +1,162 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\sortlist[entry]{nyt/global/}
+  \entry{balland2020complex}{article}{}
+    \name{author}{6}{}{%
+      {{hash=BPA}{%
+         family={Balland},
+         familyi={B\bibinitperiod},
+         given={Pierre-Alexandre},
+         giveni={P\bibinitperiod-A\bibinitperiod},
+      }}%
+      {{hash=JFC}{%
+         family={Jara-Figueroa},
+         familyi={J\bibinitperiod-F\bibinitperiod},
+         given={Cristian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=PSG}{%
+         family={Petralia},
+         familyi={P\bibinitperiod},
+         given={Sergio\bibnamedelima G},
+         giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+      {{hash=SMP}{%
+         family={Steijn},
+         familyi={S\bibinitperiod},
+         given={Mathieu\bibnamedelima PA},
+         giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=RDL}{%
+         family={Rigby},
+         familyi={R\bibinitperiod},
+         given={David\bibnamedelima L},
+         giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=HCA}{%
+         family={Hidalgo},
+         familyi={H\bibinitperiod},
+         given={C{\'e}sar\bibnamedelima A},
+         giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Nature Publishing Group}%
+    }
+    \strng{namehash}{BPA+1}
+    \strng{fullhash}{BPAJFCPSGSMPRDLHCA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2020}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{3}
+    \field{pages}{248\bibrangedash 254}
+    \field{title}{Complex economic activities concentrate in large cities}
+    \field{volume}{4}
+    \field{journaltitle}{Nature Human Behaviour}
+    \field{year}{2020}
+  \endentry
+
+  \entry{duranton2020}{article}{}
+    \name{author}{2}{}{%
+      {{hash=DG}{%
+         family={Duranton},
+         familyi={D\bibinitperiod},
+         given={Gilles},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=PD}{%
+         family={Puga},
+         familyi={P\bibinitperiod},
+         given={Diego},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DGPD1}
+    \strng{fullhash}{DGPD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2020}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{number}{3}
+    \field{pages}{3\bibrangedash 26}
+    \field{title}{The economics of Urban Density}
+    \field{volume}{34}
+    \field{journaltitle}{Journal of Economics Perspectives}
+    \field{year}{2020}
+  \endentry
+
+  \entry{glaeser2012triumph}{book}{}
+    \name{author}{1}{}{%
+      {{hash=GEL}{%
+         family={Glaeser},
+         familyi={G\bibinitperiod},
+         given={Edward\bibnamedelima Ludwig},
+         giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Penguin}%
+    }
+    \strng{namehash}{GEL1}
+    \strng{fullhash}{GEL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2012}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{title}{Triumph of the City: How Our Greatest Invention Makes Us
+  Richer, Smarter, Greener, Healthier, and Happier}
+    \field{year}{2012}
+  \endentry
+
+  \entry{rosenthal2020}{article}{}
+    \name{author}{2}{}{%
+      {{hash=RSC}{%
+         family={Rosenthal},
+         familyi={R\bibinitperiod},
+         given={Stuart\bibnamedelima C.},
+         giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=SWC}{%
+         family={Strange},
+         familyi={S\bibinitperiod},
+         given={William\bibnamedelima C.},
+         giveni={W\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RSCSWC1}
+    \strng{fullhash}{RSCSWC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2020}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{number}{3}
+    \field{pages}{27\bibrangedash 49}
+    \field{title}{How Close Is Close? The Spatial Reach of Agglomeration
+  Economies}
+    \field{volume}{34}
+    \field{journaltitle}{Journal of Economics Perspectives}
+    \field{year}{2020}
+  \endentry
+\endsortlist
+\endinput
