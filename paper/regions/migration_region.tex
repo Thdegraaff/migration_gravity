@@ -61,7 +61,7 @@
 \JournalInfo{Journal of Regional Science} % Journal information
 \Archive{Working paper} % Additional notes (e.g. copyrigh, DOI, review/research article)
 
-\PaperTitle{Urban exodus: housing market and interregional migration revisited}
+\PaperTitle{Urban exodus: housing market structure and interregional migration revisited}
 
 \Authors{Thomas de Graaff\textsuperscript{1}*} % Authors
 \affiliation{\textsuperscript{1}\textit{Department of Spatial Economics, Vrije Universiteit Amsterdam, Amsterdam, The Netherlands}} % Author affiliation
@@ -74,7 +74,18 @@
 %%	ABSTRACT
 %%----------------------------------------------------------------------------------------
 
-\Abstract{}
+\Abstract{This paper revisits the impact of home-ownership and social renting
+  rates on intercity residential migration in the Netherlands. The application
+  of a Bayesian multilevel gravity model allows me to control simultanously for
+  (\emph{i}) both city-specific effects of origin and destination, (\emph{ii})
+  dyad-pair specific effects, and (\emph{iii}) the impact of the housing market
+  structure in both the city of origin and the city of destination. I find
+  positive and high elasticities of social renting (0.8) and homeownership (1.8)
+  rates on out-migration, while homeownership rates have a smaller and negative
+  impact ($-0.5$) on in-migration. Moreover, city specific in- and out-migration
+  flows are highly correlated (0.88) just as dyad-specific flows (0.8). Finally,
+  I show that my probabilistic model is able to accurately predict both within
+  and out-of-sample.}
 
 %----------------------------------------------------------------------------------------
 \hypersetup{draft} 
@@ -88,12 +99,15 @@
 
 \section{Introduction}
 
-In the recent decade cities have been proclaimed to be the overall ``winners'' within the regional landscape \citep[]{glaeser2012triumph}. There is a large literature that finds that especially large cities exhibit relatively more employment, more innovation and produce overall more added value \citep[see, e.g.,][]{balland2020complex}. Most of this success of (large) cities can be attributed to positive regional and urban agglomeration economies \citep[see for a recent overview of the size, scope and nature of these urban economies][]{duranton2020, rosenthal2020}
+In the recent decade cities have been proclaimed to be the overall ``winners''
+within the regional economic landscape \citep[]{glaeser2012triumph}. Indeed,
+there is a large empirical literature that finds that especially large cities exhibit relatively more employment, more innovation and produce overall more added value \citep[see, e.g.,][]{balland2020complex}. Most of this success of (large) cities can be attributed to positive regional and urban agglomeration economies \citep[see for a recent overview of the size, scope and nature of these urban economies][]{duranton2020, rosenthal2020}
 
 Arguably, however, urban succes does not accrue to everyone and recent research has shown as well the negative aspects of this success.
 
-\begin{figure*}[t!]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-  \includegraphics[width=1\linewidth]{../../fig/outmig_amsterdam.pdf}
+\begin{figure*}[h!]\centering % Using \begin{figure*} makes the figure take up
+  % the entire width of the page
+ \includegraphics[width=1\linewidth]{../../fig/outmig_amsterdam.pdf}
   \caption{Interregional migration out of Amsterdam in the period 2011-2019 for various age cohorts (including total out-migration in the most left-panel)}
   \label{fig:adam_mig}
 \end{figure*}
