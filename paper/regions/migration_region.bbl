@@ -74,6 +74,33 @@
     \field{year}{2020}
   \endentry
 
+  \entry{boyle1998migration}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BP}{%
+         family={Boyle},
+         familyi={B\bibinitperiod},
+         given={P},
+         giveni={P},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {SAGE Publications Sage UK: London, England}%
+    }
+    \strng{namehash}{BP1}
+    \strng{fullhash}{BP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1998}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{5}
+    \field{pages}{855\bibrangedash 866}
+    \field{title}{Migration and housing tenure in South East England}
+    \field{volume}{30}
+    \field{journaltitle}{Environment and Planning A}
+    \field{year}{1998}
+  \endentry
+
   \entry{duranton2020}{article}{}
     \name{author}{2}{}{%
       {{hash=DG}{%

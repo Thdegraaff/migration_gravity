@@ -74,18 +74,20 @@
 %%	ABSTRACT
 %%----------------------------------------------------------------------------------------
 
-\Abstract{This paper revisits the impact of home-ownership and social renting
-  rates on intercity residential migration in the Netherlands. The application
-  of a Bayesian multilevel gravity model allows me to control simultanously for
-  (\emph{i}) both city-specific effects of origin and destination, (\emph{ii})
-  dyad-pair specific effects, and (\emph{iii}) the impact of the housing market
-  structure in both the city of origin and the city of destination. I find
-  positive and high elasticities of social renting (0.8) and homeownership (1.8)
-  rates on out-migration, while homeownership rates have a smaller and negative
-  impact ($-0.5$) on in-migration. Moreover, city specific in- and out-migration
-  flows are highly correlated (0.88) just as dyad-specific flows (0.8). Finally,
-  I show that my probabilistic model is able to accurately predict both within
-  and out-of-sample.}
+\Abstract{This paper addresses the impact of home-ownership and social renting
+  rates on intercity residential migration in the Netherlands. It especially
+  focuses on their role on the migration of natives out of the larger and
+  popular Dutch cities. By applying a
+  Bayesian multilevel gravity model I control simultanously for (\emph{i}) both
+  city-specific effects of origin and destination, (\emph{ii}) dyad-pair
+  specific effects, and (\emph{iii}) the impact of the housing market structure
+  in both the city of origin and the city of destination. I find positive and
+  high elasticities of social renting (0.8) and homeownership (1.8) rates on
+  out-migration, while homeownership rates have a smaller and negative impact
+  ($-0.5$) on in-migration. Moreover, city specific in- and out-migration flows
+  are highly correlated (0.88) just as dyad-specific flows (0.8). Finally, I
+  show that my probabilistic model is able to accurately predict migration flows
+  both within and out-of-sample.}
 
 %----------------------------------------------------------------------------------------
 \hypersetup{draft} 
@@ -111,6 +113,41 @@ Arguably, however, urban succes does not accrue to everyone and recent research 
   \caption{Interregional migration out of Amsterdam in the period 2011-2019 for various age cohorts (including total out-migration in the most left-panel)}
   \label{fig:adam_mig}
 \end{figure*}
+
+To anticipate the results of this paper, I find strong negative effects of
+home-ownership rates on on both in- and out-migration flows. Further, social
+renting rates also affect regional migration flows negatively, but only for
+out-migration.
+
+This paper reads as follows. The next section describes the data and focuses
+especially on the distribution of regional migration flows and housing market
+structure. Section 3 describes the modelling approach, where starting from
+traditional gravity model and using the descriptives of the migration flows, a
+Bayesian multilevel gravity model is constructed. Section 4 gives both the model
+results and interprets them by providing as well predictions within and
+out-of-sample. The last section concludes.
+
+ \section{Data}
+
+ \begin{figure*}[t!]\centering % Using \begin{figure*} makes the figure take up
+% the entire width of the page
+   \includegraphics[width=0.8\linewidth]{./../../fig/hist_mig_corop.pdf}
+          \caption{Histogram of inter-regional migrant flows. Left panel shows the histogram of
+small migrant flows ($0 \leq N < 100$) and the right panel shows the histogram of
+large migrant flows ($N \geq 100$). Note the different scale of the y-axes.}
+          \label{fig:hist_mig_corop}
+        \end{figure*}
+
+I use inter-regional migration flows measured in individuals between
+all of the 40 Dutch COROP regions between 2012 and 2018. I use no information on
+within regional migration. So, I have 320 regional
+characteristics (or doubled when accounting for both origin and destination
+municipalities) and 10,902 aggregate migration flows ($7 \times (40 \times 40 - 40)$).
+
+The histograms in Figure \ref{fig:hist_mig_corop} show the distribution of
+migrant flows within my sample. The left panel deals with migrant flows below
+100, the right panel with migrant flows of 100 and larger. Two main observations
+can be made.
 
 \section*{Acknowledgments}
 
