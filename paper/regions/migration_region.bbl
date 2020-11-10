@@ -17,6 +17,63 @@
 \endgroup
 
 \sortlist[entry]{nyt/global/}
+  \entry{anderson2011gravity}{article}{}
+    \name{author}{1}{}{%
+      {{hash=AJE}{%
+         family={Anderson},
+         familyi={A\bibinitperiod},
+         given={James\bibnamedelima E},
+         giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Annual Reviews}%
+    }
+    \strng{namehash}{AJE1}
+    \strng{fullhash}{AJE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2011}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{number}{1}
+    \field{pages}{133\bibrangedash 160}
+    \field{title}{The gravity model}
+    \field{volume}{3}
+    \field{journaltitle}{Annu. Rev. Econ.}
+    \field{year}{2011}
+  \endentry
+
+  \entry{anderson2003gravity}{article}{}
+    \name{author}{2}{}{%
+      {{hash=AJE}{%
+         family={Anderson},
+         familyi={A\bibinitperiod},
+         given={James\bibnamedelima E},
+         giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=VWE}{%
+         family={Van\bibnamedelima Wincoop},
+         familyi={V\bibinitperiod\bibinitdelim W\bibinitperiod},
+         given={Eric},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AJEVWE1}
+    \strng{fullhash}{AJEVWE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2003}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{number}{1}
+    \field{pages}{170\bibrangedash 192}
+    \field{title}{Gravity with gravitas: a solution to the border puzzle}
+    \field{volume}{93}
+    \field{journaltitle}{American economic review}
+    \field{year}{2003}
+  \endentry
+
   \entry{balland2020complex}{article}{}
     \name{author}{6}{}{%
       {{hash=BPA}{%
@@ -74,31 +131,78 @@
     \field{year}{2020}
   \endentry
 
-  \entry{boyle1998migration}{article}{}
-    \name{author}{1}{}{%
+  \entry{beckers2019residential}{article}{}
+    \name{author}{2}{}{%
       {{hash=BP}{%
-         family={Boyle},
+         family={Beckers},
          familyi={B\bibinitperiod},
-         given={P},
-         giveni={P},
+         given={Pascal},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=BS}{%
+         family={Boschman},
+         familyi={B\bibinitperiod},
+         given={Sanne},
+         giveni={S\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
       {SAGE Publications Sage UK: London, England}%
     }
-    \strng{namehash}{BP1}
-    \strng{fullhash}{BP1}
+    \strng{namehash}{BPBS1}
+    \strng{fullhash}{BPBS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1998}
+    \field{labelyear}{2019}
     \field{sortinit}{B}
     \field{sortinithash}{B}
-    \field{number}{5}
-    \field{pages}{855\bibrangedash 866}
-    \field{title}{Migration and housing tenure in South East England}
-    \field{volume}{30}
-    \field{journaltitle}{Environment and Planning A}
-    \field{year}{1998}
+    \field{number}{4}
+    \field{pages}{760\bibrangedash 777}
+    \field{title}{Residential choices of foreign highly skilled workers in the
+  Netherlands and the role of neighbourhood and urban regional characteristics}
+    \field{volume}{56}
+    \field{journaltitle}{Urban Studies}
+    \field{year}{2019}
+  \endentry
+
+  \entry{burger2009specification}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BM}{%
+         family={Burger},
+         familyi={B\bibinitperiod},
+         given={Martijn},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=VOF}{%
+         family={Van\bibnamedelima Oort},
+         familyi={V\bibinitperiod\bibinitdelim O\bibinitperiod},
+         given={Frank},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=LGJ}{%
+         family={Linders},
+         familyi={L\bibinitperiod},
+         given={Gert-Jan},
+         giveni={G\bibinitperiod-J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Taylor \& Francis Group}%
+    }
+    \strng{namehash}{BM+1}
+    \strng{fullhash}{BMVOFLGJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2009}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{2}
+    \field{pages}{167\bibrangedash 190}
+    \field{title}{On the specification of the gravity model of trade: zeros,
+  excess zeros and zero-inflated estimation}
+    \field{volume}{4}
+    \field{journaltitle}{Spatial Economic Analysis}
+    \field{year}{2009}
   \endentry
 
   \entry{duranton2020}{article}{}
@@ -155,6 +259,216 @@
     \field{year}{2012}
   \endentry
 
+  \entry{hochstenbach2018gentrification}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HC}{%
+         family={Hochstenbach},
+         familyi={H\bibinitperiod},
+         given={Cody},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={Musterd},
+         familyi={M\bibinitperiod},
+         given={Sako},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Taylor \& Francis}%
+    }
+    \strng{namehash}{HCMS1}
+    \strng{fullhash}{HCMS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{1}
+    \field{pages}{26\bibrangedash 53}
+    \field{title}{Gentrification and the suburbanization of poverty: Changing
+  urban geographies through boom and bust periods}
+    \field{volume}{39}
+    \field{journaltitle}{Urban Geography}
+    \field{year}{2018}
+  \endentry
+
+  \entry{koster2018short}{report}{}
+    \name{author}{3}{}{%
+      {{hash=KH}{%
+         family={Koster},
+         familyi={K\bibinitperiod},
+         given={Hans},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=vOJ}{%
+         prefix={van},
+         prefixi={v\bibinitperiod},
+         family={Ommeren},
+         familyi={O\bibinitperiod},
+         given={Jos},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=VN}{%
+         family={Volkhausen},
+         familyi={V\bibinitperiod},
+         given={Nicolas},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {CEPR Discussion Paper No. DP13094}%
+    }
+    \strng{namehash}{KH+1}
+    \strng{fullhash}{KHvOJVN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{title}{Short-term rentals and the housing market: Quasi-experimental
+  evidence from Airbnb in Los Angeles}
+    \field{type}{techreport}
+    \field{year}{2018}
+  \endentry
+
+  \entry{linders2006estimation}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LGJ}{%
+         family={Linders},
+         familyi={L\bibinitperiod},
+         given={Gert-Jan},
+         giveni={G\bibinitperiod-J\bibinitperiod},
+      }}%
+      {{hash=DGHL}{%
+         family={De\bibnamedelima Groot},
+         familyi={D\bibinitperiod\bibinitdelim G\bibinitperiod},
+         given={Henri\bibnamedelima LF},
+         giveni={H\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Tinbergen Institute Discussion Paper}%
+    }
+    \strng{namehash}{LGJDGHL1}
+    \strng{fullhash}{LGJDGHL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2006}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Estimation of the gravity equation in the presence of zero
+  flows}
+    \field{year}{2006}
+  \endentry
+
+  \entry{mcelreath2020statistical}{book}{}
+    \name{author}{1}{}{%
+      {{hash=MR}{%
+         family={McElreath},
+         familyi={M\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {CRC press}%
+    }
+    \strng{namehash}{MR1}
+    \strng{fullhash}{MR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2020}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Statistical rethinking: A Bayesian course with examples in R
+  and Stan}
+    \field{year}{2020}
+  \endentry
+
+  \entry{melo2009meta}{article}{}
+    \name{author}{3}{}{%
+      {{hash=MPC}{%
+         family={Melo},
+         familyi={M\bibinitperiod},
+         given={Patricia\bibnamedelima C},
+         giveni={P\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=GDJ}{%
+         family={Graham},
+         familyi={G\bibinitperiod},
+         given={Daniel\bibnamedelima J},
+         giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=NRB}{%
+         family={Noland},
+         familyi={N\bibinitperiod},
+         given={Robert\bibnamedelima B},
+         giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{MPC+1}
+    \strng{fullhash}{MPCGDJNRB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2009}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{number}{3}
+    \field{pages}{332\bibrangedash 342}
+    \field{title}{A meta-analysis of estimates of urban agglomeration
+  economies}
+    \field{volume}{39}
+    \field{journaltitle}{Regional science and urban Economics}
+    \field{year}{2009}
+  \endentry
+
+  \entry{poot2016gravity}{article}{}
+    \name{author}{4}{}{%
+      {{hash=PJ}{%
+         family={Poot},
+         familyi={P\bibinitperiod},
+         given={Jacques},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AO}{%
+         family={Alimi},
+         familyi={A\bibinitperiod},
+         given={Omoniyi},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=CMP}{%
+         family={Cameron},
+         familyi={C\bibinitperiod},
+         given={Michael\bibnamedelima P},
+         giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=MDC}{%
+         family={Mar{\'e}},
+         familyi={M\bibinitperiod},
+         given={David\bibnamedelima C},
+         giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PJ+1}
+    \strng{fullhash}{PJAOCMPMDC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{number}{36}
+    \field{pages}{63\bibrangedash 86}
+    \field{title}{The gravity model of migration: The successful comeback of an
+  ageing superstar in regional science}
+    \field{volume}{2016}
+    \field{journaltitle}{Investigaciones Regionales}
+    \field{year}{2016}
+  \endentry
+
   \entry{rosenthal2020}{article}{}
     \name{author}{2}{}{%
       {{hash=RSC}{%
@@ -184,6 +498,102 @@
     \field{volume}{34}
     \field{journaltitle}{Journal of Economics Perspectives}
     \field{year}{2020}
+  \endentry
+
+  \entry{silva2006log}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SJS}{%
+         family={Silva},
+         familyi={S\bibinitperiod},
+         given={JMC\bibnamedelima Santos},
+         giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=TS}{%
+         family={Tenreyro},
+         familyi={T\bibinitperiod},
+         given={Silvana},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MIT Press}%
+    }
+    \strng{namehash}{SJSTS1}
+    \strng{fullhash}{SJSTS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2006}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{4}
+    \field{pages}{641\bibrangedash 658}
+    \field{title}{The log of gravity}
+    \field{volume}{88}
+    \field{journaltitle}{The Review of Economics and statistics}
+    \field{year}{2006}
+  \endentry
+
+  \entry{tammaru2015socio}{book}{}
+    \name{author}{4}{}{%
+      {{hash=TT}{%
+         family={Tammaru},
+         familyi={T\bibinitperiod},
+         given={Tiit},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=VHM}{%
+         family={Van\bibnamedelima Ham},
+         familyi={V\bibinitperiod\bibinitdelim H\bibinitperiod},
+         given={Maarten},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={Marci{\'n}czak},
+         familyi={M\bibinitperiod},
+         given={Szymon},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={Musterd},
+         familyi={M\bibinitperiod},
+         given={Sako},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Routledge}%
+    }
+    \strng{namehash}{TT+1}
+    \strng{fullhash}{TTVHMMSMS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{title}{Socio-economic segregation in European capital cities: East
+  meets West}
+    \field{year}{2015}
+  \endentry
+
+  \entry{tinbergen1962shaping}{article}{}
+    \name{author}{1}{}{%
+      {{hash=TJJ}{%
+         family={Tinbergen},
+         familyi={T\bibinitperiod},
+         given={Jan\bibnamedelima J},
+         giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TJJ1}
+    \strng{fullhash}{TJJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1962}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{title}{Shaping the world economy; suggestions for an international
+  economic policy}
+    \field{year}{1962}
   \endentry
 \endsortlist
 \endinput

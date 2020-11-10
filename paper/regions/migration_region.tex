@@ -101,11 +101,24 @@
 
 \section{Introduction}
 
-In the recent decade cities have been proclaimed to be the overall ``winners''
-within the regional economic landscape \citep[]{glaeser2012triumph}. Indeed,
-there is a large empirical literature that finds that especially large cities exhibit relatively more employment, more innovation and produce overall more added value \citep[see, e.g.,][]{balland2020complex}. Most of this success of (large) cities can be attributed to positive regional and urban agglomeration economies \citep[see for a recent overview of the size, scope and nature of these urban economies][]{duranton2020, rosenthal2020}
+In the recent decade metropolitan areas have been proclaimed to be the overall
+``winners'' within the regional economic landscape \citep[]{glaeser2012triumph}.
+Indeed, there is an abundant empirical literature that finds that especially
+large cities exhibit---on average---relatively more employment, more innovation
+and produce overall more added value \citep[see, e.g.,][]{balland2020complex}.
+Most of this success of (large) cities can be attributed to positive regional
+and urban agglomeration economies \citep[see for recent overviews of the size,
+scope and nature of these urban economies][]{melo2009meta, duranton2020,
+  rosenthal2020}
 
-Arguably, however, urban succes does not accrue to everyone and recent research has shown as well the negative aspects of this success.
+Arguably, however, urban succes does not accrue to everyone equally and recent
+empirial research has highlighted the negative sides of proclaimed urban
+success. For example, there is ample empirical evidence of rising levels of
+economic segregation witin cities \citep{tammaru2015socio}, of suburbanization
+of poverty \citep{hochstenbach2018gentrification}, and crowding out of the housing
+market by short-term rentals \citet{koster2018short} and by the increasing influx of
+high-skilled migrants to the most popular (inner) cities
+\citet{beckers2019residential}.
 
 \begin{figure*}[h!]\centering % Using \begin{figure*} makes the figure take up
   % the entire width of the page
@@ -148,6 +161,200 @@ The histograms in Figure \ref{fig:hist_mig_corop} show the distribution of
 migrant flows within my sample. The left panel deals with migrant flows below
 100, the right panel with migrant flows of 100 and larger. Two main observations
 can be made.
+
+First, there is strong but consistent decay pattern in migration flow size in
+both panels, which points to a persistent underlying pattern. However, the right
+`tail' in this distribution is rather thick.\footnote{The largest migration
+  flows are between the regions of Amsterdam and Utrecht and amount to about
+  6,555 migrants in 2015.} Thus, there are still observations quite far right in
+the distribution. Indeed, the sample mean is about 270, while the sample
+variance is around 290,000, leading to a strong presence of
+\emph{overdispersion} (unconditional on other explanatory variables). Second, a
+small part of the dataset consists of zero observations. Although they do seem
+to be genuine observations and not caused by another process, I check in a
+robustness analysis whether the occurrence of zeros does need to be taken
+specifically into account.
+
+Seven explanatory variables are added to the model. First, to account for
+spatial distance decay between origin $i$ and destination $j$, distance between
+all regions are calculated as Eucledian distance between regional centroids
+($\text{dist}_{ij}$). Secondly, as regional mass we use population size for
+both region of origin and region of destination (so $\text{pop}_i$ and
+$\text{pop}_j$). Finally, for housing market structure we use variables
+indicating percentage of homeownership ($\text{home}_i$ and $\text{home}_j$) and
+percentage of social renting ($\text{soc}_i$ and $\text{soc}_j$), again in both
+regions of origin and destination. Social renting in the Netherlands includes all
+kinds of rent controlled housing but typically involves local housing
+corporations offering housing to lower income households, where eligibility is
+based on (local---within region) waiting lists.
+
+\begin{figure*}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+  \includegraphics[width=0.8\linewidth]{./../../fig/hist_housing_corop.pdf}
+  \caption{Histogram of social housing (left) and homeownership (right)
+    percentages in COROP regions in 2018 (check)}
+  \label{fig:housing_mig}
+\end{figure*}
+
+Figure \ref{fig:housing_mig} shows the distribution of social renting and
+homeownership across Dutch regions in 2018. Clearly, both home-ownership
+and social housing are prevalent across Dutch regions, with an average
+per city of 25\% of social housing and around 60\% of homeownership Moreover, it
+is worthwhile to note that social renting is especially prevalent in the larger
+cities with a correlation of 0.46 between regional size and social renting (e.g.,
+Amsterdam has about a 40\% social renting rate). Also, some smaller dutch
+municipalities do not exhibit any social renting. Homeownership and city size
+correlate negatively ($-0.63$). Finally, there is a large negative correlation
+between social renting and homeownership ($-0.88$) across regions.
+
+\section{Modeling framework}
+
+\subsection{The traditional gravity model}
+
+Throughout time, the workhorse model to study aggregate migration flows has been
+the gravity model (see \citet{anderson2011gravity} for a generic survey of the
+use of gravity models and \citet{poot2016gravity} for an overview of migration
+applications). I therefore start by adopting the basic gravity model
+specification pioneered by \citet{tinbergen1962shaping}, so:
+\begin{equation}
+  \text{migrants}_{ij} = \text{M}_i^{\beta_1}\text{M}_j^{\beta_2}\text{dist}_{ij}^\gamma,
+  \label{eq:grav}
+\end{equation}
+where $\text{migrants}_{ij}$ are the number of migrants going from $i$ to $j$,
+$\text{M}_i$ ($\text{M}_j$) denotes the `mass' of $i$ ($j$), and
+$\text{dist}_{ij}$ the distance between $i$ and $j$. Usually, the `mass'
+variables are proxied by population, gross domestic product, density, etcetera.
+Moreover, the variable $\text{dist}_{ij}$ may represent in general all sorts of
+frictions, not only physical distance.
+
+Importantly, \citet{anderson2003gravity} argued that origin and destination
+specific variables should be incorporated to take into account multilateral
+resistance terms. Most often, this is done by log-linearising model
+(\ref{eq:grav})\footnote{In our case, note that zeros are present in our social
+  renting variable. We therefore add a small number to this variables (0.0001).
+  Doing this only on the \emph{right-hand side} does only marginally affect our
+  results.} and incorporating fixed effects for origins and destinations, as
+follows:
+\begin{equation}
+  \log(\text{migrants}_{ij}) = o_i + d_j +  \gamma\log(\text{dist}_{ij})
+  \label{eq:gravfixed}
+\end{equation}
+Note that now all origin and destination specific variables are absorbed by the
+fixed effects $o_i$ and $d_j$ and that only variables affecting the frictions
+$(\text{dist}_{ij})$ can be incorporated.\footnote{If there is another variable
+  dimension---say, repeated observations over time---then this might be
+  circumvented. However, this requires enough variation in the data as
+  time-invariant variables can still not be taken into account.}\footnote{An
+  often applied strategy is to use differences between origin and destination
+  specific variables. Take for example $\Delta h_{ij}$ as the difference in
+  home-ownership rates between $i$ and $j$. A disadvantage of this approach is
+  that the difference between 10\% and 20\% home-ownership rates and the
+  difference between 80\% and 90\% home-ownership rates would be valued as the
+  same.}
+        \begin{figure}[ht]\centering
+        	\includegraphics[width=\linewidth]{./../../fig/gravity_network.pdf}
+        	\caption{Decomposition of variables impacting migration flows from $i$ to $j$ $\left(\{i,j\} \in \{1,\ldots, R\}\right)$}
+        	\label{fig:gravity_network}
+        \end{figure}
+        Figure \ref{fig:gravity_network} denotes the problem schematically in a
+        generic dyadic type of network. Typically, one wants to model migration
+        flows between $i$ and $j$, whilst taken into account both the municipal
+        specific effects ($o_i$ and $d_j$) and the municipal variables
+        ($\mathbf{X}_i$ and $\mathbf{X}_j$) one is interested in, such as
+        housing market, population structure or cultural variables.
+
+        Moreover, equation (\ref{eq:gravfixed}) is typically estimated with
+        linear regression type of models, which is often very cumbersome given
+        the large amount of zeros migrants flows. `Quick and dirty' remedies as
+        adding a small amount to the flow variable or removing all zeros have
+        been proven to seriously bias the results \citep{linders2006estimation,
+          burger2009specification}.
+
+
+        Therefore, I next allow for a different strategy, where I would like to
+        tackle simultaneously the two disadvantes of above: incorporating both
+        city varying effects and city specific variables and modelling the
+        distribution of migrants flows as they are displayed in Figure
+        \ref{fig:hist_mig}---even when being zero.
+
+        \subsection{A Bayesian multilevel gravity model}
+
+        First, as municipal migrants flows are discrete, non-negative and
+        relatively rare give the size of the population, theoretically the most
+        appropriate way to go forward is to model migrant flows with a Poisson
+        type of model. However, given that the sampling variance is four times
+        the sampling mean of the migration flows (although not conditional on
+        the covariates), we likely need to correct for overdispersion of
+        heteroskedasticity \citep[][states that heteroskedasticity (rather than
+        the presence of too many zeros) is responsible for the main source of
+        bias within gravity models.]{silva2006log}. An often used distribution
+        to account for overdispersion is the Gamma-Poisson model (which is under
+        re-parametrization similar to the perhaps better known negative binomial
+        model). So, we use that for our outcome variable.
+
+        To account for the multiplicative nature of the theoretical model as in
+        (\ref{eq:grav}), I adopt a log link for the expected number of migrants
+        $\lambda_{ij}$ in the Gamma-Poisson model.  Apart from the theoretical
+        model, note that this log link ensures as well that the expected number
+        of migrants is always positive.  Further, I assume that
+        $\log(\lambda_{ij})$ is a linear function of the municipal specific
+        variables and the distance between $i$ and $j$.
+
+        Finally, to adopt both municipality effects and variables I adopt a
+        multilevel model with partial pooling. This entails that the municipal
+        varying effects (unlike fixed effects) are now drawn from a, in this
+        case Normal, distribution, where the parameters of this distribution are
+        estimated as well (in the Bayesian literature they are known as well as
+        hyper-parameters).  Intuitively, this entails that municipalities are
+        partially pooled indicating that (statistical) information between
+        municipalities is shared. This is an attractive feature, as fixed
+        effects assume no pooling. In that case, the model only learns from the
+        information contained in that specific municipality whereas with partial
+        pooling it is ensured that outliers (very high or low effects) are
+        effectively \emph{shrunk} towards the mean. Indeed, this is a further
+        extension of that best feature of linear regression: regression towards
+        the mean.
+
+        The complete model now looks as follows:\footnote{I adopt here the model structure from \citet{mcelreath2020statistical}.}
+
+        \begin{subequations}
+          \begin{align} \text{Migrants}_{ij} \sim & \text{Gamma-Poisson}(\lambda_{ij}, \tau) \label{outcome}\\
+            \log(\lambda_{ij}) =
+            & \alpha + o_{\text{mun}[i]} + d_{\text{mun}[j]} + \notag
+            \\ & \beta_1 \log(\text{pop}_i) +
+            \beta_2\log(\text{pop}_j) + \notag \\ & \beta_3
+            \log(\text{home}_i) + \beta_4 \log(\text{home}_j) + \notag\\
+            & \beta_5 \log(\text{soc}_i) + \beta_6 \log(\text{soc}_j)
+            + \notag \\ & \beta_7 \log(\text{dist}_{ij}) \label{linear} \\
+            o_{\text{mun}} \sim& \text{ Normal}(0, \sigma_o) \label{muno} \\
+            d_{\text{mun}} \sim& \text{ Normal}(0, \sigma_d) \label{mund} \\
+            \beta_1,\ldots, \beta_7 \sim& \text{
+                                          Normal}(0,2)\\ \alpha_o, \alpha_d \sim& \text{ Normal}(0,2)\\
+            \sigma_o, \sigma_d \sim& \text{ HalfCauchy}(0,1) \\ \tau
+            \sim& \text{ Gamma}(0.01, 0.01)
+          \end{align}
+          \label{model}
+        \end{subequations}
+        The first part ({\ref{outcome}) models the outcome variable, being the
+          number of migrants, using a Gamma-Poisson distribution (with parameter
+          $\lambda_{ij}$) allowing for overdispersion by using an additional
+          parameter $\tau$. The linear part of the model is given by
+          (\ref{linear}) and states that the poisson outcome variable is on a
+          log-scale and that most explanatory variables are on a log-scale as
+          well, allowing for direct comparison of the parameters being
+          elasticities. Equations (\ref{muno}) and {(\ref{mund}) constitute the
+            multilevel part, where parameters $\sigma_o$ and $\sigma_d$ measure
+            the amount of pooling. If they go to zero, then the data exhibits
+            complete pooling. If they become very large (go to infinity) there
+            is no pooling (which is the fixed effects case). Equations
+            (3e)--(3h) denote priors for all parameter involved. These priors
+            are chosen that they are rather conservative. Namely, we know from
+            previous empirical literature that the $\beta$-parameters typically
+            are not lower than $-2$ or higher than $2$. But given the amount of
+            data these priors are of little influence. The only structure I
+            impose is that the standard deviations $\sigma_o$ and $\sigma_d$ are
+            assumed to be non-negative with relatively probability in the their
+            right tails. The Gamma prior for $\tau$ is a standard and as well a
+            very conservative prior.
 
 \section*{Acknowledgments}
 

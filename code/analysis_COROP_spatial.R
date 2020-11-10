@@ -154,7 +154,7 @@ save(m, file = "./output/corop_model_spatial.rda")
 
 precis( m , depth=3 , pars=c("Rho_sp") ) #, "Rho_d","sigma_d") )
 precis( m , depth=3 , pars=c("gsA") ) #, "Rho_d","sigma_d") )
-precis( m , depth=3 , pars=c("Rho_1", "Rho_2", "sigma_d", "sigma_gr") ) #, "Rho_d","sigma_d") )
+precis( m , depth=3 , pars=c("Rho_2", "sigma_d") ) #, "Rho_d","sigma_d") )
 pairs(m@stanfit, pars=c("b_sA", "b_sB", "b_hA", "b_hB") )
 pairs(m@stanfit, pars=c("b_popA", "b_popB") )#, "b_sd", "b_so") )
 traceplot(m, pars=c("b_dist"))#, "b_sA", "b_sB", "b_hA", "b_hB", "sigma_y") )
@@ -179,7 +179,7 @@ data_scatter <- rbind(exp(g), exp(r)) %>%
   data.frame() %>% 
   set_names(1:nr_regions) %>% 
   mutate(parameter = rep(c("g", "r"), each = n() / 2),
-         iter      = rep(1:12000, times = 2)) %>% 
+         iter      = rep(1:10000, times = 2)) %>% 
   pivot_longer(-c(parameter, iter),
                names_to = "region") %>% 
   pivot_wider(names_from = parameter,
