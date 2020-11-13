@@ -3,10 +3,6 @@
 ######################
 
 library("tidyverse")
-library("sf")
-library("cowplot")
-library("spatialrisk")
-library("rethinking")
 library("dutchmasters")
 
 ######################
@@ -56,12 +52,12 @@ df_adam <- adam %>%
     out_mig = Tussen.gemeenten.verhuisde.personen.Vertrokken.uit.de.gemeente..aantal.
   ) %>%
   mutate(
-    net_out = out_mig - in_mig, 
+    net_in = in_mig - out_mig, 
   ) %>%
   select(-in_mig, -out_mig)
 
 df <- df_adam %>%
-  pivot_wider(names_from = age, values_from = net_out) %>%
+  pivot_wider(names_from = age, values_from = net_in) %>%
   mutate(
     Total = Totaal, 
     `Below 15` = `0 tot 5 jaar` + `5 tot 10 jaar` + `10 tot 15 jaar`,
@@ -86,10 +82,10 @@ df <- df_adam %>%
   
 plot_adam <- ggplot(df, aes(x = year, y= value)) + 
   geom_bar(stat = "identity", fill = "#EEDA9D", color = "#DCA258") + 
-  ylab("Net outmigration") + 
+  ylab("Net inmigration") + 
   #theme(axis.title.y=element_text(hjust=0.9, angle = 90)) +
   xlab("Year") + 
-  ggtitle("Net interregional migration out of Amsterdam (2011-2019)") + facet_wrap(~name, nrow = 1)  +
+  ggtitle("Net regional migration to Amsterdam (2011-2019)") + facet_wrap(~name, nrow = 1)  +
   scale_x_discrete(labels=c("2011" = "", "2013" = "", "2014" = "", "2015" = "", "2016" = "", "2017" = "", "2019" = ""))
 
 pdf(file = "./fig/outmig_amsterdam.pdf" ,width=8,height=4) 
