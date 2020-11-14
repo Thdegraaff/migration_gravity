@@ -1,17 +1,17 @@
 # Fdb version 3
-["bibtex migration_region"] 1605025361 "migration_region.aux" "migration_region.bbl" "migration_region" 1605025367
+["bibtex migration_region"] 1605356614 "migration_region.aux" "migration_region.bbl" "migration_region" 1605356630
   "/usr/local/texlive/2017/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1480098434 63002 075c3f13314e99e71e6ff0a472a98980 ""
-  "migration_region-blx.bib" 1605025365 306 5b06ccd736fe7936629b5ab2f116c8e0 ""
-  "migration_region.aux" 1605025367 9250 b1cd3f2c46612dcdbe05412217bf6fc0 ""
+  "migration_region-blx.bib" 1605356628 306 5b06ccd736fe7936629b5ab2f116c8e0 ""
+  "migration_region.aux" 1605356630 14589 7fb64deea402f799baaf294a295c5ab8 ""
   "references.bib" 1605021667 16463 8b331ab5ee9cb5fdb94b12eb63dd0945 ""
   (generated)
   "migration_region.bbl"
   "migration_region.blg"
-["pdflatex"] 1605025364 "migration_region.tex" "migration_region.pdf" "migration_region" 1605025367
+["pdflatex"] 1605356627 "migration_region.tex" "migration_region.pdf" "migration_region" 1605356630
   "../../fig/gravity_network.pdf" 1557932040 64488 25740746d228adc1a9f2e5da5c28a556 ""
   "../../fig/hist_housing_corop.pdf" 1598176284 4799 ebf20b5f841f368cd2bbd1a54ecccef4 ""
   "../../fig/hist_mig_corop.pdf" 1598176045 4983 89698f0f3bbe3aa46f7122808a0520ac ""
-  "../../fig/outmig_amsterdam.pdf" 1598607031 5701 0b9c72b9c99e83fb8de222e3fc649629 ""
+  "../../fig/outmig_amsterdam.pdf" 1605279535 5766 0c5bb95017b03d462eca71f475569ee4 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm" 1480098688 2240 eb56c13537f4d8a0bd3fafc25572b1bd ""
@@ -170,13 +170,13 @@
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1507478637 4129592 778be113e4f91bde869b3b6ef8ac4c5c ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
   "SelfArx.cls" 1550841385 7278 e73ad3fe0a654ddca73525a34dd49344 ""
-  "migration_region.aux" 1605025367 9250 b1cd3f2c46612dcdbe05412217bf6fc0 ""
-  "migration_region.bbl" 1605025361 17091 7656200bd494149f9f5aace33f65ead0 "bibtex migration_region"
-  "migration_region.run.xml" 1605025367 2714 d29c77d7377a2e3c5e777e76a5582e5a ""
-  "migration_region.tex" 1605025354 21459 812b9c2277885d8708652310ea6560fb ""
+  "migration_region.aux" 1605356630 14589 7fb64deea402f799baaf294a295c5ab8 ""
+  "migration_region.bbl" 1605356621 36894 f509cdb627c753c408770a71e188a0c1 "bibtex migration_region"
+  "migration_region.run.xml" 1605356630 2714 d29c77d7377a2e3c5e777e76a5582e5a ""
+  "migration_region.tex" 1605356602 28773 2ac3c0c1657b231adeeccd62e63c10ee ""
   (generated)
+  "migration_region.run.xml"
   "migration_region.pdf"
   "migration_region.aux"
-  "migration_region.run.xml"
   "migration_region-blx.bib"
   "migration_region.log"

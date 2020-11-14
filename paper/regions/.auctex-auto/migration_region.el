@@ -32,8 +32,6 @@
     "keywordname")
    (LaTeX-add-labels
     "fig:adam_mig"
-    "fig:hist_mig_corop"
-    "fig:housing_mig"
     "eq:grav"
     "eq:gravfixed"
     "fig:gravity_network"
@@ -41,7 +39,9 @@
     "linear"
     "mund"
     "muno"
-    "model")
+    "model"
+    "fig:hist_mig_corop"
+    "fig:housing_mig")
    (LaTeX-add-bibliographies
     "references.bib"))
  :latex)
