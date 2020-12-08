@@ -58,15 +58,9 @@ m_data <- list(
   mBA = df$mBA,
   nr_regions = max(df$destination),
   nr = max(df$did),
-  ldist = df$ldist,
+  ldist = df$ldist, 
   lpopA = df$lpopA,
-  lpopB = df$lpopB,
-  lhomA = df$lhomA,
-  lsocA = df$lsocA,
-  lhomB = df$lhomB,
-  lsocB = df$lsocB,
-  lrentA = df$lrentA,
-  lrentB = df$lrentB
+  lpopB = df$lpopB
 )
 
 pairs( ~ lpopA + lpopB, data = df, col= rangi2)
@@ -79,22 +73,17 @@ m <- ulam(
     log(lambdaAB) <- cons + 
       b_popA * lpopA + b_popB * lpopB + 
       b_dist*ldist + 
-      b_hA  * lhomA + b_hB * lhomB + b_sA * lsocA + b_sB * lsocB + 
-      #b_hA_int  * lhomA * lpopA + b_hB_int * lhomB * lpopB + b_sA_int * lsocA * lpopA + b_sB_int * lsocB * lpopB + 
-      gr[origin,1] + gr[destination,2] +   
+            gr[origin,1] + gr[destination,2] +   
       y[year] + 
       d[did,1],
     log(lambdaBA) <- cons + 
       b_popB * lpopA + b_popA * lpopB + 
        b_dist*ldist + 
-       b_hA  * lhomB + b_hB * lhomA + b_sA * lsocB + b_sB * lsocA + 
-       #b_hB_int  * lhomA * lpopA + b_hA_int * lhomB * lpopB + b_sB_int * lsocA * lpopA + b_sA_int * lsocB * lpopB + 
       gr[destination,1] + gr[origin,2] +   
       y[year] + 
       d[did, 2],
     b_dist ~ normal(-1.5, 0.5),
     c(b_popA, b_popB) ~ normal(1, 0.5),
-    c(b_hA, b_sA, b_hB, b_sB) ~ normal(0, 1),
     #c(b_hA_int, b_sA_int, b_hB_int, b_sB_int) ~ normal(0, 1),
     cons ~ normal(3,3),
     y[year] ~ normal(0, sigma_y),
@@ -122,7 +111,7 @@ m <- ulam(
   ), data = m_data , chains = 4 , cores = 4 , iter = 4000, warmup = 1000 )
 
 precis(m)
-save(m, file = "./output/corop_final_model.rda")
+save(m, file = "./output/corop_final_no_housing_model.rda")
 load(file = "./output/corop_final_model.rda")
 precis( m , depth=3 , pars=c("Rho_1", "Rho_2", "sigma_d", "sigma_gr") ) #, "Rho_d","sigma_d") )
 pairs(m@stanfit, pars=c("b_sA", "b_sB", "b_hA", "b_hB", "b_popA", "b_popB") )
@@ -139,7 +128,7 @@ tibble(g = exp(g[, 1]),
   geom_abline(color = "#FCF9F0", linetype = 2, alpha = 1/3) + # white "#FCF9F0" # gold "#B1934A"
   geom_point(color = "#B1934A", alpha = 1/3, size = 1/4) +
   stat_ellipse(type = "norm", level = .5, size = 1/2, color = "#80A0C7") +
-  stat_ellipse(type = "norm", level = .90, size = 1/2, color = "#80A0C7") +
+  stat_ellipse(type = "norm", level = .9, size = 1/2, color = "#80A0C7") +
   labs(x = expression(giving[italic(i)==1]),
        y = expression(receiving[italic(i)==1])) +
   coord_equal(xlim = c(0, 700),
@@ -170,14 +159,14 @@ p_scatter<-  ggplot(data = data_scatter, aes(group = region)) +
   geom_abline(color = "#FCF9F0", linetype = 2, alpha = 1/3) +
   stat_ellipse(data = . %>% unnest(data),
                aes(x = g, y = r),
-               type = "norm", level = .90, size = 1/2, alpha = 1/2, color = "#80A0C7") +
-  geom_point(aes(x = mu_g, y = mu_r, size = population/2, alpha = 1/3 ),
+               type = "norm", level = .5, size = 1/2, alpha = 1/2, color = "#80A0C7") +
+  geom_point(aes(x = mu_g, y = mu_r, size = population ),
              show.legend = FALSE,
              color = "#DCA258") +
   labs(x = "generalized push",
        y = "generalized pull") +
   coord_equal(xlim = c(0, 500),
-              ylim = c(0, 300))
+              ylim = c(0, 400))
 
 pdf(file = "./fig/scatter.pdf" ,width=5,height=4) 
 p_scatter
@@ -188,8 +177,8 @@ dy2 <- apply( post$d[,,2] , 2 , mean )
 
 p_dyad <- ggplot(data = data.frame(dy1, dy2), aes(dy1, dy2), color = col.alpha("blue",1)) + 
   geom_point(color = "#8B9DAF", alpha = 1/2, size = 1/2) +
-  xlab("dyad specific factor i to j")+ 
-  ylab("dyad specific factor j to i") + 
+  xlab("Region i in dyad")+ 
+  ylab("region j in dyad") + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + 
   geom_hline(yintercept=0, color = "#FCF9F0", linetype = 2, alpha = 1/3) + 
   geom_vline(xintercept=0, color = "#FCF9F0", linetype = 2, alpha = 1/3) + 

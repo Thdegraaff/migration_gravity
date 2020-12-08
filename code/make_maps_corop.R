@@ -67,10 +67,10 @@
   regions <- left_join(regions, d_wonen, by = c("corop_nr" = "corop") ) 
   
   p_coef_in <- ggplot() + geom_sf(data = regions, aes(fill = coef_in), lwd = 0.4) + 
-    scale_fill_distiller("Relative\n pull factor\n", palette = "RdBu", direction = -1, limits = c(-1.5, 1.5) ) +
+    scale_fill_distiller("Relative\n pull factor\n", palette = "RdBu", direction = -1, limits = c(-1.55, 1.55) ) +
     ggtitle("Regional destination effect") 
   p_coef_out <- ggplot() + geom_sf(data = regions, aes(fill = coef_out), lwd = 0.4) + 
-    scale_fill_distiller("Relative\n push factor\n", palette = "RdBu", direction = -1, limits = c(-1.5, 1.5) ) + 
+    scale_fill_distiller("Relative\n push factor\n", palette = "RdBu", direction = -1, limits = c(-1.55, 1.55) ) + 
     ggtitle("Regional origin effect") 
   
   p_homeown <- ggplot() + geom_sf(data = regions, aes(fill = ownership)) + 

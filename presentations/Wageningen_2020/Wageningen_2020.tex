@@ -1,0 +1,461 @@
+\documentclass{beamer}
+\usetheme[block = fill, titleformat title = allcaps, titleformat subtitle  = smallcaps,
+progressbar = foot, background = light]{metropolis}           % Use metropolis theme
+\usepackage{pgfplots}
+\usepackage{appendixnumberbeamer}
+\usepackage{booktabs}
+\usepackage{amsmath, array}
+\usepackage{pifont}
+\usetikzlibrary{arrows.meta,positioning, shapes, backgrounds}
+
+\usepackage[sortcites=false,style=authoryear-comp,bibencoding=utf8, natbib=true, firstinits=true, maxcitenames=2, maxbibnames = 99, uniquename=false, backend=bibtex, useprefix=true, backref=false,doi=false,isbn=false,url=false,dashed=true]{biblatex}
+\setlength\bibhang{20pt}
+\bibliography{../../paper/regions/references.bib}
+\AtEveryBibitem{%
+	\clearfield{day}%
+	\clearfield{month}%
+	\clearfield{endday}%
+	\clearfield{endmonth}%
+}
+\AtBeginBibliography{\footnotesize}
+
+\makeatletter
+\let\save@measuring@true\measuring@true
+\def\measuring@true{%
+	\save@measuring@true
+	\def\beamer@sortzero##1{\beamer@ifnextcharospec{\beamer@sortzeroread{##1}}{}}%
+	\def\beamer@sortzeroread##1<##2>{}%
+	\def\beamer@finalnospec{}%
+}
+\makeatother
+
+\title{Urban exodus?}
+\subtitle{Housing market structure and interregional migration revisited}
+\date{December 8, 2020}
+\author{Thomas de Graaff}
+\institute{Vrije Universiteit Amsterdam\\Tinbergen Institute Amsterdam}
+\begin{document}
+\maketitle
+
+\begin{frame}{Background: two different cultures \footnotesize{\citep{breiman2001statistical}} }
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+		In economics:
+		\begin{itemize}
+			\item \alert{causal} impact of $x$ on $y$
+			\item \alert{focuses} on $\hat{\beta}$
+			\item \alert{marginal} effect
+		\end{itemize}
+		\begin{center}
+			\includegraphics[width=0.5\textwidth]{../../fig/harmless}
+		\end{center}
+	\end{column}\pause
+	\begin{column}{0.5\textwidth}
+		Outside economics:
+		\begin{itemize}
+			\item \alert{model performance }
+			\item \alert{focuses} on $\hat{y}$
+			\item \alert{prediction} of total effect
+		\end{itemize}
+		\begin{center}
+			\includegraphics[width=0.5\textwidth]{../../fig/rethinking}
+		\end{center}
+	\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Urban Exodus?}
+  \includegraphics[width=1.0\textwidth]{../../fig/outmig_amsterdam.pdf}
+\end{frame}
+
+\begin{frame}{Housing market, urban regions and interregional migration: why bother?}
+  \begin{itemize}
+	\item Possible drivers of urban out-migration?
+	  \begin{itemize}
+		\item \alert{suburbanisation} of poverty \footnotesize{\citep{hochstenbach2018gentrification}}
+		\item \alert{crowding} out of the housing market by short-term rentals
+		  \footnotesize{\citep{koster2018short}}
+		\item \alert{Influx} of high-skilled migrants
+		  \footnotesize{\citep{beckers2019residential}}\newline \pause
+\end{itemize}
+\item Dutch housing market: \alert{tight} \& regulated
+	  \begin{itemize}
+   			\item large \alert{shortage} of housing
+   			\item decrease in housing \alert{transactions}
+   			\item large \alert{regional} variation\newline \pause
+   		\end{itemize}
+   		\item Large literature on \alert{external} effects of home-ownership \footnotesize{\citep{dietz2003social}}
+   		\begin{itemize}
+   			\item \alert{negative}: moving costs \footnotesize{\citep{oswald1996conjecture,oswald1999housing}}
+   		\end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{My contributions to the literature}
+  \begin{itemize}
+  \item Large empirical (economic) literature on impact home-ownership as drivers of interregional migration, but:
+    \begin{itemize}
+    \item usually concerns \alert{marginal} effect of home-ownership
+    \item less attention to \alert{predictions} for the whole network\newline
+    \end{itemize}
+  \item Literature on impact of social renting on migration flows is
+    scarce \footnotesize{\citep{de2009homeownership} }
+	\begin{itemize}
+        \item In the Netherlands social renting is a large phenomenon
+          ($\approx$ 24\% of total housing stock)
+        \item Social renting rights only valid \alert{within} city
+        \item Social renting is an \alert{urban} phenomenon (e.g. $\approx$
+          40--50\% in Amsterdam) 
+        \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{So, this paper}
+  \begin{description}
+  \item[Does what?] \alert{Estimates} the impact of housing market
+	  structure on Dutch interregional migration flows using a
+	  \alert{multilevel} gravity model
+    \begin{footnotesize}
+	\begin{itemize}
+	  \item \footnotesize UK context by \citet{congdon2010random}
+	  \item \footnotesize social relations model \emph{cf.}
+		\citet{koster2014food}
+		\item \footnotesize \emph{Statistical Rethinking} from \citet{mcelreath2020statistical}
+		\item \footnotesize \texttt{ggplot2} code from \href{https://bookdown.org/content/4857/}{Solomon Kurz} (2020) \newline
+	\end{itemize}
+  \end{footnotesize}
+	\item[Aim] To \alert{predict} regional migration flows using housing market structure, regional specific and regional-pair specific effects
+  \end{description}
+\end{frame}
+
+
+\begin{frame}[fragile]{Why a \alert{multilevel} approach?}
+There are at least two \alert{levels} in migration (I use three) \pause
+\begin{description}
+	\item[Observed migration \alert{flows}] Migration between $i$ and $j$ with friction (e.g., distance) attributes (obs = $R^2 - R$)
+		\begin{figure}	
+		\begin{tikzpicture}[scale=0.90, thick]
+		
+		\tikzstyle{orig}=[rectangle, rounded corners, thin, fill=green!20, text=black, draw, minimum width=2cm]
+		\tikzstyle{dest}=[rectangle, rounded corners, thin, fill=red!20, text=black, draw, minimum width=2cm]
+	\tikzstyle{var}=[rectangle, rounded corners, thin, fill=black!10, text=black, draw, minimum width = 0.6cm, minimum height = 0.4cm]
+		\node[orig] (o1) at (0,0)  {\textsc{region$_i$}};
+		\node[dest] (d1) at (6,0)  {\textsc{region$_j$}};	
+		% Migration links
+		\draw[-latex, black, thick] (1.5,0) -- (4.5, 0);
+		\node[var] (m) at (3,0)  {\scriptsize \textsc{$\mathbf{X}_{ij}$}};
+
+		\end{tikzpicture}
+	\end{figure}\pause
+	\item[Observed \alert{push \& pull} factors] Attributes of $i$ and $j$ (obs $= R$)
+		\begin{figure}	
+	\begin{tikzpicture}[scale=0.90, thick]
+	
+	\tikzstyle{orig}=[rectangle, rounded corners, thin, fill=green!20, text=black, draw, minimum width=2cm]
+	\tikzstyle{dest}=[rectangle, rounded corners, thin, fill=red!20, text=black, draw, minimum width=2cm]
+	\tikzstyle{var}=[rectangle, rounded corners, thin, fill=black!10, text=black, draw, minimum width = 0.6cm, minimum height = 0.4cm]
+	\node[orig] (o1) at (0,0)  {\textsc{region$_i$}};
+	\node[dest] (d1) at (6,0)  {\textsc{region$_j$}};	
+
+	\node[var] (v1) at (0,-1.2)  {\scriptsize \textsc{$\mathbf{X}_i$}};
+	\node[var] (v3) at (6,-1.2)  {\scriptsize \textsc{$\mathbf{X}_j$} };
+
+	\draw[-latex, thick, black] (v1) -- (o1);
+	\draw[-latex, thick, black] (v3) -- (d1);
+	
+	\end{tikzpicture}
+\end{figure}\pause	
+	\item[Observed flows within regional \alert{dyads}] migration from $i \rightarrow j$ is correlated with migration from $j \rightarrow i$ (obs $= \frac{R^{2}- R}{2}$)
+			\begin{figure}	
+		\begin{tikzpicture}[scale=0.90, thick]
+		
+		\tikzstyle{orig}=[rectangle, rounded corners, thin, fill=green!20, text=black, draw, minimum width=2cm]
+		\tikzstyle{dest}=[rectangle, rounded corners, thin, fill=red!20, text=black, draw, minimum width=2cm]
+		\node[orig] (o1) at (0,0)  {\textsc{region$_i$}};
+		\node[dest] (d1) at (6,0)  {\textsc{region$_j$}};	
+		% Migration links
+		\draw[-latex, black, thick] (1.5,0.15) -- (4.5, 0.15);
+		\draw[-latex, black, thick] (4.5,-0.15) -- (1.5, -0.15);		
+		
+		\end{tikzpicture}
+	\end{figure}
+\end{description}
+\end{frame}
+
+\begin{frame}{Why a \alert{Bayesian} multilevel approach?}
+\begin{itemize}
+	\item Hierarchical, mixed effects, varying intercept/parameter, shrinkage, partial pooling models\pause
+	\item Increasingly used for model \alert{performance} and \alert{flexibility} \pause
+    \item \alert{Simultaneous} modeling at various levels (e.g., cities, regions, flows, individuals) 
+    \begin{itemize}
+    	\item no two-stage models anymore 
+    	\item precision (standard errors) is correct\pause
+    \end{itemize}
+	\item \alert{Partial pooling}: For example, origin specific effects are drawn from a distribution: $o_{i} \sim \text{ Normal}(\alpha, \sigma)$
+	\begin{itemize}
+		\item $\sigma \longrightarrow 0$ : complete pooling
+		\item $\sigma \longrightarrow \infty$ : no pooling (fixed effects)
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Data: migrations flows in 2018}
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{../../fig/hist_mig_corop}      
+	\end{center}
+\begin{itemize}
+  \item Panel for the period 2012--2018
+	\begin{itemize}
+		\item estimation: 2012--2017
+		\item out-of-sample prediction: 2018
+	\end{itemize}
+	\item Migration flows \alert{between} 40 Dutch regions
+	\item Variance $\gg$ mean: \alert{over-dispersion}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Data: regional housing structure in 2018}
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{../../fig/hist_housing_corop}
+\end{center}
+\begin{itemize}
+	\item Positive correlation between population and share social renting ($0.46$)
+	\item Negative correlation between share social renting and share home-ownership ($-0.88)$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Data: regional housing structure in 2018 (cont.)}
+		\begin{columns}
+	\begin{column}{0.5\textwidth}
+	  \begin{center}
+		\begin{figure}
+		  \includegraphics[width=1.1\textwidth]{../../fig/p_homeown}
+		  \caption{Share of homeownership}
+		  \end{figure}
+		\end{center}
+	\end{column}
+	\begin{column}{0.5\textwidth}
+		\begin{center}
+		  \begin{figure}
+		  \includegraphics[width=1.1\textwidth]{../../fig/p_socrent}
+		  \caption{Share of social renting}
+		  \end{figure}
+		\end{center}
+	\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Modeling framework: traditional gravity modeling}
+	\begin{equation*}
+	\log(\text{Migrants}_{ij}) = o_i + d_j + \gamma\log(\text{dist}_{ij}) + \epsilon_{ij}
+	\label{eq:gravfixed}
+	\end{equation*} 
+	
+	Origin and destination specific \alert{regional} effects for multilateral resistance  \citep{anderson2003gravity}, but:
+	\begin{itemize}
+		\item what about \alert{zeros} in $\text{Migrants}_{ij}$?
+		\item how to incorporate \alert{housing} structure in the presence of $o_i$ and $d_j$?
+		\item \alert{over-dispersion} and \alert{heteroskedasticity} \footnotesize{\citep{silva2006log} }
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Poisson versus negative binomial\footnote{
+			\emph{We urge researchers to resist the siren song of the Negative
+			Binomial \footnotesize{ \citep{head2014gravity}} }
+			}}
+	
+	\begin{itemize}
+		\item Counts of migrants\newline 
+		\item \alert{Constraints} should hold
+		$$
+		\sum_{j=1}^{R} {\widehat{\text{Migrants} }_{ij} } = O_i \qquad \sum_{i=1}^{R} {\widehat{\text{Migrants} }_{ij} } = D_j
+		$$
+		\begin{itemize}
+			\item poisson: \ding{51}
+		    \item negative binomial: \ding{55} \newline
+		  \end{itemize}
+		  \item multilevel structure already controls for overdispersion
+		\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Modeling framework: multilevel gravity modeling}
+\begin{small}
+  \begin{align}
+	\text{Migrants}_{ij} \sim & \text{ Poisson}(\lambda_{ij}) \notag \\
+	\text{Migrants}_{ji} \sim & \text{ Poisson}(\lambda_{ji}) \tag{\footnotesize \color{blue} flow of migrants} \\ \pause
+	\log(\lambda_{ij}) =  & \: \alpha + o_{i} + d_{j} + \text{dyad}_{ij} +\tag{\footnotesize
+							\color{blue} varying effects}  \\ \pause
+							  & \: \mathbf{X}_{i}  \beta_{i}+ \mathbf{X}_{j} \beta_{j}  \tag{\footnotesize \color{blue} explanatory variables}  \\ \pause
+	\log(\lambda_{ji}) =  & \: \alpha + o_{j} + d_{i} + \text{dyad}_{ji} + \notag \\
+							  & \: \mathbf{X}_{j}  \beta_{i}+ \mathbf{X}_{i} \beta_{j} \notag  \\ \pause
+	\left(\begin{matrix} 
+		o_{i} \\
+		d_{i}
+	\end{matrix}\right) \sim& \text{ MVNormal}\left( \left( \begin{matrix}
+	0 \\
+	0 
+	\end{matrix}\right) , \left(\begin{matrix}
+	\sigma_o^2 & \sigma_o \sigma_d \rho \\
+	 \sigma_o \sigma_d \rho  & \sigma_d^2
+   \end{matrix}\right) \right)  \tag{\footnotesize \color{blue} varying region effects}  \\ \pause 	\left(\begin{matrix}
+		\text{dyad}_{ij} \\
+		\text{dyad}_{ji}
+	\end{matrix}\right) \sim& \text{ MVNormal}\left( \left( \begin{matrix}
+	0 \\
+	0 
+	\end{matrix}\right) , \left(\begin{matrix}
+	\sigma_{\text{dyad}}^2 & \sigma_{\text{dyad}}^2 \rho_{\text{dyad}} \\
+	 \sigma_{\text{dyad}}^2 \rho_{\text{dyad}}  & \sigma_{\text{dyad}}^2
+	\end{matrix}\right) \right)  \tag{\footnotesize \color{blue} varying dyad effects}
+	\end{align}
+\end{small}
+\end{frame}
+
+\begin{frame}{Out-of-sample prediction for 2018 ($\text{R}^{2} = 0.98$ )}
+\begin{center}
+	\includegraphics[width=0.9\textwidth]{../../fig/p_o_plot}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Estimation results}
+				\begin{tiny}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} rr}
+				\toprule
+				parameter &  mean & standard deviation \\
+				\midrule
+				intercept  & $\mathbf{4.48}$ & 0.14 \\
+				\addlinespace
+				origin: \\
+				\hspace{1cm} log(population) & $\mathbf{1.08}$ & 0.04 \\
+				\hspace{1cm} log(homeownership)  &  $\mathbf{1.85}$ & 0.11 \\
+				\hspace{1cm} log(social renting)  &  $\mathbf{1.39}$ & 0.08 \\
+				\addlinespace
+				destination: \\
+				\hspace{1cm} log(population)  &  $\mathbf{0.95}$ & 0.03 \\
+				\hspace{1cm} log(homeownership)  & $\textbf{-0.67}$ & 0.10 \\
+				\hspace{1cm} log(social renting)  &  $-0.09$ & 0.07 \\
+				\addlinespace
+				migrants flow: \\
+				\hspace{1cm} log(distance) &  $\mathbf{-1.62}$ & 0.02 \\
+				\addlinespace
+				standard deviations: \\
+				\hspace{1cm} origin &  $\mathbf{0.51}$ & 0.06 \\
+				\hspace{1cm} destination  & $\mathbf{0.31}$ & 0.04 \\
+				\hspace{1cm} dyad  &  $\mathbf{0.39}$ & 0.01 \\
+				\addlinespace
+				correlation \\
+				\hspace{1cm} origin-destination  & $\mathbf{0.84}$ & 0.05 \\
+				\hspace{1cm} dyad  &  $\mathbf{0.80}$ & 0.01 \\
+				\bottomrule
+			  \end{tabular*}
+		\end{tiny}
+		\tiny{\textbf{Bold:} 89\% credible intervals do not include zero}\\
+		\tiny{Samples are drawn using the NUTS sampler from STAN using 4 chains, each with 4,000 iterations and 1,000 warm-up samples}
+\end{frame}
+
+\begin{frame}{Correlation between origin and destination $\rho= 0.84$}
+				\begin{center}
+		\includegraphics[width=0.9\textwidth]{../../fig/scatter}
+	\end{center}
+\end{frame}
+
+
+\begin{frame}{Asymmetric push and pull factors}
+		\begin{columns}
+	\begin{column}{0.5\textwidth}
+		\begin{center}
+			\includegraphics[width=1.1\textwidth]{../../fig/p_coef_out}      
+		\end{center}
+	\end{column}
+	\begin{column}{0.5\textwidth} 	
+		\begin{center}
+			\includegraphics[width=1.1\textwidth]{../../fig/p_coef_in}      
+		\end{center}
+	\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Dyad specific effects $\rho_{\text{dyad}} = 0.80$}
+				\begin{center}
+		\includegraphics[width=0.9\textwidth]{../../fig/dyad}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Sensitivity checks}
+			\begin{columns}
+		\begin{column}{0.5\textwidth}
+				Results are \alert{robust} to
+				\begin{itemize}
+					\item year\pause
+					\item interaction effects with population \pause
+				  \item inclusion of household size \pause
+				  \item spatial autocorrelation in regional effects:
+					\begin{eqnarray*}
+					  o_{i}, d_{j}& \sim &\text{MVNormal}(0, \mathbf{K})\\
+					  \mathbf{K}_{ij} & = & \eta^{2}\exp(-\rho^{2}\mathbf{D}_{ij})
+					\end{eqnarray*}
+					\pause
+				  \end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\alert{Modest} spatial autocorrelation
+			\begin{center}
+				\includegraphics[width=\textwidth]{../../fig/spatial_autocorrelation}
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Conclusions}
+
+\textbf{Main results}
+\begin{itemize}
+  \item housing structure asymmetric impact on migration
+  \begin{itemize}
+	\item positive on push/negative on pull
+  \end{itemize}
+  \item No indication for specific \alert{urban} exodus in period 2012--2017
+  \begin{itemize}
+\item time-trends?
+  \end{itemize}
+  \item impact social renting smaller than homeowership
+\citep{boyle1998migration}
+	\begin{itemize}
+	  \item social housing is like a \alert{different ball game}\newline
+	\end{itemize}
+\end{itemize}
+
+\textbf{Powerful Bayesian multilevel gravity model}:
+\begin{itemize}
+  \item predictive power---shrinkage
+  \item flexibility
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Supplementary materials}
+
+Paper, presentation, data and code can be retrieved from the project's GitHub page: 
+
+\begin{center}\url{https://github.com/Thdegraaff/migration\_gravity}\end{center}
+
+\end{frame}
+
+\begin{frame}[standout]
+Thank you!
+\end{frame}
+
+\appendix
+
+\begin{frame}[allowframebreaks]{References}
+
+		\printbibliography[heading=none]
+
+\end{frame}
+
+
+\end{document}

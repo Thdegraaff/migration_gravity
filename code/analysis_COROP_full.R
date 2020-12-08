@@ -114,7 +114,7 @@ m <- ulam(
   ), data = m_data , chains = 4 , cores = 4 , iter = 2000, warmup = 1000 )
 
 precis(m)
-save(m, file = "./output/corop_null_model_full.rda")
+save(m, file = "./output/corop_final_model_full.rda")
 
 precis( m , depth=3 , pars=c("Rho_sp") ) #, "Rho_d","sigma_d") )
 precis( m , depth=3 , pars=c("gsA") ) #, "Rho_d","sigma_d") )

@@ -1,0 +1,31 @@
+\frametitle{Modeling framework: multilevel gravity modeling}
+\begin{small}
+  \begin{align}
+	\text{Migrants}_{ij} \sim & \text{ Poisson}(\lambda_{ij}) \notag \\
+	\text{Migrants}_{ji} \sim & \text{ Poisson}(\lambda_{ji}) \tag{\footnotesize \color{blue} flow of migrants} \\ \pause
+	\log(\lambda_{ij}) =  & \: \alpha + o_{i} + d_{j} + \text{dyad}_{ij} +\tag{\footnotesize
+							\color{blue} varying effects}  \\ \pause
+							  & \: \mathbf{X}_{i}  \beta_{i}+ \mathbf{X}_{j} \beta_{j}  \tag{\footnotesize \color{blue} explanatory variables}  \\ \pause
+	\log(\lambda_{ji}) =  & \: \alpha + o_{j} + d_{i} + \text{dyad}_{ji} + \notag \\
+							  & \: \mathbf{X}_{j}  \beta_{i}+ \mathbf{X}_{i} \beta_{j} \notag  \\ \pause
+	\left(\begin{matrix}
+		o_{i} \\
+		d_{i}
+	\end{matrix}\right) \sim& \text{ MVNormal}\left( \left( \begin{matrix}
+	0 \\
+	0
+	\end{matrix}\right) , \left(\begin{matrix}
+	\sigma_o^2 & \sigma_o \sigma_d \rho \\
+	 \sigma_o \sigma_d \rho  & \sigma_d^2
+   \end{matrix}\right) \right)  \tag{\footnotesize \color{blue} varying region effects}  \\ \pause 	\left(\begin{matrix}
+		\text{dyad}_{ij} \\
+		\text{dyad}_{ji}
+	\end{matrix}\right) \sim& \text{ MVNormal}\left( \left( \begin{matrix}
+	0 \\
+	0
+	\end{matrix}\right) , \left(\begin{matrix}
+	\sigma_{\text{dyad}}^2 & \sigma_{\text{dyad}}^2 \rho_{\text{dyad}} \\
+	 \sigma_{\text{dyad}}^2 \rho_{\text{dyad}}  & \sigma_{\text{dyad}}^2
+	\end{matrix}\right) \right)  \tag{\footnotesize \color{blue} varying dyad effects}
+	\end{align}
+\end{small}

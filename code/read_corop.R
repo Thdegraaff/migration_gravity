@@ -113,7 +113,7 @@ d_wonen <- d_wonen %>%
     socialrent = total_social_rent/total_houses,
     rent = total_other/total_houses
     ) %>% 
-  select(corop, year,  ownership, socialrent, rent) %>%
+  select(corop, year,  ownership, socialrent, rent, total_houses) %>%
   filter(corop <= nr_corop)
 
 save(d_wonen, file="./data/derived/d_wonen.Rda")
@@ -146,18 +146,27 @@ d <- d %>%
   rename(popB = population)
 d <- left_join(d, d_wonen, by = c("origin" = "corop", "year" = "year") ) 
 d <- d %>%
+  mutate(
+    hhsizeA = popA/total_houses 
+  ) %>%
   rename(
     homA = ownership,
     socA = socialrent,
     rentA = rent
-    )
+    ) %>%
+  select(-total_houses)
 d <- left_join(d, d_wonen, by = c("destination" = "corop", "year" = "year") ) 
 d <- d %>%
+  mutate(
+    hhsizeB = popB/total_houses 
+  ) %>%
   rename(
     homB = ownership,
     socB = socialrent, 
     rentB = rent
-    )
+    )%>%
+  select(-total_houses)
+  
 
 ######################
 # Demean data
@@ -174,11 +183,13 @@ d <- d %>%
     lsocA = log(socA) - mean( log(socA) ),
     lsocB = log(socB) - mean( log(socB) ),
     lrentA = log(rentA) - mean( log(rentA) ),
-    lrentB = log(rentB) - mean( log(rentB) )
+    lrentB = log(rentB) - mean( log(rentB) ),
+    lhhsizeA = log(hhsizeA) - mean( log(hhsizeA) ),
+    lhhsizeB = log(hhsizeB) - mean( log(hhsizeB) )    
   )  
 
 ######################
-# tranform to dyad database
+# transform to dyad database
 ######################
 
 origin <- integer(0)
