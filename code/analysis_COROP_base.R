@@ -80,24 +80,4 @@ m_base_housing <- ulam(
 precis(m_base_housing)
 save(m_base_housing, file = "./output/m_base_housing.rda")
 
-load(file = "./output/m_base.rda")
-load(file = "./output/m_base_housing.rda")
-
-mu_base <- link(m_base)
-mu_base_housing <- link(m_base_housing)
-
-y_hat <- c(colMeans(mu_base$lambdaAB), colMeans(mu_base$lambdaBA) ) 
-y <- c(df$mAB, df$mBA) 
-y_mean <- mean(c(df$mAB, df$mBa))
-ESS <- sum((y_hat - y_mean)^2)
-TSS <- sum((y - y_mean)^2)
-ESS/TSS
-
-y_hat <- c(colMeans(mu_base_housing$lambdaAB), colMeans(mu_base_housing$lambdaBA) ) 
-y <- c(df$mAB, df$mBA) 
-y_mean <- mean(c(df$mAB, df$mBa))
-ESS <- sum((y_hat - y_mean)^2)
-TSS <- sum((y - y_mean)^2)
-ESS/TSS
-
 rm(list = ls()) # Remove all objects

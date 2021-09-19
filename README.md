@@ -1,6 +1,6 @@
 # migration_gravity
 
-Code, data, presentation and paper for a within migration study in the Netherlands using a mixed effects multilevel model. 
+Code, data, presentation and paper for a domestic regional migration study in the Netherlands using a mixed effects multilevel model. 
 The preliminary abstract of the paper is as follows:
 
 ## Housing market and migration revisited: a Bayesian multilevel gravity model for Dutch regions 
@@ -30,9 +30,13 @@ commands from the `R`-package `rethinking`. The latter package is written by
 [rethinking](https://github.com/rmcelreath/rethinking))
 
 1. `read_corop.R`
-2. `analysis_COROP.R`
-3. `make_maps.R`
-4. `process_results.R`
+2. `analysis_COROP_base.R`
+3. `analysis_COROP_full.R`
+4. `analysis_COROP_hhsize.R`
+5. `analysis_COROP_spatial.R`
+4. `make_maps_corop.R`
+5  `make_results_table.R`
+6. `process_results.R`
 
-Note that there are more code files that are used for earlier analyses
-(typically on a municipality level)
+Note that there are more code files that are used for earlier analyses on municipalities
+(within the folder municipalities)
