@@ -59,62 +59,70 @@ distance <- list(
   destination = as.integer( colnames(distance)[col(distance)] %||% col(distance) ),
   distance = distance/100000
 ) %>% 
-  map_dfc(as.vector)
+  map_dfc(as.vector) %>%
+  mutate(distance = replace(distance, distance == 0, 0.01))
 
 ######################
 # Read in csv files
 ######################
 
 verh <- read.csv2(file = "./data/src/COROP/verhuizingen_corop.csv", header = FALSE, skip = 1)
+verh <- read.csv2(file = "./data/src/COROP/verhuizingen_corop_2011_2020.csv", header = FALSE, skip = 1, sep = ";")
 verh$V1<- as.character(verh$V1)
-d <- separate(verh, V1,  c("id", "destination", "origin", "year", "number"))
+d <- separate(verh, V1,  c("year", "destination", "origin", "number"), sep = ";")
 d <- d %>%
+  select(-destination, -origin) %>%
   mutate(
-    destination = as.integer(str_remove(destination, "CR") ),
-    origin = as.integer(str_remove(origin, "CR") ),
-    year = as.integer(str_remove(year, "JJ00") ),
+    destination = rep(1:nr_corop, each = 10 * nr_corop),
+    origin = rep(1:nr_corop, nr_corop, each = 10),
+    year = as.integer(year),
     number = as.integer(number)
   ) %>%
-  select( -id ) %>% # we do not need this variable
-  filter(destination != origin, year != 2011, origin <= nr_corop, destination <= nr_corop) # not interested in within migration
-
-d_in <- d %>% 
-  filter(destination == 23) %>% 
-  group_by(year) %>%
-  summarise(total_in = sum(number))
-
-d_out <- d %>% 
-  filter(origin == 23) %>% 
-  group_by(year) %>%
-  summarise(total_out = sum(number))
-
-mig_adam <- right_join(d_in, d_out, by = "year") %>%
-  mutate(net_out = total_out - total_in)
+  filter(year != 2011, origin != destination)
 
 d_for_plot <- d
 
-bev <- read.csv2(file = "./data/src/COROP/bevolking.csv", sep = ";", header = FALSE, skip = 1)
-bev$V1<- as.character(bev$V1)
-d_bev <- separate(bev, V1,  c("id", "Geslacht", "Leeftijd", "BurgerlijkeStaat", "COROP", "year", "population"))
+bev <- read.csv2(file = "./data/src/COROP/bevolking_2011_2020.csv", sep = ";", header = FALSE, skip = 1)
+d_bev <- separate(bev, V1,  c("Geslacht", "Leeftijd", "BurgerlijkeStaat", "year", "corop", "population"), sep = ";")
 d_bev <- d_bev %>%
+  select(population, BurgerlijkeStaat ) %>%
   mutate(
-    corop = as.integer(str_remove(COROP, "CR") ),
-    year = as.integer(str_remove(year, "JJ00") ),
+    year = rep(2011:2020, 120),
+    corop = rep(1:40, 3, each = 10),
     population = as.numeric(population)
   ) %>%
-  select( corop, year, population ) %>%
-  filter(year != 2011, year != 2019, corop <= nr_corop)
+  pivot_wider(names_from = BurgerlijkeStaat, values_from = population) %>%
+  rename(
+    population = '"Totaal burgerlijke staat"',
+    married = '"Gehuwd"',
+    divorced = '"Gescheiden"'
+  ) %>%
+  filter(year != 2011)
 
-d_wonen <- read.csv(file = "./data/src/COROP/corop_woningen_totaal.csv", header = TRUE)
-d_wonen$corop <- rep(1:40, each = 8)
+d_wonen <- read.csv2(file = "./data/src/COROP/corop_woningen_2012_2020.csv", header = FALSE, skip = 1)
+d_wonen <- separate(d_wonen, V1,  c("totaal", "corop", "year", "total_houses", "total_own","total_rent", "total_social_rent", "total_other", "unknown"), sep = ";")
 d_wonen <- d_wonen %>%
+  filter(totaal == "Totaal") %>%
+  select(-corop, -year, -totaal) %>%
   mutate(
+    year = rep(2012:2020, 40),
+    corop = rep(1:40, each = 9),
+    total_houses = as.numeric(total_houses),
+    total_own = as.numeric(total_own),
+    total_rent = as.numeric(total_rent),
+    total_social_rent = as.numeric(total_social_rent),
+    total_other = as.numeric(total_other),
     ownership = total_own/total_houses,
     socialrent = total_social_rent/total_houses,
-    rent = total_other/total_houses
-    ) %>% 
-  select(corop, year,  ownership, socialrent, rent, total_houses) %>%
-  filter(corop <= nr_corop)
+    rent = total_other/total_houses    
+  )  %>% 
+  group_by(corop) %>%
+  mutate(
+    d_own = lead(total_own) - total_own,
+    d_social_rent = lead(total_social_rent) - total_social_rent,
+    d_private_rent = lead(total_other) - total_other
+  ) %>%
+  select(corop, year,  ownership, socialrent, rent, total_houses, total_own, total_social_rent, d_own, d_social_rent, d_private_rent)
 
 save(d_wonen, file="./data/derived/d_wonen.Rda")
 
@@ -125,7 +133,7 @@ save(d_wonen, file="./data/derived/d_wonen.Rda")
 df_pairs <- d_wonen %>%
   left_join(d_bev, by = c("corop" = "corop", "year" = "year") ) %>%
   filter(year == 2015)
-pairs(~ ownership + socialrent + rent + population, data = df_pairs, col = rangi2)
+pairs(~ d_social_rent + d_own + population, data = df_pairs, col = rangi2)
 
 ######################
 # descriptives
@@ -150,9 +158,16 @@ d <- d %>%
     hhsizeA = popA/total_houses 
   ) %>%
   rename(
+    dhomA = d_own,
+    dsocA = d_social_rent,
+    dpriA = d_private_rent,
     homA = ownership,
-    socA = socialrent,
-    rentA = rent
+    socA = socialrent,     
+    rentA = rent,
+    marriedA = married.x,
+    divorcedA = divorced.x,
+    marriedB = married.y,
+    divorcedB = divorced.y,
     ) %>%
   select(-total_houses)
 d <- left_join(d, d_wonen, by = c("destination" = "corop", "year" = "year") ) 
@@ -161,12 +176,14 @@ d <- d %>%
     hhsizeB = popB/total_houses 
   ) %>%
   rename(
+    dhomB = d_own,
+    dsocB = d_social_rent,
+    dpriB = d_private_rent,
     homB = ownership,
     socB = socialrent, 
     rentB = rent
     )%>%
   select(-total_houses)
-  
 
 ######################
 # Demean data
@@ -182,6 +199,12 @@ d <- d %>%
     lhomB = log(homB) - mean( log(homB) ),
     lsocA = log(socA) - mean( log(socA) ),
     lsocB = log(socB) - mean( log(socB) ),
+    dhomA = (dhomA - mean(dhomA, na.rm = TRUE) )/sd(dhomA, na.rm = TRUE),
+    dhomB = (dhomB - mean(dhomB, na.rm = TRUE) )/sd(dhomB, na.rm = TRUE),
+    dsocA = (dsocA - mean(dsocA, na.rm = TRUE) )/sd(dsocA, na.rm = TRUE),
+    dsocB = (dsocB - mean(dsocB, na.rm = TRUE) )/sd(dsocB, na.rm = TRUE),    
+    dpriA = (dpriA - mean(dpriA, na.rm = TRUE) )/sd(dpriA, na.rm = TRUE),
+    dpriB = (dpriB - mean(dpriB, na.rm = TRUE) )/sd(dpriB, na.rm = TRUE),     
     lrentA = log(rentA) - mean( log(rentA) ),
     lrentB = log(rentB) - mean( log(rentB) ),
     lhhsizeA = log(hhsizeA) - mean( log(hhsizeA) ),
@@ -194,9 +217,9 @@ d <- d %>%
 
 origin <- integer(0)
 destination <- integer(0)
-for (i in 1:(nr_corop -1) ) {
-  origin_new <- rep(i, nr_corop - i )
-  destination_new <- seq(i+1, nr_corop)
+for (i in 1:(nr_corop - 1) ) {
+  origin_new <- rep(i, nr_corop - i)
+  destination_new <- seq(i + 1, nr_corop)
   origin <- c(origin, origin_new)
   destination <- c(destination, destination_new)
 }
@@ -204,9 +227,9 @@ df <- data.frame(origin, destination)
 
 nr_d <- nrow(df)
 df$did <- seq(1, nr_d, 1)
-# we have 7 years
-df <- rbind(df, df, df, df, df, df, df)
-df$year <- rep(2012:2018, each = nr_d)
+# we have 9 years
+df <- rbind(df, df, df, df, df, df, df, df, df)
+df$year <- rep(2012:2020, each = nr_d)
 
 # start joining
 df <- left_join(df, d, by = c("origin" = "origin", "destination" = "destination", "year" = "year") )

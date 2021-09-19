@@ -36,7 +36,7 @@
   
   # Load Data files
   
-  load(file="./output/corop_final_model.Rda")
+  load(file="./output/corop_dyad.Rda")
   load(file="./data/derived/d_wonen.Rda")
   d_wonen <- d_wonen %>%
     filter(year == 2018) %>%
@@ -52,7 +52,7 @@
   data("nl_corop")
   regions <- nl_corop
   
-  post <- extract.samples( m )
+  post <- extract.samples( m_dyad )
   
   ori <- sapply( 1:nr_corop , function(i) post$gr[,i,1] )
   des <- sapply( 1:nr_corop , function(i) post$gr[,i,2] )
@@ -67,10 +67,10 @@
   regions <- left_join(regions, d_wonen, by = c("corop_nr" = "corop") ) 
   
   p_coef_in <- ggplot() + geom_sf(data = regions, aes(fill = coef_in), lwd = 0.4) + 
-    scale_fill_distiller("Relative\n pull factor\n", palette = "RdBu", direction = -1, limits = c(-1.55, 1.55) ) +
+    scale_fill_distiller("Relative\n pull factor\n", palette = "RdBu", direction = -1, limits = c(-2, 2) ) +
     ggtitle("Regional destination effect") 
   p_coef_out <- ggplot() + geom_sf(data = regions, aes(fill = coef_out), lwd = 0.4) + 
-    scale_fill_distiller("Relative\n push factor\n", palette = "RdBu", direction = -1, limits = c(-1.55, 1.55) ) + 
+    scale_fill_distiller("Relative\n push factor\n", palette = "RdBu", direction = -1, limits = c(-2, 2) ) + 
     ggtitle("Regional origin effect") 
   
   p_homeown <- ggplot() + geom_sf(data = regions, aes(fill = ownership)) + 

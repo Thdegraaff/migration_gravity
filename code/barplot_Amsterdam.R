@@ -37,41 +37,28 @@ theme_set(theme_pearl_earring())
 # Read data
 ######################
 
-adam <- read.csv2(file = "./data/src/COROP/Amsterdam_migratie.csv", header = TRUE)
+adam <- read.csv2(file = "./data/src/COROP/Amsterdam_migratie_2011_2020.csv", header = FALSE, skip = 1, sep = ";")
+adam <- separate(adam, V1,  c("year", "region", "totaal_g", "0_5_g", "5_10_g",  "10_15_g",  "15_20_g",  "20_25_g",  "25_30_g",
+                              "30_40_g", "40_50_g",  "50_65_g",  "65_85_g",  "85_g", 
+                              "totaal_v", "0_5_v", "5_10_v",  "10_15_v",  "15_20_v",  "20_25_v",  "25_30_v",
+                              "30_40_v", "40_50_v",  "50_65_v",  "65_85_v",  "85_v"), sep = ";")
 
 ######################
 # Mutate data
 ######################
 
 df_adam <- adam %>%
-  select(-Geslacht, -Regio.s) %>%
-  rename(
-    age  = Leeftijd..31.december.,
-    year = Perioden,
-    in_mig = Tussen.gemeenten.verhuisde.personen.Gevestigd.in.de.gemeente..aantal.,
-    out_mig = Tussen.gemeenten.verhuisde.personen.Vertrokken.uit.de.gemeente..aantal.
-  ) %>%
   mutate(
-    net_in = in_mig - out_mig, 
+    Total = as.numeric(totaal_g) - as.numeric(totaal_v),
+    `Below 15` = as.numeric(`0_5_g`) + as.numeric(`5_10_g`) + as.numeric(`10_15_g`) - (as.numeric(`0_5_v`) + as.numeric(`5_10_v`) + as.numeric(`10_15_v`) ),
+    `15 to 30` = as.numeric(`15_20_g`) + as.numeric(`20_25_g`) + as.numeric(`25_30_g`) - (as.numeric(`15_20_v`) + as.numeric(`20_25_v`) + as.numeric(`25_30_v`) ),
+    `30 to 50` = as.numeric(`30_40_g`) + as.numeric(`40_50_g`) - (as.numeric(`30_40_v`) + as.numeric(`40_50_v`) ),
+    `50 to 65` = as.numeric(`50_65_g`) - (as.numeric(`50_65_v`) ),    
+    `Above 65` = as.numeric(`65_85_g`) + as.numeric(`85_g`) - (as.numeric(`65_85_v`) + as.numeric(`85_v`) )
   ) %>%
-  select(-in_mig, -out_mig)
-
-df <- df_adam %>%
-  pivot_wider(names_from = age, values_from = net_in) %>%
-  mutate(
-    Total = Totaal, 
-    `Below 15` = `0 tot 5 jaar` + `5 tot 10 jaar` + `10 tot 15 jaar`,
-    `15 to 30` = `15 tot 20 jaar` + `20 tot 25 jaar` + `25 tot 30 jaar`,
-    `30 to 45` = `30 tot 35 jaar` + `35 tot 40 jaar` + `40 tot 45 jaar`,
-    `45 to 60` = `45 tot 50 jaar` + `50 tot 55 jaar` + `55 tot 60 jaar`, 
-    `Above 60` = `60 tot 65 jaar` + `65 tot 70 jaar` + `70 tot 75 jaar` + 
-      `75 tot 80 jaar` + `80 tot 85 jaar` + `85 tot 90 jaar` + 
-      `90 tot 95 jaar` + `95 tot 100 jaar` + `100 jaar of ouder`, 
-  ) %>%
-  select(year, Total, `Below 15`,  `15 to 30`, `30 to 45`, `45 to 60`, `Above 60` ) %>%
+  select(year, Total, `Below 15`,  `15 to 30`, `30 to 50`, `50 to 65`, `Above 65` ) %>%
   pivot_longer(cols = 2:7) %>%
-  filter(year %in% (2011:2019)) %>%
-  transform(name=factor(name,levels=c("Total","Below 15","15 to 30", "30 to 45", "45 to 60", "Above 60"))) %>%
+  transform(name=factor(name,levels=c("Total","Below 15","15 to 30", "30 to 50", "50 to 65", "Above 65"))) %>%
   mutate(
     year = as.factor(year)
   ) 
@@ -80,12 +67,12 @@ df <- df_adam %>%
 # Make plot
 ######################
   
-plot_adam <- ggplot(df, aes(x = year, y= value)) + 
+plot_adam <- ggplot(df_adam, aes(x = year, y= value)) + 
   geom_bar(stat = "identity", fill = "#EEDA9D", color = "#DCA258") + 
   ylab("Net inmigration") + 
   xlab("Year") + 
-  ggtitle("Net regional migration to Amsterdam (2011-2019)") + facet_wrap(~name, nrow = 1)  +
-  scale_x_discrete(labels=c("2011" = "", "2013" = "", "2014" = "", "2015" = "", "2016" = "", "2017" = "", "2019" = ""))
+  ggtitle("Net regional migration to Amsterdam (2011-2020)") + facet_wrap(~name, nrow = 1)  +
+  scale_x_discrete(labels=c("2011" = "", "2013" = "", "2014" = "", "2015" = "", "2016" = "", "2017" = "", "2019" = "", "2020" = ""))
 
 pdf(file = "./fig/outmig_amsterdam.pdf" ,width=8,height=4) 
 plot_adam

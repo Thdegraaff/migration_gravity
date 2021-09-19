@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: urban_exodus.aux
+The style file: cas-model2-names.bst
+Database file #1: references.bib
+Repeated entry---line 218 of file references.bib
+ : @article{dietz2003social
+ :                         ,
+I'm skipping whatever remains of this entry
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--missing institution in koster2018short
+Warning--empty journal in linders2006estimation
+Warning--missing institution in oswald1996conjecture
+Warning--empty journal in tinbergen1962shaping
+You've used 38 entries,
+            2990 wiz_defined-function locations,
+            962 strings with 12529 characters,
+and the built_in function-call counts, 23301 in all, are:
+= -- 1801
+> -- 780
+< -- 25
++ -- 322
+- -- 264
+* -- 2419
+:= -- 3385
+add.period$ -- 112
+call.type$ -- 38
+change.case$ -- 274
+chr.to.int$ -- 38
+cite$ -- 42
+duplicate$ -- 1807
+empty$ -- 1807
+format.name$ -- 392
+if$ -- 4319
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 338
+newline$ -- 203
+num.names$ -- 152
+pop$ -- 703
+preamble$ -- 1
+purify$ -- 240
+quote$ -- 0
+skip$ -- 517
+stack$ -- 0
+substring$ -- 1092
+swap$ -- 1197
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 330
+warning$ -- 4
+while$ -- 168
+width$ -- 0
+write$ -- 529
+(There was 1 error message)

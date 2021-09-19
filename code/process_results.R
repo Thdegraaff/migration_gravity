@@ -48,13 +48,13 @@ theme_set(theme_pearl_earring())
 
 nr <- 40
 
-load(file = "./output/corop_final_model.rda")
+load(file = "./output/corop_dyad.rda")
 
 
 ######## From rethinking package
 
-precis(m)
-list <-  extract.samples( m )
+precis(m_dyad)
+list <-  extract.samples( m_dyad )
 samples <- data.frame(list[1:10])
 samples <- samples[, c(1:8)]
 
@@ -84,7 +84,7 @@ dev.off()
 
 load(file = "./data/derived/migration_COROP.Rda")
 
-df <- df %>% filter(year == 2018)
+df <- df %>% filter(year == 2020)
 
 nr_regions = max(df$destination)
 
@@ -112,9 +112,9 @@ mig_data <- list(
 # Careful, will take some time
 ##############################
 
-samplesp <- extract.samples(m, n = 500)
+samplesp <- extract.samples(m_dyad, n = 500)
 
-p <- link(m, data = mig_data, post = samplesp)
+p <- link(m_dyad, data = mig_data, post = samplesp)
 mABp <- round(colMeans(p$lambdaAB))
 mBAp <- round(colMeans(p$lambdaBA))
 
@@ -162,14 +162,17 @@ p_o_plot <- ggplot(data = predict_df, aes(x = migrants, y = predict) ) +
                      geom_point(color = "#B1934A", alpha = 1/2, size = 2) + 
                      geom_abline(intercept = 0, slope = 1, color = "#FCF9F0", linetype = 2, alpha = 1/3) +
                      geom_smooth(method = "lm", color = "#80A0C7", linetype = 1, alpha = 0.5, size = 0.5, se = F) + 
-                     coord_equal(xlim = c(0, 7000),
-                                 ylim = c(0, 7000)) + 
-                    xlab("Observed migrant flows in 2018")+ 
-                    ylab("Predicted migrant flows in 2018") 
+                     coord_equal(xlim = c(0, 8000),
+                                 ylim = c(0, 8000)) + 
+                    xlab("Observed migrant flows in 2020")+ 
+                    ylab("Predicted migrant flows in 2020") 
 
 pdf(file = "./fig/p_o_plot.pdf" ,width=5,height=4) 
 p_o_plot
 dev.off()
+
+cor(predict_df$migrants, predict_df$predict)
+
 ######################
 # Create new data and difference the pmean predicted outcomes
 ######################
