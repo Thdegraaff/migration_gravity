@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex urban_exodus"] 1631970739 "urban_exodus.aux" "urban_exodus.bbl" "urban_exodus" 1631970739
+["bibtex urban_exodus"] 1632057134 "urban_exodus.aux" "urban_exodus.bbl" "urban_exodus" 1632057180
   "./cas-model2-names.bst" 1620742662 31800 50c9da7327ed431cce3c915c6982e987 ""
   "references.bib" 1605021667 16463 8b331ab5ee9cb5fdb94b12eb63dd0945 ""
-  "urban_exodus.aux" 1631970738 8184 621c05d2b97e1e6cec6ef8ad545400b9 ""
+  "urban_exodus.aux" 1632057179 8292 ee1c6e99a4180fabeb734a5ea7b8c88a ""
   (generated)
   "urban_exodus.bbl"
   "urban_exodus.blg"
-["pdflatex"] 1631970737 "urban_exodus.tex" "urban_exodus.pdf" "urban_exodus" 1631970737
+["pdflatex"] 1632057178 "urban_exodus.tex" "urban_exodus.pdf" "urban_exodus" 1632057180
   "../../fig/gravity_network.pdf" 1557932040 64488 25740746d228adc1a9f2e5da5c28a556 ""
   "../../fig/hist_housing_corop.pdf" 1631795908 4799 3f0a4d831de8587e5f96a5ed72c5aefc ""
   "../../fig/hist_mig_corop.pdf" 1631795907 4983 728bf88cc6f5f9d4e1e8909da8ba3596 ""
@@ -166,14 +166,14 @@
   "cas-dc.cls" 1620742662 4131 cd339ce7718d9133dc8cc5e56b7202a8 ""
   "thumbnails/cas-email.jpeg" 1553056078 8764 ae276cc9956197082d008c18ae4cbb28 ""
   "thumbnails/cas-url.jpeg" 1553056078 7736 ef75ae5d7195a5176d102b6aea09b729 ""
-  "urban_exodus.abs" 1631970738 1265 8d37cc8284174b349fcb6b9145ef55d8 ""
-  "urban_exodus.aux" 1631970715 8161 fe82aa8a7114a22f5cb40c98be3ef95b ""
-  "urban_exodus.bbl" 1631970716 14466 712a90229f54d47f85acc7e1e08c7c65 "bibtex urban_exodus"
-  "urban_exodus.out" 1631970715 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "urban_exodus.tex" 1631970735 25693 bfd69ccc2829352d8e0a955b67122150 ""
+  "urban_exodus.abs" 1632057179 1265 8d37cc8284174b349fcb6b9145ef55d8 ""
+  "urban_exodus.aux" 1632057179 8292 ee1c6e99a4180fabeb734a5ea7b8c88a ""
+  "urban_exodus.bbl" 1632057134 14466 712a90229f54d47f85acc7e1e08c7c65 "bibtex urban_exodus"
+  "urban_exodus.out" 1632057179 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "urban_exodus.tex" 1632057177 28262 5849f77422b2ad890894a0f1f507a0c1 ""
   (generated)
-  "urban_exodus.log"
-  "urban_exodus.abs"
-  "urban_exodus.aux"
   "urban_exodus.pdf"
+  "urban_exodus.log"
   "urban_exodus.out"
+  "urban_exodus.aux"
+  "urban_exodus.abs"

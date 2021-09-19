@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.8)  18 SEP 2021 15:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.8)  19 SEP 2021 15:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1835,14 +1835,14 @@ Package pdftex.def Info: ./../../fig/hist_housing_corop.pdf used on input line
 411.
 (pdftex.def)             Requested size: 238.25444pt x 119.12346pt.
  [4 <./../../fig/hist_mig_corop.pdf>]
-(./urban_exodus.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 452.
- [5 <./../../fig/hist_housing_corop.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 452.
+(./urban_exodus.bbl [5 <./../../fig/hist_housing_corop.pdf>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 491.
+ [6]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 491.
 
 (./urban_exodus.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 452.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 452.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 491.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 491.
 Package rerunfilecheck Info: File `urban_exodus.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  )
@@ -1852,13 +1852,13 @@ Package rerunfilecheck Info: File `urban_exodus.out' has not changed.
 ### simple group (level 1) entered at line 340 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 21892 strings out of 492995
- 374003 string characters out of 6132704
- 477899 words of memory out of 5000000
- 24923 multiletter control sequences out of 15000+600000
+ 21896 strings out of 492995
+ 374030 string characters out of 6132704
+ 479902 words of memory out of 5000000
+ 24925 multiletter control sequences out of 15000+600000
  633401 words of font info for 214 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,11n,69p,10416b,436s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,11n,69p,10416b,537s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm
 -super-t1.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/inconsolata/i
 4-t1-0.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/stix/stix-t1.enc
@@ -1880,10 +1880,10 @@ cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfss
 b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/stix-mathrm-bold.
 pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb
 >
-Output written on urban_exodus.pdf (5 pages, 322335 bytes).
+Output written on urban_exodus.pdf (6 pages, 325632 bytes).
 PDF statistics:
- 340 PDF objects out of 1000 (max. 8388607)
- 303 compressed objects within 4 object streams
- 79 named destinations out of 1000 (max. 500000)
+ 345 PDF objects out of 1000 (max. 8388607)
+ 307 compressed objects within 4 object streams
+ 81 named destinations out of 1000 (max. 500000)
  23071 words of extra memory for PDF output out of 24883 (max. 10000000)
 
