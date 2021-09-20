@@ -44,51 +44,45 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>migration_region.aux</file>
-      <file>migration_region-blx.bib</file>
+      <file>urban_exodus.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>migration_region.bbl</file>
+      <file>urban_exodus.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
       <file>blx-compat.def</file>
-      <file>blx-bibtex.def</file>
       <file>biblatex.def</file>
       <file>blx-natbib.def</file>
-      <file>authoryear-comp.bbx</file>
-      <file>authoryear.bbx</file>
       <file>standard.bbx</file>
-      <file>authoryear-comp.cbx</file>
+      <file>authoryear.bbx</file>
+      <file>authoryear.cbx</file>
       <file>biblatex.cfg</file>
       <file>english.lbx</file>
+      <file>british.lbx</file>
+      <file>dutch.lbx</file>
     </requires>
   </internal>
   <external package="biblatex" priority="5" active="0">
-    <generic>bibtex</generic>
+    <generic>biber</generic>
     <cmdline>
-      <binary>bibtex</binary>
-      <option>-min-crossrefs 2</option>
-      <infile>migration_region</infile>
+      <binary>biber</binary>
+      <infile>urban_exodus</infile>
     </cmdline>
     <input>
-      <file>migration_region.aux</file>
+      <file>urban_exodus.bcf</file>
     </input>
     <output>
-      <file>migration_region.bbl</file>
+      <file>urban_exodus.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>migration_region.bbl</file>
+      <file>urban_exodus.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>migration_region.aux</file>
-      <file>migration_region-blx.bib</file>
+      <file>urban_exodus.bcf</file>
     </requires>
     <requires type="editable">
       <file>references.bib</file>
-    </requires>
-    <requires type="static">
-      <file>biblatex.bst</file>
     </requires>
   </external>
 </requests>

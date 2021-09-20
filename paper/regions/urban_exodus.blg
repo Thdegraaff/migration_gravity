@@ -1,56 +1,18 @@
-This is BibTeX, Version 0.99d (TeX Live 2017)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
-The top-level auxiliary file: urban_exodus.aux
-The style file: cas-model2-names.bst
-Database file #1: references.bib
-Repeated entry---line 218 of file references.bib
- : @article{dietz2003social
- :                         ,
-I'm skipping whatever remains of this entry
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Warning--missing institution in koster2018short
-Warning--empty journal in linders2006estimation
-Warning--missing institution in oswald1996conjecture
-Warning--empty journal in tinbergen1962shaping
-You've used 38 entries,
-            2990 wiz_defined-function locations,
-            962 strings with 12529 characters,
-and the built_in function-call counts, 23301 in all, are:
-= -- 1801
-> -- 780
-< -- 25
-+ -- 322
-- -- 264
-* -- 2419
-:= -- 3385
-add.period$ -- 112
-call.type$ -- 38
-change.case$ -- 274
-chr.to.int$ -- 38
-cite$ -- 42
-duplicate$ -- 1807
-empty$ -- 1807
-format.name$ -- 392
-if$ -- 4319
-int.to.chr$ -- 1
-int.to.str$ -- 1
-missing$ -- 338
-newline$ -- 203
-num.names$ -- 152
-pop$ -- 703
-preamble$ -- 1
-purify$ -- 240
-quote$ -- 0
-skip$ -- 517
-stack$ -- 0
-substring$ -- 1092
-swap$ -- 1197
-text.length$ -- 0
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 330
-warning$ -- 4
-while$ -- 168
-width$ -- 0
-write$ -- 529
-(There was 1 error message)
+[0] Config.pm:304> INFO - This is Biber 2.12
+[1] Config.pm:307> INFO - Logfile is 'urban_exodus.blg'
+[47] biber-MSWIN64:315> INFO - === 
+[137] Biber.pm:371> INFO - Reading 'urban_exodus.bcf'
+[260] Biber.pm:889> INFO - Found 45 citekeys in bib section 0
+[284] Biber.pm:4093> INFO - Processing section 0
+[302] Biber.pm:4254> INFO - Looking for bibtex format file 'references.bib' for section 0
+[417] bibtex.pm:1523> INFO - LaTeX decoding ...
+[502] bibtex.pm:1340> INFO - Found BibTeX data source 'references.bib'
+[506] Utils.pm:193> WARN - Duplicate entry key: 'dietz2003social' in file 'references.bib', skipping ...
+[742] Utils.pm:193> WARN - month field 'mar' in entry 'kurzStatisticalRethinkingSecondEd2021' is not an integer - this will probably not sort properly.
+[842] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[843] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[844] Biber.pm:3921> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-GB'
+[845] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-GB'
+[905] bbl.pm:636> INFO - Writing 'urban_exodus.bbl' with encoding 'UTF-8'
+[1097] bbl.pm:739> INFO - Output to urban_exodus.bbl
+[1100] Biber.pm:110> INFO - WARNINGS: 2

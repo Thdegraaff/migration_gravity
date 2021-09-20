@@ -40,40 +40,36 @@ This plot describes the flows from origins to destinations and the various varia
 	\node[dest] (d7) at (8,-6) {\textsc{Destination$_R$}};
 	
 	 % Migratior links
-  	\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5, 0);
+
 	\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-0.8);
 	\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-1.8);
 	\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-3.8);
 	\draw[-latex, blue, thin, dashed] (1.5,0) -- (6.5,-5.6);
 	
 	\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-0.1);
-	\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-0.9);
 	\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-1.9);
 	\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-3.9);
 	\draw[-latex, blue, thin, dashed] (1.5,-1) -- (6.5,-5.7);
 	
 	\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5, -0.2);
 	\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-1);
-	\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-2);
 	\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-4);
 	\draw[-latex, blue, thin, dashed] (1.5,-2) -- (6.5,-5.8);
 	
 	\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-0.3);
 	\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-1.1);
 	\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-2.1);
-	\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-4.1);
 	\draw[-latex, blue, thin, dashed] (1.5,-4) -- (6.5,-5.9);
 	
 	\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5, -0.4);
 	\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-1.2);
 	\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-2.2);
 	\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-4.2);
-	\draw[-latex, blue, thin, dashed] (1.5,-6) -- (6.5,-6);
 	
 	\node[migrants] (m) at (4,-3)  {\textsc{Migrant flows $i \rightarrow j$}};
 	
 	\node[var] (v1) at (0,-8)  {\textsc{Origin-specific variables ($o_i, \mathbf{X_i}$)}};
-	\node[var] (v2) at (4,-8)  {\textsc{flow-specific variables ($\mathbf{X}_{ij}$) }};
+	\node[var] (v2) at (4,-8)  {\textsc{flow-specific variables (${dyad}_{ij}$, $\mathbf{X}_{ij}$) }};
 	\node[var] (v3) at (8,-8)  {\textsc{Destination-specific variables  ($d_j, \mathbf{X_j}$)}};
 	
 	\begin{pgfonlayer}{background}
