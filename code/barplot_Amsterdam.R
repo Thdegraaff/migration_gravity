@@ -8,30 +8,30 @@ library("dutchmasters")
 ######################
 # Set Dutch masters theme
 ######################
-
-theme_pearl_earring <- function(light_color = "#E8DCCF", 
-                                dark_color = "#100F14", 
-                                my_family = "Courier",
-                                ...) {
-  
-  theme(line = element_line(color = light_color),
-        text = element_text(color = light_color, family = my_family),
-        strip.text = element_text(color = light_color, family = my_family),
-        axis.text = element_text(color = light_color),
-        axis.ticks = element_line(color = light_color),
-        axis.line = element_blank(),
-        legend.background = element_rect(fill = dark_color, color = "transparent"),
-        legend.key = element_rect(fill = dark_color, color = "transparent"),
-        panel.background = element_rect(fill = dark_color, color = light_color),
-        panel.grid = element_blank(),
-        plot.background = element_rect(fill = dark_color, color = dark_color),
-        strip.background = element_rect(fill = dark_color, color = "transparent"),
-        ...)
-  
-}
-
-# now set `theme_pearl_earring()` as the default theme
-theme_set(theme_pearl_earring())
+# 
+# theme_pearl_earring <- function(light_color = "#E8DCCF", 
+#                                 dark_color = "#100F14", 
+#                                 my_family = "Courier",
+#                                 ...) {
+#   
+#   theme(line = element_line(color = light_color),
+#         text = element_text(color = light_color, family = my_family),
+#         strip.text = element_text(color = light_color, family = my_family),
+#         axis.text = element_text(color = light_color),
+#         axis.ticks = element_line(color = light_color),
+#         axis.line = element_blank(),
+#         legend.background = element_rect(fill = dark_color, color = "transparent"),
+#         legend.key = element_rect(fill = dark_color, color = "transparent"),
+#         panel.background = element_rect(fill = dark_color, color = light_color),
+#         panel.grid = element_blank(),
+#         plot.background = element_rect(fill = dark_color, color = dark_color),
+#         strip.background = element_rect(fill = dark_color, color = "transparent"),
+#         ...)
+#   
+# }
+# 
+# # now set `theme_pearl_earring()` as the default theme
+# theme_set(theme_pearl_earring())
 
 ######################
 # Read data
@@ -68,11 +68,14 @@ df_adam <- adam %>%
 ######################
   
 plot_adam <- ggplot(df_adam, aes(x = year, y= value)) + 
-  geom_bar(stat = "identity", fill = "#EEDA9D", color = "#DCA258") + 
+  geom_bar(stat = "identity", color = "white", fill = "cornflowerblue") + 
   ylab("Net inmigration") + 
   xlab("Year") + 
-  ggtitle("Net regional migration to Amsterdam (2011-2020)") + facet_wrap(~name, nrow = 1)  +
-  scale_x_discrete(labels=c("2011" = "", "2013" = "", "2014" = "", "2015" = "", "2016" = "", "2017" = "", "2019" = "", "2020" = ""))
+  ggtitle("Net domestic regional migration to Amsterdam (2011-2020)") + facet_wrap(~name, nrow = 1)  +
+  scale_x_discrete(labels=c("2011" = "", "2013" = "", "2014" = "", "2015" = "", "2016" = "", "2017" = "", "2019" = "", "2020" = "")) +
+  theme_minimal() +
+  theme(panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) 
 
 pdf(file = "./fig/outmig_amsterdam.pdf" ,width=8,height=4) 
 plot_adam

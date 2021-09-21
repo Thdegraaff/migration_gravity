@@ -14,29 +14,29 @@ library(rethinking)
 # Set Dutch masters theme
 ######################
 
-theme_pearl_earring <- function(light_color = "#E8DCCF", 
-                                dark_color = "#100F14", 
-                                my_family = "Courier",
-                                ...) {
-  
-  theme(line = element_line(color = light_color),
-        text = element_text(color = light_color, family = my_family),
-        strip.text = element_text(color = light_color, family = my_family),
-        axis.text = element_text(color = light_color),
-        axis.ticks = element_line(color = light_color),
-        axis.line = element_blank(),
-        legend.background = element_rect(fill = dark_color, color = "transparent"),
-        legend.key = element_rect(fill = dark_color, color = "transparent"),
-        panel.background = element_rect(fill = dark_color, color = light_color),
-        panel.grid = element_blank(),
-        plot.background = element_rect(fill = dark_color, color = dark_color),
-        strip.background = element_rect(fill = dark_color, color = "transparent"),
-        ...)
-  
-}
-
-# now set `theme_pearl_earring()` as the default theme
-theme_set(theme_pearl_earring())
+# theme_pearl_earring <- function(light_color = "#E8DCCF", 
+#                                 dark_color = "#100F14", 
+#                                 my_family = "Courier",
+#                                 ...) {
+#   
+#   theme(line = element_line(color = light_color),
+#         text = element_text(color = light_color, family = my_family),
+#         strip.text = element_text(color = light_color, family = my_family),
+#         axis.text = element_text(color = light_color),
+#         axis.ticks = element_line(color = light_color),
+#         axis.line = element_blank(),
+#         legend.background = element_rect(fill = dark_color, color = "transparent"),
+#         legend.key = element_rect(fill = dark_color, color = "transparent"),
+#         panel.background = element_rect(fill = dark_color, color = light_color),
+#         panel.grid = element_blank(),
+#         plot.background = element_rect(fill = dark_color, color = dark_color),
+#         strip.background = element_rect(fill = dark_color, color = "transparent"),
+#         ...)
+#   
+# }
+# 
+# # now set `theme_pearl_earring()` as the default theme
+# theme_set(theme_pearl_earring())
 
 ######################
 # Read in data
@@ -136,14 +136,20 @@ fit_data <- data.frame(
 fit_large <- filter(fit_data, Migrants >= 100)
 fit_small <- filter(fit_data, Migrants < 100)
 hist_fit_small <- ggplot(data = fit_small, aes(Migrants, fill = type)) + 
-  geom_histogram( color = "#100F14" , bins = 10, position = 'dodge') +
-  scale_fill_manual(values=c("#DCA258", "#80A0C7")) +
-  labs(fill="") 
+  geom_histogram( color = "white" , bins = 10, position = 'dodge') +
+  scale_fill_manual(values=c("cornflowerblue", "#DCA258")) +
+  labs(fill="")  + 
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black"))
 hist_fit_large <- ggplot(data = fit_large, aes(Migrants, fill = type)) + 
-  geom_histogram(color = "#100F14", bins = 10, position = 'dodge') +
+  geom_histogram(color = "white", bins = 10, position = 'dodge') +
   scale_x_continuous(breaks=seq(100, 7100, 1000)) +
-  scale_fill_manual(values=c("#DCA258", "#80A0C7")) +
-  labs(fill="")
+  scale_fill_manual(values=c("cornflowerblue", "#DCA258")) +
+  labs(fill="") + 
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black"))
 hist_fit <- plot_grid(hist_fit_small + theme(legend.position = "none"), 
                       hist_fit_large + theme(legend.position = "none"), 
                       labels = c("Small flows", "Large flows"), 
@@ -153,23 +159,22 @@ legend_b <- get_legend(hist_fit_small + theme(legend.position="bottom"))
 
 hist_fit <- plot_grid( hist_fit, legend_b, ncol = 1, rel_heights = c(1,.1) )
 
-pdf(file = "./fig/hist_fit.pdf" ,width=8,height=4) 
-hist_fit
-dev.off()
+ggsave(hist_fit, file="./fig/hist_fit.pdf", width  = 200, height = 80, units = "mm")
 
 predict_df <- data_frame(migrants, predict)
 p_o_plot <- ggplot(data = predict_df, aes(x = migrants, y = predict) ) + 
-                     geom_point(color = "#B1934A", alpha = 1/2, size = 2) + 
-                     geom_abline(intercept = 0, slope = 1, color = "#FCF9F0", linetype = 2, alpha = 1/3) +
-                     geom_smooth(method = "lm", color = "#80A0C7", linetype = 1, alpha = 0.5, size = 0.5, se = F) + 
+                     geom_point(color = "cornflowerblue", alpha = 1/2, size = 2) + 
+                     geom_abline(intercept = 0, slope = 1, color = "black", linetype = 2, alpha = 1/3) +
+                     geom_smooth(method = "lm", color = "cornflowerblue", linetype = 1, alpha = 0.5, size = 0.5, se = F) + 
                      coord_equal(xlim = c(0, 8000),
                                  ylim = c(0, 8000)) + 
                     xlab("Observed migrant flows in 2020")+ 
-                    ylab("Predicted migrant flows in 2020") 
+                    ylab("Predicted migrant flows in 2020") +
+                theme_minimal() +
+                theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black"))
 
-pdf(file = "./fig/p_o_plot.pdf" ,width=5,height=4) 
-p_o_plot
-dev.off()
+ggsave(p_o_plot, file="./fig/prediction_2020.pdf", width  = 100, height = 80, units = "mm")
 
 cor(predict_df$migrants, predict_df$predict)
 

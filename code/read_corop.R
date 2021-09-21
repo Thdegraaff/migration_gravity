@@ -8,34 +8,36 @@ library("cowplot")
 library("spatialrisk")
 library("rethinking")
 library("dutchmasters")
+library("grid")
+library("gridExtra")
 
 ######################
 # Set Dutch masters theme
 ######################
 
-theme_pearl_earring <- function(light_color = "#E8DCCF", 
-                                dark_color = "#100F14", 
-                                my_family = "Courier",
-                                ...) {
-  
-  theme(line = element_line(color = light_color),
-        text = element_text(color = light_color, family = my_family),
-        strip.text = element_text(color = light_color, family = my_family),
-        axis.text = element_text(color = light_color),
-        axis.ticks = element_line(color = light_color),
-        axis.line = element_blank(),
-        legend.background = element_rect(fill = dark_color, color = "transparent"),
-        legend.key = element_rect(fill = dark_color, color = "transparent"),
-        panel.background = element_rect(fill = dark_color, color = light_color),
-        panel.grid = element_blank(),
-        plot.background = element_rect(fill = dark_color, color = dark_color),
-        strip.background = element_rect(fill = dark_color, color = "transparent"),
-        ...)
-  
-}
+# theme_pearl_earring <- function(light_color = "#E8DCCF", 
+#                                 dark_color = "#100F14", 
+#                                 my_family = "Courier",
+#                                 ...) {
+#   
+#   theme(line = element_line(color = light_color),
+#         text = element_text(color = light_color, family = my_family),
+#         strip.text = element_text(color = light_color, family = my_family),
+#         axis.text = element_text(color = light_color),
+#         axis.ticks = element_line(color = light_color),
+#         axis.line = element_blank(),
+#         legend.background = element_rect(fill = dark_color, color = "transparent"),
+#         legend.key = element_rect(fill = dark_color, color = "transparent"),
+#         panel.background = element_rect(fill = dark_color, color = light_color),
+#         panel.grid = element_blank(),
+#         plot.background = element_rect(fill = dark_color, color = dark_color),
+#         strip.background = element_rect(fill = dark_color, color = "transparent"),
+#         ...)
+#   
+# }
 
 # now set `theme_pearl_earring()` as the default theme
-theme_set(theme_pearl_earring())
+#theme_set(theme_pearl_earring())
 
 ######################
 # Read in Shapefile
@@ -125,6 +127,14 @@ d_wonen <- d_wonen %>%
   select(corop, year,  ownership, socialrent, rent, total_houses, total_own, total_social_rent, d_own, d_social_rent, d_private_rent)
 
 save(d_wonen, file="./data/derived/d_wonen.Rda")
+
+d_wonen %>%
+  filter(corop == 23) %>%
+  group_by(year) %>%
+  summarise(
+    m_hom = mean(total_own/total_houses), 
+    m_soc = mean(total_social_rent/total_houses)
+  )
 
 ######################
 # pairs plot
@@ -277,27 +287,36 @@ variable_names <- c(
 )
 
 hist_housing <- ggplot(data = housing, aes(x = percentage)) + 
-  geom_histogram(aes(y = ..density..) ,fill = "#EEDA9D", color = "#DCA258", breaks=seq(0, 100, by=5), position = "identity") +
+  geom_histogram(aes(y = ..density..), binwidth = 0.1, color = "white", fill = "cornflowerblue",  breaks=seq(0, 100, by=5), position = "identity") +
   facet_wrap(~ housing_type, labeller = labeller(housing_type= variable_names)) +
-  labs(x = "Percentage (%)", y = "")
+  labs(x = "Percentage (%)", y = "")  +  
+  theme_minimal() +
+  theme(panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) 
 
 d_for_plot <- d_for_plot %>%
   filter(year == 2018)
 data_mig_large <- filter(d_for_plot, number >= 100)
 data_mig_small <- filter(d_for_plot, number < 100)
-hist_mig_small <- ggplot(data = data_mig_small, aes(number)) + 
-  geom_histogram(fill = "#EEDA9D", color = "#DCA258", bins = 10) +
-  xlab("Interregional migrants") + ylab("")
-hist_mig_large <- ggplot(data = data_mig_large, aes(number)) + 
-  geom_histogram(fill = "#EEDA9D", color = "#DCA258", bins = 10) +
-  scale_x_continuous(breaks=seq(100, 7100, 1000)) +
-  xlab("Interregional migrants") + ylab("")
-hist_mig <- plot_grid(hist_mig_small, hist_mig_large, labels = c("Small flows", "Large flows"), label_x = 0.4, label_y = 0.96)
-hist_mig
 
-pdf(file = "./fig/hist_mig_corop.pdf" ,width=8,height=4) 
-hist_mig
-dev.off()
+hist_mig_small <- ggplot(data = data_mig_small, aes(number)) + 
+  geom_histogram(color = "white", fill = "cornflowerblue", bins = 10) +
+  xlab("Interregional migrants") + ylab("") + 
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) 
+
+hist_mig_large <- ggplot(data = data_mig_large, aes(number)) + 
+  geom_histogram(color = "white", fill = "cornflowerblue", bins = 10) +
+  scale_x_continuous(breaks=seq(100, 7100, 1000)) +
+  xlab("Interregional migrants") + ylab("") +
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) 
+
+hist_mig <- arrangeGrob(hist_mig_small, hist_mig_large, nrow = 1)
+
+ggsave(hist_mig, file = "./fig/hist_mig_corop.pdf" , width  = 200, height = 80, units = "mm")
 
 pdf(file = "./fig/hist_housing_corop.pdf" ,width=8,height=4) 
 hist_housing 

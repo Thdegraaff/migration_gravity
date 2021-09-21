@@ -19,20 +19,20 @@
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
 \usepackage[style= authoryear, backend=biber, natbib=true, giveninits=true, uniquename=init,doi=false,isbn=false,url=false, maxnames=2, maxcitenames=2, maxbibnames=10, dashed =true, useprefix=true]{biblatex}
-\DeclareSortingNamekeyTemplate{
-	\keypart{
-		\namepart{family}
-	}
-	\keypart{
-		\namepart{prefix}
-	}
-	\keypart{
-		\namepart{given}
-	}
-	\keypart{
-		\namepart{suffix}
-	}
-}
+%\DeclareSortingNamekeyTemplate{
+%	\keypart{
+%		\namepart{family}
+%	}
+%	\keypart{
+%		\namepart{prefix}
+%	}
+%	\keypart{
+%		\namepart{given}
+%	}
+%	\keypart{
+%		\namepart{suffix}
+%	}
+%}
 \AtEveryBibitem{%
 	\clearfield{note}%
 }
@@ -125,7 +125,7 @@ various age cohorts in the period 2011--2019.
 \begin{figure}[h!]\centering % Using \begin{figure*} makes the figure take up
   % the entire width of the page
  \includegraphics[width=1\linewidth]{../../fig/outmig_amsterdam.pdf}
- \caption{Net regional (domestic) migration into Amsterdam in the period 2011--2020 for
+ \caption{Net domestic regional domestic migration into Amsterdam in the period 2011--2020 for
    various age cohorts (including total population in the most left-panel)}
   \label{fig:adam_mig}
 \end{figure}
@@ -315,7 +315,7 @@ Note that Figure \ref{fig:gravity_network} as well denotes, apart from $\mathbf{
 
 To overcome these hurdles, I opt in the next subsection for an alternative strategy which 
 can tackle simultaneously issues above: incorporating both city and dyad
-varying effects and city and dyad specific variables, controlling for heteroskedasticity and modelling the distribution of migrants flows as they are displayed in Figure \ref{fig:hist_mig_corop}---even when
+varying effects and region and dyad specific variables, controlling for heteroskedasticity and modelling the distribution of migrants flows as they are displayed in Figure \ref{fig:hist_mig_corop}---even when
 being zero.
 
 \subsection{A multilevel social relations model for domestic regional migrant flows}
@@ -343,81 +343,122 @@ it is ensured that outliers (very high or low effects) are effectively
 \emph{shrunk} towards the mean. Indeed, this is a further extension of that best
 feature of linear regression: regression towards the mean.
 
-Likewise, I adopt a similar strategy for regional pair effects, where I assume that there is a specific dyad effect for flows from $i$ to $j$ \emph{and} from flows $j$ to $i$, drawn again from a normal distribution. Together with the other variables for origins, desinations and flows, the complete model now looks as follows:
+Likewise, I adopt a similar strategy for regional pair effects, where I assume
+that there is a specific dyad effect for flows from $i$ to $j$ \emph{and} from
+flows $j$ to $i$, drawn again from a normal distribution. Together with the
+other variables for origins, desinations and flows, the complete model now looks
+as follows:
 \begin{subequations}
-  \begin{align} \text{Migrants}_{ij} \sim & \text{Poisson}(\lambda_{ij}), \label{outcome}\\
-    \log(\lambda_{ij}) = & \alpha + o_i + d_j + \text{dyad}_{ij} + \ln(\mathbf{X}_i)\beta_1 + \ln(\mathbf{X}_j)\beta_2 + \ln(\mathbf{X}_{ij})\gamma.  \label{model}
+  \begin{align} \text{Migrants}_{ij} \sim & \text{Poisson}(\lambda_{ijt}), \label{outcome}\\
+    \log(\lambda_{ijt}) = & \alpha + o_i + d_j + t_t + \text{dyad}_{ij} + \ln(\mathbf{X}_{it})\beta_1 + \ln(\mathbf{X}_{jt})\beta_2 + \ln(\mathbf{X}_{ijt})\gamma.  \label{model}
   \end{align}
+  \label{eq:prefmodel}
 \end{subequations}
 The first part (\ref{outcome}) models the outcome variable, being the number of
-  migrants moving from region $i$ to region $j$, using a Poisson distribution (with parameter $\lambda_{ij}$). The second part (\ref{model})  states that the poisson
-    outcome variable is on a log-scale and that the explanatory variables are
-    on a log-scale as well, allowing for the parameter (vectors) $\beta_1$, $\beta_2$ and $\gamma$ to be elasticities.
+migrants moving from region $i$ to region $j$ in year $t$, using a Poisson distribution
+(with parameter $\lambda_{ijt}$). The second part (\ref{model}) states that the
+poisson outcome variable is on a log-scale and that the explanatory variables
+are on a log-scale as well, allowing for the parameter (vectors) $\beta_1$,
+$\beta_2$ and $\gamma$ to be elasticities.
     
-As it may well be that, because of unobserved factors, regions are more or less open for in- or outmigration, I assume that the regional specific origin, $o_i$, and destination, $d_j$, variables are correlated as follows
-
+As it may well be that, because of unobserved factors, regions are more or less
+open for both in- and outmigration, I assume that the regional specific origin,
+$o_i$, and destination, $d_j$, variables are correlated as follows:
 \begin{equation}
 	\begin{pmatrix}o_i\\
 		d_j
-	\end{pmatrix} \sim N \left\{\left(\begin{array}{c}
+	\end{pmatrix} \sim \mathcal{N} \left\{\left(\begin{array}{c}
 	0\\
 	0
-\end{array}\right),
+       \end{array}\right),
+\left(                                        
 \begin{array}{cc}
-\left(
-	\sigma^2_i & \sigma_{ij} \\
-		  \sigma_{ij} & \sigma^2_{j} 
-\right)
+  \sigma^2_i & \rho_{ij} \\
+  \rho_{ij} & \sigma^2_{j} 
 \end{array}
-\right\}
+\right)
+\right\}.
+\label{eq:randomregion}
 \end{equation}
-    amount of pooling. If they go to zero, then the data exhibits complete
-    pooling. If they become very large (go to infinity) there is no pooling
-    (which is the fixed effects case). Equations (3e)--(3h) denote priors for
-    all parameter involved. These priors are chosen that they are rather
-    conservative. Namely, we know from previous empirical literature that the
-    $\beta$-parameters typically are not lower than $-2$ or higher than $2$. But
-    given the amount of data these priors are of little influence. The only
-    structure I impose is that the standard deviations $\sigma_o$ and $\sigma_d$
-    are assumed to be non-negative with relatively probability in the their
-    right tails. 
+Here, $\sigma_i$ and $\sigma_j$ control the amount of pooling. If they converge
+to zero, there is complete pooling and regions of origin and destination come
+from the same distribution. If both deviation parameters tend to be very large
+(relative to the overall varation in the data), there is no pooling of
+regions. Every region of origin and destination is then a separate identity
+which should be modeled with the use of fixed effects. When $\sigma_i$ and
+$\sigma_j$ are positive and relatively small (again, relative to the overall
+variation in the data) there is partial pooling yielding shrinkage: outliers in
+the data are effectively shrunk by the model to the overall mean---where the
+amount of shrinkage is governed by the size of $\sigma_i$ and $\sigma_j$. The
+correlation parameter $\rho_{ij}$ models the correlation between in- and
+outflows of regions, as I hypothesize that regions with relatively large amounts
+of immigration tend as well to have large amounts of outmigration. Equation (\ref{eq:randomregion}) indicates as well that the region specifi c effects are mean centered around zero, where the final effect can be deduced as deviations around the grand mean $\alpha$.
+
+The dyad specific effects are drawn as well from a multivariate normal distribution as follows: 
+ \begin{equation}
+	\begin{pmatrix}\text{dyad}_{ij}\\
+		\text{dyad}_{ji}
+	\end{pmatrix} \sim \mathcal{N} \left\{\left(\begin{array}{c}
+	0\\
+	0
+       \end{array}\right),
+\left(                                        
+\begin{array}{cc}
+  \sigma^2_{\text{dyad}} & \rho \\
+  \rho & \sigma^2_{\text{dyad}} 
+\end{array}
+\right)
+\right\},
+\end{equation}
+where $\sigma^2_{\text{dyad}}$ denotes again the amount of partial pooling at
+the dyad level. Note that for dyadic relationship it does not matter whether
+flows go from $i$ to $j$ of from $j$ to $i$. Moreover, parameter $\rho$ measures
+whether the size of flows from $i$ to $j$ correlates with the size of flows from
+$j$ to $i$. Given the tight Dutch housing market in the Netherland, this is more than likely as houses tend not to be vacant very long.
+
+Finally, to control for year specific effects, we include a year varying effect, $t_t$, drawn from a normal distribution as follows: $t_t \sim \mathcal{N}(0, \sigma_t$). 
 
 \section{Data and methods}
 
 \subsection{Data}
 
-I use inter-regional migration flows measured in individuals between
-all of the 40 Dutch COROP regions between 2012 and 2018. I use no information on
-within regional migration. So, I have 320 regional
-characteristics (or doubled when accounting for both origin and destination
-municipalities) and 10,902 aggregate migration flows ($7 \times (40 \times 40 - 40)$).
+I use interregional migration flows measured in individuals migrating between
+all of the 40 Dutch COROP regions between 2012 and 2020. I use the period
+2012--2019 for estimation and the year 2020 for out-of-sample
+forecasting.\footnote{The year 2020 is obviously a strange year containing the
+  start of the COVID-19 outbreak in March 2020. I delibarately choose not to
+  incorporate this year at it might affect the results, and at the same time
+  out-of-sample prediction might contain evidence whether COVID-19 truly changed
+  migration patterns.} I use no information on within regional migration. So, I
+have 320 time-varying regional characteristics (or doubled when accounting for
+both origin and destination municipalities) and 12,480 aggregate migration flows
+($8 \times (40 \times 40 - 40)$).
 
- \begin{figure}[ht]\centering % Using \begin{figure*} makes the figure take up
-% the entire width of the page
-   \includegraphics[width=1.0\linewidth]{./../../fig/hist_mig_corop.pdf}
-          \caption{Histogram of inter-regional migrant flows. Left panel shows the histogram of
-small migrant flows ($0 \leq N < 100$) and the right panel shows the histogram of
-large migrant flows ($N \geq 100$). Note the different scale of the y-axes.}
-          \label{fig:hist_mig_corop}
-        \end{figure}
+ \begin{figure}[ht]\centering % Using \begin{figure*} makes the figure take up %
+the entire width of the page
+\includegraphics[width=1.0\linewidth]{./../../fig/hist_mig_corop.pdf}
+          \caption{Histogram of domestic interregional migrant flows. Left panel
+shows the histogram of small migrant flows ($0 \leq N < 100$) and the right
+panel shows the histogram of large migrant flows ($N \geq 100$). Note the
+different scale of the y-axes.}
+\label{fig:hist_mig_corop}
+\end{figure}
 
 The histograms in Figure \ref{fig:hist_mig_corop} show the distribution of
-migrant flows within my sample. The left panel deals with migrant flows below
+migrant flows within the sample. The left panel deals with migrant flows below
 100, the right panel with migrant flows of 100 and larger. Two main observations
-can be made.
-
-First, there is a strong but consistent decay pattern in migration flow size in
-both panels, which points to a persistent underlying pattern. However, the right
-`tail' in this distribution is rather thick.\footnote{The largest migration
-  flows are between the urban regions of Amsterdam and Utrecht and amount to about
-  6,555 migrants in 2018.} Thus, there are still observations quite far right in
-the distribution. Indeed, the sample mean is about 270, while the sample
-variance is around 290,000, leading to a strong presence of
-\emph{overdispersion} (unconditional on other explanatory variables). Second, a
-small part of the dataset consists of zero observations. Although they do seem
-to be genuine observations and not caused by another process, I check in a
-robustness analysis whether the occurrence of zeros does need to be taken
-specifically into account.
+can be made. First, there is a strong but consistent decay pattern in migration
+flow size in both panels, which points to a persistent underlying
+pattern. However, the right `tail' in this distribution is rather
+thick.\footnote{The largest migration flows are between the urban regions of
+  Amsterdam and Utrecht and amount to 7,327 migrants in 2019.} In effect, this entails that there are
+still observations quite far right in the distribution. Indeed, the sample mean
+is about 273, while the sample variance is around 300,000, leading to a strong
+presence of \emph{overdispersion} (unconditional on other explanatory
+variables). Second, a small part of the dataset consists of zero
+observations. Although they do seem to be genuine observations and not caused by
+another process, I check in a robustness analysis whether the occurrence of
+zeros does need to be taken specifically into account.
 
 Seven explanatory variables are added to the model. First, to account for
 spatial distance decay between origin $i$ and destination $j$, distance between
@@ -434,27 +475,89 @@ based on (local---within region) waiting lists.
 
 \begin{figure}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
   \includegraphics[width=1.0\linewidth]{./../../fig/hist_housing_corop.pdf}
-  \caption{Histogram of social housing (left) and homeownership (right)
-    percentages in COROP regions in 2018 (check)}
+  \caption{Histogram of homeownership (left) and social housing (right)
+    percentages in Dutch COROP regions in 2018}
   \label{fig:housing_mig}
 \end{figure}
 
 Figure \ref{fig:housing_mig} shows the distribution of social renting and
-homeownership across Dutch regions in 2018. Clearly, both home-ownership
+homeownership across Dutch regions in 2018. Clearly, both homeownership
 and social housing are prevalent across Dutch regions, with an average
-per city of 25\% of social housing and around 60\% of homeownership. Moreover, it
-is worthwhile to note that social renting is especially prevalent in the larger
-cities with a correlation of 0.46 between regional size and social renting (e.g.,
-Amsterdam has about a 40\% social renting rate). Also, more rural Dutch regions
-exhibit much less social renting. Homeownership and city size
-correlate negatively ($-0.63$). Finally, there is a large negative correlation
-between social renting and homeownership ($-0.88$) across regions.
+per region of 25\% of social housing and around 60\% of homeownership. In the last decade, these numbers have been quite robust. Percentage homeownership grew in the period 2012--2020 with only a 0.5 percentage point, while social renting decreased with 1.5 percentage point. Within regions these numbers are less stable. For example, in the region of Amsterdam social renting decreased from 0.39 percent to 0.35 percent of total housing stock.
+
+\begin{figure}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+  \includegraphics[width=1.0\linewidth]{./../../fig/housing_types.pdf}
+  \caption{Maps of homeownership (left) and social housing (right)
+    percentages in Dutch COROP regions in 2018 }
+  \label{fig:housing_types}
+\end{figure}
+
+Figure \ref{fig:housing_types} shows the regional distribution of social renting
+and homeownership in 2018. Clearly, social renting is especially prevalent in
+the larger urban regions with a correlation of 0.46 between regional size and social
+renting (e.g., Amsterdam has about a 37\% social renting rate in 2018). Also,
+more rural Dutch regions exhibit much less social renting. Homeownership and
+regional size correlate negatively ($-0.63$). Finally, the maps show as well that
+there is a large negative correlation between social renting and homeownership
+($-0.88$) across regions.
 
 \subsection{Modeling strategy}
 
+For my main estimation, I construct four baseline models, where the first is the most simple gravity model as presented in equation (\ref{eq:grav}) but then with a log-link and using a Poisson distribution on the outcome and the fourth the preferred and most complete specification as presented in equation (\ref{eq:prefmodel}).
+
+So, the first model is specified as:
+\begin{align} \text{Migrants}_{ij} \sim & \text{Poisson}(\lambda_{ijt}), \notag \\
+  \log(\lambda_{ijt}) = & \alpha +
+                          \beta_1 \ln(\text{pop}_{it}) +
+                          \beta_2 \ln(\text{pop}_{jt}) +
+                          \gamma \ln(\text{dist}_{ijt}).  
+\tag{model 1}\label{eq:m1}
+\end{align}
+
+the second model allows for regional housing market structure:
+\begin{align} \text{Migrants}_{ij} \sim & \text{Poisson}(\lambda_{ijt}), \notag \\
+  \log(\lambda_{ijt}) = & \alpha + \beta_1 \ln(\text{pop}_{it}) + \beta_2
+                          \ln(\text{pop}_{jt}) +
+                          \gamma \ln(\text{dist}_{ijt}) + \notag \\
+                                        & \beta_3 \ln(\text{home}_{it}) +
+                                          \beta_4 \ln(\text{home}_{jt}) +
+                                          \beta_5 \ln(\text{soc}_{it}) + \beta_6
+                                          \ln(\text{soc}_{jt}). \tag{Model
+                                          2} \label{eq:m2}
+\end{align}
+
+The third model adds origin and destination regional varying effects to model (\ref{eq:m2}), as well as time-varying effects:
+\begin{align} \text{Migrants}_{ij} \sim & \text{Poisson}(\lambda_{ijt}), \notag \\
+  \log(\lambda_{ijt}) = & \alpha +  o_i + d_j + t_t + \notag \\
+                                        &\beta_1 \ln(\text{pop}_{it}) + \beta_2
+                                          \ln(\text{pop}_{jt}) +
+                                          \gamma \ln(\text{dist}_{ijt}) + \notag \\
+                                        & \beta_3 \ln(\text{home}_{it}) +
+                                          \beta_4 \ln(\text{home}_{jt}) +
+                                          \beta_5 \ln(\text{soc}_{it}) + \beta_6
+                                          \ln(\text{soc}_{jt}).  \tag{Model
+                                          3} \label{eq:m3}
+\end{align}
+
+Finally, the fourth and preferred model adds dyad specific effects to model (\ref{eq:m3}):                                          
+  \begin{align} \text{Migrants}_{ij} \sim & \text{Poisson}(\lambda_{ijt}), \notag \\
+    \log(\lambda_{ijt}) = & \alpha +  o_i + d_j + t_t + \text{dyad}_{ij}+ \notag \\
+                                          & \beta_1 \ln(\text{pop}_{it}) +
+                                            \beta_2 \ln(\text{pop}_{jt}) +
+                                            \gamma \ln(\text{dist}_{ijt}) + \notag \\
+                                          & \beta_3 \ln(\text{home}_{it}) +
+                                            \beta_4 \ln(\text{home}_{jt}) +
+                                            \beta_5 \ln(\text{soc}_{it}) +
+                                            \beta_6
+                                            \ln(\text{soc}_{jt}). \tag{Model
+                                            4} \label{eq:m4}
+\end{align}
+
+As models (\ref{eq:m1})--(\ref{eq:m4}) are estimated with Bayesian Markov Chain Monte Carlo methods, all parameters can be given priors.\footnote{It is also possible to give parameters flat priors, essentially reducing the models to maximum likelihood models.}. Based on previous literature and data descriptives we assume $\alpha$ to be $\mathcal{N}(4,2)$, $\gamma$ to be $\mathcal{N}(-1.5,1)$, $\beta_1$ and $\beta_2$ to be $\mathcal{N}(1, 0.5)$, and $\beta_3$--$\beta_6$ to be $\mathcal{N}(0,1)$ distibuted. All variation parameters ($\sigma_i$, $\sigma^2_{\text{dyad}}$ and $\sigma_t$) are assumed to be exponentially distributed with parameter 1, mainly to ensure a positive standard deviation whilst the tails are still relativily flat. The correlation parameters, $\rho_{ij}$ and $\rho$, are assumed to follow a LKJ(2) distribution which ensures a relatively low probability mass close to the extremes ($-1$ and $1$) \citep{lewandowski2009generating}.\footnote{Although the priors on the standard deviation and correlation parameters are important as they ensure that restrictions on those parameters are satisfied, the priors on the $\alpha$, $\beta$ and $\gamma$ parameters are in this case less essential given the relatively large number of observations.}
+
 \subsection{Estimation}
 
-I fit models X--X with Markov Chain Monte Carlo sampling provided by the STAN platform for statistical modeling \citep{gelman2015stan}, more notably its implementation in the statistical software package R \citep{r2021, rstan2020}. For data wrangling, coding and visualisation I follow \citet{mcelreath2020statistical} and \citet{kurzStatisticalRethinkingSecondEd2021}. All models are run with 4 chains, each with 4,000 iterations and a warm-up sample of 1,000. Model diagnostics for all models are deemed satisfactorily as each parameter has a large effective sample size (usually more than a 1,000) and has a $\widehat{R}$ at least smaller than $1.05$ (but usually very close to 1) indicating convergence \citep{vehtari2019rank}.
+I fit models (\ref{eq:m1})--(\ref{eq:m4}) with Markov Chain Monte Carlo sampling provided by the STAN platform for statistical modeling \citep{gelman2015stan}, more notably its implementation in the statistical software package R \citep{r2021, rstan2020}. For data wrangling, coding and visualisation I follow \citet{mcelreath2020statistical} and \citet{kurzStatisticalRethinkingSecondEd2021}. All models are run with 4 chains, each with 4,000 iterations and a warm-up sample of 1,000. Model diagnostics for all models are deemed satisfactorily as each parameter has a large effective sample size (usually more than a 1,000) and has a $\widehat{R}$ at least smaller than $1.05$ (but usually very close to 1) indicating convergence \citep{vehtari2019rank}.
 
 \section{Results}
 
@@ -515,6 +618,30 @@ R2           & 0.67        & 0.70        & 0.79        & 0.84        \\
 \end{longtable}
 \end{scriptsize}
 \end{center}
+
+\begin{figure}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+  \includegraphics[width=1.0\linewidth]{./../../fig/attractivity_region.pdf}
+  \caption{Maps of regional pull/destination (left panel) and push/origin (right panel) factors in Dutch COROP regions in the period 2012--2019.}
+  \label{fig:housing_types}
+\end{figure}
+
+\begin{figure}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+  \includegraphics[width=1.0\linewidth]{./../../fig/country_dyad.pdf}
+  \caption{Maps of regional pull/destination (left panel) and push/origin (right panel) factors in Dutch COROP regions in the period 2012--2019.}
+  \label{fig:housing_types}
+\end{figure}
+
+\begin{figure}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+  \includegraphics[width=0.5\linewidth]{./../../fig/prediction_2020.pdf}
+  \caption{Maps of regional pull/destination (left panel) and push/origin (right panel) factors in Dutch COROP regions in the period 2012--2019.}
+  \label{fig:housing_types}
+\end{figure}
+
+\begin{figure}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+  \includegraphics[width=1.0\linewidth]{./../../fig/hist_fit.pdf}
+  \caption{Maps of regional pull/destination (left panel) and push/origin (right panel) factors in Dutch COROP regions in the period 2012--2019.}
+  \label{fig:housing_types}
+\end{figure}
 
 \section{Discussion}
 
