@@ -171,7 +171,8 @@
     ) %>%
     mutate(
       growth_w = (total_w - lag(total_w, n = 8) )/total_w,
-      growth_nd = (total_nd - lag(total_nd, n = 8) )/total_nd
+      growth_nd = (total_nd - lag(total_nd, n = 8) )/total_nd,
+      growth_pop = (total_pop - lag(total_pop, n = 8) )/total_pop 
     ) %>%
     filter(year == 2020)
   
@@ -188,7 +189,7 @@
       divorce_rate = divorced/population,
       population = population
     ) %>%
-    select(corop_nr, coef_out, coef_in, hhsize, divorce_rate, population, growth, growth_houses, growth_w, growth_nd, total_w, total_nd, total_nw) 
+    select(corop_nr, coef_out, coef_in, hhsize, divorce_rate, population, growth, growth_houses, growth_w, growth_nd, total_w, total_nd, total_nw, growth_pop) 
   
   out_plot_1 <- ggplot(data = data_plot, aes(coef_out, divorce_rate)) + 
     geom_point(color = "cornflowerblue", alpha = 1, size = 2) +
