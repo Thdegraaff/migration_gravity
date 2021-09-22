@@ -42,7 +42,7 @@
   load(file="./data/derived/d_wonen.Rda")
   d_wonen <- d_wonen %>%
     filter(year == 2018) %>%
-    select(corop, ownership, socialrent, rent)
+    select(corop, ownership, socialrent, rent, total_houses)
   
   # Define colour palette
   
@@ -98,3 +98,220 @@
 
   attractivity <- arrangeGrob(p_coef_in, p_coef_out, nrow = 1)
   ggsave(attractivity, file="./fig/attractivity_region.pdf", width  = 200, height = 80, units = "mm")
+  
+  ################ Check scatterplots for panel regional varying effects
+  
+  bev <- read.csv2(file = "./data/src/COROP/bevolking_2011_2020.csv", sep = ";", header = FALSE, skip = 1)
+  bevolking <- separate(bev, V1,  c("Geslacht", "Leeftijd", "BurgerlijkeStaat", "year", "corop", "population"), sep = ";")
+  bevolking <- bevolking %>%
+    select(population, BurgerlijkeStaat ) %>%
+    mutate(
+      year = rep(2011:2020, 120),
+      corop = rep(1:40, 3, each = 10),
+      population = as.numeric(population)
+    ) %>%
+    pivot_wider(names_from = BurgerlijkeStaat, values_from = population) %>%
+    rename(
+      population = '"Totaal burgerlijke staat"',
+      married = '"Gehuwd"',
+      divorced = '"Gescheiden"'
+    ) %>%
+    filter(year != 2011 & year != 2020) %>%
+    group_by(corop) %>%
+    summarize(
+      population = mean(population),
+      divorced = mean(divorced), 
+      married = mean(married)
+    )    
+  
+  ########################## Read in value (woz) data ######################
+  
+  value <- read.csv2(file = "./data/src/COROP/Waarde_onroerende_zaken.csv", sep = ";", header = FALSE, skip = 1)
+  value <- separate(value, V1,  c("year", "corop", "value"), sep = ";")
+  value <- value %>%
+    select(-corop) %>%
+    mutate(
+      corop =  rep(1:40, 1, each = 10),
+      value = as.integer(value)
+    )   %>%
+    group_by(corop) %>%
+    mutate(
+      prev = lag(value, n = 9), 
+      growth = (value - prev)/prev
+    ) %>%
+    filter(year == "2020*") %>%
+    select(corop, growth)
+  
+  load(file="./data/derived/d_wonen.Rda")
+  housing_growth <- d_wonen %>%
+    mutate(
+      prev = lag(total_houses, n = 8), 
+      growth_houses = (total_houses - prev)/prev
+    ) %>%
+    filter(year == 2020) %>%
+    select(corop, growth_houses) 
+  
+  ########################## Read in nationality data ######################
+    
+  nat <- read.csv2(file = "./data/src/COROP/nationaliteit_2012_2020.csv", sep = ";", header = FALSE, skip = 1)
+  nat <- separate(nat, V1,  c("total_gender", "total_age", "nationality", "year", "corop", "population"), sep = ";")
+  nat <- nat %>%
+    select(-total_gender, -total_age ) %>%
+    mutate(
+      year = rep(2012:2020, 160),
+      corop = rep(1:40, 4, each = 9),
+      population = as.numeric(population)
+    ) %>%
+    pivot_wider(names_from = nationality, values_from = population) %>%
+    rename(
+      total_pop = '"Totaal"',
+      total_nd = '"Totaal niet-Nederlandse nationaliteit"',
+      total_w = '"Westerse nationaliteiten ex. Nederlands"',
+      total_nw = '"Niet-westerse nationaliteiten"'
+    ) %>%
+    mutate(
+      growth_w = (total_w - lag(total_w, n = 8) )/total_w,
+      growth_nd = (total_nd - lag(total_nd, n = 8) )/total_nd
+    ) %>%
+    filter(year == 2020)
+  
+  ########################## Join stuff
+  
+  regions <- left_join(regions, bevolking, by = c("corop_nr" = "corop") ) 
+  regions <- left_join(regions, value, by = c("corop_nr" = "corop") ) 
+  regions <- left_join(regions, housing_growth, by = c("corop_nr" = "corop") )
+  regions <- left_join(regions, nat, by = c("corop_nr" = "corop") )
+  
+  data_plot <- regions %>%
+    mutate(
+      hhsize = population/total_houses,
+      divorce_rate = divorced/population,
+      population = population
+    ) %>%
+    select(corop_nr, coef_out, coef_in, hhsize, divorce_rate, population, growth, growth_houses, growth_w, growth_nd, total_w, total_nd, total_nw) 
+  
+  out_plot_1 <- ggplot(data = data_plot, aes(coef_out, divorce_rate)) + 
+    geom_point(color = "cornflowerblue", alpha = 1, size = 2) +
+    geom_smooth(method='lm') +
+    ylab("Average divorce rate") + 
+    xlab("Regional push factor") + 
+    theme_minimal() +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          panel.background = element_blank(), axis.line = element_line(colour = "black")) 
+  out_plot_1
+  
+  out_plot_2 <- ggplot(data = data_plot, aes(coef_out, hhsize)) + 
+    geom_point(color = "cornflowerblue", alpha = 1, size = 2) +
+    geom_smooth(method='lm') +
+    ylab("Average household size") + 
+    xlab("Regional push factor") + 
+    theme_minimal() +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          panel.background = element_blank(), axis.line = element_line(colour = "black")) 
+  out_plot_2
+  
+  out_plot_3 <- ggplot(data = data_plot, aes(coef_out, population)) + 
+    geom_point(color = "cornflowerblue", alpha = 1, size = 2) +
+    geom_smooth(method='lm') +
+    ylab("Average population size") + 
+    xlab("Regional push factor") + 
+    theme_minimal() +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          panel.background = element_blank(), axis.line = element_line(colour = "black")) 
+  out_plot_3
+  
+  out_plot_4 <- ggplot(data = data_plot, aes(coef_out, growth_houses)) + 
+    geom_point(color = "cornflowerblue", alpha = 1, size = 2) +
+    geom_smooth(method='lm') +
+    ylab("Regional housing stock growth 2012-2020") + 
+    xlab("Regional push factor") + 
+    theme_minimal() +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          panel.background = element_blank(), axis.line = element_line(colour = "black")) 
+  out_plot_4
+  
+  out_plot_5 <- ggplot(data = data_plot, aes(coef_out, total_nd)) + 
+    geom_point(color = "cornflowerblue", alpha = 1, size = 2) +
+    geom_smooth(method='lm') +
+    ylab("Total non-dutch residents 2020") + 
+    xlab("Regional push factor") + 
+    theme_minimal() +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          panel.background = element_blank(), axis.line = element_line(colour = "black")) 
+  out_plot_5
+  
+  out_plot_6 <- ggplot(data = data_plot, aes(coef_out, growth_nd)) + 
+    geom_point(color = "cornflowerblue", alpha = 1, size = 2) +
+    geom_smooth(method='lm') +
+    ylab("Growth non-dutch residents 2012-2020") + 
+    xlab("Regional push factor") + 
+    theme_minimal() +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          panel.background = element_blank(), axis.line = element_line(colour = "black")) 
+  out_plot_6
+  
+  g <- arrangeGrob(out_plot_1, out_plot_2, out_plot_3, out_plot_4, out_plot_5, out_plot_6, nrow = 2)
+  ggsave(g, file="./fig/regional_out_plot.pdf", width  = 300, height = 160, units = "mm")
+  
+  in_plot_1 <- ggplot(data = data_plot, aes(coef_in, divorce_rate)) + 
+    geom_point(color = "cornflowerblue", alpha = 1, size = 2) +
+    geom_smooth(method='lm') +
+    ylab("Average divorce rate") + 
+    xlab("Regional pull factor") + 
+    theme_minimal() +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          panel.background = element_blank(), axis.line = element_line(colour = "black")) 
+  in_plot_1
+  
+  in_plot_2 <- ggplot(data = data_plot, aes(coef_in, hhsize)) + 
+    geom_point(color = "cornflowerblue", alpha = 1, size = 2) +
+    geom_smooth(method='lm') +
+    ylab("Average household size") + 
+    xlab("Regional pull factor") + 
+    theme_minimal() +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          panel.background = element_blank(), axis.line = element_line(colour = "black")) 
+  in_plot_2
+  
+  in_plot_3 <- ggplot(data = data_plot, aes(coef_in, population)) + 
+    geom_point(color = "cornflowerblue", alpha = 1, size = 2) +
+    geom_smooth(method='lm') +
+    ylab("Average population size") + 
+    xlab("Regional pull factor") + 
+    theme_minimal() +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          panel.background = element_blank(), axis.line = element_line(colour = "black")) 
+  in_plot_3
+  
+  in_plot_4 <- ggplot(data = data_plot, aes(coef_in, growth_houses)) + 
+    geom_point(color = "cornflowerblue", alpha = 1, size = 2) +
+    geom_smooth(method='lm') +
+    ylab("Regional housing stock growth 2012-2020") + 
+    xlab("Regional pull factor") + 
+    theme_minimal() +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          panel.background = element_blank(), axis.line = element_line(colour = "black")) 
+  in_plot_4
+  
+  in_plot_5 <- ggplot(data = data_plot, aes(coef_in, total_nd)) + 
+    geom_point(color = "cornflowerblue", alpha = 1, size = 2) +
+    geom_smooth(method='lm') +
+    ylab("Total non-dutch residents 2020") + 
+    xlab("Regional pull factor") + 
+    theme_minimal() +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          panel.background = element_blank(), axis.line = element_line(colour = "black")) 
+  in_plot_5
+  
+  in_plot_6 <- ggplot(data = data_plot, aes(coef_in, growth_nd)) + 
+    geom_point(color = "cornflowerblue", alpha = 1, size = 2) +
+    geom_smooth(method='lm') +
+    ylab("Growth non-dutch residents 2012-2020") + 
+    xlab("Regional pull factor") + 
+    theme_minimal() +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          panel.background = element_blank(), axis.line = element_line(colour = "black")) 
+  in_plot_6
+  
+  g <- arrangeGrob(in_plot_1, in_plot_2, in_plot_3, in_plot_4, in_plot_5, in_plot_6, nrow = 2)
+  ggsave(g, file="./fig/regional_in_plot.pdf", width  = 300, height = 160, units = "mm")

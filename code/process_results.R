@@ -151,9 +151,7 @@ hist_fit_large <- ggplot(data = fit_large, aes(Migrants, fill = type)) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black"))
 hist_fit <- plot_grid(hist_fit_small + theme(legend.position = "none"), 
-                      hist_fit_large + theme(legend.position = "none"), 
-                      labels = c("Small flows", "Large flows"), 
-                      label_x = 0.4, label_y = 0.96) 
+                      hist_fit_large + theme(legend.position = "none"))
 
 legend_b <- get_legend(hist_fit_small + theme(legend.position="bottom"))
 
@@ -161,7 +159,7 @@ hist_fit <- plot_grid( hist_fit, legend_b, ncol = 1, rel_heights = c(1,.1) )
 
 ggsave(hist_fit, file="./fig/hist_fit.pdf", width  = 200, height = 80, units = "mm")
 
-predict_df <- data_frame(migrants, predict)
+  predict_df <- data_frame(migrants, predict)
 p_o_plot <- ggplot(data = predict_df, aes(x = migrants, y = predict) ) + 
                      geom_point(color = "cornflowerblue", alpha = 1/2, size = 2) + 
                      geom_abline(intercept = 0, slope = 1, color = "black", linetype = 2, alpha = 1/3) +
