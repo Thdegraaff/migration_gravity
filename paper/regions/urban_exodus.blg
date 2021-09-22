@@ -1,23 +1,18 @@
-[0] Config.pm:354> INFO - This is Biber 2.7
-[1] Config.pm:357> INFO - Logfile is 'urban_exodus.blg'
-[49] biber-darwin:303> INFO - === Tue Sep 21, 2021, 17:02:02
-[74] Biber.pm:359> INFO - Reading 'urban_exodus.bcf'
-[190] Biber.pm:835> INFO - Found 46 citekeys in bib section 0
-[209] Biber.pm:3670> INFO - Processing section 0
-[226] Biber.pm:3840> INFO - Looking for bibtex format file 'references.bib' for section 0
-[229] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
-[238] bibtex.pm:1292> INFO - Found BibTeX data source 'references.bib'
-[242] Utils.pm:164> WARN - Duplicate entry key: 'dietz2003social' in file 'references.bib', skipping ...
-[316] Utils.pm:164> WARN - month field 'mar' in entry 'kurzStatisticalRethinkingSecondEd2021' is not an integer - this will probably not sort properly.
-[461] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[461] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
-[462] Biber.pm:3499> INFO - Sorting list 'nyt/global/' of type 'entry' with scheme 'nyt' and locale 'en-GB'
-[462] Biber.pm:3505> INFO - No sort tailoring available for locale 'en-GB'
-[521] bbl.pm:608> INFO - Writing 'urban_exodus.bbl' with encoding 'ascii'
-[524] Utils.pm:164> WARN - The entry 'amirault2016drags' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[527] Utils.pm:164> WARN - The entry 'balland2020complex' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[536] Utils.pm:164> WARN - The entry 'poot2016gravity' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[538] Utils.pm:164> WARN - The entry 'tammaru2015socio' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[540] Utils.pm:164> WARN - The entry 'vehtari2019rank' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[540] bbl.pm:712> INFO - Output to urban_exodus.bbl
-[540] Biber.pm:109> INFO - WARNINGS: 7
+[0] Config.pm:304> INFO - This is Biber 2.12
+[1] Config.pm:307> INFO - Logfile is 'urban_exodus.blg'
+[55] biber-MSWIN64:315> INFO - === 
+[152] Biber.pm:371> INFO - Reading 'urban_exodus.bcf'
+[302] Biber.pm:889> INFO - Found 48 citekeys in bib section 0
+[329] Biber.pm:4093> INFO - Processing section 0
+[347] Biber.pm:4254> INFO - Looking for bibtex format file 'references.bib' for section 0
+[385] bibtex.pm:1523> INFO - LaTeX decoding ...
+[473] bibtex.pm:1340> INFO - Found BibTeX data source 'references.bib'
+[477] Utils.pm:193> WARN - Duplicate entry key: 'dietz2003social' in file 'references.bib', skipping ...
+[763] Utils.pm:193> WARN - month field 'mar' in entry 'kurzStatisticalRethinkingSecondEd2021' is not an integer - this will probably not sort properly.
+[903] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[904] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[905] Biber.pm:3921> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-GB'
+[906] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-GB'
+[973] bbl.pm:636> INFO - Writing 'urban_exodus.bbl' with encoding 'UTF-8'
+[1084] bbl.pm:739> INFO - Output to urban_exodus.bbl
+[1087] Biber.pm:110> INFO - WARNINGS: 2
