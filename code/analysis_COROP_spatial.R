@@ -16,29 +16,29 @@ set.seed(5)
 # Set Dutch masters theme
 ######################
 
-theme_pearl_earring <- function(light_color = "#E8DCCF", 
-                                dark_color = "#100F14", 
-                                my_family = "Courier",
-                                ...) {
-  
-  theme(line = element_line(color = light_color),
-        text = element_text(color = light_color, family = my_family),
-        strip.text = element_text(color = light_color, family = my_family),
-        axis.text = element_text(color = light_color),
-        axis.ticks = element_line(color = light_color),
-        axis.line = element_blank(),
-        legend.background = element_rect(fill = dark_color, color = "transparent"),
-        legend.key = element_rect(fill = dark_color, color = "transparent"),
-        panel.background = element_rect(fill = dark_color, color = light_color),
-        panel.grid = element_blank(),
-        plot.background = element_rect(fill = dark_color, color = dark_color),
-        strip.background = element_rect(fill = dark_color, color = "transparent"),
-        ...)
-  
-}
-
-# now set `theme_pearl_earring()` as the default theme
-theme_set(theme_pearl_earring())
+# theme_pearl_earring <- function(light_color = "#E8DCCF", 
+#                                 dark_color = "#100F14", 
+#                                 my_family = "Courier",
+#                                 ...) {
+#   
+#   theme(line = element_line(color = light_color),
+#         text = element_text(color = light_color, family = my_family),
+#         strip.text = element_text(color = light_color, family = my_family),
+#         axis.text = element_text(color = light_color),
+#         axis.ticks = element_line(color = light_color),
+#         axis.line = element_blank(),
+#         legend.background = element_rect(fill = dark_color, color = "transparent"),
+#         legend.key = element_rect(fill = dark_color, color = "transparent"),
+#         panel.background = element_rect(fill = dark_color, color = light_color),
+#         panel.grid = element_blank(),
+#         plot.background = element_rect(fill = dark_color, color = dark_color),
+#         strip.background = element_rect(fill = dark_color, color = "transparent"),
+#         ...)
+#   
+# }
+# 
+# # now set `theme_pearl_earring()` as the default theme
+# theme_set(theme_pearl_earring())
 
 
 ######################
@@ -48,14 +48,9 @@ theme_set(theme_pearl_earring())
 load(file = "./data/derived/migration_COROP.Rda")
 load(file = "./data/derived/dmat.Rda")
 
-#  df <- df %>%
-#      filter(year == 2013 | year == 2013 | year == 2014 | year == 2015 | year == 2016 | year == 2018)
+df <- df %>%
+  filter(year == 2012 | year == 2013 | year == 2014 | year == 2015 | year == 2016 | year == 2017 | year == 2018 | year == 2019)
 
-cor_df <- df %>% select(
-  lhomA, lhomB, lsocA, lsocB, lrentA, lrentB, lpopA, lpopB
-)
-
-round(cor(cor_df, use = "complete.obs"), 2)
 
 nr_regions = max(df$destination)
 
@@ -202,7 +197,7 @@ p_scatter<-  ggplot(data = data_scatter, aes(group = region)) +
               ylim = c(0, 400))
 
 pdf(file = "./fig/scatter.pdf" ,width=5,height=4) 
-p_scatter
+p_scatter_spatial
 dev.off()
 
 dy1 <- apply( post$d[,,1] , 2 , mean )
@@ -219,7 +214,7 @@ p_dyad <- ggplot(data = data.frame(dy1, dy2), aes(dy1, dy2), color = col.alpha("
 p_dyad
 
 pdf(file = "./fig/dyad.pdf" ,width=5,height=4) 
-p_dyad
+p_dyad_spatial
 dev.off()
 
 eta2 <- mean(post$etasq)
@@ -235,11 +230,12 @@ p <- ggplot(data = data.frame(x = 0:1, y = 0:1),
 
 # Then cycle in all the curve
 for (i in 1:25) {
-  p <- p + stat_function(fun = function(x, i) (post$etasq[i]*exp(-post$rhosq[i]*x^2) ), size = 1/4, alpha = 1/4, color = "#EEDA9D", args=list(i=i)) 
+  p <- p + stat_function(fun = function(x, i) (post$etasq[i]*exp(-post$rhosq[i]*x^2) ), size = 1/4, alpha = 1/4, color = "cornflowerblue", args=list(i=i)) 
 }
-p <- p + stat_function(fun = function(x) (eta2*exp(-rho2*x^2) ), color = "#DCA258", size = 1) 
+p <- p + stat_function(fun = function(x) (eta2*exp(-rho2*x^2) ), color = "cornflowerblue", size = 1) +
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) 
 print(p)
 
-pdf(file = "./fig/spatial_autocorrelation.pdf" ,width=4,height=4) 
-p
-dev.off()
+ggsave(p, file="./fig/spatial_autocorrelation.pdf", width  = 100, height = 80, units = "mm")
