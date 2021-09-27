@@ -68,36 +68,51 @@
   
   regions <- left_join(regions, d_wonen, by = c("corop_nr" = "corop") ) 
   
+  label_name <-  rep(NA, 40)
+  label_name[17] <-  "Utrecht"
+  label_name[23] <- "Amsterdam"
+  label_name[26] <- "The Hague"
+  label_name[29] <- "Rotterdam"
+  regions <- cbind(regions, label_name)
+  
   p_coef_in <- ggplot() + geom_sf(data = regions, aes(fill = coef_in), lwd = 0.4) + 
     scale_fill_distiller("Relative\n pull factor\n", palette = "RdBu", direction = -1, limits = c(-2, 2) ) +
     ggtitle("Regional destination effect") +
     theme_minimal() +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-          panel.background = element_blank(), axis.line = element_line(colour = "black"))
+          panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+    geom_sf_label(data = data_plot, aes(label = label_name)) + 
+    xlab("") + ylab("")
   
   p_coef_out <- ggplot() + geom_sf(data = regions, aes(fill = coef_out), lwd = 0.4) + 
     scale_fill_distiller("Relative\n push factor\n", palette = "RdBu", direction = -1, limits = c(-2, 2) ) + 
     ggtitle("Regional origin effect") +
     theme_minimal() +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-          panel.background = element_blank(), axis.line = element_line(colour = "black"))
+          panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+    geom_sf_label(data = data_plot, aes(label = label_name)) + 
+    xlab("") + ylab("")
   
   p_homeown <- ggplot() + geom_sf(data = regions, aes(fill = ownership)) + 
-    scale_fill_distiller("Percentage \nhomeownership", palette = "Reds", direction = 1)  +
+    scale_fill_distiller("Percentage \nhome-ownership", palette = "Reds", direction = 1)  +
     theme_minimal() +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-          panel.background = element_blank(), axis.line = element_line(colour = "black"))
+          panel.background = element_blank(), axis.line = element_line(colour = "black"))+ 
+    geom_sf_label(data = data_plot, aes(label = label_name)) + 
+    xlab("") + ylab("")
   p_socrent <- ggplot() + geom_sf(data = regions, aes(fill = socialrent)) + 
     scale_fill_distiller("Percentage \nsocial renting", palette = "Reds", direction = 1) +
     theme_minimal() +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-          panel.background = element_blank(), axis.line = element_line(colour = "black"))
+          panel.background = element_blank(), axis.line = element_line(colour = "black"))+ 
+    geom_sf_label(data = data_plot, aes(label = label_name)) + 
+    xlab("") + ylab("")
   
   housing <- arrangeGrob(p_homeown, p_socrent, nrow = 1)
-  ggsave(housing, file="./fig/housing_types.pdf", width  = 200, height = 80, units = "mm")
+  ggsave(housing, file="./fig/housing_types.pdf", width  = 400, height = 160, units = "mm")
 
   attractivity <- arrangeGrob(p_coef_in, p_coef_out, nrow = 1)
-  ggsave(attractivity, file="./fig/attractivity_region.pdf", width  = 200, height = 80, units = "mm")
+  ggsave(attractivity, file="./fig/attractivity_region.pdf", width  = 400, height = 160, units = "mm")
   
   ################ Check scatterplots for panel regional varying effects
   
@@ -189,7 +204,14 @@
       divorce_rate = divorced/population,
       population = population
     ) %>%
-    select(corop_nr, coef_out, coef_in, hhsize, divorce_rate, population, growth, growth_houses, growth_w, growth_nd, total_w, total_nd, total_nw, growth_pop) 
+    select(areaname, corop_nr, coef_out, coef_in, hhsize, divorce_rate, population, growth, growth_houses, growth_w, growth_nd, total_w, total_nd, total_nw, growth_pop) 
+  
+  label_name <-  rep(NA, 40)
+  label_name[17] <-  "Utrecht"
+  label_name[23] <- "Amsterdam"
+  label_name[26] <- "The Hague"
+  label_name[29] <- "Rotterdam"
+  data_plot <- cbind(data_plot, label_name)
   
   out_plot_1 <- ggplot(data = data_plot, aes(coef_out, divorce_rate)) + 
     geom_point(color = "cornflowerblue", alpha = 1, size = 2) +
@@ -316,3 +338,29 @@
   
   g <- arrangeGrob(in_plot_1, in_plot_2, in_plot_3, in_plot_4, in_plot_5, in_plot_6, nrow = 2)
   ggsave(g, file="./fig/regional_in_plot.pdf", width  = 300, height = 160, units = "mm")
+  
+  #### map growth population
+  
+  growth_pop <- ggplot() + geom_sf(data = data_plot, aes(fill = growth_pop)) + 
+    scale_fill_distiller("Growth \npopulation", palette = "Reds", direction = 1) +
+    theme_minimal() +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+    geom_sf_label(data = data_plot, aes(label = label_name)) + 
+    xlab("") + ylab("")
+  growth_pop
+  
+  ggsave(growth_pop, file="./fig/growth_pop.pdf", width  = 200, height = 250, units = "mm")
+  
+  #### map growth housing value
+  
+  growth_woz <- ggplot() + geom_sf(data = data_plot, aes(fill = growth)) + 
+    scale_fill_distiller("Growth \nhousing \nvalue", palette = "Reds", direction = 1) +
+    theme_minimal() +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          panel.background = element_blank(), axis.line = element_line(colour = "black")) + 
+    geom_sf_label(data = data_plot, aes(label = label_name)) + 
+    xlab("") + ylab("")
+  growth_woz
+  
+  ggsave(growth_woz, file="./fig/growth_woz.pdf", width  = 200, height = 250, units = "mm")

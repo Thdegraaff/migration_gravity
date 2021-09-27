@@ -80,14 +80,14 @@ m_temporal <- ulam(
     log(lambdaAB) <- cons + 
       b_popA * lpopA + b_popB * lpopB + 
       b_dist*ldist + 
-      b_hA[year]  * lhomA + b_hB[year] * lhomB + b_sA[year] * lsocA + b_sB[year] * lsocB + 
+      b_hA[year] * lhomA + b_hB[year] * lhomB + b_sA[year] * lsocA + b_sB[year] * lsocB + 
       gr[origin,1] + gr[destination,2] +   
       y[year] + 
       d[did,1],
     log(lambdaBA) <- cons + 
       b_popB * lpopA + b_popA * lpopB + 
       b_dist*ldist + 
-      b_hA[year]  * lhomB + b_hB[year] * lhomA + b_sA[year] * lsocB + b_sB[year] * lsocA + 
+      b_hA[year] * lhomB + b_hB[year] * lhomA + b_sA[year] * lsocB + b_sB[year] * lsocA + 
       gr[destination,1] + gr[origin,2] +   
       y[year] + 
       d[did, 2],
@@ -129,6 +129,7 @@ m_temporal <- ulam(
 
 precis(m_temporal)
 save(m_temporal, file = "./output/corop_temporal.rda")
+load(file = "./output/corop_temporal.rda")
 
 par <- precis(m_temporal , depth=2 , pars=c("b_hA", "b_sA", "b_hB", "b_sB") )
 d_par <- t(rbind( par@.Data[[1]], par@.Data[[2]]) ) 

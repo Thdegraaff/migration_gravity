@@ -159,7 +159,7 @@ m_dyad <- ulam(
 
 precis(m_dyad)
 save(m_dyad, file = "./output/corop_dyad.rda")
-
+load(file = "./output/corop_dyad.rda")
 
 precis( m_dyad , depth=3 , pars=c("Rho_1", "Rho_2", "sigma_d", "sigma_gr") ) #, "Rho_d","sigma_d") )
 pairs(m_dyad@stanfit, pars=c("b_sA", "b_sB", "b_hA", "b_hB", "b_popA", "b_popB") )
