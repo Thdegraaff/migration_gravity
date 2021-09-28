@@ -4,6 +4,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 
 \usepackage{pgfplots}
 \usepackage{appendixnumberbeamer}
+\usepackage[font=footnotesize,labelfont=bf]{caption}
 \usepackage{booktabs}
 \usepackage{amsmath, array}
 \usepackage{pifont}
@@ -41,7 +42,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \maketitle
 
 \begin{frame}{Urban Exodus?}
-	\includegraphics[width=1.0\textwidth]{../../fig/outmig_amsterdam.pdf}
+	\includegraphics[width=1\textwidth]{../../fig/outmig_amsterdam.pdf}
 \end{frame}
 
 \begin{frame}{Dutch population growth 2012--2020}
@@ -59,7 +60,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 		\end{itemize}
 		\item Domestic migration
 			\begin{itemize}
-				\item slightly more within than between 
+				\item slightly more \alert{within} regions than \alert{between} 
 				\item growth is the \alert{same}
 			\end{itemize}
 	\end{itemize}
@@ -78,12 +79,13 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 			\begin{itemize}
 				\item Average housing price: \euro 410,000 \newline
 				\item Change last year +20\% \newline
-				\item Waiting list social renting Amsterdam: 13 years \newline
-				\item large \alert{shortage} of housing \newline
-				\item decrease in housing \alert{transactions}
+				\item \alert{Waiting list} social renting Amsterdam: 13 years \newline
+				\item Large \alert{shortage} of housing \newline
+				\item Decrease in housing \alert{transactions}
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.5\textwidth}
+						Growth property tax value \vspace{-1cm}
 			\begin{center}
 				\includegraphics[width=1\textwidth]{../../fig/growth_woz}
 			\end{center}
@@ -123,7 +125,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\begin{itemize}
         \item In the Netherlands social renting is a large phenomenon
           ($\approx$ 24\% of total housing stock)
-        \item Social renting rights only valid \alert{within} city
+        \item Social renting rights only valid \alert{within} city/region
         \item Social renting is an \alert{urban} phenomenon (e.g. $\approx$
           30--40\% in Amsterdam) 
         \end{itemize}
@@ -138,10 +140,10 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
     \begin{footnotesize}
 	\begin{itemize}
 	  \item \footnotesize UK context by \citet{congdon2010random}
-	  \item \footnotesize social relations model \emph{cf.}
+	  \item \footnotesize \alert{social relations model} \emph{cf.}
 		\citet{koster2014food}
 		\item \footnotesize \emph{Statistical Rethinking} from \citet{mcelreath2020statistical}
-		\item \footnotesize \texttt{ggplot2} code from \href{https://bookdown.org/content/4857/}{Solomon Kurz} (2020) \newline
+		\item \footnotesize \texttt{ggplot2} code from \href{https://bookdown.org/content/4857/}{Kurz} (2020) \newline
 	\end{itemize}
   \end{footnotesize}
 	\item[Aim] To \alert{simultaneously} assess the impact of housing market structure and region specific effects on domestic migration flows
@@ -239,8 +241,8 @@ There are at least two \alert{levels} in migration (I use three) \pause
 	\includegraphics[width=0.8\textwidth]{../../fig/hist_housing_corop}
 \end{center}
 \begin{itemize}
-	\item Positive correlation between population and share social renting ($0.46$)
-	\item Negative correlation between share social renting and share home-ownership ($-0.88)$
+	\item Positive correlation between regional population and share social renting ($0.46$)
+	\item Negative correlation between regional share social renting and share home-ownership ($-0.88)$
 \end{itemize}
 \end{frame}
 
@@ -272,7 +274,7 @@ There are at least two \alert{levels} in migration (I use three) \pause
 			}}
 	
 	\begin{itemize}
-		\item Counts of migrants\newline 
+		\item \alert{Counts} of migrants\newline 
 		\item \alert{Constraints} should hold
 		$$
 		\sum_{j=1}^{R} {\widehat{\text{Migrants} }_{ij} } = O_i \qquad \sum_{i=1}^{R} {\widehat{\text{Migrants} }_{ij} } = D_j
@@ -281,7 +283,7 @@ There are at least two \alert{levels} in migration (I use three) \pause
 			\item poisson: \ding{51}
 		    \item negative binomial: \ding{55} \newline
 		  \end{itemize}
-		  \item multilevel structure already controls for overdispersion
+		  \item multilevel structure  \alert{controls} for overdispersion
 		\end{itemize}
 
 \end{frame}
@@ -290,7 +292,8 @@ There are at least two \alert{levels} in migration (I use three) \pause
 \begin{small}
   \begin{align}
   	\text{Migrants}_{ijt} \sim & \text{Poisson}(\lambda_{ijt})\tag{\footnotesize \color{blue} flow of migrants}\\ \pause
-  	\log(\lambda_{ijt}) = & \alpha + \beta_1 \ln(\text{pop}_{it}) + \beta_2
+  	\log(\lambda_{ijt}) = & \alpha +   o_i + d_j + t_t + \text{dyad}_{ij}+ \notag \\
+  	& \beta_1 \ln(\text{pop}_{it}) + \beta_2
   	\ln(\text{pop}_{jt}) +
   	\gamma \ln(\text{dist}_{ijt}) + \notag \\
   	& \beta_3 \ln(\text{home}_{it}) +
@@ -344,7 +347,7 @@ There are at least two \alert{levels} in migration (I use three) \pause
 				destination: \\
 				\hspace{1cm} log(population)  &  $\mathbf{0.84}$ & $\mathbf{0.55}$ \\
 				\hspace{1cm} log(homeownership)  & $\textbf{-1.14}$ & $\mathbf{0.17}$ \\
-				\hspace{1cm} log(social renting)  &  $-1.47$ & $\mathbf{0.87}$  \\
+				\hspace{1cm} log(social renting)  &  $\textbf{-1.47}$ & $\mathbf{0.87}$  \\
 				\addlinespace
 				migrants flow: \\
 				\hspace{1cm} log(distance) &  $\mathbf{-1.39}$ & $\mathbf{-1.63}$  \\
@@ -370,7 +373,7 @@ There are at least two \alert{levels} in migration (I use three) \pause
 	\end{center}
 \end{frame}
 
-\begin{frame}{Out-of-sample prediction for 2018 (cntd.)}
+\begin{frame}{Out-of-sample prediction for 2020 (cntd.)}
 	\begin{center}
 		\includegraphics[width=1\textwidth]{../../fig/hist_fit}
 	\end{center}
@@ -378,7 +381,11 @@ There are at least two \alert{levels} in migration (I use three) \pause
 
 \begin{frame}{Correlation patterns}
 	\begin{center}
-		\includegraphics[width=1\textwidth]{../../fig/country_dyad}
+		\begin{figure}
+			\includegraphics[width=1\textwidth]{../../fig/country_dyad}
+			\caption{Correlation (0.78) between unobserved push and pull factors region (left) and flows (correlation = 0.8) within dyad pairs (right)}
+		\end{figure}
+
 	\end{center}
 \end{frame}
 
@@ -425,7 +432,7 @@ There are at least two \alert{levels} in migration (I use three) \pause
 
 \begin{frame}{Conclusions}
 
-\textbf{Main results}
+\textbf{Main results}:
 \begin{itemize}
   \item home-ownership has a \alert{positive} impact on regional domestic migration
   \begin{itemize}

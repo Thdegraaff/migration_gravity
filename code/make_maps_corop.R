@@ -111,7 +111,7 @@
   housing <- arrangeGrob(p_homeown, p_socrent, nrow = 1)
   ggsave(housing, file="./fig/housing_types.pdf", width  = 400, height = 160, units = "mm")
 
-  attractivity <- arrangeGrob(p_coef_in, p_coef_out, nrow = 1)
+  attractivity <- arrangeGrob(p_coef_out, p_coef_in , nrow = 1)
   ggsave(attractivity, file="./fig/attractivity_region.pdf", width  = 400, height = 160, units = "mm")
   
   ################ Check scatterplots for panel regional varying effects
