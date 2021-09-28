@@ -81,7 +81,7 @@
     theme_minimal() +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
           panel.background = element_blank(), axis.line = element_line(colour = "black")) +
-    geom_sf_label(data = data_plot, aes(label = label_name)) + 
+    geom_sf_label(data = regions, aes(label = label_name)) + 
     xlab("") + ylab("")
   
   p_coef_out <- ggplot() + geom_sf(data = regions, aes(fill = coef_out), lwd = 0.4) + 
@@ -90,7 +90,7 @@
     theme_minimal() +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
           panel.background = element_blank(), axis.line = element_line(colour = "black")) +
-    geom_sf_label(data = data_plot, aes(label = label_name)) + 
+    geom_sf_label(data = regions, aes(label = label_name)) + 
     xlab("") + ylab("")
   
   p_homeown <- ggplot() + geom_sf(data = regions, aes(fill = ownership)) + 
@@ -98,14 +98,14 @@
     theme_minimal() +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
           panel.background = element_blank(), axis.line = element_line(colour = "black"))+ 
-    geom_sf_label(data = data_plot, aes(label = label_name)) + 
+    geom_sf_label(data = regions, aes(label = label_name)) + 
     xlab("") + ylab("")
   p_socrent <- ggplot() + geom_sf(data = regions, aes(fill = socialrent)) + 
     scale_fill_distiller("Percentage \nsocial renting", palette = "Reds", direction = 1) +
     theme_minimal() +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
           panel.background = element_blank(), axis.line = element_line(colour = "black"))+ 
-    geom_sf_label(data = data_plot, aes(label = label_name)) + 
+    geom_sf_label(data = regions, aes(label = label_name)) + 
     xlab("") + ylab("")
   
   housing <- arrangeGrob(p_homeown, p_socrent, nrow = 1)
