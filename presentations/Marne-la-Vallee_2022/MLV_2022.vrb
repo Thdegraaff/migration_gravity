@@ -1,0 +1,40 @@
+\frametitle{Modeling framework: multilevel gravity modeling}
+\begin{small}
+  \begin{align}
+  	\text{Migrants}_{ijt} \sim & \text{Poisson}(\lambda_{ijt})\tag{\footnotesize \color{blue} flow of migrants}\\ \pause
+  	\ln(\lambda_{ijt}) = & \alpha +   o_i + d_j + t_t + \text{dyad}_{ij}+ \notag \\
+  	& \beta_1 \ln(\text{pop}_{it}) + \beta_2
+  	\ln(\text{pop}_{jt}) +
+  	\gamma \ln(\text{dist}_{ijt}) + \notag \\
+  	& \beta_3 \ln(\text{home}_{it}) +
+  	\beta_4 \ln(\text{home}_{jt}) +
+  	\beta_5 \ln(\text{soc}_{it}) + \beta_6
+  	\ln(\text{soc}_{jt})  \tag{\footnotesize \color{blue} linear model} \\ \pause
+	\begin{pmatrix}o_i\\
+	d_j
+\end{pmatrix} \sim &\mathcal{N} \left\{\left(\begin{array}{c}
+	0\\
+	0
+\end{array}\right),
+\left(
+\begin{array}{cc}
+	\sigma^2_i & \rho_{ij} \\
+	\rho_{ij} & \sigma^2_{j}
+\end{array}
+\right)
+\right\} \tag{\footnotesize \color{blue} regional varying effects} \\ \pause
+	\begin{pmatrix}\text{dyad}_{ij}\\
+	\text{dyad}_{ji}
+\end{pmatrix} \sim & \mathcal{N} \left\{\left(\begin{array}{c}
+	0\\
+	0
+\end{array}\right),
+\left(
+\begin{array}{cc}
+	\sigma^2_{\text{dyad}} & \rho \\
+	\rho & \sigma^2_{\text{dyad}}
+\end{array}
+\right)
+\right\} \tag{\footnotesize \color{blue} dyad varying effects}
+\end{align}
+\end{small}

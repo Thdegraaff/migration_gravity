@@ -136,6 +136,33 @@ d_wonen %>%
     m_soc = mean(total_social_rent/total_houses)
   )
 
+########################## Read in nationality data ######################
+
+nat <- read.csv2(file = "./data/src/COROP/nationaliteit_2012_2020.csv", sep = ";", header = FALSE, skip = 1)
+nat <- separate(nat, V1,  c("total_gender", "total_age", "nationality", "year", "corop", "population"), sep = ";")
+nat <- nat %>%
+  select(-total_gender, -total_age ) %>%
+  mutate(
+    year = rep(2012:2020, 160),
+    corop = rep(1:40, 4, each = 9),
+    population = as.numeric(population)
+  ) %>%
+  pivot_wider(names_from = nationality, values_from = population) %>%
+  rename(
+    total_pop = '"Totaal"',
+    total_nd = '"Totaal niet-Nederlandse nationaliteit"',
+    total_w = '"Westerse nationaliteiten ex. Nederlands"',
+    total_nw = '"Niet-westerse nationaliteiten"'
+  ) %>%
+  mutate(
+    growth_w = (total_w - lag(total_w, n = 8) )/total_w,
+    growth_nd = (total_nd - lag(total_nd, n = 8) )/total_nd,
+    growth_pop = (total_pop - lag(total_pop, n = 8) )/total_pop,
+    lperc_nd = log(total_nd/total_pop),
+    lperc_w = log(total_w/total_pop)
+  ) %>%
+  select(year, corop, lperc_nd, lperc_w)
+
 ######################
 # pairs plot
 ######################
@@ -157,11 +184,17 @@ cor(df_pairs)
 
 d <- left_join(d, distance, by = c("origin" = "origin", "destination" = "destination") ) 
 d <- left_join(d, d_bev, by = c("origin" = "corop", "year" = "year") ) 
+d <- left_join(d, nat, by = c("origin" = "corop", "year" = "year") )
 d <- d %>%
-  rename(popA = population)
+  rename(popA = population, 
+         lperc_ndA = lperc_nd,
+         lperc_wA = lperc_w)
 d <- left_join(d, d_bev, by = c("destination" = "corop", "year" = "year") ) 
+d <- left_join(d, nat, by = c("destination" = "corop", "year" = "year") )
 d <- d %>%
-  rename(popB = population)
+  rename(popB = population,
+         lperc_ndB = lperc_nd,
+         lperc_wB = lperc_w)
 d <- left_join(d, d_wonen, by = c("origin" = "corop", "year" = "year") ) 
 d <- d %>%
   mutate(

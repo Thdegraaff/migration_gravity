@@ -5,7 +5,26 @@
   library("spatialrisk")
   library("grid")
   library("gridExtra")
+  library(socviz)
+  library(classInt)
   # library("dutchmasters")
+  
+  theme_map <- function(base_size=9, base_family="") {
+    require(grid)
+    theme_bw(base_size=base_size, base_family=base_family) %+replace%
+      theme(axis.line=element_blank(),
+            axis.text=element_blank(),
+            axis.ticks=element_blank(),
+            axis.title=element_blank(),
+            panel.background=element_blank(),
+            panel.border=element_blank(),
+            panel.grid=element_blank(),
+            panel.spacing=unit(0, "lines"),
+            plot.background=element_blank(),
+            legend.justification = c(0,0),
+            legend.position = c(0,0)
+      )
+  }
   
   ######################
   # Set Dutch masters theme
@@ -38,7 +57,7 @@
   
   # Load Data files
   
-  load(file="./output/corop_dyad.Rda")
+  load(file="./output/corop_final_model_hhsize.Rda")
   load(file="./data/derived/d_wonen.Rda")
   d_wonen <- d_wonen %>%
     filter(year == 2018) %>%
@@ -54,65 +73,73 @@
   data("nl_corop")
   regions <- nl_corop
   
-  post <- extract.samples( m_dyad )
+  post <- extract.samples( m )
   
   ori <- sapply( 1:nr_corop , function(i) post$gr[,i,1] )
   des <- sapply( 1:nr_corop , function(i) post$gr[,i,2] )
   ori <- apply( ori , 2 , mean )
   des <- apply( des , 2 , mean )
   
-  regions$coef_out <- ori
-  regions$coef_in <- des
-  
   # Merge data
   
-  regions <- left_join(regions, d_wonen, by = c("corop_nr" = "corop") ) 
+  # regions <- left_join(regions, d_wonen, by = c("corop_nr" = "corop") ) 
   
   label_name <-  rep(NA, 40)
   label_name[17] <-  "Utrecht"
   label_name[23] <- "Amsterdam"
   label_name[26] <- "The Hague"
   label_name[29] <- "Rotterdam"
-  regions <- cbind(regions, label_name)
   
-  p_coef_in <- ggplot() + geom_sf(data = regions, aes(fill = coef_in), lwd = 0.4) + 
-    scale_fill_distiller("Relative\n pull factor\n", palette = "RdBu", direction = -1, limits = c(-2, 2) ) +
-    ggtitle("Regional destination effect") +
-    theme_minimal() +
-    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-          panel.background = element_blank(), axis.line = element_line(colour = "black")) +
-    geom_sf_label(data = regions, aes(label = label_name)) + 
-    xlab("") + ylab("")
-  
-  p_coef_out <- ggplot() + geom_sf(data = regions, aes(fill = coef_out), lwd = 0.4) + 
-    scale_fill_distiller("Relative\n push factor\n", palette = "RdBu", direction = -1, limits = c(-2, 2) ) + 
-    ggtitle("Regional origin effect") +
-    theme_minimal() +
-    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-          panel.background = element_blank(), axis.line = element_line(colour = "black")) +
-    geom_sf_label(data = regions, aes(label = label_name)) + 
-    xlab("") + ylab("")
-  
-  p_homeown <- ggplot() + geom_sf(data = regions, aes(fill = ownership)) + 
-    scale_fill_distiller("Percentage \nhome-ownership", palette = "Reds", direction = 1)  +
-    theme_minimal() +
-    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-          panel.background = element_blank(), axis.line = element_line(colour = "black"))+ 
-    geom_sf_label(data = regions, aes(label = label_name)) + 
-    xlab("") + ylab("")
-  p_socrent <- ggplot() + geom_sf(data = regions, aes(fill = socialrent)) + 
-    scale_fill_distiller("Percentage \nsocial renting", palette = "Reds", direction = 1) +
-    theme_minimal() +
-    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-          panel.background = element_blank(), axis.line = element_line(colour = "black"))+ 
-    geom_sf_label(data = regions, aes(label = label_name)) + 
-    xlab("") + ylab("")
-  
-  housing <- arrangeGrob(p_homeown, p_socrent, nrow = 1)
-  ggsave(housing, file="./fig/housing_types.pdf", width  = 400, height = 160, units = "mm")
+  names <- rep(c("Orgin (push) effect","Destination (pull) effect"),each = 40)
+  dat_regional_effect <- tibble(corop_nr = rep(seq(1,40),2), model = names, waarde = c(ori, des), label = rep(label_name,2) )
+  dat_regional_effect$model_f <- factor(dat_regional_effect$model, levels = c("Orgin (push) effect","Destination (pull) effect"))
 
-  attractivity <- arrangeGrob(p_coef_out, p_coef_in , nrow = 1)
-  ggsave(attractivity, file="./fig/attractivity_region.pdf", width  = 400, height = 160, units = "mm")
+  regions_varying <- left_join(regions, dat_regional_effect)
+  
+  breaks_fixed <- classIntervals(regions_varying$waarde, n=8, style="fixed",
+                                 fixedBreaks=c(-1.5, -1, -0.5, -0.25, 0, 0.25, 0.5, 1, 1.5))
+  breaks_fixed
+  regions_varying <- mutate(regions_varying, waarde_cat = cut(waarde, breaks_fixed$brks, dig.lab=7))
+  
+  p0 <- ggplot() + geom_sf(data = regions_varying, aes(fill = waarde_cat), size = 0.01) + 
+    facet_wrap(.~model_f, ncol = 2) +
+    geom_sf_text(data = regions_varying, aes(label = label), size = 2, colour = "black" )
+  
+  p1 <- p0 + scale_fill_brewer(palette="RdBu") + 
+    labs(title = "Regional push and pull effects",
+         fill = "Regional effect") + theme_map()  
+  
+  p2 <- p1 + theme(legend.position = "bottom",
+                   strip.background = element_blank())                     
+  
+  ggsave(p2, filename = "./fig/regional_effects.pdf", width = 6, height = 4)
+  p2    
+  
+  names <- rep(c("Social renting","Home-ownership"),each = 40)
+  dat_housing <- tibble(corop_nr = rep(seq(1,40),2), model = names, waarde = c(d_wonen$socialrent, d_wonen$ownership), label = rep(label_name,2) )
+  dat_housing$model_f <- factor(dat_housing$model, levels = c("Social renting","Home-ownership"))
+  
+  regions <- nl_corop
+  regions_housing <- left_join(regions, dat_housing)
+  
+  breaks_fixed <- classIntervals(regions_housing$waarde, n=6, style="fixed",
+                                 fixedBreaks=c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7))
+  breaks_fixed
+  regions_housing <- mutate(regions_housing, waarde_cat = cut(waarde, breaks_fixed$brks, dig.lab=7))
+  
+  p0 <- ggplot() + geom_sf(data = regions_housing, aes(fill = waarde_cat), size = 0.01) + 
+    facet_wrap(.~model_f, ncol = 2) +
+    geom_sf_text(data = regions_housing, aes(label = label), size = 2, colour = "black" )
+  
+  p1 <- p0 + scale_fill_brewer(palette="Blues") + 
+    labs(title = "Dutch housing structure (2018)",
+         fill = "Fraction") + theme_map()  
+  
+  p2 <- p1 + theme(legend.position = "bottom",
+                   strip.background = element_blank())                     
+  
+  ggsave(p2, filename = "./fig/housing_structure.pdf", width = 6, height = 4)
+  p2   
   
   ################ Check scatterplots for panel regional varying effects
   
@@ -187,7 +214,9 @@
     mutate(
       growth_w = (total_w - lag(total_w, n = 8) )/total_w,
       growth_nd = (total_nd - lag(total_nd, n = 8) )/total_nd,
-      growth_pop = (total_pop - lag(total_pop, n = 8) )/total_pop 
+      growth_pop = (total_pop - lag(total_pop, n = 8) )/total_pop,
+      perc_nd = total_nd/total_pop,
+      perc_w = total_w/total_pop
     ) %>%
     filter(year == 2020)
   
@@ -204,7 +233,8 @@
       divorce_rate = divorced/population,
       population = population
     ) %>%
-    select(areaname, corop_nr, coef_out, coef_in, hhsize, divorce_rate, population, growth, growth_houses, growth_w, growth_nd, total_w, total_nd, total_nw, growth_pop) 
+    select(areaname, corop_nr, coef_out, coef_in, hhsize, divorce_rate, population, growth, growth_houses, growth_w, growth_nd, total_w, total_nd, total_nw, growth_pop, 
+           perc_nd, perc_w) 
   
   label_name <-  rep(NA, 40)
   label_name[17] <-  "Utrecht"
@@ -243,10 +273,10 @@
           panel.background = element_blank(), axis.line = element_line(colour = "black")) 
   out_plot_3
   
-  out_plot_4 <- ggplot(data = data_plot, aes(coef_out, growth_houses)) + 
+  out_plot_4 <- ggplot(data = data_plot, aes(coef_out, perc_nd)) + 
     geom_point(color = "cornflowerblue", alpha = 1, size = 2) +
     geom_smooth(method='lm') +
-    ylab("Regional housing stock growth 2012-2020") + 
+    ylab("Percentage non-dutch residents") + 
     xlab("Regional push factor") + 
     theme_minimal() +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
@@ -263,10 +293,10 @@
           panel.background = element_blank(), axis.line = element_line(colour = "black")) 
   out_plot_5
   
-  out_plot_6 <- ggplot(data = data_plot, aes(coef_out, growth_nd)) + 
+  out_plot_6 <- ggplot(data = data_plot, aes(coef_out, perc_w)) + 
     geom_point(color = "cornflowerblue", alpha = 1, size = 2) +
     geom_smooth(method='lm') +
-    ylab("Growth non-dutch residents 2012-2020") + 
+    ylab("percentage western immigrants") + 
     xlab("Regional push factor") + 
     theme_minimal() +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
@@ -341,26 +371,40 @@
   
   #### map growth population
   
-  growth_pop <- ggplot() + geom_sf(data = data_plot, aes(fill = growth_pop)) + 
-    scale_fill_distiller("Growth \npopulation", palette = "Reds", direction = 1) +
-    theme_minimal() +
-    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-          panel.background = element_blank(), axis.line = element_line(colour = "black")) +
-    geom_sf_label(data = data_plot, aes(label = label_name)) + 
-    xlab("") + ylab("")
+  breaks_fixed <- classIntervals(data_plot$growth_pop, n=6, style="fixed",
+                                 fixedBreaks=c(-0.2, -0.1, -0.05, 0, 0.05, 0.1, 0.3))
+  breaks_fixed
+  data_plot <- mutate(data_plot, waarde_pop = cut(growth_pop, breaks_fixed$brks, dig.lab=7))
+  
+  growth_pop <- ggplot() + geom_sf(data = data_plot, aes(fill = waarde_pop), size = 0.01) + 
+    scale_fill_brewer(palette = "RdBu", direction = 1) +
+    theme_map() +
+    geom_sf_text(data = regions, aes(label = label_name), size = 4, colour = "black" ) +
+    xlab("") + ylab("") +
+    theme(legend.position = "bottom",
+          strip.background = element_blank()) +
+    labs(title = "Growth population, 2012-2020",
+         fill = "growth rates")
   growth_pop
   
-  ggsave(growth_pop, file="./fig/growth_pop.pdf", width  = 200, height = 250, units = "mm")
+  ggsave(growth_pop, file="./fig/growth_pop.pdf", width  = 4, height = 6)
   
   #### map growth housing value
   
-  growth_woz <- ggplot() + geom_sf(data = data_plot, aes(fill = growth)) + 
-    scale_fill_distiller("Growth \nhousing \nvalue", palette = "Reds", direction = 1) +
-    theme_minimal() +
-    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-          panel.background = element_blank(), axis.line = element_line(colour = "black")) + 
-    geom_sf_label(data = data_plot, aes(label = label_name)) + 
-    xlab("") + ylab("")
+  breaks_fixed <- classIntervals(data_plot$growth, n=6, style="fixed",
+                                 fixedBreaks=c(-0.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6))
+  breaks_fixed
+  data_plot <- mutate(data_plot, waarde_cat = cut(growth, breaks_fixed$brks, dig.lab=7))
+  
+  growth_woz  <- ggplot() + geom_sf(data = data_plot, aes(fill = waarde_cat), size = 0.01) + 
+    scale_fill_brewer(palette="Blues")  +
+    theme_map() +
+    geom_sf_text(data = regions, aes(label = label_name), size = 4, colour = "black" ) +
+    xlab("") + ylab("") +
+    theme(legend.position = "bottom",
+          strip.background = element_blank()) +
+    labs(title = "Growth property tax value, 2012-2020",
+         fill = "growth rates")
   growth_woz
   
-  ggsave(growth_woz, file="./fig/growth_woz.pdf", width  = 200, height = 250, units = "mm")
+  ggsave(growth_woz, file="./fig/growth_woz.pdf", width  = 4, height = 6)

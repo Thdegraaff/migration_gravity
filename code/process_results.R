@@ -48,15 +48,15 @@ library(rethinking)
 
 nr <- 40
 
-load(file = "./output/corop_dyad.rda")
+load(file = "./output/corop_final_model_hhsize.rda")
 
 
 ######## From rethinking package
 
-precis(m_dyad)
-list <-  extract.samples( m_dyad )
-samples <- data.frame(list[1:10])
-samples <- samples[, c(1:8)]
+precis(m)
+list <-  extract.samples( m )
+samples <- data.frame(list[1:12])
+samples <- samples[, c(1:12)]
 
 samples <- samples %>%
   rename(`Intercept` = `cons`, 
@@ -105,16 +105,20 @@ mig_data <- list(
   lhomB = df$lhomB,
   lsocB = df$lsocB,
   lrentA = df$lrentA,
-  lrentB = df$lrentB
+  lrentB = df$lrentB,
+  lhhsizeA = df$lhhsizeA,
+  lhhsizeB = df$lhhsizeB, 
+  lperc_wA = df$lperc_wA,
+  lperc_wB = df$lperc_wB
 )
 
 #############################
 # Careful, will take some time
 ##############################
 
-samplesp <- extract.samples(m_dyad, n = 500)
+samplesp <- extract.samples(m, n = 500)
 
-p <- link(m_dyad, data = mig_data, post = samplesp)
+p <- link(m, data = mig_data, post = samplesp)
 mABp <- round(colMeans(p$lambdaAB))
 mBAp <- round(colMeans(p$lambdaBA))
 
@@ -159,7 +163,7 @@ hist_fit <- plot_grid( hist_fit, legend_b, ncol = 1, rel_heights = c(1,.1) )
 
 ggsave(hist_fit, file="./fig/hist_fit.pdf", width  = 200, height = 80, units = "mm")
 
-  predict_df <- data_frame(migrants, predict)
+predict_df <- data_frame(migrants, predict)
 p_o_plot <- ggplot(data = predict_df, aes(x = migrants, y = predict) ) + 
                      geom_point(color = "cornflowerblue", alpha = 1/2, size = 2) + 
                      geom_abline(intercept = 0, slope = 1, color = "black", linetype = 2, alpha = 1/3) +
@@ -174,7 +178,8 @@ p_o_plot <- ggplot(data = predict_df, aes(x = migrants, y = predict) ) +
 
 ggsave(p_o_plot, file="./fig/prediction_2020.pdf", width  = 100, height = 80, units = "mm")
 
-cor(predict_df$migrants, predict_df$predict)
+m_pred <- lm(predict_df$migrants ~ predict_df$predict)
+summary(m_pred)
 
 ######################
 # Create new data and difference the pmean predicted outcomes

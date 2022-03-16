@@ -45,7 +45,7 @@ theme_set(theme_pearl_earring())
 
 load(file = "./data/derived/migration_COROP.Rda")
 df <- df %>%
-  filter(year == 2012 | year == 2013 | year == 2014 | year == 2015 | year == 2016 | year == 2017)
+  filter(year == 2012 | year == 2013 | year == 2014 | year == 2015 | year == 2016 | year == 2017 | year == 2018 | year == 2019)
 
 nr_regions = max(df$destination)
 
@@ -68,7 +68,9 @@ m_data <- list(
   lrentA = df$lrentA,
   lrentB = df$lrentB,
   lhhsizeA = df$lhhsizeA,
-  lhhsizeB = df$lhhsizeB 
+  lhhsizeB = df$lhhsizeB, 
+  lperc_wA = df$lperc_wA,
+  lperc_wB = df$lperc_wB
 )
 
 pairs( ~ lpopA + lpopB, data = df, col= rangi2)
@@ -81,20 +83,24 @@ m <- ulam(
     log(lambdaAB) <- cons + 
       b_popA * lpopA + b_popB * lpopB + 
       b_dist*ldist + 
-      b_hA  * lhomA + b_hB * lhomB + b_sA * lsocA + b_sB * lsocB + b_hsizeA * lhhsizeA + b_hsizeB * lhhsizeB + 
+      b_hA  * lhomA + b_hB * lhomB + b_sA * lsocA + b_sB * lsocB + 
+      b_hsizeA * lhhsizeA + b_hsizeB * lhhsizeB + 
+      b_wA * lperc_wA + b_wB * lperc_wB + 
       gr[origin,1] + gr[destination,2] +   
       y[year] + 
       d[did,1],
     log(lambdaBA) <- cons + 
       b_popB * lpopA + b_popA * lpopB + 
        b_dist*ldist + 
-       b_hA  * lhomB + b_hB * lhomA + b_sA * lsocB + b_sB * lsocA + b_hsizeA * lhhsizeB + b_hsizeB * lhhsizeA +  
+       b_hA  * lhomB + b_hB * lhomA + b_sA * lsocB + b_sB * lsocA + 
+      b_hsizeA * lhhsizeB + b_hsizeB * lhhsizeA +  
+      b_wA * lperc_wB + b_wB * lperc_wA + 
       gr[destination,1] + gr[origin,2] +   
       y[year] + 
       d[did, 2],
     b_dist ~ normal(-1.5, 0.5),
     c(b_popA, b_popB) ~ normal(1, 0.5),
-    c(b_hA, b_sA, b_hB, b_sB, b_hsizeA, b_hsizeB) ~ normal(0, 1),
+    c(b_hA, b_sA, b_hB, b_sB, b_hsizeA, b_hsizeB, b_wA, b_wB) ~ normal(0, 1),
     #c(b_hA_int, b_sA_int, b_hB_int, b_sB_int) ~ normal(0, 1),
     cons ~ normal(3,3),
     y[year] ~ normal(0, sigma_y),
