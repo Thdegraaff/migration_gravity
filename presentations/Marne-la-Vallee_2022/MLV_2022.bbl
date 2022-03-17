@@ -322,30 +322,6 @@
     \field{year}{2014}
   \endentry
 
-  \entry{mcelreath2020statistical}{book}{}
-    \name{author}{1}{}{%
-      {{hash=MR}{%
-         family={McElreath},
-         familyi={M\bibinitperiod},
-         given={Richard},
-         giveni={R\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {CRC press}%
-    }
-    \strng{namehash}{MR1}
-    \strng{fullhash}{MR1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2020}
-    \field{sortinit}{M}
-    \field{sortinithash}{M}
-    \field{title}{Statistical rethinking: A Bayesian course with examples in R
-  and Stan}
-    \field{year}{2020}
-  \endentry
-
   \entry{oswald1996conjecture}{report}{}
     \name{author}{1}{}{%
       {{hash=OAJ}{%
@@ -421,6 +397,92 @@
     \field{volume}{88}
     \field{journaltitle}{The Review of Economics and statistics}
     \field{year}{2006}
+  \endentry
+
+  \entry{zhangAnalysingInterprovincialUrban2020}{article}{}
+    \name{author}{4}{}{%
+      {{hash=ZXN}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Xingna\bibnamedelima Nina},
+         giveni={X\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=WWW}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Wenfei\bibnamedelima Winnie},
+         giveni={W\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=HR}{%
+         family={Harris},
+         familyi={H\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=LG}{%
+         family={Leckie},
+         familyi={L\bibinitperiod},
+         given={George},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZXN+1}
+    \strng{fullhash}{ZXNWWWHRLG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{labelyear}{2020}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{abstract}{%
+    This paper proposes a novel multilevel gravity model of migration to study
+  the under-researched topic of urban to urban migration in China. Many
+  previous studies have looked at rural to urban migration in the context of
+  urbanisation and economic development, and at return migration. Very few have
+  looked at what is becoming more important in increasingly urbanised
+  countries, which is the movement from one urban location to another. In the
+  study, we develop a new method that allows for the interconnections between
+  migration flows: between those that share an origin, those that share a
+  destination, and where there is a reciprocal flow between places. A
+  conventional gravity model of migration ignores those connections, risking
+  erroneous estimation of the regression parameters and of their statistical
+  significance. It also ignores that those connections are of substantive
+  interest—they reveal the interconnections between places regarding the
+  numbers of migrants that they send and receive. We motivate and illustrate
+  the advantages of our approach using 2010 interprovincial migration census
+  data for China. The results obtained from the model confirm the effect of
+  distance, of population size and of regional income levels. They show that
+  there is greater variation in the numbers of migrants received by provinces
+  than there is in the numbers sent, and that reciprocal migration between
+  pairs of provinces is an important feature of what is happening in China,
+  especially between the neighbouring provinces of Sichuan and Tibet.%
+    }
+    \verb{doi}
+    \verb 10.1093/migration/mny026
+    \endverb
+    \field{issn}{2049-5846}
+    \field{number}{1}
+    \field{pages}{19\bibrangedash 42}
+    \field{shortjournal}{Migration Studies}
+    \field{shorttitle}{Analysing Inter-Provincial Urban Migration Flows in
+  {{China}}}
+    \field{title}{Analysing Inter-Provincial Urban Migration Flows in
+  {{China}}: {{A}} New Multilevel Gravity Model Approach}
+    \verb{url}
+    \verb https://doi.org/10.1093/migration/mny026
+    \endverb
+    \field{volume}{8}
+    \verb{file}
+    \verb /Users/tomba/Zotero/storage/BM53SN3Q/Zhang et al_2020_Analysing inter
+    \verb -provincial urban migration flows in China.pdf;/Users/tomba/Zotero/st
+    \verb orage/P4RJRBRX/5061546.html
+    \endverb
+    \field{journaltitle}{Migration Studies}
+    \field{day}{01}
+    \field{month}{03}
+    \field{year}{2020}
+    \field{urlday}{12}
+    \field{urlmonth}{03}
+    \field{urlyear}{2022}
   \endentry
 \endsortlist
 \endinput

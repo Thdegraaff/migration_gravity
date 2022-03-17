@@ -513,7 +513,6 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/sansmathaccent/mathker
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmssi9.tfm
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm
 OUTPUT MLV_2022.vrb
 INPUT MLV_2022.vrb
 INPUT MLV_2022.vrb
@@ -539,6 +538,9 @@ INPUT ../../fig/hist_housing_corop.pdf
 INPUT ../../fig/housing_structure.pdf
 INPUT ../../fig/housing_structure.pdf
 INPUT ../../fig/housing_structure.pdf
+INPUT ../../fig/hhsize_corop.pdf
+INPUT ../../fig/hhsize_corop.pdf
+INPUT ../../fig/hhsize_corop.pdf
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
@@ -573,12 +575,6 @@ INPUT ../../fig/country_dyad.pdf
 INPUT ../../fig/regional_effects.pdf
 INPUT ../../fig/regional_effects.pdf
 INPUT ../../fig/regional_effects.pdf
-INPUT ../../fig/regional_out_plot.pdf
-INPUT ../../fig/regional_out_plot.pdf
-INPUT ../../fig/regional_out_plot.pdf
-INPUT ../../fig/temporal_variation.pdf
-INPUT ../../fig/temporal_variation.pdf
-INPUT ../../fig/temporal_variation.pdf
 INPUT ../../fig/spatial_autocorrelation.pdf
 INPUT ../../fig/spatial_autocorrelation.pdf
 INPUT ../../fig/spatial_autocorrelation.pdf
@@ -610,7 +606,6 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.8)  16 MAR 2022 15:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.28)  17 MAR 2022 11:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1605,8 +1605,6 @@ Overfull \vbox (23.64499pt too high) detected at line 93
 
 ] [7
 
-] [8
-
 ]
 \openout4 = `MLV_2022.vrb'.
 
@@ -1619,13 +1617,15 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <8> not available
 (Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 15.
 
-) [9
+) [8
+
+] (./MLV_2022.vrb) [9
 
 ] (./MLV_2022.vrb) [10
 
 ] (./MLV_2022.vrb) [11
 
-] (./MLV_2022.vrb) [12
+] [12
 
 ]
 [13
@@ -1634,167 +1634,150 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <8> not available
 
 ] [15
 
-] [16
-
-]
-<../../fig/hist_mig_corop.pdf, id=159, 568.1225pt x 226.8475pt>
+] <../../fig/hist_mig_corop.pdf, id=146, 568.1225pt x 226.8475pt>
 File: ../../fig/hist_mig_corop.pdf Graphic file (type pdf)
 
 <use ../../fig/hist_mig_corop.pdf>
-Package pdftex.def Info: ../../fig/hist_mig_corop.pdf used on input line 236.
+Package pdftex.def Info: ../../fig/hist_mig_corop.pdf used on input line 239.
 (pdftex.def)             Requested size: 245.83282pt x 98.15865pt.
- [17
+ [16
 
  <../../fig/hist_mig_corop.pdf>]
-<../../fig/hist_housing_corop.pdf, id=171, 578.16pt x 289.08pt>
+<../../fig/hist_housing_corop.pdf, id=157, 578.16pt x 289.08pt>
 File: ../../fig/hist_housing_corop.pdf Graphic file (type pdf)
 
 <use ../../fig/hist_housing_corop.pdf>
 Package pdftex.def Info: ../../fig/hist_housing_corop.pdf used on input line 24
-6.
+9.
 (pdftex.def)             Requested size: 245.83282pt x 122.9125pt.
- [18
+ [17
 
  <../../fig/hist_housing_corop.pdf>]
-<../../fig/housing_structure.pdf, id=182, 433.62pt x 289.08pt>
+<../../fig/housing_structure.pdf, id=169, 433.62pt x 289.08pt>
 File: ../../fig/housing_structure.pdf Graphic file (type pdf)
 
 <use ../../fig/housing_structure.pdf>
-Package pdftex.def Info: ../../fig/housing_structure.pdf used on input line 252
+Package pdftex.def Info: ../../fig/housing_structure.pdf used on input line 255
 .
 (pdftex.def)             Requested size: 307.28987pt x 204.86888pt.
 
-Overfull \vbox (5.52296pt too high) detected at line 252
+Overfull \vbox (5.52296pt too high) detected at line 255
  []
 
-[19
+[18
 
- <../../fig/housing_structure.pdf>] [20
+ <../../fig/housing_structure.pdf>]
+<../../fig/hhsize_corop.pdf, id=180, 578.16pt x 289.08pt>
+File: ../../fig/hhsize_corop.pdf Graphic file (type pdf)
 
-] [21
+<use ../../fig/hhsize_corop.pdf>
+Package pdftex.def Info: ../../fig/hhsize_corop.pdf used on input line 261.
+(pdftex.def)             Requested size: 307.28987pt x 153.64394pt.
+ [19
+
+ <../../fig/hhsize_corop.pdf>] [20
+
+]
+[21
 
 ]
 \openout4 = `MLV_2022.vrb'.
 
  (./MLV_2022.vrb) [22
 
-]
-(./MLV_2022.vrb) [23
+] (./MLV_2022.vrb) [23
 
 ] (./MLV_2022.vrb) [24
 
-] (./MLV_2022.vrb) [25
+]
+(./MLV_2022.vrb) [25
 
 ]
-Overfull \vbox (20.63887pt too high) detected at line 362
+Overfull \vbox (20.63887pt too high) detected at line 376
  []
 
 [26
 
-] <../../fig/prediction_2020.pdf, id=241, 284.06125pt x 226.8475pt>
+] <../../fig/prediction_2020.pdf, id=239, 284.06125pt x 226.8475pt>
 File: ../../fig/prediction_2020.pdf Graphic file (type pdf)
 
 <use ../../fig/prediction_2020.pdf>
-Package pdftex.def Info: ../../fig/prediction_2020.pdf used on input line 368.
+Package pdftex.def Info: ../../fig/prediction_2020.pdf used on input line 382.
 (pdftex.def)             Requested size: 276.559pt x 220.876pt.
 
-Overfull \vbox (21.53009pt too high) detected at line 368
+Overfull \vbox (21.53009pt too high) detected at line 382
  []
 
 [27
 
  <../../fig/prediction_2020.pdf>]
-<../../fig/hist_fit.pdf, id=259, 568.1225pt x 226.8475pt>
+<../../fig/hist_fit.pdf, id=257, 568.1225pt x 226.8475pt>
 File: ../../fig/hist_fit.pdf Graphic file (type pdf)
 
 <use ../../fig/hist_fit.pdf>
-Package pdftex.def Info: ../../fig/hist_fit.pdf used on input line 374.
+Package pdftex.def Info: ../../fig/hist_fit.pdf used on input line 388.
 (pdftex.def)             Requested size: 307.28987pt x 122.7035pt.
  [28
 
  <../../fig/hist_fit.pdf>]
-<../../fig/country_dyad.pdf, id=270, 568.1225pt x 226.8475pt>
+<../../fig/country_dyad.pdf, id=268, 568.1225pt x 226.8475pt>
 File: ../../fig/country_dyad.pdf Graphic file (type pdf)
 
 <use ../../fig/country_dyad.pdf>
-Package pdftex.def Info: ../../fig/country_dyad.pdf used on input line 384.
+Package pdftex.def Info: ../../fig/country_dyad.pdf used on input line 398.
 (pdftex.def)             Requested size: 307.28987pt x 122.7035pt.
  [29
 
  <../../fig/country_dyad.pdf>]
-<../../fig/regional_effects.pdf, id=286, 433.62pt x 289.08pt>
+<../../fig/regional_effects.pdf, id=284, 433.62pt x 289.08pt>
 File: ../../fig/regional_effects.pdf Graphic file (type pdf)
 
 <use ../../fig/regional_effects.pdf>
-Package pdftex.def Info: ../../fig/regional_effects.pdf used on input line 391.
+Package pdftex.def Info: ../../fig/regional_effects.pdf used on input line 405.
 
 (pdftex.def)             Requested size: 307.28987pt x 204.86888pt.
 
-Overfull \vbox (5.52296pt too high) detected at line 391
+Overfull \vbox (5.52296pt too high) detected at line 405
  []
 
 [30
 
  <../../fig/regional_effects.pdf>]
-<../../fig/regional_out_plot.pdf, id=297, 853.1875pt x 454.69875pt>
-File: ../../fig/regional_out_plot.pdf Graphic file (type pdf)
-
-<use ../../fig/regional_out_plot.pdf>
-Package pdftex.def Info: ../../fig/regional_out_plot.pdf used on input line 397
-.
-(pdftex.def)             Requested size: 307.28987pt x 163.76773pt.
- [31
-
- <../../fig/regional_out_plot.pdf>]
-<../../fig/temporal_variation.pdf, id=313, 568.1225pt x 397.485pt>
-File: ../../fig/temporal_variation.pdf Graphic file (type pdf)
-
-<use ../../fig/temporal_variation.pdf>
-Package pdftex.def Info: ../../fig/temporal_variation.pdf used on input line 40
-3.
-(pdftex.def)             Requested size: 307.28987pt x 215.00261pt.
-
-Overfull \vbox (15.6567pt too high) detected at line 403
- []
-
-[32
-
- <../../fig/temporal_variation.pdf>]
-<../../fig/spatial_autocorrelation.pdf, id=327, 284.06125pt x 226.8475pt>
+<../../fig/spatial_autocorrelation.pdf, id=295, 284.06125pt x 226.8475pt>
 File: ../../fig/spatial_autocorrelation.pdf Graphic file (type pdf)
 
 <use ../../fig/spatial_autocorrelation.pdf>
 Package pdftex.def Info: ../../fig/spatial_autocorrelation.pdf used on input li
-ne 425.
+ne 440.
 (pdftex.def)             Requested size: 153.64493pt x 122.7035pt.
- [33
+ [31
 
  <../../fig/spatial_autocorrelation.pdf>]
 File: ../../fig/spatial_autocorrelation.pdf Graphic file (type pdf)
  <use ../../fig/spatial_autocorrelation.pdf>
 Package pdftex.def Info: ../../fig/spatial_autocorrelation.pdf used on input li
-ne 425.
+ne 440.
 (pdftex.def)             Requested size: 153.64493pt x 122.7035pt.
- [34
+ [32
+
+] [33
+
+] [34
 
 ] [35
-
-] [36
-
-] [37
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 461.
+(hyperref)                removing `\translate ' on input line 474.
 
-[38
+[36
 
  </usr/local/texlive/2017/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf
->] [39
+>] [37
 
 
-] [40
+] [38
 
 
 ]
@@ -1807,11 +1790,11 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 \tf@snm=\write10
 \openout10 = `MLV_2022.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 470.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 470.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 483.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 483.
  (./MLV_2022.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 470.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 470.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 483.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 483.
 Package rerunfilecheck Info: File `MLV_2022.out' has not changed.
 (rerunfilecheck)             Checksum: D9694BC855D0C50CCAD6B8D6DEDF7609;41.
 
@@ -1827,11 +1810,11 @@ Package logreq Info: Writing requests to 'MLV_2022.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40061 strings out of 492995
- 947755 string characters out of 6132704
- 1318022 words of memory out of 5000000
- 42726 multiletter control sequences out of 15000+600000
- 23202 words of font info for 84 fonts, out of 8000000 for 9000
+ 40042 strings out of 492995
+ 947469 string characters out of 6132704
+ 1320022 words of memory out of 5000000
+ 42713 multiletter control sequences out of 15000+600000
+ 23035 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,20n,98p,1930b,1838s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pf
@@ -1851,14 +1834,13 @@ l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
 exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/tex
 live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texliv
-e/2017/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texliv
-e/2017/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on MLV_2022.pdf (40 pages, 520262 bytes).
+ive/2017/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb></usr/local/texlive/
+2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on MLV_2022.pdf (38 pages, 505335 bytes).
 PDF statistics:
- 477 PDF objects out of 1000 (max. 8388607)
- 375 compressed objects within 4 object streams
- 96 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 444 PDF objects out of 1000 (max. 8388607)
+ 347 compressed objects within 4 object streams
+ 92 named destinations out of 1000 (max. 500000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

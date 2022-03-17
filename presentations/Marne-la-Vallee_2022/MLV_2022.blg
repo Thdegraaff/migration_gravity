@@ -18,7 +18,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: MLV_2022-blx.bib
 Database file #2: ../../paper/regions/references.bib
-Repeated entry---line 312 of file ../../paper/regions/references.bib
+Repeated entry---line 330 of file ../../paper/regions/references.bib
  : @article{dietz2003social
  :                         ,
 I'm skipping whatever remains of this entry
@@ -27,43 +27,43 @@ Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 You've used 14 entries,
             6256 wiz_defined-function locations,
-            1260 strings with 10857 characters,
-and the built_in function-call counts, 72393 in all, are:
-= -- 4791
-> -- 1491
-< -- 493
-+ -- 1511
-- -- 489
-* -- 5236
-:= -- 6621
+            1270 strings with 12881 characters,
+and the built_in function-call counts, 80883 in all, are:
+= -- 5219
+> -- 2307
+< -- 528
++ -- 2362
+- -- 1211
+* -- 5754
+:= -- 7995
 add.period$ -- 0
 call.type$ -- 14
-change.case$ -- 304
-chr.to.int$ -- 30
+change.case$ -- 295
+chr.to.int$ -- 102
 cite$ -- 26
-duplicate$ -- 7555
-empty$ -- 7037
-format.name$ -- 912
-if$ -- 15413
+duplicate$ -- 8146
+empty$ -- 7522
+format.name$ -- 944
+if$ -- 16443
 int.to.chr$ -- 0
-int.to.str$ -- 38
+int.to.str$ -- 37
 missing$ -- 0
-newline$ -- 415
-num.names$ -- 724
-pop$ -- 4529
+newline$ -- 456
+num.names$ -- 712
+pop$ -- 4544
 preamble$ -- 1
-purify$ -- 359
+purify$ -- 356
 quote$ -- 0
-skip$ -- 2605
+skip$ -- 2646
 stack$ -- 0
-substring$ -- 7705
-swap$ -- 2079
-text.length$ -- 362
+substring$ -- 8800
+swap$ -- 2257
+text.length$ -- 394
 text.prefix$ -- 13
 top$ -- 1
 type$ -- 463
 warning$ -- 0
-while$ -- 774
+while$ -- 892
 width$ -- 0
-write$ -- 402
+write$ -- 443
 (There was 1 error message)

@@ -51,7 +51,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\begin{itemize}
 		\item NUTS-3 regions
 		\begin{itemize}
-			\item originally (1970) labour market regions \newline
+			\item originally (1970) \alert{labour market} regions \newline
 		\end{itemize}
 		\item Last decade:
 		\begin{itemize}
@@ -73,7 +73,7 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 \end{columns}
 \end{frame}
 
-\begin{frame}{Tight Dutch housing market}
+\begin{frame}{\alert{Tight} Dutch housing market}
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
 			\begin{itemize}
@@ -94,18 +94,16 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 
 
 \begin{frame}{Housing market, urban regions and interregional migration: why bother?}
-  \begin{itemize}
-	\item Possible drivers of urban out-migration?
+	Possible \alert{drivers} of urban out-migration?
 	  \begin{itemize}
 		\item \alert{suburbanisation} of poverty \citep{hochstenbach2018gentrification}
 		\item \alert{crowding-out} of the housing market by short-term rentals
 		  \citep{koster2021short}
 		\item \alert{Influx} of high-skilled migrants
-		  \citep{beckers2019residential}\newline \pause
-\end{itemize}
-   		\item Large literature on \alert{external} effects of home-ownership \citep{dietz2003social}
+		  \citep{beckers2019residential}
+   		\item \alert{Housing market structure} (external effects of home-ownership \citet{dietz2003social})
    		\begin{itemize}
-   			\item \alert{negative}: moving costs \citep{oswald1996conjecture,oswald1999housing}
+   			\item \alert{negative}: moving costs of home-ownership (and social renting) \citep{oswald1996conjecture,oswald1999housing}
    		\end{itemize}
   \end{itemize}
 \end{frame}
@@ -114,10 +112,10 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 
 \begin{frame}{My contributions to the literature}
   \begin{itemize}
-  \item Large empirical (economic) literature on impact home-ownership as drivers of interregional migration, but:
+  \item Large empirical (economic) literature on impact housing market structure as driver of interregional migration, but:
     \begin{itemize}
-    \item usually concerns \alert{marginal} effect of home-ownership
-    \item less attention for the whole \alert{network} (e.g., Amsterdam effect)\newline
+    \item usually focuses on \alert{marginal} effect of home-ownership
+    \item less attention for (asymetric) network effects (e.g., push vs. pull effects of larger cities)\newline
     \end{itemize}
   \item Literature on impact of social renting on migration flows is
     scarce \footnotesize{\citep{de2009homeownership} }
@@ -140,17 +138,22 @@ progressbar = foot, background = light]{metropolis}           % Use metropolis t
 	\begin{itemize}
 	  \item \footnotesize UK context by \citet{congdon2010random}
 	  \item \footnotesize \alert{social relations model} \emph{cf.}
-		\citet{koster2014food}
-		\item \footnotesize \emph{Statistical Rethinking} from \citet{mcelreath2020statistical}
-		\item \footnotesize \texttt{ggplot2} code from \href{https://bookdown.org/content/4857/}{Kurz} (2020) \newline
+		\citet{koster2014food,zhangAnalysingInterprovincialUrban2020}\newline
 	\end{itemize}
   \end{footnotesize}
 	\item[Aim] To \alert{simultaneously} assess the impact of housing market structure and region specific effects on domestic migration flows
+  \begin{footnotesize}
+	\begin{itemize}
+	  \item \footnotesize home-ownership and social renting
+	  \item \footnotesize household size
+	  \item \footnotesize percentage western immigrants
+	\end{itemize}
+  \end{footnotesize}
   \end{description}
 \end{frame}
 
 
-\begin{frame}[fragile]{Why a \alert{multilevel} approach for the gravity model?}
+\begin{frame}[fragile]{Why a \alert{multilevel} approach for modeling (migration) flows?}
 There are at least two \alert{levels} in migration (I use three) \pause
 \begin{description}
 	\item[Observed migration \alert{flows}] Migration between $i$ and $j$ with friction (e.g., distance) attributes (obs = $R^2 - R$)
@@ -205,7 +208,7 @@ There are at least two \alert{levels} in migration (I use three) \pause
 
 \begin{frame}{Why a \alert{Bayesian} multilevel approach?}
 \begin{itemize}
-	\item Hierarchical, mixed effects, varying intercept/parameter, shrinkage, partial pooling models\pause
+	\item \alert{Multilevel}, hierarchical, mixed effects, varying intercept/parameter, shrinkage, partial pooling models\pause
 	\item Increasingly used for model \alert{performance} and \alert{flexibility} \pause
     \item \alert{Simultaneous} modeling at various levels (e.g., cities, regions, flows, individuals) 
     \begin{itemize}
@@ -248,6 +251,12 @@ There are at least two \alert{levels} in migration (I use three) \pause
 \begin{frame}{Data: regional housing structure in 2018 (cont.)}
 		\begin{figure}
 		  \includegraphics[width=1\textwidth]{../../fig/housing_structure}
+		  \end{figure}
+\end{frame}
+
+\begin{frame}{Data: regional household size}
+	\begin{figure}
+		  \includegraphics[width=1\textwidth]{../../fig/hhsize_corop}
 		  \end{figure}
 \end{frame}
 
@@ -297,7 +306,12 @@ There are at least two \alert{levels} in migration (I use three) \pause
   	& \beta_3 \ln(\text{home}_{it}) +
   	\beta_4 \ln(\text{home}_{jt}) +
   	\beta_5 \ln(\text{soc}_{it}) + \beta_6
-  	\ln(\text{soc}_{jt})  \tag{\footnotesize \color{blue} linear model} \\ \pause
+	 \ln(\text{soc}_{jt}) + \notag \\
+	&  \beta_{7}\ln(\text{hhsize}_{it}) +
+	 \beta_{8}\ln(\text{hhsize}_{jt}) + \notag \\
+	& \beta_{9}\ln(\text{perc\_wi}_{it}) +
+	 \beta_{10}\ln(\text{perc\_wi}_{jt})
+	 \tag{\footnotesize \color{blue} linear model} \\ \pause
 	\begin{pmatrix}o_i\\
 	d_j
 \end{pmatrix} \sim &\mathcal{N} \left\{\left(\begin{array}{c}
@@ -390,17 +404,18 @@ There are at least two \alert{levels} in migration (I use three) \pause
 \end{center}
 \end{frame}
 
-\begin{frame}{Determinants of push factors?}
-	\begin{center}
-		\includegraphics[width=1\textwidth]{../../fig/regional_out_plot}
-	\end{center}
-\end{frame}
+% \begin{frame}{Determinants of push factors?}
+% 	\begin{center}
+% 		\includegraphics[width=1\textwidth]{../../fig/regional_out_plot}
+% 	\end{center}
+% \end{frame}
 
-\begin{frame}{Sensitivity check: temporal stability?}
-			\begin{center}
-	\includegraphics[width=\textwidth]{../../fig/temporal_variation}
-\end{center}
-\end{frame}
+% \begin{frame}{Sensitivity check: temporal stability?}
+% 			\begin{center}
+% 	\includegraphics[width=\textwidth]{../../fig/temporal_variation}
+% \end{center}
+% \
+% end{frame}
 
 \begin{frame}{Sensitivity check: spatial autocorrelation}
 			\begin{columns}
@@ -428,21 +443,19 @@ There are at least two \alert{levels} in migration (I use three) \pause
 
 \textbf{Main results}:
 \begin{itemize}
-  \item home-ownership has a \alert{positive} impact on regional domestic migration
-  \begin{itemize}
-	\item social renting to a lesser extent
-  \end{itemize}
-  \item large urban areas have large \alert{push} effects
+  \item home-ownership and social renting have \alert{negative} effect on push and \alert{positive} impact on pull factors
+  \item household size have \alert{positive} impact on push and \alert{negative} on pull factors
+  \item percentage western immigrants small effect
+  \item \alert{still} large urban areas have large \alert{push} effects
   \begin{itemize}
 	\item effect is different from housing market structure 
-	\item \alert{similar} to and \alert{larger} than push effects in periphery
+	\item more \alert{dynamic} than in periphery
   \end{itemize}
 \end{itemize}
 
 \textbf{Speculation}:
 \begin{itemize}
-  \item home-ownership is a proxy for satelite communities close to major urban areas?
-  \item tourism, short stay (high-skilled), and large housing investment companies drive natives out?
+ \item \alert{internationalisation}: tourist, short stay (high-skilled), and large housing investment companies drive natives out?
 \end{itemize}
 \end{frame}
 

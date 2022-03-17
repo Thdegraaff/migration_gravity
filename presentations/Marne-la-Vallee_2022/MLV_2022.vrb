@@ -9,7 +9,12 @@
   	& \beta_3 \ln(\text{home}_{it}) +
   	\beta_4 \ln(\text{home}_{jt}) +
   	\beta_5 \ln(\text{soc}_{it}) + \beta_6
-  	\ln(\text{soc}_{jt})  \tag{\footnotesize \color{blue} linear model} \\ \pause
+	 \ln(\text{soc}_{jt}) + \notag \\
+	&  \beta_{7}\ln(\text{hhsize}_{it}) +
+	 \beta_{8}\ln(\text{hhsize}_{jt}) + \notag \\
+	& \beta_{9}\ln(\text{perc\_wi}_{it}) +
+	 \beta_{10}\ln(\text{perc\_wi}_{jt})
+	 \tag{\footnotesize \color{blue} linear model} \\ \pause
 	\begin{pmatrix}o_i\\
 	d_j
 \end{pmatrix} \sim &\mathcal{N} \left\{\left(\begin{array}{c}
