@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.28)  17 MAR 2022 11:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.28)  17 MAR 2022 15:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1837,7 +1837,7 @@ live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texl
 ive/2017/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb></usr/local/texlive/
 2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texl
 ive/2017/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on MLV_2022.pdf (38 pages, 505335 bytes).
+Output written on MLV_2022.pdf (38 pages, 505330 bytes).
 PDF statistics:
  444 PDF objects out of 1000 (max. 8388607)
  347 compressed objects within 4 object streams
